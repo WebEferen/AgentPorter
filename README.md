@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-    <img src="assets/logo.svg" alt="AgentPorter" width="420">
+    <img src="assets/logo.svg" alt="AgentPorter" width="160">
   </picture>
 </p>
 
@@ -92,11 +92,10 @@ Calling `/agentporter:port` with no arguments resumes the current port.
 
 ## How it works
 
-```text
-recover -> survey -> target -> deps -> contract -> strategy -> implement (per unit) -> verify
- (REA,                (pick a                                    ^                       |
- binaries only)       language)                                  +------- gaps ----------+
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/how-it-works-dark.svg">
+  <img src="assets/how-it-works.svg" alt="The eight phases: recover, survey, target, deps, contract, strategy, implement per unit, verify. Recover, target, deps and strategy stop for your approval, and a GAP found by verify goes back to implement." width="100%">
+</picture>
 
 | Phase | What happens | You approve |
 | --- | --- | --- |
@@ -270,6 +269,5 @@ Security issues go through GitHub private vulnerability reporting, described in 
 
 ## License and credits
 
-MIT, see [LICENSE](LICENSE). The wordmark is drawn from Inter (SIL Open Font License), see
-[NOTICE](NOTICE). Reverse engineering is done by [REA](https://github.com/morluto/rea), which is a
+MIT, see [LICENSE](LICENSE) and [NOTICE](NOTICE). Reverse engineering is done by [REA](https://github.com/morluto/rea), which is a
 separate project with its own license and is downloaded on demand.

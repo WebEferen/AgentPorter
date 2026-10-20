@@ -11,7 +11,8 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
-- New logo: a hotel service bell between code brackets. The README now leads with the one-command install.
+- New logo: a hotel service bell whose dome is split by a chevron, from source (slate) to target (teal).
+  The README shows the symbol only, leads with the one-command install, and draws the pipeline as a diagram.
 
 ### Fixed
 

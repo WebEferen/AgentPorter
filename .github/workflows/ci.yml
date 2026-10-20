@@ -39,11 +39,11 @@ jobs:
         run: npx -y markdownlint-cli2@0.18.1 "**/*.md"
       - name: Logo stays small
         run: |
-          for f in assets/logo-mark.svg assets/logo.svg assets/logo-dark.svg assets/wordmark.svg; do
+          for f in assets/logo.svg assets/logo-dark.svg assets/icon.svg assets/how-it-works.svg assets/how-it-works-dark.svg; do
             size=$(wc -c < "$f")
             echo "$f: $size bytes"
           done
-          test "$(wc -c < assets/logo-mark.svg)" -le 4096
+          test "$(wc -c < assets/logo.svg)" -le 4096
 
   plugin:
     runs-on: ubuntu-latest
