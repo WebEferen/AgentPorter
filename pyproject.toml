@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentporter"
+version = "0.1.0"
+description = "Deterministic CLI behind the AgentPorter plugin: port libraries, CLI tools and binaries between languages with proof of parity."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "WebEferen" }]
+keywords = ["porting", "migration", "parity", "reverse-engineering", "agents"]
+classifiers = [
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Code Generators",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/WebEferen/AgentPorter"
+Issues = "https://github.com/WebEferen/AgentPorter/issues"
+
+[project.scripts]
+agentporter = "porterlib.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts/porterlib"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"knowledge" = "porterlib/knowledge"
+
+[tool.hatch.build.targets.sdist]
+include = ["scripts/", "knowledge/", "README.md", "LICENSE", "pyproject.toml"]

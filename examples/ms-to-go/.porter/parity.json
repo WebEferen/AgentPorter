@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "upstream": {
+    "package": "ms",
+    "version": "2.1.3",
+    "commit": "1c6264b795492e8fdecbc82cb8802fcfbfc08d26",
+    "language": "javascript",
+    "mode": "code",
+    "artifactSha256": null
+  },
+  "target": {
+    "language": "go",
+    "package": "github.com/agentporter-examples/ms",
+    "path": "."
+  },
+  "evidenceDate": "2026-10-20T17:41:50Z",
+  "run": "final",
+  "units": [
+    {
+      "unit": "index",
+      "level": "DIVERGENT",
+      "fixtures": {
+        "total": 1490,
+        "passed": 1458,
+        "normalized": 8,
+        "divergent": 24,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 44,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 4,
+        "DIVERGENCE": 1,
+        "UNRESOLVED": 0,
+        "total": 49
+      },
+      "divergences": [
+        "empty-string",
+        "typed-input"
+      ],
+      "mismatches": [],
+      "perf": {
+        "cases": 1490,
+        "medianRatio": 0.022,
+        "note": "target time / oracle time; above 1 is slower"
+      },
+      "notes": [],
+      "oracle": {
+        "language": "javascript",
+        "package": "ms",
+        "version": "2.1.3",
+        "commit": "1c6264b795492e8fdecbc82cb8802fcfbfc08d26",
+        "runtime": "node 24.18.0",
+        "driver": "agentporter/knowledge/oracles/javascript/oracle.mjs",
+        "recordedAt": "2026-10-20T17:27:44Z"
+      }
+    }
+  ],
+  "divergences": [
+    {
+      "id": "typed-input",
+      "unit": "index",
+      "summary": "Inputs that exist only through JavaScript's dynamic typing cannot be passed to the Go API: a val that is undefined, null, a boolean, an array or an object (the source throws Error), and an options value other than an object or null, or an options.long other than true, false, null or absent (the source applies JavaScript truthiness). The harness reports these cases as BindingError.",
+      "rationale": "Planned in strategy.md (scope gauntlet, idiom map rows Dynamic dispatch and Options) and logged in decisions.md on 2026-10-20. The idiomatic Go API is Parse(string), Format(float64) and FormatLong(float64); the compiler rules out the other value types, so the typeof check and the truthiness rules have nothing to act on. options null, {}, {long: true/false/null} and an undefined options stay in scope through the binding and are not covered here.",
+      "cases": [
+        "ref.invalid.undefined",
+        "ref.invalid.null",
+        "ref.invalid.array",
+        "ref.invalid.object",
+        "edge.invalid.true",
+        "edge.invalid.false",
+        "edge.invalid.array-of-number",
+        "edge.invalid.array-of-string",
+        "edge.invalid.object-with-key",
+        "edge.invalid.options-as-value",
+        "edge.invalid.nested",
+        "edge.invalid.object-unicode-key",
+        "edge.options.long-one",
+        "edge.options.long-zero",
+        "edge.options.long-string",
+        "edge.options.long-string-false",
+        "edge.options.long-empty-string",
+        "edge.options.long-array",
+        "edge.options.string-options",
+        "edge.options.true-options",
+        "adv2.options.false-options",
+        "adv2.invalid.nan-truthy-string-long"
+      ],
+      "approvedBy": null
+    },
+    {
+      "id": "empty-string",
+      "unit": "index",
+      "summary": "Parse(\"\") returns (0, false), reported as undefined, where the JavaScript ms(\"\") throws Error \"val is not a non-empty string or a valid number. val=\\\"\\\"\".",
+      "rationale": "Planned in strategy.md (scope gauntlet) and logged in decisions.md on 2026-10-20. The source throws for \"\" to catch type confusion at a dynamic entry point; with a typed Parse(string) the empty string is just another string that is not a duration, and the comma-ok form has no error to return.",
+      "cases": [
+        "ref.invalid.empty-string",
+        "edge.invalid.empty-string-long"
+      ],
+      "approvedBy": null
+    }
+  ],
+  "markers": {
+    "empty-string": [
+      "ms.go:51"
+    ],
+    "typed-input": [
+      "ms.go:131",
+      "cmd/porter-harness/bindings.go:37",
+      "cmd/porter-harness/bindings.go:46"
+    ]
+  },
+  "markerErrors": [],
+  "totals": {
+    "units": 1,
+    "total": 1490,
+    "passed": 1458,
+    "normalized": 8,
+    "divergent": 24,
+    "failed": 0,
+    "missing": 0,
+    "EXACT": 0,
+    "EQUIVALENT": 0,
+    "DIVERGENT": 1,
+    "ASSERTED": 0,
+    "GAP": 0,
+    "OUT-OF-SCOPE": 0
+  }
+}

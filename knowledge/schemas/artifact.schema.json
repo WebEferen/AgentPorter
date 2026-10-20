@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter artifact identity (.porter/recover/artifact.json, written by porter.py recover detect)",
+  "type": "object",
+  "required": ["schema", "path", "sha256", "bytes", "format", "platform", "kind", "runnable", "reaPlan"],
+  "properties": {
+    "schema": {"const": 1},
+    "path": {"type": "string", "minLength": 1},
+    "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "bytes": {"type": "integer", "minimum": 0},
+    "format": {"enum": ["elf", "macho", "macho-fat", "pe", "wasm", "jar", "war", "apk", "aar", "zip", "asar", "app-bundle", "directory", "script", "pyc", "unknown"]},
+    "arch": {"type": ["string", "null"]},
+    "platform": {"enum": ["native", "dotnet", "jvm", "android", "node", "electron", "browser", "python", "wasm", "unknown"]},
+    "language": {"type": ["string", "null"]},
+    "languageEvidence": {"type": "array", "items": {"type": "string"}},
+    "kind": {"enum": ["cli", "library", "app", "service", "unknown"]},
+    "runnable": {"type": "boolean"},
+    "runnableNote": {"type": ["string", "null"]},
+    "reaPlan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["command", "why"],
+        "properties": {
+          "command": {"type": "array", "items": {"type": "string"}},
+          "why": {"type": "string"},
+          "needsProvider": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "detectedAt": {"type": "string"}
+  }
+}

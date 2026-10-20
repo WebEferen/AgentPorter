@@ -1,0 +1,6 @@
+cache/
+runs/
+oracle/.venv/
+oracle/node_modules/
+oracle/build/
+*.tmp

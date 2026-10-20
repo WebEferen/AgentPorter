@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter reference test resolution (.porter/reftests.json)",
+  "type": "object",
+  "required": ["schema", "units"],
+  "properties": {
+    "schema": {"const": 1},
+    "units": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["ref", "resolution"],
+          "properties": {
+            "ref": {"type": "string"},
+            "resolution": {"enum": ["PASS", "FAIL", "OUT-OF-SCOPE", "DIVERGENCE", "UNRESOLVED"]},
+            "reason": {"type": ["string", "null"]},
+            "targetTest": {"type": ["string", "null"]}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "javascript",
+    "package": "ms",
+    "version": "2.1.3",
+    "commit": "1c6264b795492e8fdecbc82cb8802fcfbfc08d26",
+    "entry": "index.js",
+    "importSpecifier": "ms",
+    "notes": "Symbol ids use the draft plan's module id (index). Fixtures call the same function through its import specifier, ms:default, which is what the JavaScript oracle resolves (package.json main ./index). Each symbol's callId names the fixture call id."
+  },
+  "symbols": [
+    {
+      "id": "index:default",
+      "name": "default",
+      "module": "index",
+      "kind": "function",
+      "signature": "ms(val: string | number, options?: { long?: any }): number | string | undefined",
+      "returns": "typeof val === 'string' && val.length > 0: the parsed duration in milliseconds as a double, or undefined when the string is longer than 100 UTF-16 code units or does not match the grammar (options ignored). typeof val === 'number' && isFinite(val): a string, short form ('2s', '-3d', '0.5ms') or, when options.long is truthy, long form ('2 seconds', '1 day', '500 ms').",
+      "errors": [
+        {
+          "category": "Error",
+          "when": "val is not a non-empty string and not a finite number: '', undefined, null, booleans, arrays, objects, NaN, Infinity, -Infinity, boxed String or Number objects",
+          "message": "val is not a non-empty string or a valid number. val=<JSON.stringify(val)>",
+          "examples": [
+            "val=\"\"",
+            "val=undefined",
+            "val=null (for null, NaN, Infinity and -Infinity)",
+            "val=[]",
+            "val={\"a\":1}",
+            "val=true"
+          ]
+        },
+        {
+          "category": "TypeError",
+          "when": "val is a BigInt: JSON.stringify throws while building the message. JavaScript only; not in fixtures.",
+          "message": "Do not know how to serialize a BigInt"
+        }
+      ],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "index",
+      "reason": null,
+      "leaks": [
+        "round-half-up",
+        "plural-sign",
+        "unit-rollup",
+        "number-to-string",
+        "negative-zero",
+        "undefined-result",
+        "double-results",
+        "grammar",
+        "length-limit",
+        "typeof-dispatch",
+        "options-truthiness",
+        "error-message"
+      ],
+      "docs": "readme.md:7-40 (examples), index.js:13-25 (JSDoc)",
+      "interfaceId": null,
+      "callId": "ms:default"
+    },
+    {
+      "id": "index:default.long",
+      "name": "long",
+      "module": "index",
+      "kind": "config-key",
+      "signature": "options.long: any",
+      "returns": "Selects the long format when truthy (JavaScript truthiness: 1, 'yes', 'false' and [] are truthy; 0, '', null, false and a missing key are not). Read only when val is a finite number. options itself defaults through `options || {}`, so null and undefined mean {}.",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "index",
+      "reason": null,
+      "leaks": [
+        "options-truthiness"
+      ],
+      "docs": "index.js:16-18, readme.md:32-40",
+      "interfaceId": null,
+      "callId": "ms:default"
+    }
+  ],
+  "leaks": [
+    {
+      "id": "round-half-up",
+      "description": "Math.round rounds halves toward +infinity: ms(1500) is \"2s\", ms(-1500) is \"-1s\", ms(-2500) is \"-2s\". Go math.Round rounds away from zero (-2.5 gives -3). math.Floor(x+0.5) is also wrong: for odd integers in [2^52, 2^53) it adds one, while ms(3.891110078048109e+23) must be \"4503599627370497d\".",
+      "traps": ["T14"],
+      "fixtures": ["edge.format.half.*", "edge.format-long.half.*", "edge.format.large.round-2p52-*", "edge.format-long.large.round-2p52-*"]
+    },
+    {
+      "id": "plural-sign",
+      "description": "Long format picks the plural from the absolute value (|ms| >= 1.5 * unit) but rounds the signed value, so ms(-1500, {long: true}) is \"-1 seconds\" and ms(-90000, {long: true}) is \"-1 minutes\", while ms(-1499, {long: true}) is \"-1 second\". Under one second there is no pluralisation: \"1 ms\", \"500 ms\".",
+      "traps": ["T14"],
+      "fixtures": ["edge.format-long.half.*"]
+    },
+    {
+      "id": "unit-rollup",
+      "description": "The unit is chosen from |ms| before rounding, so a value just below a unit boundary rounds up inside the smaller unit: ms(59999) is \"60s\", ms(3599999) is \"60m\", ms(86399999) is \"24h\". Days is the largest output unit: weeks and years are never printed (ms(31557600000) is \"365d\").",
+      "traps": [],
+      "fixtures": ["edge.format.rollup.*", "edge.format-long.rollup.*", "edge.format.large.week", "edge.format.large.year"]
+    },
+    {
+      "id": "number-to-string",
+      "description": "Numbers become text through JavaScript Number#toString (shortest round-trip digits, ECMAScript Number::toString). Below one second the input itself is printed: \"0.5ms\", \"0.30000000000000004ms\", \"0.000001ms\", but \"9.99e-7ms\", \"1e-7ms\" and \"5e-324ms\" (exponent form below 1e-6). Rounded counts print in full below 1e21 (\"999999999999999900000d\") and in exponent form from 1e21 (\"1.0000000000000001e+21d\", \"1.1574074074074075e+292d\"). The exponent has no zero padding and an explicit sign. Go strconv 'g' gives \"1e-07\" and switches to exponent form at other thresholds; 'f' never does.",
+      "traps": ["T15"],
+      "fixtures": ["edge.format.subsecond.*", "edge.format.large.*", "gen.format.float-*"]
+    },
+    {
+      "id": "negative-zero",
+      "description": "Formatting -0 gives \"0ms\" and \"0 ms\" (JavaScript prints -0 as 0; Go strconv prints \"-0\"). Parsing \"-0\", \"-0ms\", \"-0.0\" or \"-0.0d\" returns -0, recorded as {\"$float\": \"-0\"}.",
+      "traps": ["T15"],
+      "fixtures": ["edge.format.negative-zero", "edge.format-long.negative-zero", "edge.parse.number.neg0*"]
+    },
+    {
+      "id": "undefined-result",
+      "description": "A non-empty string that is too long or does not match returns undefined (recorded as {\"$undefined\": true}). It is not NaN and not an error. The reference test 'should return NaN if invalid' passes only because isNaN(undefined) is true.",
+      "traps": ["T42"],
+      "fixtures": ["ref.string.invalid.*", "edge.parse.malformed.*", "edge.parse.ws.*", "edge.parse.unicode.*", "gen.parse.*"]
+    },
+    {
+      "id": "double-results",
+      "description": "Parsed values are IEEE-754 doubles, parseFloat(number) * unit with s=1000, m=60000, h=3600000, d=86400000, w=604800000 and y=31557600000 (365.25 days). Results need not be integers: \"1.15h\" is 4139999.9999999995, \"1.1d\" is 95040000.00000001, \".5ms\" is 0.5. parseFloat is correctly rounded on inputs up to 100 characters: \"9007199254740993\" is 9007199254740992, \"1.50000000000000000001s\" is 1500.",
+      "traps": ["T11", "T17"],
+      "fixtures": ["edge.parse.number.*", "edge.parse.length.*", "gen.parse.valid-*"]
+    },
+    {
+      "id": "grammar",
+      "description": "The regex /^(-?(?:\\d+)?\\.?\\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i is the whole input grammar: ASCII digits only; an optional leading '-' and no '+'; a leading '.' is allowed, a trailing '.' is not; no exponent, hex or digit separators; only U+0020 between number and unit, any count; trailing U+0020 is accepted after a unit-less number (\"1 \" is 1) but not after a unit (\"1ms \" is undefined); no leading whitespace; '$' is the end of input (\"1m\\n\" is undefined). Units are case-insensitive under JavaScript's non-Unicode /i, which never folds a non-ASCII character to ASCII: \"1ſ\" and \"1 weeK\" are undefined. Go regexp (?i) folds ſ to s and K to k and accepts both.",
+      "traps": ["T5", "T17", "T20", "T21"],
+      "fixtures": ["edge.parse.*", "gen.parse.near-grammar-*"]
+    },
+    {
+      "id": "length-limit",
+      "description": "A string longer than 100 UTF-16 code units returns undefined before matching (\"9\" x 100 is 1e100, \"9\" x 101 is undefined, \"1\" plus 99 spaces is 1). Only ASCII strings can match the grammar, so counting bytes, runes or UTF-16 units gives the same observable result.",
+      "traps": ["T1"],
+      "fixtures": ["edge.parse.length.*"]
+    },
+    {
+      "id": "typeof-dispatch",
+      "description": "The function dispatches on typeof val: a non-empty string is parsed and options are ignored; a finite number is formatted; anything else throws. The string branch never throws and the number branch never returns undefined. Boxed String and Number objects throw because typeof is 'object'.",
+      "traps": ["T43"],
+      "fixtures": ["edge.parse.ignores-long-option", "edge.parse.ignores-null-option", "ref.invalid.*", "edge.invalid.*"]
+    },
+    {
+      "id": "options-truthiness",
+      "description": "options = options || {}; options.long is tested for truthiness. {long: 1}, {long: 'yes'}, {long: 'false'} and {long: []} give the long format; {long: 0}, {long: ''}, {long: null}, {long: false}, {} and null give the short format. Non-object options ('long', true) have no long property and give the short format. Extra keys are ignored.",
+      "traps": ["T43"],
+      "fixtures": ["edge.options.*"]
+    },
+    {
+      "id": "error-message",
+      "description": "Invalid input throws a plain Error (no subclass) whose message is 'val is not a non-empty string or a valid number. val=' + JSON.stringify(val): '' gives val=\"\", undefined gives val=undefined, null, NaN, Infinity and -Infinity give val=null, arrays and objects give compact JSON (val={\"a\":1}). The reference tests only assert that a throw happens; the message is observable and recorded exactly. A BigInt argument instead throws TypeError from JSON.stringify (JavaScript only, not in fixtures).",
+      "traps": ["T19", "T35"],
+      "fixtures": ["ref.invalid.*", "edge.invalid.*"]
+    }
+  ],
+  "free": [
+    "Helper names and boundaries (parse, fmtShort, fmtLong, plural) and the names of the unit constants.",
+    "The Go API shape (for example separate Parse, Format and FormatLong functions, an Options struct, a (float64, bool) or error return) as long as the ms:default binding only translates calling conventions and never patches results.",
+    "The Go error type name, mapped through contract/error-map.json.",
+    "Regex engine or a hand-written scanner, as long as the grammar leak holds.",
+    "The unreachable default branch of parse (index.js:100-101) and the String(str) coercion inside parse (only strings reach it).",
+    "The unit used to count input length, since only ASCII input can match.",
+    "Performance: the source makes no timing promises."
+  ]
+}

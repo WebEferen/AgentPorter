@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter oracle case spec (.porter/oracle/cases/<unit>.json)",
+  "type": "object",
+  "required": ["schema", "unit"],
+  "properties": {
+    "schema": {"const": 1},
+    "unit": {"type": "string"},
+    "call": {"type": "string"},
+    "kind": {"enum": ["value", "cli", "trace", "files"]},
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case", "input"],
+        "properties": {
+          "case": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+          "origin": {"type": "string"},
+          "call": {"type": "string"},
+          "input": {"type": "object"},
+          "normalize": {"type": "array", "items": {"type": "string", "pattern": "^(float:[0-9.eE+-]+|unordered|lines-unordered|trim|trim-trailing-ws|lf|nfc|json|ignore-stderr|ignore-message)$"}},
+          "messagePattern": {"type": "string"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "generate": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "seed", "count"],
+        "properties": {
+          "name": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+          "call": {"type": "string"},
+          "seed": {"type": "integer"},
+          "count": {"type": "integer", "minimum": 1, "maximum": 5000},
+          "args": {"type": "array"},
+          "kwargs": {"type": "object"},
+          "input": {"type": "object", "description": "whole input template (argv, stdin, init); replaces args and kwargs"},
+          "normalize": {"type": "array", "items": {"type": "string", "pattern": "^(float:[0-9.eE+-]+|unordered|lines-unordered|trim|trim-trailing-ws|lf|nfc|json|ignore-stderr|ignore-message)$"}}
+        }
+      }
+    }
+  }
+}

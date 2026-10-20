@@ -1,0 +1,301 @@
+{
+  "schema": 1,
+  "units": {
+    "index": [
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms(\"\")",
+        "resolution": "DIVERGENCE",
+        "reason": "Divergence empty-string: Parse(\"\") returns (0, false) like any other string that is not a duration; the typed Go API has no type confusion for the throw to catch. TestParseEmptyStringIsNotADuration asserts the Go behavior.",
+        "targetTest": "TestParseEmptyStringIsNotADuration"
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms(undefined)",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "Divergence typed-input: Parse takes a string and Format a float64, so the Go compiler rejects an undefined argument; there is no dynamic entry point to call.",
+        "targetTest": null
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms(null)",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "Divergence typed-input: neither string nor float64 can be nil, so ms(null) cannot be written against the Go API.",
+        "targetTest": null
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms([])",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "Divergence typed-input: the Go compiler rejects a slice argument to Parse, Format or FormatLong.",
+        "targetTest": null
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms({})",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "Divergence typed-input: the Go compiler rejects a map or struct argument to Parse, Format or FormatLong.",
+        "targetTest": null
+      },
+      {
+        "ref": "tests.js::ms(string)::should not throw an error",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should preserve ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should convert from m to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should convert from h to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should convert d to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should convert w to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should convert s to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should convert ms to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should work with decimals",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should work with multiple spaces",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should return NaN if invalid",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should be case-insensitive",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should work with numbers starting with .",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should work with negative integers",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should work with negative decimals",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(string)::should work with negative decimals starting with \".\"",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should not throw an error",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should convert milliseconds to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should convert msecs to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should convert sec to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should convert from min to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should convert from hr to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should convert days to ms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should work with decimals",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should work with negative integers",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should work with negative decimals",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(long string)::should work with negative decimals starting with \".\"",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestParseLongString/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should not throw an error",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should support milliseconds",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should support seconds",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should support minutes",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should support hours",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should support days",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number, { long: true })::should round",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormatLong/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should not throw an error",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should support milliseconds",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should support seconds",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should support minutes",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should support hours",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should support days",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(number)::should round",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestFormat/"
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms(NaN)",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestInvalidInputs/"
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms(Infinity)",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestInvalidInputs/"
+      },
+      {
+        "ref": "tests.js::ms(invalid inputs)::should throw an error, when ms(-Infinity)",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/ms TestInvalidInputs/"
+      }
+    ]
+  }
+}

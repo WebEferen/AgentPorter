@@ -1,0 +1,322 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-20T16:28:00Z",
+  "root": ".porter/cache/source",
+  "subpath": null,
+  "sampled": false,
+  "coverage": {
+    "codeFiles": 2,
+    "scanned": 2
+  },
+  "vcs": {
+    "kind": "git",
+    "commit": "1c6264b795492e8fdecbc82cb8802fcfbfc08d26",
+    "dirty": false,
+    "remote": "https://github.com/vercel/ms.git",
+    "describe": "2.1.3"
+  },
+  "license": {
+    "spdx": "MIT",
+    "source": "license.md",
+    "copyleft": "none",
+    "manifest": "MIT"
+  },
+  "package": {
+    "name": "ms",
+    "version": "2.1.3",
+    "license": "MIT"
+  },
+  "languages": [
+    {
+      "language": "javascript",
+      "files": 2,
+      "loc": 383
+    }
+  ],
+  "primaryLanguage": "javascript",
+  "tests": {
+    "files": 1,
+    "loc": 232,
+    "cases": 49,
+    "ratio": 1.54,
+    "runners": [
+      "mocha-style (describe/it)"
+    ],
+    "modules": [
+      {
+        "path": "tests.js",
+        "imports": []
+      }
+    ]
+  },
+  "manifests": [
+    {
+      "path": "package-lock.json",
+      "kind": "npm-lock"
+    },
+    {
+      "path": "package.json",
+      "kind": "npm"
+    }
+  ],
+  "tooling": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "kind": "ci"
+    }
+  ],
+  "runtimes": [],
+  "entryPoints": [
+    {
+      "kind": "library",
+      "name": "main",
+      "target": "./index",
+      "path": "package.json"
+    }
+  ],
+  "packages": [
+    {
+      "path": ".",
+      "manifests": [
+        "package.json"
+      ]
+    }
+  ],
+  "kind": "library",
+  "couplingCounts": {
+    "pure": 1
+  },
+  "sourceLoc": 151,
+  "publicSymbols": 1,
+  "graph": {
+    "leaves": [
+      "index"
+    ],
+    "hubs": [],
+    "cycles": []
+  },
+  "modules": [
+    {
+      "id": "index",
+      "path": "index.js",
+      "language": "javascript",
+      "loc": 151,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "error-model",
+        "float-format",
+        "nullability",
+        "numeric",
+        "reflection",
+        "regex"
+      ],
+      "riskScore": 10,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "s",
+          "kind": "constant",
+          "line": 5,
+          "endLine": 5,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "m",
+          "kind": "constant",
+          "line": 6,
+          "endLine": 6,
+          "public": false,
+          "loc": 1,
+          "refs": [
+            "index:s"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "h",
+          "kind": "constant",
+          "line": 7,
+          "endLine": 7,
+          "public": false,
+          "loc": 1,
+          "refs": [
+            "index:m"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "d",
+          "kind": "constant",
+          "line": 8,
+          "endLine": 8,
+          "public": false,
+          "loc": 1,
+          "refs": [
+            "index:h"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "w",
+          "kind": "constant",
+          "line": 9,
+          "endLine": 9,
+          "public": false,
+          "loc": 1,
+          "refs": [
+            "index:d"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "y",
+          "kind": "constant",
+          "line": 10,
+          "endLine": 10,
+          "public": false,
+          "loc": 1,
+          "refs": [
+            "index:d"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "default",
+          "kind": "function",
+          "line": 26,
+          "endLine": 38,
+          "public": true,
+          "loc": 13,
+          "refs": [
+            "index:fmtLong",
+            "index:fmtShort",
+            "index:parse"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "error-model",
+            "numeric",
+            "reflection"
+          ]
+        },
+        {
+          "name": "parse",
+          "kind": "function",
+          "line": 48,
+          "endLine": 103,
+          "public": false,
+          "loc": 56,
+          "refs": [
+            "index:d",
+            "index:h",
+            "index:m",
+            "index:s",
+            "index:w",
+            "index:y"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "float-format",
+            "nullability",
+            "regex"
+          ]
+        },
+        {
+          "name": "fmtShort",
+          "kind": "function",
+          "line": 113,
+          "endLine": 128,
+          "public": false,
+          "loc": 16,
+          "refs": [
+            "index:d",
+            "index:h",
+            "index:m",
+            "index:s"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "float-format",
+            "numeric"
+          ]
+        },
+        {
+          "name": "fmtLong",
+          "kind": "function",
+          "line": 138,
+          "endLine": 153,
+          "public": false,
+          "loc": 16,
+          "refs": [
+            "index:d",
+            "index:h",
+            "index:m",
+            "index:plural",
+            "index:s"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "numeric"
+          ]
+        },
+        {
+          "name": "plural",
+          "kind": "function",
+          "line": 159,
+          "endLine": 162,
+          "public": false,
+          "loc": 4,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "float-format",
+            "numeric"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tests",
+      "path": "tests.js",
+      "language": "javascript",
+      "loc": 232,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": [
+          "expect.js"
+        ]
+      },
+      "symbols": []
+    }
+  ]
+}

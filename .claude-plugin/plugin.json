@@ -1,0 +1,11 @@
+{
+  "name": "agentporter",
+  "displayName": "AgentPorter",
+  "version": "0.1.0",
+  "description": "Port libraries, CLI tools and binaries between programming languages with registry-checked dependency decisions, oracle fixtures recorded from the original, unit-by-unit implementation and a parity report. Reverse engineers closed tools with REA and can recommend the target language.",
+  "author": {"name": "WebEferen", "url": "https://github.com/WebEferen"},
+  "homepage": "https://github.com/WebEferen/AgentPorter",
+  "repository": "https://github.com/WebEferen/AgentPorter",
+  "license": "MIT",
+  "keywords": ["porting", "migration", "legacy", "rewrite", "parity", "dependencies", "reverse-engineering", "skills"]
+}

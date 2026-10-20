@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter dependency decisions (.porter/deps.json)",
+  "type": "object",
+  "required": ["schema", "source", "target", "dependencies"],
+  "properties": {
+    "schema": {"const": 1},
+    "source": {"type": "object", "required": ["language"]},
+    "target": {"type": "object", "required": ["language", "registry"]},
+    "devTools": {
+      "type": "array",
+      "items": {"type": "object", "required": ["source", "target"]}
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "scope", "direct", "role", "decision", "confidence"],
+        "properties": {
+          "name": {"type": "string"},
+          "version": {"type": ["string", "null"]},
+          "versionSpec": {"type": ["string", "null"]},
+          "scope": {"enum": ["runtime", "dev", "build", "optional", "peer", "platform"]},
+          "direct": {"type": "boolean"},
+          "role": {"enum": ["runtime-library", "framework", "build-tool", "test-tool", "lint-tool", "type-stubs", "polyfill", "platform-binding", "unused"]},
+          "usedSurface": {
+            "type": "object",
+            "properties": {
+              "symbols": {"type": "array", "items": {"type": "string"}},
+              "callSites": {"type": "integer"},
+              "modules": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "decision": {"enum": ["ABSORB", "MAP", "SHIM", "PORT", "VENDOR", "DROP", "DEFER", "UNDECIDED"]},
+          "candidate": {
+            "type": ["object", "null"],
+            "properties": {
+              "name": {"type": "string"},
+              "registry": {"type": ["string", "null"]},
+              "version": {"type": ["string", "null"]},
+              "license": {"type": ["string", "null"]},
+              "lastRelease": {"type": ["string", "null"]},
+              "coverage": {"type": ["string", "null"]},
+              "evidence": {"type": ["string", "null"]}
+            }
+          },
+          "alternatives": {"type": "array"},
+          "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+          "verified": {
+            "type": "object",
+            "properties": {
+              "registryLookup": {"type": "boolean"},
+              "fetchedAt": {"type": ["string", "null"]},
+              "reason": {"type": ["string", "null"]},
+              "status": {"enum": ["VERIFIED", "UNVERIFIED", "NOT_FOUND", "NOT_APPLICABLE"]}
+            }
+          },
+          "budget": {"type": ["object", "null"]},
+          "license": {"type": ["object", "null"]},
+          "sourceLicense": {"type": ["object", "null"]},
+          "gate": {"type": "boolean"},
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

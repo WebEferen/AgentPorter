@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter state (.porter/state.json, written only by porter.py state)",
+  "type": "object",
+  "required": [
+    "schema",
+    "phase",
+    "phases",
+    "units",
+    "budgets",
+    "stale",
+    "history"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "phase": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "phases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "PENDING",
+              "IN_PROGRESS",
+              "GATE_WAIT",
+              "DONE",
+              "STALE",
+              "SKIPPED"
+            ]
+          },
+          "at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gate": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "artifacts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "units": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "PENDING",
+              "IN_PROGRESS",
+              "IMPLEMENTED",
+              "REVIEWED",
+              "VERIFIED",
+              "DONE",
+              "BLOCKED",
+              "DEFERRED",
+              "GAP"
+            ]
+          },
+          "wave": {
+            "type": "integer"
+          },
+          "attempts": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "task": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "verifiedLevel": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "discovered": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "required": [
+        "attemptsPerUnit",
+        "discoveredUnits",
+        "discoveredUsed"
+      ],
+      "properties": {
+        "attemptsPerUnit": {
+          "type": "integer"
+        },
+        "discoveredUnits": {
+          "type": "integer"
+        },
+        "discoveredUsed": {
+          "type": "integer"
+        }
+      }
+    },
+    "stale": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "event"
+        ],
+        "properties": {
+          "at": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

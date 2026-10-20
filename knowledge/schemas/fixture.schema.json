@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter fixture file (.porter/fixtures/<unit>/<name>.json)",
+  "type": "object",
+  "required": ["schema", "unit", "oracle", "cases"],
+  "properties": {
+    "schema": {"const": 1},
+    "unit": {"type": "string"},
+    "oracle": {
+      "type": "object",
+      "required": ["language", "package", "version", "recordedAt"],
+      "properties": {
+        "language": {"type": "string"},
+        "package": {"type": "string"},
+        "version": {"type": "string"},
+        "commit": {"type": ["string", "null"]},
+        "runtime": {"type": ["string", "null"]},
+        "driver": {"type": ["string", "null"]},
+        "recordedAt": {"type": "string"}
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case", "call", "input", "expect"],
+        "properties": {
+          "case": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+          "origin": {"type": "string"},
+          "call": {"type": "string"},
+          "input": {"type": "object"},
+          "normalize": {"type": "array", "items": {"type": "string", "pattern": "^(float:[0-9.eE+-]+|unordered|lines-unordered|trim|trim-trailing-ws|lf|nfc|json|ignore-stderr|ignore-message)$"}},
+          "tags": {"type": "array", "items": {"type": "string"}},
+          "expect": {"$ref": "#/$defs/outcome"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "outcome": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"enum": ["value", "error", "trace", "cli", "files"]},
+        "value": {},
+        "category": {"type": "string"},
+        "categories": {"type": "array", "items": {"type": "string"}},
+        "message": {"type": ["string", "null"]},
+        "messagePattern": {"type": "string"},
+        "events": {"type": "array"},
+        "stdout": {"type": "string"},
+        "stderr": {"type": "string"},
+        "exitCode": {"type": "integer"},
+        "files": {"type": "object"}
+      }
+    }
+  }
+}

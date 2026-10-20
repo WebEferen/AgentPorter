@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter harness output (.porter/runs/<run>/<unit>.json)",
+  "type": "object",
+  "required": ["schema", "unit", "runner", "results"],
+  "properties": {
+    "schema": {"const": 1},
+    "unit": {"type": "string"},
+    "runner": {"type": "object", "required": ["language"]},
+    "startedAt": {"type": "string"},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case", "actual"],
+        "properties": {
+          "case": {"type": "string"},
+          "actual": {"$ref": "fixture.schema.json#/$defs/outcome"},
+          "durationMs": {"type": "number"}
+        }
+      }
+    }
+  }
+}

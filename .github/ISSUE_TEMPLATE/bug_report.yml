@@ -1,0 +1,32 @@
+name: Bug report
+description: Something in a port went wrong
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what AgentPorter did instead.
+    validations:
+      required: true
+  - type: textarea
+    id: board
+    attributes:
+      label: Stage card
+      description: Output of `porter.py state board --units`, or the command that failed and its output.
+      render: text
+  - type: input
+    id: pair
+    attributes:
+      label: Source and target
+      placeholder: python 3.12 to typescript
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and version
+      placeholder: Claude Code 2.x, Codex 0.159
+  - type: input
+    id: version
+    attributes:
+      label: AgentPorter version
+      placeholder: "0.1.0"

@@ -1,0 +1,22 @@
+name: Language pair request
+description: Ask for, or offer, a pair reference
+labels: [language-pair]
+body:
+  - type: input
+    id: pair
+    attributes:
+      label: Source and target
+      placeholder: ruby to go
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What you want to port
+      description: The kind of code, and any traps you already know about.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contributing
+      options:
+        - label: I can help write the reference (see docs/adding-a-language-pair.md)

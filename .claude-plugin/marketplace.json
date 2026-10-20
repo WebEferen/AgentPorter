@@ -1,0 +1,14 @@
+{
+  "name": "agentporter",
+  "owner": {"name": "WebEferen", "url": "https://github.com/WebEferen"},
+  "description": "AgentPorter: port libraries and tools between languages, with proof of parity.",
+  "plugins": [
+    {
+      "name": "agentporter",
+      "source": "./",
+      "description": "Port libraries, CLI tools and binaries between languages with proof of parity.",
+      "category": "development",
+      "strict": true
+    }
+  ]
+}

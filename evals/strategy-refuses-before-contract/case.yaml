@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: strategy-refuses-before-contract
+context:
+  scaffold_script: scaffold.sh

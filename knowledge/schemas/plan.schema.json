@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter plan (.porter/plan.json)",
+  "type": "object",
+  "required": ["schema", "draft", "units", "order"],
+  "properties": {
+    "schema": {"const": 1},
+    "draft": {"type": "boolean"},
+    "generatedBy": {"type": "string"},
+    "generatedAt": {"type": "string"},
+    "budgets": {"type": "object"},
+    "tracer": {"type": ["string", "null"]},
+    "order": {"type": "array", "items": {"type": "string"}},
+    "layers": {"type": "object"},
+    "cycles": {"type": "array"},
+    "adjustments": {"type": "array"},
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "layer", "wave", "symbols", "dependsOn"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+          "name": {"type": "string"},
+          "layer": {"enum": ["foundation", "core", "boundary", "runtime-welded", "native", "entry"]},
+          "wave": {"type": "integer", "minimum": 0},
+          "symbols": {"type": "array", "items": {"type": "string"}},
+          "sources": {"type": "array"},
+          "loc": {"type": "integer"},
+          "dependsOn": {"type": "array", "items": {"type": "string"}},
+          "externalDeps": {"type": "array", "items": {"type": "string"}},
+          "fixtures": {"type": "object"},
+          "noFixturesReason": {"type": ["string", "null"]},
+          "referenceTests": {"type": "array", "items": {"type": "string"}},
+          "riskTags": {"type": "array", "items": {"type": "string"}},
+          "riskScore": {"type": "integer"},
+          "strategy": {"enum": ["contract-port", "code-port", "wrap", "drop", null]},
+          "acceptance": {"type": "array", "items": {"type": "string"}},
+          "deferred": {"type": ["string", "null"]},
+          "discovered": {"type": "boolean"},
+          "tracer": {"type": "boolean"},
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

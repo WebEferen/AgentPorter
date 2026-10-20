@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: deps-verifies-in-registry
+context:
+  scaffold_script: scaffold.sh

@@ -1,0 +1,27 @@
+{
+  "name": "agentporter",
+  "version": "0.1.0",
+  "description": "Port libraries, CLI tools and binaries between programming languages with registry-checked dependency decisions, oracle fixtures, unit-by-unit implementation and a parity report.",
+  "author": {"name": "WebEferen", "url": "https://github.com/WebEferen"},
+  "homepage": "https://github.com/WebEferen/AgentPorter",
+  "repository": "https://github.com/WebEferen/AgentPorter",
+  "license": "MIT",
+  "keywords": ["porting", "migration", "legacy", "rewrite", "parity", "dependencies", "reverse-engineering"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AgentPorter",
+    "shortDescription": "Port libraries and tools between languages, with proof.",
+    "longDescription": "AgentPorter moves a library, CLI tool or binary from one language to another. It surveys the source (or reverse engineers a binary with REA), recommends a target language, decides every dependency against live registries, records the original's behavior as fixtures, cuts the work into units, implements them one at a time and proves parity with a per-unit report.",
+    "developerName": "WebEferen",
+    "category": "Developer Tools",
+    "capabilities": ["Skills"],
+    "defaultPrompt": [
+      "Port ./legacy-lib to TypeScript",
+      "Which language should I port this package to?",
+      "What is the status of this port?"
+    ],
+    "brandColor": "#14B8A6",
+    "composerIcon": "./assets/icon-128.png",
+    "logo": "./assets/icon-512.png"
+  }
+}

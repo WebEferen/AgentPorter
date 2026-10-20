@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter public surface (.porter/contract/api.json)",
+  "type": "object",
+  "required": [
+    "schema",
+    "source",
+    "symbols"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "source": {
+      "type": "object"
+    },
+    "symbols": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "module",
+          "kind",
+          "inScope"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "module": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "function",
+              "class",
+              "method",
+              "constant",
+              "type",
+              "cli-command",
+              "cli-flag",
+              "cli-argument",
+              "exit-code",
+              "config-key",
+              "env-var",
+              "event",
+              "endpoint",
+              "export",
+              "module"
+            ]
+          },
+          "signature": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "returns": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "errors": {
+            "type": "array"
+          },
+          "sideEffects": {
+            "type": "array"
+          },
+          "inScope": {
+            "type": "boolean"
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "leaks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "docs": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "interfaceId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "callId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "noFixturesReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "leaks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "description"
+        ]
+      }
+    },
+    "free": {
+      "type": "array"
+    }
+  }
+}

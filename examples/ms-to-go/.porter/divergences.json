@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "divergences": [
+    {
+      "id": "typed-input",
+      "unit": "index",
+      "summary": "Inputs that exist only through JavaScript's dynamic typing cannot be passed to the Go API: a val that is undefined, null, a boolean, an array or an object (the source throws Error), and an options value other than an object or null, or an options.long other than true, false, null or absent (the source applies JavaScript truthiness). The harness reports these cases as BindingError.",
+      "rationale": "Planned in strategy.md (scope gauntlet, idiom map rows Dynamic dispatch and Options) and logged in decisions.md on 2026-10-20. The idiomatic Go API is Parse(string), Format(float64) and FormatLong(float64); the compiler rules out the other value types, so the typeof check and the truthiness rules have nothing to act on. options null, {}, {long: true/false/null} and an undefined options stay in scope through the binding and are not covered here.",
+      "cases": [
+        "ref.invalid.undefined",
+        "ref.invalid.null",
+        "ref.invalid.array",
+        "ref.invalid.object",
+        "edge.invalid.true",
+        "edge.invalid.false",
+        "edge.invalid.array-of-number",
+        "edge.invalid.array-of-string",
+        "edge.invalid.object-with-key",
+        "edge.invalid.options-as-value",
+        "edge.invalid.nested",
+        "edge.invalid.object-unicode-key",
+        "edge.options.long-one",
+        "edge.options.long-zero",
+        "edge.options.long-string",
+        "edge.options.long-string-false",
+        "edge.options.long-empty-string",
+        "edge.options.long-array",
+        "edge.options.string-options",
+        "edge.options.true-options",
+        "adv2.options.false-options",
+        "adv2.invalid.nan-truthy-string-long"
+      ],
+      "approvedBy": null
+    },
+    {
+      "id": "empty-string",
+      "unit": "index",
+      "summary": "Parse(\"\") returns (0, false), reported as undefined, where the JavaScript ms(\"\") throws Error \"val is not a non-empty string or a valid number. val=\\\"\\\"\".",
+      "rationale": "Planned in strategy.md (scope gauntlet) and logged in decisions.md on 2026-10-20. The source throws for \"\" to catch type confusion at a dynamic entry point; with a typed Parse(string) the empty string is just another string that is not a duration, and the comma-ok form has no error to return.",
+      "cases": [
+        "ref.invalid.empty-string",
+        "edge.invalid.empty-string-long"
+      ],
+      "approvedBy": null
+    }
+  ]
+}

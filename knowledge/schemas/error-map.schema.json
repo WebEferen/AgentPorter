@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter error category map (.porter/contract/error-map.json)",
+  "type": "object",
+  "required": ["schema", "map"],
+  "properties": {
+    "schema": {"const": 1},
+    "map": {"type": "object", "additionalProperties": {"type": "string"}},
+    "notes": {"type": ["string", "null"]}
+  }
+}

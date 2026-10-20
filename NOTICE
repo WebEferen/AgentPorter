@@ -1,0 +1,17 @@
+AgentPorter
+Copyright (c) 2026 WebEferen and AgentPorter contributors
+Licensed under the MIT License, see LICENSE.
+
+Third-party material
+
+- The AgentPorter wordmark in assets/wordmark.svg, assets/logo.svg and
+  assets/logo-dark.svg is outlined from the Inter typeface by Rasmus Andersson,
+  licensed under the SIL Open Font License 1.1 (https://openfontlicense.org).
+
+Tools used at runtime and not distributed with AgentPorter
+
+- REA (https://github.com/morluto/rea, npm package rea-agents) is downloaded on
+  demand by the recover phase and is covered by its own license.
+
+Example ports in examples/ are derived from third-party projects. Each example
+folder keeps the upstream license notice of the project it ports.

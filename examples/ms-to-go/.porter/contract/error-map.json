@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "map": {
+    "Error": "InvalidValueError"
+  },
+  "notes": "The source throws a plain JavaScript Error for every invalid value (category Error, 19 fixtures). The proposed Go target is an exported error type `InvalidValueError` (returned as *InvalidValueError, so the Go harness reports the type name without the pointer) whose Error() text reproduces the source message 'val is not a non-empty string or a valid number. val=<JSON of val>'. A struct type keeps the exact message; a wrapped sentinel would change it. The strategy phase may pick another name; if it does, update this map. TypeError (BigInt input) is JavaScript only and has no fixture, so it is not mapped."
+}

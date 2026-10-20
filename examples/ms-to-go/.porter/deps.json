@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "javascript",
+    "ecosystem": "npm"
+  },
+  "target": {
+    "language": "go",
+    "registry": "go"
+  },
+  "devTools": [
+    {
+      "source": "mocha",
+      "target": "go test",
+      "note": "table-driven tests with t.Run; go test ./... -count=1"
+    },
+    {
+      "source": "expect.js",
+      "target": "testing (standard library)",
+      "note": "plain t.Errorf comparisons; no assertion library needed"
+    },
+    {
+      "source": "eslint",
+      "target": "go vet",
+      "note": "go vet ./...; staticcheck optional"
+    },
+    {
+      "source": "prettier",
+      "target": "gofmt",
+      "note": "gofmt -l . must print nothing"
+    },
+    {
+      "source": "husky",
+      "target": "none",
+      "note": "git hook installer; CI runs the same checks"
+    },
+    {
+      "source": "lint-staged",
+      "target": "none",
+      "note": "pre-commit runner; gofmt and go vet cover it in CI"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "eslint",
+      "version": "4.18.2",
+      "versionSpec": "4.18.2",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev lint tool, never ported. Replaced by go vet (devTools). cache/usage.json: unused in code.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "expect.js",
+      "version": "0.3.1",
+      "versionSpec": "0.3.1",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [
+          "(default call)"
+        ],
+        "callSites": 87,
+        "modules": [
+          "tests.js"
+        ]
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Assertion library used only by tests.js (87 call sites, cache/usage.json). Go tests use the standard testing package (devTools).",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "husky",
+      "version": "0.14.3",
+      "versionSpec": "0.14.3",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Git hook installer, no code usage. Not needed in the Go module.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "lint-staged",
+      "version": "5.0.0",
+      "versionSpec": "5.0.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Pre-commit runner for eslint and prettier, no code usage. gofmt and go vet replace it.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "mocha",
+      "version": "4.0.1",
+      "versionSpec": "4.0.1",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [
+          "describe",
+          "it"
+        ],
+        "callSites": 0,
+        "modules": [
+          "tests.js"
+        ]
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Test runner providing describe/it globals to tests.js. Replaced by go test with t.Run (devTools).",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "prettier",
+      "version": "2.0.5",
+      "versionSpec": "2.0.5",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Formatter, never ported. Replaced by gofmt (devTools).",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter parity results (.porter/parity.json)",
+  "type": "object",
+  "required": ["schema", "upstream", "target", "evidenceDate", "units", "totals"],
+  "properties": {
+    "schema": {"const": 1},
+    "upstream": {"type": "object"},
+    "target": {"type": "object"},
+    "evidenceDate": {"type": "string"},
+    "run": {"type": ["string", "null"]},
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["unit", "level", "fixtures", "referenceTests"],
+        "properties": {
+          "unit": {"type": "string"},
+          "level": {"enum": ["EXACT", "EQUIVALENT", "DIVERGENT", "ASSERTED", "GAP", "OUT-OF-SCOPE"]},
+          "fixtures": {
+            "type": "object",
+            "required": ["total", "passed", "normalized", "divergent", "failed", "missing"]
+          },
+          "referenceTests": {"type": "object"},
+          "divergences": {"type": "array", "items": {"type": "string"}},
+          "mismatches": {"type": "array"},
+          "perf": {"type": ["object", "null"]},
+          "notes": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "divergences": {"type": "array"},
+    "markerErrors": {"type": "array"},
+    "totals": {"type": "object"}
+  }
+}

@@ -1,0 +1,362 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter recovered behavior (.porter/recover/recovery.json)",
+  "type": "object",
+  "required": [
+    "schema",
+    "artifact",
+    "kind",
+    "interface",
+    "behaviors",
+    "modules",
+    "unknowns",
+    "oracle",
+    "source",
+    "evidence"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "format": {
+          "type": "string"
+        }
+      }
+    },
+    "origin": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "package": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "toolchain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "kind": {
+      "enum": [
+        "library",
+        "cli",
+        "sdk",
+        "service",
+        "app",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "interface": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "confidence",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._:-]*$"
+          },
+          "kind": {
+            "enum": [
+              "command",
+              "subcommand",
+              "flag",
+              "argument",
+              "stdin",
+              "stdout",
+              "stderr",
+              "env",
+              "file",
+              "exit-code",
+              "function",
+              "class",
+              "method",
+              "export",
+              "endpoint",
+              "event",
+              "config"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "group": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "signature": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "behaviors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "confidence",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._:-]*$"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interface": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "from"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ecosystem": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "from": {
+            "enum": [
+              "go-buildinfo",
+              "cargo-auditable",
+              "managed-reference",
+              "package-manifest",
+              "strings",
+              "observed",
+              "manual"
+            ]
+          },
+          "main": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "question"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "impact": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "probe": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "oracle": {
+      "type": "object",
+      "required": [
+        "runnable"
+      ],
+      "properties": {
+        "runnable": {
+          "type": "boolean"
+        },
+        "command": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "origin": {
+          "enum": [
+            "none",
+            "sourcemap",
+            "decompiled",
+            "embedded",
+            "reference"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "producer"
+        ],
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "producer": {
+            "enum": [
+              "rea",
+              "porter-probe",
+              "manual"
+            ]
+          },
+          "command": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tool": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "at": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

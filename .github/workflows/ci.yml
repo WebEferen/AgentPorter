@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Package builds and runs
+        run: |
+          python -m pip install .
+          agentporter --version
+          cd "$RUNNER_TEMP" && agentporter init --source "$GITHUB_WORKSPACE" --to typescript && agentporter state validate
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Markdown
+        run: npx -y markdownlint-cli2@0.18.1 "**/*.md"
+      - name: Logo stays small
+        run: |
+          for f in assets/logo-mark.svg assets/logo.svg assets/logo-dark.svg assets/wordmark.svg; do
+            size=$(wc -c < "$f")
+            echo "$f: $size bytes"
+          done
+          test "$(wc -c < assets/logo-mark.svg)" -le 4096
+
+  plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate plugin and marketplace
+        run: |
+          npm install -g @anthropic-ai/claude-code
+          claude plugin validate . --strict

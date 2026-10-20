@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter survey (.porter/survey.json)",
+  "type": "object",
+  "required": ["schema", "root", "languages", "primaryLanguage", "modules", "graph", "kind", "sampled"],
+  "properties": {
+    "schema": {"const": 1},
+    "root": {"type": "string"},
+    "subpath": {"type": ["string", "null"]},
+    "sampled": {"type": "boolean"},
+    "coverage": {"type": "object"},
+    "vcs": {"type": "object"},
+    "license": {"type": "object"},
+    "languages": {
+      "type": "array",
+      "items": {"type": "object", "required": ["language", "files", "loc"]}
+    },
+    "primaryLanguage": {"type": ["string", "null"]},
+    "tests": {"type": "object"},
+    "manifests": {"type": "array"},
+    "tooling": {"type": "array"},
+    "runtimes": {"type": "array"},
+    "entryPoints": {"type": "array"},
+    "packages": {"type": "array"},
+    "kind": {"enum": ["library", "cli", "sdk", "service", "app", "mixed", "unknown"]},
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "language", "loc", "role", "coupling", "symbols"],
+        "properties": {
+          "role": {"enum": ["source", "test", "aux"]},
+          "coupling": {"enum": ["pure", "io", "runtime-welded", "native"]},
+          "symbols": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "kind", "line", "endLine", "loc", "public", "refs"],
+              "properties": {"refs": {"type": "array", "items": {"type": "string"}}}
+            }
+          }
+        }
+      }
+    },
+    "graph": {
+      "type": "object",
+      "required": ["leaves", "hubs", "cycles"]
+    },
+    "publicSymbols": {"type": "integer"}
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "draft": false,
+  "generatedBy": "porter.py decompose",
+  "generatedAt": "2026-10-20T16:45:13Z",
+  "budgets": {
+    "unitMaxLoc": 400,
+    "unitMaxSymbols": 8,
+    "unitMinLoc": 30
+  },
+  "tracer": "index",
+  "order": [
+    "index"
+  ],
+  "layers": {
+    "core": [
+      "index"
+    ]
+  },
+  "cycles": [],
+  "orphans": [],
+  "unknownRoots": [],
+  "adjustments": [],
+  "units": [
+    {
+      "id": "index",
+      "name": "index",
+      "layer": "core",
+      "wave": 0,
+      "symbols": [
+        "index:default",
+        "index:s",
+        "index:m",
+        "index:h",
+        "index:d",
+        "index:w",
+        "index:y",
+        "index:parse",
+        "index:fmtShort",
+        "index:fmtLong",
+        "index:plural"
+      ],
+      "publicSymbols": [
+        "index:default"
+      ],
+      "sources": [
+        {
+          "path": "index.js",
+          "lines": [
+            5,
+            10
+          ]
+        },
+        {
+          "path": "index.js",
+          "lines": [
+            26,
+            38
+          ]
+        },
+        {
+          "path": "index.js",
+          "lines": [
+            48,
+            103
+          ]
+        },
+        {
+          "path": "index.js",
+          "lines": [
+            113,
+            128
+          ]
+        },
+        {
+          "path": "index.js",
+          "lines": [
+            138,
+            153
+          ]
+        },
+        {
+          "path": "index.js",
+          "lines": [
+            159,
+            162
+          ]
+        }
+      ],
+      "loc": 111,
+      "dependsOn": [],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/index/",
+        "expected": null
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "tests.js"
+      ],
+      "riskTags": [
+        "error-model",
+        "float-format",
+        "nullability",
+        "numeric",
+        "reflection",
+        "regex"
+      ],
+      "riskScore": 10,
+      "strategy": "contract-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": true,
+      "overBudget": false,
+      "notes": null
+    }
+  ]
+}

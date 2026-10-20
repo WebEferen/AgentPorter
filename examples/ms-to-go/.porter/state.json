@@ -1,0 +1,355 @@
+{
+  "schema": 1,
+  "phase": "verify",
+  "phases": {
+    "recover": {
+      "status": "SKIPPED",
+      "at": null,
+      "gate": "source code available",
+      "artifacts": {}
+    },
+    "survey": {
+      "status": "DONE",
+      "at": "2026-10-20T16:31:14Z",
+      "gate": null,
+      "artifacts": {
+        "survey.json": "sha256:aca6fe8a2b90466c4306c7707b3451b92e1402ae760460aa192d056d3d7ca9d8",
+        "survey.md": "sha256:baaf4926308e9e8503d0f01edcdddf5de02f21233b013e6530fa0132de7fe577"
+      }
+    },
+    "target": {
+      "status": "DONE",
+      "at": "2026-10-20T16:27:49Z",
+      "gate": "given",
+      "artifacts": {}
+    },
+    "deps": {
+      "status": "DONE",
+      "at": "2026-10-20T16:32:18Z",
+      "gate": "no items",
+      "artifacts": {
+        "deps.json": "sha256:ed4fd3b79ebf51d23b282af11716f80a906c4e0ad50129e03730681f7b85fb55",
+        "deps.md": "sha256:0342525c1865504b56c078696e3324f04a29620fd36f4ede601806f47cada815"
+      }
+    },
+    "contract": {
+      "status": "DONE",
+      "at": "2026-10-20T16:44:54Z",
+      "gate": null,
+      "artifacts": {
+        "contract/api.json": "sha256:ba596a5340ae1901633744b181c5c170a8cc5bf62c0e113c6f4ca7ec3dec074c",
+        "contract/contract.md": "sha256:aa0a5d93e0a5778760746cc8bb6079ac3978516fda8926f1736974035fe2a5d8",
+        "fixtures": "sha256:ef6046c12f02c1e3cafdc839f1de14565c1d77f7a7c8a4e86b8be973c5056033"
+      }
+    },
+    "strategy": {
+      "status": "DONE",
+      "at": "2026-10-20T17:30:39Z",
+      "gate": "approved",
+      "artifacts": {
+        "plan.json": "sha256:b5f7a51e3c9d916ed4f6a8700b6b08f14beea017ace689a2358f9d165509a43d",
+        "strategy.md": "sha256:056141280b072612801c18a07af272032b70c161858a65af41e4bf8d474ccf94",
+        "decomposition.md": "sha256:3b285b3a5e114ac1c123482cb8157364b85ac326a0da5b926d93ba65bad2272d"
+      }
+    },
+    "implement": {
+      "status": "DONE",
+      "at": "2026-10-20T17:30:43Z",
+      "gate": null,
+      "artifacts": {}
+    },
+    "verify": {
+      "status": "DONE",
+      "at": "2026-10-20T17:41:50Z",
+      "gate": null,
+      "artifacts": {
+        "parity.json": "sha256:cdfb25a5a242cebe68de63d0ef59181da56711fc6b5f65c9d0e0cda259cd5a99",
+        "PARITY.md": "sha256:66d120b0c3c6b0c114dca4f4fdedcd9d4517277bcebc61fe4108cd210c059b79"
+      }
+    }
+  },
+  "units": {
+    "index": {
+      "status": "DONE",
+      "wave": 0,
+      "attempts": 1,
+      "task": "commit",
+      "verifiedLevel": "DIVERGENT",
+      "note": null
+    }
+  },
+  "budgets": {
+    "attemptsPerUnit": 3,
+    "discoveredUnits": 5,
+    "discoveredUsed": 0
+  },
+  "stale": [],
+  "history": [
+    {
+      "at": "2026-10-20T16:27:49Z",
+      "event": "init",
+      "source": ".porter/cache/source",
+      "mode": "code",
+      "target": "go"
+    },
+    {
+      "at": "2026-10-20T16:28:00Z",
+      "event": "phase.start",
+      "phase": "survey"
+    },
+    {
+      "at": "2026-10-20T16:31:14Z",
+      "event": "phase.end",
+      "phase": "survey",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T16:31:28Z",
+      "event": "phase.start",
+      "phase": "deps"
+    },
+    {
+      "at": "2026-10-20T16:32:18Z",
+      "event": "phase.end",
+      "phase": "deps",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T16:32:32Z",
+      "event": "phase.start",
+      "phase": "contract"
+    },
+    {
+      "at": "2026-10-20T16:44:54Z",
+      "event": "phase.end",
+      "phase": "contract",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T16:45:13Z",
+      "event": "phase.start",
+      "phase": "strategy"
+    },
+    {
+      "at": "2026-10-20T16:48:46Z",
+      "event": "plan.sync",
+      "added": [
+        "index"
+      ]
+    },
+    {
+      "at": "2026-10-20T16:48:46Z",
+      "event": "phase.end",
+      "phase": "strategy",
+      "status": "GATE_WAIT"
+    },
+    {
+      "at": "2026-10-20T16:49:28Z",
+      "event": "gate",
+      "phase": "strategy",
+      "decision": "approve",
+      "note": "approve the proposed units, order and budgets as written."
+    },
+    {
+      "at": "2026-10-20T16:49:43Z",
+      "event": "phase.start",
+      "phase": "implement"
+    },
+    {
+      "at": "2026-10-20T16:49:44Z",
+      "event": "unit.status",
+      "unit": "index",
+      "from": "PENDING",
+      "to": "IN_PROGRESS"
+    },
+    {
+      "at": "2026-10-20T16:53:00Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "read-contract"
+    },
+    {
+      "at": "2026-10-20T16:55:51Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "scaffold"
+    },
+    {
+      "at": "2026-10-20T16:56:29Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "implement"
+    },
+    {
+      "at": "2026-10-20T16:56:48Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "mark-divergences"
+    },
+    {
+      "at": "2026-10-20T16:58:55Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "port-tests"
+    },
+    {
+      "at": "2026-10-20T16:59:38Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "wire-fixtures"
+    },
+    {
+      "at": "2026-10-20T16:59:54Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "green"
+    },
+    {
+      "at": "2026-10-20T17:00:35Z",
+      "event": "unit.status",
+      "unit": "index",
+      "from": "IN_PROGRESS",
+      "to": "IMPLEMENTED"
+    },
+    {
+      "at": "2026-10-20T17:09:42Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "apply-findings"
+    },
+    {
+      "at": "2026-10-20T17:09:42Z",
+      "event": "unit.status",
+      "unit": "index",
+      "from": "IMPLEMENTED",
+      "to": "REVIEWED"
+    },
+    {
+      "at": "2026-10-20T17:09:53Z",
+      "event": "phase.start",
+      "phase": "verify"
+    },
+    {
+      "at": "2026-10-20T17:17:52Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "verify"
+    },
+    {
+      "at": "2026-10-20T17:17:52Z",
+      "event": "unit.status",
+      "unit": "index",
+      "from": "REVIEWED",
+      "to": "VERIFIED",
+      "level": "DIVERGENT"
+    },
+    {
+      "at": "2026-10-20T17:18:27Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "report"
+    },
+    {
+      "at": "2026-10-20T17:18:35Z",
+      "event": "unit.task",
+      "unit": "index",
+      "task": "commit"
+    },
+    {
+      "at": "2026-10-20T17:18:35Z",
+      "event": "unit.status",
+      "unit": "index",
+      "from": "VERIFIED",
+      "to": "DONE"
+    },
+    {
+      "at": "2026-10-20T17:18:41Z",
+      "event": "phase.changed",
+      "phase": "contract",
+      "stale": [
+        "strategy",
+        "implement",
+        "verify"
+      ]
+    },
+    {
+      "at": "2026-10-20T17:18:41Z",
+      "event": "phase.end",
+      "phase": "implement",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T17:19:25Z",
+      "event": "phase.start",
+      "phase": "strategy"
+    },
+    {
+      "at": "2026-10-20T17:19:34Z",
+      "event": "plan.sync"
+    },
+    {
+      "at": "2026-10-20T17:19:34Z",
+      "event": "phase.end",
+      "phase": "strategy",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T17:20:13Z",
+      "event": "phase.start",
+      "phase": "verify"
+    },
+    {
+      "at": "2026-10-20T17:30:21Z",
+      "event": "phase.end",
+      "phase": "verify",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T17:30:27Z",
+      "event": "phase.changed",
+      "phase": "contract",
+      "stale": [
+        "strategy",
+        "implement",
+        "verify"
+      ]
+    },
+    {
+      "at": "2026-10-20T17:30:39Z",
+      "event": "phase.start",
+      "phase": "strategy"
+    },
+    {
+      "at": "2026-10-20T17:30:39Z",
+      "event": "plan.sync"
+    },
+    {
+      "at": "2026-10-20T17:30:39Z",
+      "event": "phase.end",
+      "phase": "strategy",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T17:30:43Z",
+      "event": "phase.end",
+      "phase": "implement",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T17:41:46Z",
+      "event": "migrate",
+      "note": "contract fixtures hash recomputed with the v0.1.0 canonical fixtures digest"
+    },
+    {
+      "at": "2026-10-20T17:41:46Z",
+      "event": "phase.start",
+      "phase": "verify"
+    },
+    {
+      "at": "2026-10-20T17:41:50Z",
+      "event": "phase.end",
+      "phase": "verify",
+      "status": "DONE"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentPorter config (.porter/config.json)",
+  "type": "object",
+  "required": [
+    "schema",
+    "source",
+    "target",
+    "options"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "location"
+      ],
+      "properties": {
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dirty": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "subpath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "package": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "license": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "spdx": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "copyleft": {
+              "enum": [
+                "none",
+                "weak",
+                "strong",
+                "unknown"
+              ]
+            }
+          }
+        },
+        "mode": {
+          "enum": [
+            "code",
+            "artifact"
+          ]
+        },
+        "authorization": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "language"
+      ],
+      "properties": {
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "path": {
+          "type": "string"
+        },
+        "package": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "required": [
+        "commitPolicy",
+        "budgets"
+      ],
+      "properties": {
+        "commitPolicy": {
+          "enum": [
+            "per-unit",
+            "never"
+          ]
+        },
+        "worktree": {
+          "type": "boolean"
+        },
+        "registryTtlHours": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "budgets": {
+          "type": "object",
+          "required": [
+            "unitMaxLoc",
+            "unitMaxSymbols",
+            "unitMinLoc",
+            "attemptsPerUnit",
+            "discoveredUnits",
+            "portMaxDepth",
+            "portMaxLoc"
+          ],
+          "properties": {
+            "unitMaxLoc": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "unitMaxSymbols": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "unitMinLoc": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "attemptsPerUnit": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "discoveredUnits": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "portMaxDepth": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "portMaxLoc": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
