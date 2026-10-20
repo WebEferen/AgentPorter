@@ -333,7 +333,8 @@ def render_parity_md(parity: dict) -> str:
     lines = [
         "# Parity report",
         "",
-        f"Upstream: {up.get('package') or 'unknown'} {up.get('version') or ''} ({up.get('language')}, {origin}).",
+        f"Upstream: {' '.join(filter(None, [up.get('package') or 'unknown', up.get('version')]))} "
+        f"({up.get('language')}, {origin}).",
         f"Port: {tg.get('package') or '(unnamed)'} in {tg.get('language')}. Evidence date: {parity['evidenceDate'][:10]}. "
         f"Harness run: {parity.get('run') or 'none'}.",
         f"Fixtures: {t['total']} cases, {t['passed']} exact, {t['normalized']} normalized, {t['divergent']} divergent, "
@@ -417,10 +418,73 @@ def parse_gotest(path: Path) -> list[tuple[str, str]]:
     return results
 
 
+CARGO_RUNNING = re.compile(r"^\s*Running (?:unittests )?(\S+\.rs)\b")
+CARGO_RESULT = re.compile(r"^test (\S+) \.\.\. (ok|FAILED|ignored)\b")
+RUST_FN = re.compile(r"^\s*(?:pub(?:\([^)]*\))?\s+)?(?:async\s+)?fn\s+(\w+)")
+
+
+def rust_test_refs(root: Path) -> dict[str, dict[str, list[str]]]:
+    """[ref: id] tags from the comment lines directly above each Rust fn, by file, then fn name."""
+    out: dict[str, dict[str, list[str]]] = {}
+    for path in sorted(p for d in ("src", "tests") if (root / d).is_dir() for p in (root / d).rglob("*.rs")):
+        pending: list[str] = []
+        refs: dict[str, list[str]] = {}
+        for line in (read_text_safe(path) or "").splitlines():
+            s = line.strip()
+            if s.startswith("//"):
+                pending += REF_TAG.findall(s)
+                continue
+            if s.startswith("#["):
+                continue
+            m = RUST_FN.match(line)
+            if m and pending:
+                refs.setdefault(m.group(1), []).extend(pending)
+            pending = []
+        if refs:
+            out[path.relative_to(root).as_posix()] = refs
+    return out
+
+
+def _rust_refs_for(tags: dict[str, dict[str, list[str]]], target: str, test: str) -> list[str]:
+    parts = test.split("::")
+    name, mods = parts[-1], parts[:-1]
+    if target.startswith("tests/"):
+        files = [f for f in tags if f == target or f.startswith(target[:-3] + "/")]
+    elif "/" in target:
+        files = [f for f in tags if f.startswith(target.rsplit("/", 1)[0] + "/")]
+    else:
+        files = list(tags)
+    hits = [f for f in files if name in tags[f]]
+    if len(hits) > 1 and mods:
+        hits = [f for f in hits if any(m in Path(f).with_suffix("").parts for m in mods)] or hits
+    return [r for f in hits for r in tags[f][name]]
+
+
+def parse_cargo(path: Path, root: Path) -> list[tuple[str, str]]:
+    """Captured `cargo test` output. Rust test names cannot hold [ref: id], so tags come from comments above the fn."""
+    tags = rust_test_refs(root)
+    target, out = "", []
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        m = CARGO_RUNNING.match(line)
+        if m:
+            target = m.group(1)
+            continue
+        m = CARGO_RESULT.match(line)
+        if not m:
+            continue
+        test, status = m.group(1), {"ok": "passed", "FAILED": "failed", "ignored": "skipped"}[m.group(2)]
+        refs = list(dict.fromkeys(_rust_refs_for(tags, target, test)))
+        out += [(f"{target} {test} [ref: {r}]".strip(), status) for r in refs] or [(f"{target} {test}".strip(), status)]
+    return out
+
+
 def cmd_reftests(args: argparse.Namespace) -> int:
     ws = Workspace.open(args.workspace)
-    parser = {"junit": parse_junit, "vitest": parse_vitest, "jest": parse_vitest, "gotest": parse_gotest}[args.format]
-    results = parser(Path(args.report))
+    if args.format == "cargo":
+        results = parse_cargo(Path(args.report), ws.target_root())
+    else:
+        parser = {"junit": parse_junit, "vitest": parse_vitest, "jest": parse_vitest, "gotest": parse_gotest}[args.format]
+        results = parser(Path(args.report))
     path = ws.p("reftests.json")
     data = read_json(path) if path.exists() else {"schema": 1, "units": {}}
     if args.replace:
@@ -463,7 +527,8 @@ def cmd_reftests(args: argparse.Namespace) -> int:
         resolution = {"passed": "PASS", "failed": "FAIL", "skipped": "UNRESOLVED"}[status]
         if existing and existing["resolution"] in ("OUT-OF-SCOPE", "DIVERGENCE") and status != "failed":
             continue
-        entry = {"ref": ref, "resolution": resolution, "reason": None, "targetTest": REF_TAG.sub("", name).strip()}
+        target_test = re.sub(r"\[\s*\]", "", REF_TAG.sub("", name)).strip()
+        entry = {"ref": ref, "resolution": resolution, "reason": None, "targetTest": target_test}
         if existing:
             existing.update(entry)
         else:
@@ -539,7 +604,7 @@ def register(sub: argparse._SubParsersAction) -> None:
     r.add_argument("--copy-to", help="also write PARITY.md here, e.g. the port's docs folder")
     r.set_defaults(func=cmd_report)
     t = ps.add_parser("reftests", help="import ported reference-test results ([ref: id] in test names)")
-    t.add_argument("format", choices=("junit", "vitest", "jest", "gotest"))
+    t.add_argument("format", choices=("junit", "vitest", "jest", "gotest", "cargo"))
     t.add_argument("report")
     t.add_argument("--unit", help="assign every imported ref to this unit")
     t.add_argument("--replace", action="store_true",

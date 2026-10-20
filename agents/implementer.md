@@ -31,8 +31,12 @@ Advance the task in state as you finish each step, naming the step you just fini
    that line and an entry in `.porter/divergences.json` (`id`, `unit`, `summary`, `rationale`, `cases` glob).
    `approvedBy` names the gate where the user approved it (the strategy gate covers divergences planned in
    `strategy.md`); leave it null otherwise and list the divergence in your report.
-5. port-tests: port the reference tests mapped to the unit. Put `[ref: <source test id>]` in each test name
-   (Go: `go test` turns spaces in subtest names into underscores, so log it with `t.Log("[ref: <id>]")`).
+5. port-tests: port the reference tests mapped to the unit. Put `[ref: <source test id>]` in each test name.
+   Where a name cannot hold it:
+   - Go: `go test` turns spaces in subtest names into underscores, so log it with `t.Log("[ref: <id>]")`.
+   - pytest: put it in the parametrize id, one per row: `pytest.param(..., id="[ref: <id>]")`.
+   - Rust: write `// [ref: <id>]` on comment lines directly above `#[test] fn`, one line per id, and import
+     the captured output of `cargo test --no-fail-fast 2>&1` with `porter parity reftests cargo`.
    Assert observable behavior, never source internals. A test that cannot apply is recorded as OUT-OF-SCOPE
    with a reason in `.porter/reftests.json`.
 6. wire-fixtures: add one binding per call id of this unit to the harness bindings file

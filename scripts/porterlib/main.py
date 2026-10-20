@@ -38,6 +38,10 @@ def _hoist_workspace(argv: list[str]) -> list[str]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
+    # Fixtures may hold lone UTF-16 surrogates recorded from JavaScript or Java; print them as \uXXXX escapes.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="backslashreplace")
     argv = sys.argv[1:] if argv is None else list(argv)
     _, extra = parser.parse_known_args(argv)
     misplaced = any(x == "--workspace" or x.startswith("--workspace=") for x in extra)

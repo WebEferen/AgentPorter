@@ -25,6 +25,24 @@ porter parity collect --run <run>
 
 The default run id is the UTC time. Exit code 0 when runs were written, 2 when the harness cannot run.
 
+## Reference tests
+
+Rust test names cannot hold `[ref: <id>]`, so put each tag on a comment line directly above the test:
+
+```rust
+// [ref: test/compare.ts::compares versions]
+#[test]
+fn compares_versions() { /* ... */ }
+```
+
+Then capture the run and import it. `cargo` reads the tags from the source and uses cargo's `Running` lines to
+tell same-named tests in different files apart:
+
+```sh
+cargo test --no-fail-fast 2>&1 | tee .porter/runs/<run>/cargo-test.txt
+porter parity reftests cargo .porter/runs/<run>/cargo-test.txt --replace [--unit <unit>]
+```
+
 ## Bindings
 
 `bindings.rs` has `pub fn bindings() -> Vec<(&'static str, Binding)>`, one entry per source call id. A

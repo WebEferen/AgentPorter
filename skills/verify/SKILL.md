@@ -28,7 +28,7 @@ Unit: `$ARGUMENTS` (empty means the final pass over every unit).
    - confirms fixtures match the pinned original (re-record a sample; a difference means the source moved),
    - runs the harness: `porter cli run --exe "<port command>" [--unit <unit>]` for CLIs, or the target
      harness from `knowledge/harnesses/<target>/` for libraries, writing `.porter/runs/<run>/<unit>.json`,
-   - imports reference test results with `porter parity reftests <junit|vitest|jest|gotest> <report>`,
+   - imports reference test results with `porter parity reftests <junit|vitest|jest|gotest|cargo> <report>`,
    - adds adversarial cases (boundary, empty, unicode, large, malformed) to `oracle/cases/<unit>.json`
      with `"origin": "adversarial:<topic>"`, expands and records them from the original, and runs them
      through the port (without that origin, the new cases change the contract's hash and mark later phases STALE),
@@ -39,7 +39,9 @@ Unit: `$ARGUMENTS` (empty means the final pass over every unit).
    - GAP: `porter state unit set <unit> GAP` and return the mismatches to the implement skill. When the
      verifier classed every mismatch as a divergence candidate, there is nothing for the implementer to
      fix: stop and ask the user whether to add those case ids to the divergence (`approvedBy` names their
-     answer) or to fix the behavior. Sending such a unit back to implement only spends its attempts.
+     answer) or to fix the behavior. Sending such a unit back to implement only spends its attempts. When
+     the user accepts the divergence, run `porter parity collect --unit <unit> --run <run>` again and
+     `porter state unit set <unit> VERIFIED --level DIVERGENT --note "<their decision>"`.
 5. Final pass (no unit argument, all units terminal): `porter parity collect`, `porter parity report
    --copy-to <target docs dir>/PARITY.md`, then `porter state postflight verify`. A unit the final pass
    finds GAP is set GAP even when it is DONE (`porter state preflight implement --rerun` reopens the

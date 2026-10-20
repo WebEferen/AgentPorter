@@ -100,6 +100,12 @@ def _git(root: Path, *args: str) -> str | None:
     return out.stdout.strip() if out.returncode == 0 else None
 
 
+def remote_import_path(url: str | None) -> str | None:
+    """host/owner/repo from an https or ssh git remote: the import path of a Go repository without go.mod."""
+    m = re.match(r"^(?:[a-z+]+://)?(?:[^@/]+@)?([^/:]+\.[^/:]+)[:/](.+?)(?:\.git)?/?$", url or "")
+    return f"{m.group(1)}/{m.group(2)}" if m else None
+
+
 def vcs_info(root: Path) -> dict:
     top = _git(root, "rev-parse", "--show-toplevel")
     if not top:
@@ -939,12 +945,14 @@ def run_survey(root: Path, subpath: str | None = None, max_files: int = 4000) ->
 
     # go (module = package directory)
     go_files = [rel for rel in texts if rel.endswith(".go")]
+    module_path = None
     if go_files:
         go_mod = next((scan_root / m["path"] for m in manifests if m["kind"] == "go.mod" and "/" not in m["path"]), None)
-        module_path = None
         if go_mod and go_mod.exists():
             mm = re.search(r"^module\s+(\S+)", go_mod.read_text(encoding="utf-8"), re.M)
             module_path = mm.group(1) if mm else None
+        else:
+            module_path = remote_import_path(_git(root, "config", "--get", "remote.origin.url"))
         pkgs: dict[str, list[str]] = defaultdict(list)
         for rel in go_files:
             pkgs[str(Path(rel).parent.as_posix())].append(rel)
@@ -1019,6 +1027,8 @@ def run_survey(root: Path, subpath: str | None = None, max_files: int = 4000) ->
     }
 
     entries, runtimes, package = entry_points_and_runtimes(scan_root, manifests)
+    if not package.get("name") and module_path:
+        package["name"] = module_path
     for rel, mod_id in py_ids.items():
         if roles.get(rel) == "source" and rel.endswith("__init__.py") and "." not in mod_id:
             entries.append({"kind": "library", "name": mod_id, "target": rel, "path": rel})

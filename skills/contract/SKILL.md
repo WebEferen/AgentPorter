@@ -32,8 +32,8 @@ Codex, the `scripts/porter.py` two directories above this file).
      unit (template `knowledge/templates/unit-contract.md`) and `contract/error-map.json` when error types
      will differ in the target.
 4. Recording fixtures, whichever applies:
-   - Library with source: copy `${CLAUDE_PLUGIN_ROOT}/knowledge/oracles/<source language>/` into
-     `.porter/oracle/driver/` (the copy pins the driver with the workspace), run `porter fixtures expand`,
+   - Library with source: copy `${CLAUDE_PLUGIN_ROOT}/knowledge/oracles/<source language>/` (TypeScript uses
+     `javascript/`, Kotlin uses `java/`) into `.porter/oracle/driver/` (the copy pins the driver with the workspace), run `porter fixtures expand`,
      then run that copy with the command its README gives, the plugin path replaced by `.porter/oracle/driver/`.
    - CLI, from source or artifact: `porter fixtures expand --unit <unit>` then
      `porter cli record --unit <unit>` (the command comes from `recovery.json` or `--exe`).

@@ -1,6 +1,6 @@
 # JavaScript oracle driver
 
-`oracle.mjs` records what the pinned JavaScript (or compiled TypeScript) source does. It reads
+`oracle.mjs` records what the pinned JavaScript or TypeScript source does. It reads
 `.porter/oracle/expanded/<unit>.json`, loads the source modules, calls each case, and writes
 `.porter/fixtures/<unit>/oracle.json` plus `.porter/oracle/timings/<unit>.json` as
 [CONTRACT.md](../CONTRACT.md) describes. Node 18 or newer, no dependencies.
@@ -24,8 +24,22 @@ porter fixtures validate
 The source root is `config.source.path` joined with `config.source.subpath`. Package name and version come
 from `config.source.package`, then the nearest `package.json`.
 
-Exit codes: 0 when fixtures were written (throws are outcomes), 2 when the driver cannot run: an unknown
-module or export, a case with `kwargs`, a CLI unit.
+Exit codes: 0 when fixtures were written (throws are outcomes), 2 when the driver cannot run: a module
+that does not load, an unknown export, a case with `kwargs`, a CLI unit. A module that fails to load is
+never recorded as behavior, and that unit's fixtures are not written.
+
+## TypeScript sources
+
+Node 22.18 or newer strips types, so the driver loads unbuilt `.ts` files directly: point call ids at the
+source file (`./src/index.ts:camelCase`) instead of the build output. Nothing is built and nothing is
+written to the checkout. Bundler-style imports without an extension (`export * from "./types"`) resolve to
+`./types.ts` or `./types/index.ts`, and NodeNext-style `./types.js` resolves to `./types.ts` when no
+`.js` file exists. The fixtures record `oracle.language` as `typescript`.
+
+Type stripping does not run syntax that needs a transform: `enum`, `namespace`, parameter properties and
+`paths` aliases. It also keeps a type imported without `import type`, which then fails to load. For such a
+source, build it with its own locked compiler into `.porter/oracle/build/` (git-ignored) and point the call
+ids there.
 
 ## How calls resolve
 

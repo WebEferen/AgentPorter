@@ -5,6 +5,7 @@ import unittest
 
 from util import TempDir, porter, read_json, tiny_python_project, write
 from porterlib import fixtures, parity
+from porterlib.state import fixtures_digest
 
 
 class GeneratorTest(unittest.TestCase):
@@ -116,6 +117,27 @@ class CliParityFlowTest(unittest.TestCase):
             report = porter("parity", "report", cwd=tmp).stdout
             self.assertIn("sharp-s", report)
 
+    def test_lone_surrogates_survive_validate_collect_and_report(self):
+        with TempDir() as tmp:
+            write(tmp / "src" / "x.txt", "x")
+            porter("init", "--source", str(tmp / "src"), "--to", "go", cwd=tmp)
+            ws = tmp / ".porter"
+            cases = [{"case": "lone", "call": "m:split", "input": {"args": ["\U00010400a"]},
+                      "expect": {"kind": "value", "value": ["\ud801", "\udc00a"]}},
+                     {"case": "plain", "call": "m:split", "input": {"args": ["ab"]}, "expect": {"kind": "value", "value": ["ab"]}}]
+            write(ws / "fixtures" / "core" / "oracle.json", json.dumps({
+                "schema": 1, "unit": "core", "oracle": {"language": "javascript", "package": "m", "version": "1", "recordedAt": "2026-01-01T00:00:00Z"}, "cases": cases}))
+            write(ws / "runs" / "r" / "core.json", json.dumps({"schema": 1, "unit": "core", "results": [
+                {"case": "lone", "actual": {"kind": "value", "value": ["\ufffd", "\ufffda"]}},
+                {"case": "plain", "actual": {"kind": "value", "value": ["ab"]}}]}))
+            self.assertTrue(fixtures_digest(ws / "fixtures"))
+            self.assertEqual(porter("fixtures", "validate", cwd=tmp).returncode, 0)
+            gap = porter("parity", "collect", "--run", "r", cwd=tmp, check=False)
+            self.assertEqual(gap.returncode, 1, gap.stderr)
+            self.assertIn("lone", gap.stdout)
+            porter("parity", "report", cwd=tmp)
+            self.assertIn("\\ud801", (ws / "PARITY.md").read_text(encoding="utf-8"))
+
 
 class RefTestsTest(unittest.TestCase):
     def test_harvested_cases_decide_the_owner_before_the_file_name(self):
@@ -137,6 +159,23 @@ class RefTestsTest(unittest.TestCase):
             porter("parity", "reftests", "junit", str(tmp / "report2.xml"), "--replace", cwd=tmp)
             units = read_json(ws / "reftests.json")["units"]
             self.assertEqual((units["a"][0]["resolution"], units["b"][0]["resolution"]), ("UNRESOLVED", "PASS"))
+
+    def test_cargo_reads_tags_from_comments_and_scopes_by_target(self):
+        with TempDir() as tmp:
+            write(tmp / "src" / "lib.rs", "pub fn f() {}\n\n#[cfg(test)]\nmod tests {\n    // [ref: unit.py::test_same]\n"
+                                          "    #[test]\n    fn same() {}\n}\n")
+            write(tmp / "tests" / "api.rs", "/// Checks the API.\n/// [ref: api.py::test_same]\n#[test]\nfn same() {}\n\n"
+                                            "// [ref: api.py::test_broken]\n#[test]\n#[ignore]\nfn broken() {}\n\n#[test]\nfn untagged() {}\n")
+            report = write(tmp / "cargo.txt", "     Running unittests src/lib.rs (target/debug/deps/x-1)\n"
+                                              "test tests::same ... ok\n"
+                                              "     Running tests/api.rs (target/debug/deps/api-2)\n"
+                                              "test same ... ok\ntest broken ... FAILED\ntest untagged ... ok\n")
+            results = parity.parse_cargo(report, tmp)
+            self.assertIn(("src/lib.rs tests::same [ref: unit.py::test_same]", "passed"), results)
+            self.assertIn(("tests/api.rs same [ref: api.py::test_same]", "passed"), results)
+            self.assertIn(("tests/api.rs broken [ref: api.py::test_broken]", "failed"), results)
+            self.assertIn(("tests/api.rs untagged", "passed"), results)
+            self.assertEqual(len(results), 4)
 
     def test_gotest_reads_tags_from_log_output(self):
         with TempDir() as tmp:

@@ -29,8 +29,10 @@ artifact mode `recover/recovery.json`. Contract for fixtures: the plugin's `know
    `reference-test:<test id>`), hand-written edge cases (empty, boundary, unicode, large, malformed, error
    paths), and `generate` blocks with fixed seeds for pure functions. CLI cases use `input.argv`,
    `input.stdin`, `input.files`, `input.env`. Normalization goes on a case only with a written reason.
+   Keep results within the drivers' serialization limits (64 levels of nesting, see the oracle contract).
 5. Record. `porter fixtures expand`, then the oracle for the source (driver from
-   `knowledge/oracles/<language>/`, or `porter cli record --unit <unit>` for CLIs). Then
+   `knowledge/oracles/<language>/`, with TypeScript on `javascript/` and Kotlin on `java/`, or
+   `porter cli record --unit <unit>` for CLIs). Then
    `porter fixtures validate`. Look at a sample of recorded outcomes: an unexpected error usually means a
    wrong call id or argument shape, not a behavior.
 6. Error map. When the target will name errors differently, write `.porter/contract/error-map.json` mapping

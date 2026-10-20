@@ -52,7 +52,8 @@ Unit requested: `$ARGUMENTS` (empty means the next READY unit).
 - Write target idioms from the idiom map. Do not transliterate the source line by line.
 - Every deliberate behavior difference gets a `DIVERGENCE(<id>)` comment at the point of divergence and an
   entry in `.porter/divergences.json` with summary and rationale.
-- Port every reference test mapped to the unit, tagged `[ref: <source test id>]` in the test name, asserting
+- Port every reference test mapped to the unit, tagged `[ref: <source test id>]` in the test name (Go, pytest
+  and Rust put it elsewhere, see the implementer brief), asserting
   observable behavior. A test that cannot be ported is OUT-OF-SCOPE with a reason in `reftests.json`, never
   skipped silently.
 - In artifact mode, work from `contract/` and `fixtures/` only. Never read decompiled code into the port,

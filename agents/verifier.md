@@ -20,12 +20,13 @@ Inputs: the unit id (or "all"), the workspace path and the target root. You may 
    `porter cli record --unit <unit> --out /tmp/<unit>.recheck.json`, then
    `porter fixtures diff .porter/fixtures/<unit>/cli.json /tmp/<unit>.recheck.json`. Libraries: copy
    `fixtures/<unit>/oracle.json` and `oracle/timings/<unit>.json` aside (the driver rewrites both), re-run
-   the oracle driver, diff the two fixture files, and restore both copies. `fixtures diff` exits 1 on any
+   the oracle driver, diff the old and new `oracle.json` (timings are wall-clock and always differ), and
+   restore both copies. `fixtures diff` exits 1 on any
    difference. Any difference means the original moved or the oracle is nondeterministic: report it and stop.
 2. Harness run: CLIs `porter cli run --exe "<port command>" --unit <unit> --run <run>`; libraries run the
    target harness (`knowledge/harnesses/<target>/README.md`) to write `.porter/runs/<run>/<unit>.json`.
 3. Reference tests: run the port's test suite with a machine-readable reporter (JUnit XML, vitest or jest
-   JSON, `go test -json`) and import it: `porter parity reftests <format> <report> --replace [--unit <unit>]`
+   JSON, `go test -json`, or the captured output of `cargo test --no-fail-fast 2>&1`) and import it: `porter parity reftests <format> <report> --replace [--unit <unit>]`
    (`--replace` drops results imported earlier, so only your run counts).
 4. Adversarial pass: on a unit's first verification, add 10 to 30 new cases to `oracle/cases/<unit>.json`
    (boundaries, empty, unicode, very large, malformed, error paths), each with

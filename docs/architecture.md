@@ -80,7 +80,7 @@ Unit statuses and the rules `porter.py` enforces on them:
 | IMPLEMENTED | The `green` step was reached: build, lint, typecheck and tests pass. |
 | REVIEWED | Review findings were applied. |
 | VERIFIED | `parity.json` has an entry for the unit with a passing level that matches the claimed one. |
-| GAP | `parity.json` records GAP. The unit goes back to IN_PROGRESS. |
+| GAP | `parity.json` records GAP. The unit goes back to IN_PROGRESS, or to VERIFIED with `--note` once the user accepts the remaining cases as a divergence. |
 | DONE | The unit was VERIFIED and its report written. |
 | BLOCKED | A note says what blocked it and what was tried. |
 | DEFERRED | A note says why it is out of scope. |

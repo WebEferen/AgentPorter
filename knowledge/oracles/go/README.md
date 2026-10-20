@@ -20,6 +20,17 @@ In `go.mod`, set the `require` line to the source module path and point the `rep
 in `config.source.path`, so the oracle builds the pinned source. Then add one `dispatch` entry per call id in
 `.porter/oracle/cases/*.json`.
 
+A source from before Go modules has no `go.mod`, and `replace` needs one in the directory it points at. Do
+not add it to the checkout. Export the pinned commit next to the driver and give that copy a `go.mod`:
+
+```sh
+mkdir -p .porter/oracle/go/upstream
+git -C <checkout> archive <commit> | tar -x -C .porter/oracle/go/upstream
+printf 'module <import path>\n\ngo 1.21\n' > .porter/oracle/go/upstream/go.mod
+```
+
+and use `replace <import path> => ./upstream`.
+
 ## Run it
 
 ```sh
@@ -70,7 +81,9 @@ The call id is only a map key, so any form works. Use the contract form: `exampl
 
 A returned error's category is the name registered in `Sentinels` when `errors.Is` matches, otherwise its
 type name without the pointer (`*ParseError` becomes `ParseError`). Register sentinels in an `init` in
-`dispatch.go`: without that, `errors.New` errors all get the category `errorString`.
+`dispatch.go`: without that, `errors.New` errors all get the category `errorString`. When the function also
+returns a non-zero result next to the error (the words parsed so far, a partial count), the outcome keeps it
+as `value`. Return it from the dispatch entry together with the error.
 
 A panic is an outcome with category `panic`. A case that runs past `--timeout` (default 10 seconds) gets
 category `timeout`; its goroutine cannot be stopped and keeps running until the program exits.

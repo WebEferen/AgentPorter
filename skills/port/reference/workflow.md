@@ -38,6 +38,8 @@ PENDING -> DEFERRED (strategy decision, with a reason)
 
 Only the verify skill sets VERIFIED or GAP, and only when `parity.json` agrees. A DONE unit goes back to
 GAP when a later pass finds a mismatch; `state postflight verify` refuses to finish while any unit is GAP.
+A GAP made only of divergence candidates goes straight to VERIFIED once the user accepts the divergence and
+parity is collected again (`--note` records the decision); it does not spend an attempt.
 
 ## Unit task checklist
 

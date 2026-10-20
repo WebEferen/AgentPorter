@@ -59,6 +59,16 @@ Strings stay strings (UTF-8). Do not normalize them: normalization is declared p
 `normalize` list. The names are `float:<tol>`, `unordered`, `lines-unordered`, `trim`, `trim-trailing-ws`,
 `lf`, `nfc`, `json`, `ignore-stderr` and `ignore-message`; any other name fails validation.
 
+A JavaScript, Java or C# string can hold a lone UTF-16 surrogate. Record it as is (JSON writes it as a
+`\ud801` escape) and porter keeps it. A target whose strings must be valid UTF-8, such as Go or Rust,
+cannot return one, so plan a divergence for those cases instead of dropping them.
+
+Drivers stop serializing at 64 levels of nesting: a deeper value is written as
+`{"$type": "<TypeName>", "truncated": true}`. The Python and PHP drivers also cut a collection at 10,000
+items and end it with `{"$truncated": 10000}`. Parity has no rule for these markers, so a case whose result
+crosses a limit cannot pass. Keep generated cases inside the limits; a recorded case that already crosses
+one is a divergence, not a port bug.
+
 The tags apply to case inputs too. Drivers and harnesses decode them in `input.args`, `input.kwargs` and
 `input.init`, so a case can pass NaN, bytes, a set or a big integer.
 
@@ -81,6 +91,8 @@ A call either returns or throws.
   type name; `.porter/contract/error-map.json` maps source categories to target categories. A mapped category
   grades as EQUIVALENT. A port that names its error types after the source categories can reach EXACT.
 - Timeout (default 10 s per case): `{"kind": "error", "category": "timeout", "message": "..."}`.
+- A Go function can return a result next to its error. The Go driver keeps a non-zero one as `value` on the
+  error outcome. Parity does not compare it; the port should still expose it, for example on the exception.
 
 ## Oracle driver behavior
 

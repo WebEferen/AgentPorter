@@ -290,6 +290,9 @@ def cmd_merge(args: argparse.Namespace) -> int:
 
 def cmd_diff(args: argparse.Namespace) -> int:
     a, b = read_json(args.old), read_json(args.new)
+    for path, doc in ((args.old, a), (args.new, b)):
+        if not isinstance(doc, dict) or not isinstance(doc.get("cases"), list) or not isinstance(doc.get("oracle"), dict):
+            raise PorterError(f"{path} is not a fixture file (no oracle and cases list); timings files are not compared")
     ca = {c["case"]: c for c in a["cases"]}
     cb = {c["case"]: c for c in b["cases"]}
     added = sorted(set(cb) - set(ca))

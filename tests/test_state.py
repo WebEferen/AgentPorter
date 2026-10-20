@@ -120,6 +120,11 @@ class StateFlowTest(unittest.TestCase):
             (ws / "parity.json").write_text(json.dumps({"units": [{"unit": "core", "level": "GAP"}]}))
             porter("state", "unit", "set", "core", "GAP", cwd=tmp)
             self.assertEqual(read_json(ws / "state.json")["units"]["core"]["status"], "GAP")
+            (ws / "parity.json").write_text(json.dumps({"units": [{"unit": "core", "level": "DIVERGENT"}]}))
+            silent = porter("state", "unit", "set", "core", "VERIFIED", "--level", "DIVERGENT", cwd=tmp, check=False)
+            self.assertIn("--note", silent.stderr)
+            porter("state", "unit", "set", "core", "VERIFIED", "--level", "DIVERGENT", "--note", "user accepted d1", cwd=tmp)
+            self.assertEqual(read_json(ws / "state.json")["units"]["core"]["attempts"], 1)
 
     def test_verify_added_cases_leave_the_fixtures_hash_alone(self):
         with TempDir() as tmp:

@@ -70,7 +70,7 @@ def write_json(path: Path | str, data: Any) -> None:
 def write_text(path: Path | str, text: str) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8")
+    path.write_text(text, encoding="utf-8", errors="backslashreplace")
 
 
 def sha256_path(path: Path, exclude: tuple[str, ...] = ()) -> str | None:

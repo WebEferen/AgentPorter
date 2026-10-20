@@ -4,7 +4,7 @@
 
 mod bindings;
 
-use serde_json::{json, Map, Value};
+use serde_json::{Map, Value, json};
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 use std::panic::{self, AssertUnwindSafe};
 use std::path::{Path, PathBuf};
@@ -26,7 +26,10 @@ pub struct Failure {
 
 impl Failure {
     pub fn new(category: impl Into<String>, message: impl Into<String>) -> Self {
-        Failure { category: category.into(), message: message.into() }
+        Failure {
+            category: category.into(),
+            message: message.into(),
+        }
     }
 
     fn binding(message: String) -> Self {
@@ -56,8 +59,16 @@ pub struct Input {
 impl Input {
     fn from_json(v: &Value) -> Input {
         Input {
-            args: v.get("args").and_then(Value::as_array).cloned().unwrap_or_default(),
-            kwargs: v.get("kwargs").and_then(Value::as_object).cloned().unwrap_or_default(),
+            args: v
+                .get("args")
+                .and_then(Value::as_array)
+                .cloned()
+                .unwrap_or_default(),
+            kwargs: v
+                .get("kwargs")
+                .and_then(Value::as_object)
+                .cloned()
+                .unwrap_or_default(),
             init: v.get("init").map(|i| Box::new(Input::from_json(i))),
         }
     }
@@ -66,8 +77,14 @@ impl Input {
         self.args.len()
     }
 
+    pub fn is_empty(&self) -> bool {
+        self.args.is_empty()
+    }
+
     pub fn arg(&self, i: usize) -> Result<&Value, Failure> {
-        self.args.get(i).ok_or_else(|| Failure::binding(format!("argument {i} missing (have {})", self.args.len())))
+        self.args.get(i).ok_or_else(|| {
+            Failure::binding(format!("argument {i} missing (have {})", self.args.len()))
+        })
     }
 
     pub fn kw(&self, name: &str) -> Option<&Value> {
@@ -75,11 +92,15 @@ impl Input {
     }
 
     pub fn str(&self, i: usize) -> Result<&str, Failure> {
-        self.arg(i)?.as_str().ok_or_else(|| Failure::binding(format!("argument {i}: want string")))
+        self.arg(i)?
+            .as_str()
+            .ok_or_else(|| Failure::binding(format!("argument {i}: want string")))
     }
 
     pub fn bool(&self, i: usize) -> Result<bool, Failure> {
-        self.arg(i)?.as_bool().ok_or_else(|| Failure::binding(format!("argument {i}: want bool")))
+        self.arg(i)?
+            .as_bool()
+            .ok_or_else(|| Failure::binding(format!("argument {i}: want bool")))
     }
 
     pub fn i64(&self, i: usize) -> Result<i64, Failure> {
@@ -109,16 +130,26 @@ impl Input {
     pub fn bytes(&self, i: usize) -> Result<Vec<u8>, Failure> {
         let v = self.arg(i)?;
         if let Some(s) = tag(v, "$bytes") {
-            return base64_decode(s).ok_or_else(|| Failure::binding(format!("argument {i}: bad base64")));
+            return base64_decode(s)
+                .ok_or_else(|| Failure::binding(format!("argument {i}: bad base64")));
         }
-        v.as_str().map(|s| s.as_bytes().to_vec()).ok_or_else(|| Failure::binding(format!("argument {i}: want $bytes")))
+        v.as_str()
+            .map(|s| s.as_bytes().to_vec())
+            .ok_or_else(|| Failure::binding(format!("argument {i}: want $bytes")))
     }
 
     pub fn strs(&self, i: usize) -> Result<Vec<String>, Failure> {
-        let items = self.arg(i)?.as_array().ok_or_else(|| Failure::binding(format!("argument {i}: want array")))?;
+        let items = self
+            .arg(i)?
+            .as_array()
+            .ok_or_else(|| Failure::binding(format!("argument {i}: want array")))?;
         items
             .iter()
-            .map(|x| x.as_str().map(str::to_string).ok_or_else(|| Failure::binding(format!("argument {i}: want strings"))))
+            .map(|x| {
+                x.as_str()
+                    .map(str::to_string)
+                    .ok_or_else(|| Failure::binding(format!("argument {i}: want strings")))
+            })
             .collect()
     }
 }
@@ -178,7 +209,9 @@ fn float(f: f64) -> Value {
     } else if f == 0.0 && f.is_sign_negative() {
         json!({"$float": "-0"})
     } else {
-        serde_json::Number::from_f64(f).map(Value::Number).unwrap_or(Value::Null)
+        serde_json::Number::from_f64(f)
+            .map(Value::Number)
+            .unwrap_or(Value::Null)
     }
 }
 
@@ -201,7 +234,11 @@ int_contract!(i8, i16, i32, i64, i128, isize, u8, u16, u32, u64, usize);
 
 impl ToContract for u128 {
     fn to_contract(&self) -> Value {
-        if *self <= SAFE_INT as u128 { Value::from(*self as u64) } else { json!({"$int": self.to_string()}) }
+        if *self <= SAFE_INT as u128 {
+            Value::from(*self as u64)
+        } else {
+            json!({"$int": self.to_string()})
+        }
     }
 }
 
@@ -308,8 +345,12 @@ impl<T: ToContract> ToContract for BTreeSet<T> {
     }
 }
 
-fn map<'a, K: ToContract + 'a, V: ToContract + 'a>(entries: impl Iterator<Item = (&'a K, &'a V)>) -> Value {
-    let pairs: Vec<(Value, Value)> = entries.map(|(k, v)| (k.to_contract(), v.to_contract())).collect();
+fn map<'a, K: ToContract + 'a, V: ToContract + 'a>(
+    entries: impl Iterator<Item = (&'a K, &'a V)>,
+) -> Value {
+    let pairs: Vec<(Value, Value)> = entries
+        .map(|(k, v)| (k.to_contract(), v.to_contract()))
+        .collect();
     if pairs.iter().all(|(k, _)| k.is_string()) {
         let mut m = Map::new();
         for (k, v) in pairs {
@@ -357,7 +398,9 @@ const B64: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012
 fn base64_encode(data: &[u8]) -> String {
     let mut out = String::with_capacity(data.len().div_ceil(3) * 4);
     for chunk in data.chunks(3) {
-        let n = (chunk[0] as u32) << 16 | (*chunk.get(1).unwrap_or(&0) as u32) << 8 | *chunk.get(2).unwrap_or(&0) as u32;
+        let n = (chunk[0] as u32) << 16
+            | (*chunk.get(1).unwrap_or(&0) as u32) << 8
+            | *chunk.get(2).unwrap_or(&0) as u32;
         for k in 0..4 {
             if k <= chunk.len() {
                 out.push(B64[(n >> (18 - 6 * k) & 63) as usize] as char);
@@ -400,12 +443,17 @@ fn outcome(binding: Binding, input: Input, timeout: Duration) -> Value {
                 .unwrap_or_else(|| "panic".into());
             json!({"kind": "error", "category": "panic", "message": message})
         }
-        Err(_) => json!({"kind": "error", "category": "timeout", "message": format!("timed out after {}s", timeout.as_secs_f64())}),
+        Err(_) => {
+            json!({"kind": "error", "category": "timeout", "message": format!("timed out after {}s", timeout.as_secs_f64())})
+        }
     }
 }
 
 fn utc_now(compact: bool) -> String {
-    let secs = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs() as i64).unwrap_or(0);
+    let secs = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|d| d.as_secs() as i64)
+        .unwrap_or(0);
     let (days, rem) = (secs.div_euclid(86400), secs.rem_euclid(86400));
     let z = days + 719468;
     let era = z.div_euclid(146097);
@@ -430,7 +478,8 @@ fn fail(msg: String) -> ! {
 }
 
 fn read_json(path: &Path) -> Value {
-    let text = std::fs::read_to_string(path).unwrap_or_else(|e| fail(format!("{}: {e}", path.display())));
+    let text =
+        std::fs::read_to_string(path).unwrap_or_else(|e| fail(format!("{}: {e}", path.display())));
     serde_json::from_str(&text).unwrap_or_else(|e| fail(format!("{}: {e}", path.display())))
 }
 
@@ -450,12 +499,19 @@ fn main() {
     let mut timeout = 10.0f64;
     let mut argv = std::env::args().skip(1);
     while let Some(a) = argv.next() {
-        let mut value = || argv.next().unwrap_or_else(|| fail(format!("{a} needs a value")));
+        let mut value = || {
+            argv.next()
+                .unwrap_or_else(|| fail(format!("{a} needs a value")))
+        };
         match a.as_str() {
             "--workspace" => workspace = PathBuf::from(value()),
             "--run" => run = value(),
             "--unit" => units.push(value()),
-            "--timeout" => timeout = value().parse().unwrap_or_else(|_| fail("--timeout needs seconds".into())),
+            "--timeout" => {
+                timeout = value()
+                    .parse()
+                    .unwrap_or_else(|_| fail("--timeout needs seconds".into()))
+            }
             _ => fail(format!("unknown argument {a}")),
         }
     }
@@ -464,8 +520,13 @@ fn main() {
     let table: HashMap<&str, Binding> = bindings::bindings().into_iter().collect();
     let fixtures = workspace.join("fixtures");
     if units.is_empty() {
-        let entries = std::fs::read_dir(&fixtures).unwrap_or_else(|e| fail(format!("no fixtures under {}: {e}", fixtures.display())));
-        units = entries.flatten().filter(|e| e.path().is_dir()).map(|e| e.file_name().to_string_lossy().into_owned()).collect();
+        let entries = std::fs::read_dir(&fixtures)
+            .unwrap_or_else(|e| fail(format!("no fixtures under {}: {e}", fixtures.display())));
+        units = entries
+            .flatten()
+            .filter(|e| e.path().is_dir())
+            .map(|e| e.file_name().to_string_lossy().into_owned())
+            .collect();
         units.sort();
     }
     if units.is_empty() {
@@ -493,7 +554,11 @@ fn main() {
                 let call = c["call"].as_str().unwrap_or_default();
                 let started = Instant::now();
                 let actual = match table.get(call) {
-                    Some(binding) => outcome(*binding, Input::from_json(&c["input"]), Duration::from_secs_f64(timeout)),
+                    Some(binding) => outcome(
+                        *binding,
+                        Input::from_json(&c["input"]),
+                        Duration::from_secs_f64(timeout),
+                    ),
                     None => {
                         missing += 1;
                         json!({"kind": "error", "category": "MissingBinding", "message": format!("no binding for {call}")})
@@ -514,7 +579,13 @@ fn main() {
             "startedAt": started_at,
             "results": results,
         });
-        write_json(&workspace.join("runs").join(&run).join(format!("{unit}.json")), &out);
+        write_json(
+            &workspace
+                .join("runs")
+                .join(&run)
+                .join(format!("{unit}.json")),
+            &out,
+        );
         println!("{unit}: ran {count} cases ({errors} errors) -> runs/{run}/{unit}.json");
     }
     if missing > 0 {

@@ -2,9 +2,15 @@ import json
 import unittest
 
 from util import TempDir, porter, write
+from porterlib.survey import remote_import_path
 
 
 class SurveyTest(unittest.TestCase):
+    def test_go_import_path_from_the_git_remote(self):
+        self.assertEqual(remote_import_path("https://github.com/kballard/go-shellquote.git"), "github.com/kballard/go-shellquote")
+        self.assertEqual(remote_import_path("git@github.com:kballard/go-shellquote.git"), "github.com/kballard/go-shellquote")
+        self.assertIsNone(remote_import_path("/home/me/checkout"))
+
     def test_dynamic_setuptools_version(self):
         with TempDir() as tmp:
             src = tmp / "pkg"

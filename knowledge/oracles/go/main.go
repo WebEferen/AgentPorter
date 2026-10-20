@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"reflect"
 	"runtime"
 	"sort"
 	"strings"
@@ -57,7 +58,12 @@ func runCase(fn Call, in Input, timeout time.Duration) (outcome map[string]any, 
 			return map[string]any{"kind": "error", "category": "panic", "message": fmt.Sprint(r.panic)}, elapsed, nil
 		}
 		if r.err != nil {
-			return map[string]any{"kind": "error", "category": ErrorCategory(r.err), "message": r.err.Error()}, elapsed, nil
+			outcome := map[string]any{"kind": "error", "category": ErrorCategory(r.err), "message": r.err.Error()}
+			// Some Go functions return a result next to the error (words parsed so far); keep it unless zero.
+			if r.value != nil && !reflect.ValueOf(r.value).IsZero() {
+				outcome["value"] = Serialize(r.value)
+			}
+			return outcome, elapsed, nil
 		}
 		return map[string]any{"kind": "value", "value": Serialize(r.value)}, elapsed, nil
 	case <-time.After(timeout):

@@ -1,7 +1,7 @@
 // Copy to examples/porter_harness/bindings.rs. One entry per source call id in .porter/fixtures; nothing else.
 // Bindings translate calling conventions only: never convert or patch a return value.
 
-use crate::{undefined, Binding, Failure, Input, ToContract};
+use crate::{Binding, Failure, Input, ToContract, undefined};
 use serde_json::Value;
 
 pub fn bindings() -> Vec<(&'static str, Binding)> {
@@ -9,7 +9,10 @@ pub fn bindings() -> Vec<(&'static str, Binding)> {
         ("ms:default", ms_default as Binding),
         ("slugify.slugify:slugify", slugify as Binding),
         ("pkg.mod:Counter.inc", counter_inc as Binding),
-        ("slugify.slugify:DEFAULT_SEPARATOR", default_separator as Binding),
+        (
+            "slugify.slugify:DEFAULT_SEPARATOR",
+            default_separator as Binding,
+        ),
     ]
 }
 

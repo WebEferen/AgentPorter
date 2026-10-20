@@ -81,7 +81,7 @@ REA is found through `AGENTPORTER_REA`, then `rea` on the PATH, then `npx -y rea
 | `cli run --exe <path> --unit <unit> --run <id>` | Black-box harness: runs the port on the same cases and writes actuals. |
 | `parity collect [--unit <unit>] [--run <id>] [--show N] [--dry-run]` | Compares actuals with fixtures and writes `parity.json` (not with `--dry-run`). Exits 1 when a unit is GAP. |
 | `parity report [--copy-to <path>]` | Renders `PARITY.md`. |
-| `parity reftests <junit\|vitest\|jest\|gotest> <report> [--unit <unit>] [--replace]` | Imports ported reference test results. Tests are matched by `[ref: id]` in their names (gotest also reads it from `t.Log` output). |
+| `parity reftests <junit\|vitest\|jest\|gotest\|cargo> <report> [--unit <unit>] [--replace]` | Imports ported reference test results. Tests are matched by `[ref: id]` in their names (gotest also reads it from `t.Log` output). `cargo` takes the captured output of `cargo test --no-fail-fast 2>&1` and reads the tags from `// [ref: id]` comment lines directly above each `#[test] fn`. |
 | `parity markers` | Lists `DIVERGENCE(id)` markers in the target code. `parity collect` checks them against `divergences.json` in both directions. |
 
 The fixture format and the oracle protocol are specified in `knowledge/oracles/CONTRACT.md`.

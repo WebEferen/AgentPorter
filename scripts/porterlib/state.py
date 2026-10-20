@@ -160,7 +160,7 @@ def fixtures_digest(path: Path) -> str | None:
             oracle = {k: v for k, v in (data.get("oracle") or {}).items() if k != "recordedAt"}
             data = {"unit": data.get("unit"), "oracle": oracle,
                     "cases": [c for c in data["cases"] if not _verify_added(c)]}
-            h.update(json.dumps(data, sort_keys=True, ensure_ascii=False).encode())
+            h.update(json.dumps(data, sort_keys=True, ensure_ascii=False).encode("utf-8", "surrogatepass"))
         else:
             h.update(f.read_bytes())
     return "sha256:" + h.hexdigest()
@@ -269,7 +269,9 @@ def set_unit(ws: Workspace, unit_id: str, status: str, task: str | None, level: 
         need(current == "IMPLEMENTED", "unit must be IMPLEMENTED")
         need(_task_at_least(unit, "apply-findings"), "review findings not applied (task 'apply-findings')")
     elif status == "VERIFIED":
-        need(current == "REVIEWED", "unit must be REVIEWED")
+        need(current in ("REVIEWED", "GAP"), "unit must be REVIEWED")
+        need(current == "REVIEWED" or bool(note),
+             "leaving GAP without new code needs --note recording the divergence decision")
         need(level in PASSING_LEVELS, f"--level must be one of {sorted(PASSING_LEVELS)}")
         entry = parity_entry(ws, unit_id)
         need(entry is not None, "no parity.json entry; run porter.py parity collect --unit first")

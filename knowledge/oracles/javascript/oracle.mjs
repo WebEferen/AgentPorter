@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // AgentPorter oracle driver for JavaScript sources (see knowledge/oracles/CONTRACT.md). Node 18+, no dependencies.
-import { createRequire } from "node:module";
+import nodeModule, { createRequire } from "node:module";
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, renameSync } from "node:fs";
 import { dirname, join, resolve, extname } from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { performance } from "node:perf_hooks";
 import vm from "node:vm";
 
@@ -140,8 +140,8 @@ function nearestPackage(dir) {
 
 function isEsm(file) {
   const ext = extname(file);
-  if (ext === ".mjs") return true;
-  if (ext === ".cjs") return false;
+  if (ext === ".mjs" || ext === ".mts" || ext === ".ts") return true;
+  if (ext === ".cjs" || ext === ".cts") return false;
   const pkg = nearestPackage(dirname(file));
   return Boolean(pkg && pkg.json.type === "module");
 }
@@ -180,7 +180,37 @@ function resolveSpecifier(spec, sourceRoot, ownPkg) {
   return createRequire(join(sourceRoot, "package.json")).resolve(spec);
 }
 
+// Node 22.18+ strips TypeScript types, so unbuilt .ts sources load directly. Bundler-style sources import
+// "./types" without an extension, which Node's resolver rejects: retry those with ".ts" and "/index.ts".
+function registerTypeScriptHooks() {
+  if (typeof nodeModule.registerHooks !== "function") return;
+  nodeModule.registerHooks({
+    resolve(specifier, context, nextResolve) {
+      try {
+        return nextResolve(specifier, context);
+      } catch (err) {
+        const relative = specifier.startsWith("./") || specifier.startsWith("../");
+        const fromTs = typeof context.parentURL === "string" && /\.[mc]?ts$/.test(context.parentURL);
+        if (err?.code !== "ERR_MODULE_NOT_FOUND" || !relative || !fromTs) throw err;
+        const candidates = [specifier + ".ts", specifier + "/index.ts"];
+        const js = specifier.match(/\.([mc]?)js$/);
+        if (js) candidates.unshift(specifier.slice(0, -js[0].length) + `.${js[1]}ts`);
+        for (const candidate of candidates) {
+          const url = new URL(candidate, context.parentURL);
+          if (existsSync(fileURLToPath(url))) return nextResolve(url.href, context);
+        }
+        throw err;
+      }
+    },
+    load(url, context, nextLoad) {
+      if (url.startsWith("file:") && /\.m?ts$/.test(url)) return nextLoad(url, { ...context, format: "module-typescript" });
+      return nextLoad(url, context);
+    },
+  });
+}
+
 const moduleCache = new Map();
+let loadedTypeScript = false;
 
 async function loadModule(spec, sourceRoot, ownPkg) {
   if (moduleCache.has(spec)) return moduleCache.get(spec);
@@ -189,12 +219,17 @@ async function loadModule(spec, sourceRoot, ownPkg) {
     moduleCache.set(spec, ns);
     return ns;
   }
-  const file = resolveSpecifier(spec, sourceRoot, ownPkg);
+  let file;
   let ns;
-  if (isEsm(file)) {
-    ns = await import(pathToFileURL(file).href);
-  } else {
-    const exportsValue = createRequire(file)(file);
+  try {
+    file = resolveSpecifier(spec, sourceRoot, ownPkg);
+    if (/\.[mc]?ts$/.test(file)) loadedTypeScript = true;
+    ns = isEsm(file) ? await import(pathToFileURL(file).href) : { default: createRequire(file)(file) };
+  } catch (err) {
+    throw new OracleError(`cannot load '${spec}'${file ? ` (${file})` : ""}: ${err.message}`);
+  }
+  if (!isEsm(file)) {
+    const exportsValue = ns.default;
     ns = { default: exportsValue };
     if (exportsValue && (typeof exportsValue === "object" || typeof exportsValue === "function")) {
       for (const k of Object.keys(exportsValue)) if (k !== "default") ns[k] = exportsValue[k];
@@ -289,6 +324,7 @@ function writeJson(path, data) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  registerTypeScriptHooks();
   const ws = resolve(args.workspace);
   const config = JSON.parse(readFileSync(join(ws, "config.json"), "utf8"));
   const src = config.source || {};
@@ -323,7 +359,7 @@ async function main() {
       schema: 1,
       unit,
       oracle: {
-        language: "javascript",
+        language: src.language === "typescript" || loadedTypeScript ? "typescript" : "javascript",
         package: name,
         version,
         commit: args.commit || src.commit || null,
