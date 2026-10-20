@@ -90,6 +90,22 @@ recovered behavior.
 
 Calling `/agentporter:port` with no arguments resumes the current port.
 
+## Examples
+
+Five small libraries ported end to end, each in one unattended session. Every folder holds the original
+at its pinned commit next to the port, with the full `.porter/` workspace and the parity report.
+
+| Example | Direction | Level | Fixtures exact | Reference tests |
+| --- | --- | --- | --- | --- |
+| [ms-to-go](examples/ms-to-go/) | JavaScript to Go | DIVERGENT | 1458 of 1490 | 44 of 49 |
+| [shellquote-to-python](examples/shellquote-to-python/) | Go to Python | EXACT | 1083 of 1083 | 29 of 29 |
+| [scule-to-go](examples/scule-to-go/) | TypeScript to Go | EXACT | 2984 of 2984 | 63 of 63 |
+| [compare-versions-to-rust](examples/compare-versions-to-rust/) | TypeScript to Rust | DIVERGENT | 4239 of 4288 | 406 of 422 |
+| [humps-to-rust](examples/humps-to-rust/) | Python to Rust | DIVERGENT | 4625 of 4627 | 18 of 18 |
+
+No case fails in any of them; the divergent ones are listed with reasons. Each run cost $15 to $23. How
+they were made, and what that means for the results: [examples/README.md](examples/README.md).
+
 ## How it works
 
 <picture>
@@ -153,7 +169,7 @@ gate item when its terms do not fit the port's.
 
 The original runs as an oracle and its outputs become fixtures in `.porter/fixtures/`. The port runs the
 same cases through a small harness, and `porter.py parity collect` compares both. An excerpt from the
-`PARITY.md` of the [ms to Go example](examples/ms-to-go/PARITY.md):
+`PARITY.md` of the [ms to Go example](examples/ms-to-go/port/PARITY.md):
 
 ```text
 Upstream: ms 2.1.3 (javascript, commit 1c6264b79549).

@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "draft": false,
+  "generatedBy": "porter.py decompose",
+  "generatedAt": "2026-10-20T19:32:57Z",
+  "budgets": {
+    "unitMaxLoc": 400,
+    "unitMaxSymbols": 8,
+    "unitMinLoc": 30
+  },
+  "tracer": "root",
+  "order": [
+    "root"
+  ],
+  "layers": {
+    "core": [
+      "root"
+    ]
+  },
+  "cycles": [],
+  "orphans": [],
+  "unknownRoots": [],
+  "adjustments": [],
+  "units": [
+    {
+      "id": "root",
+      "name": "root",
+      "layer": "core",
+      "wave": 0,
+      "symbols": [
+        "root:Join",
+        "root:UnterminatedSingleQuoteError",
+        "root:UnterminatedDoubleQuoteError",
+        "root:UnterminatedEscapeError",
+        "root:Split",
+        "root:specialChars",
+        "root:extraSpecialChars",
+        "root:prefixChars",
+        "root:quote",
+        "root:splitChars",
+        "root:singleChar",
+        "root:doubleChar",
+        "root:escapeChar",
+        "root:doubleEscapeChars",
+        "root:splitWord"
+      ],
+      "publicSymbols": [
+        "root:Join",
+        "root:UnterminatedSingleQuoteError",
+        "root:UnterminatedDoubleQuoteError",
+        "root:UnterminatedEscapeError",
+        "root:Split"
+      ],
+      "sources": [
+        {
+          "path": "quote.go",
+          "lines": [
+            12,
+            102
+          ]
+        },
+        {
+          "path": "unquote.go",
+          "lines": [
+            11,
+            22
+          ]
+        },
+        {
+          "path": "unquote.go",
+          "lines": [
+            33,
+            156
+          ]
+        }
+      ],
+      "loc": 213,
+      "dependsOn": [],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/root/",
+        "expected": null
+      },
+      "noFixturesReason": null,
+      "referenceTests": [],
+      "riskTags": [
+        "error-model",
+        "nullability",
+        "ordering"
+      ],
+      "riskScore": 2,
+      "strategy": null,
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": true,
+      "overBudget": false,
+      "notes": null
+    }
+  ]
+}

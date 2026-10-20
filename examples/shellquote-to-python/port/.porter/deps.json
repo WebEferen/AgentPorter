@@ -1,0 +1,198 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "go",
+    "manifests": [],
+    "note": "No go.mod or other manifest; deps-graph found 0 dependencies and usage-scan found 0 third-party imports. The rows below are the Go standard library packages imported by quote.go and unquote.go, recorded so each has an explicit decision."
+  },
+  "target": {
+    "language": "python",
+    "registry": "pypi",
+    "runtime": ">=3.11"
+  },
+  "devTools": [
+    {
+      "source": "go test (testing)",
+      "target": "pytest",
+      "registry": "pypi",
+      "version": "9.1.1",
+      "license": "MIT",
+      "evidence": "cache/registry/pypi/pytest.json",
+      "note": "Table-driven Go tests become pytest.mark.parametrize cases."
+    },
+    {
+      "source": "testing/quick + reflect.DeepEqual (both_test.go round-trip property)",
+      "target": "standard library random with a fixed seed, inside pytest",
+      "registry": null,
+      "version": null,
+      "license": null,
+      "evidence": "both_test.go:11-28",
+      "note": "User preference: Python standard library first. A seeded random.Random generator reproduces quick.Check's random []string round trip without a dependency. hypothesis 6.170.5 (cache/registry/pypi/hypothesis.json, MPL-2.0) is the alternative if shrinking is wanted later."
+    },
+    {
+      "source": "gofmt, go vet",
+      "target": "ruff (ruff format, ruff check)",
+      "registry": "pypi",
+      "version": "0.17.1",
+      "license": "MIT",
+      "evidence": "cache/registry/pypi/ruff.json"
+    },
+    {
+      "source": "Go compiler type checking",
+      "target": "mypy (strict)",
+      "registry": "pypi",
+      "version": "2.4.0",
+      "license": "MIT",
+      "evidence": "cache/registry/pypi/mypy.json"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "bytes",
+      "version": null,
+      "scope": "platform",
+      "direct": true,
+      "role": "runtime-library",
+      "usedSurface": {
+        "symbols": [
+          "bytes.Buffer",
+          "Buffer.WriteByte",
+          "Buffer.WriteString",
+          "Buffer.WriteRune",
+          "Buffer.Truncate",
+          "Buffer.Len",
+          "Buffer.Reset",
+          "Buffer.String"
+        ],
+        "callSites": 22,
+        "modules": [
+          "quote.go",
+          "unquote.go"
+        ]
+      },
+      "decision": "ABSORB",
+      "candidate": {
+        "name": "list[str] + str.join (or io.StringIO)",
+        "registry": null,
+        "version": null,
+        "license": "PSF-2.0",
+        "coverage": "full",
+        "evidence": "quote.go:13-20, quote.go:37-61, unquote.go:34, unquote.go:68-155"
+      },
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Buffer.Truncate(origLen) in quote() (quote.go:60) rolls back the per-word output; in Python build each word in its own list and discard it, so no truncate is needed.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "errors",
+      "version": null,
+      "scope": "platform",
+      "direct": true,
+      "role": "runtime-library",
+      "usedSurface": {
+        "symbols": [
+          "errors.New"
+        ],
+        "callSites": 3,
+        "modules": [
+          "unquote.go"
+        ]
+      },
+      "decision": "ABSORB",
+      "candidate": {
+        "name": "Exception subclasses (builtins)",
+        "registry": null,
+        "version": null,
+        "license": "PSF-2.0",
+        "coverage": "full",
+        "evidence": "unquote.go:10-14"
+      },
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "The three sentinel error values become exception classes with the same messages; the error-model mapping (raise instead of return, partial words) is decided in the contract and strategy phases.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "strings",
+      "version": null,
+      "scope": "platform",
+      "direct": true,
+      "role": "runtime-library",
+      "usedSurface": {
+        "symbols": [
+          "strings.ContainsRune",
+          "strings.IndexRune"
+        ],
+        "callSites": 6,
+        "modules": [
+          "quote.go",
+          "unquote.go"
+        ]
+      },
+      "decision": "ABSORB",
+      "candidate": {
+        "name": "str `in` operator, str.find",
+        "registry": null,
+        "version": null,
+        "license": "PSF-2.0",
+        "coverage": "full",
+        "evidence": "quote.go:50, quote.go:58, quote.go:77, unquote.go:40, unquote.go:88, unquote.go:117, unquote.go:140"
+      },
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Python's shlex (shlex.quote, shlex.split) was considered as a replacement for the whole package and rejected: it differs from the Go original. Probe on CPython 3.14.6: shlex.quote(\"don't\") gives 'don'\"'\"'t' where Go Join gives don\\'t; shlex.quote(\"foo*\") gives 'foo*' where Go gives foo\\*; shlex.split(\"text with\\\\\\na newline\") keeps the newline ('with\\na') where Go elides it ('witha'); shlex raises one ValueError type where Go has three distinct errors. The package itself is the port.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "unicode/utf8",
+      "version": null,
+      "scope": "platform",
+      "direct": true,
+      "role": "runtime-library",
+      "usedSurface": {
+        "symbols": [
+          "utf8.DecodeRuneInString"
+        ],
+        "callSites": 6,
+        "modules": [
+          "quote.go",
+          "unquote.go"
+        ]
+      },
+      "decision": "ABSORB",
+      "candidate": {
+        "name": "iteration over str code points",
+        "registry": null,
+        "version": null,
+        "license": "PSF-2.0",
+        "coverage": "partial: valid UTF-8 only",
+        "evidence": "quote.go:48, unquote.go:39, unquote.go:50, unquote.go:74, unquote.go:105, unquote.go:130, unquote.go:138"
+      },
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Python str holds code points, so decoding is implicit. Go strings can hold invalid UTF-8, which DecodeRuneInString reads as U+FFFD width 1 and the code copies through as raw bytes; a Python str API cannot receive those bytes. This is a contract scope question (str-only API), not a dependency gap.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    }
+  ]
+}

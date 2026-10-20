@@ -1,0 +1,5933 @@
+{
+  "schema": 1,
+  "unit": "root",
+  "kind": "value",
+  "cases": [
+    {
+      "case": "join.ref.00",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::0",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "test"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.01",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::1",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "hello goodbye"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.02",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::2",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "hello",
+          "goodbye"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.03",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::3",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "don't you know the dewey decimal system?"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.04",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::4",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "don't",
+          "you",
+          "know",
+          "the",
+          "dewey",
+          "decimal",
+          "system?"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.05",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::5",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~user",
+          "u~ser",
+          " ~user",
+          "!~user"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.06",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::6",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "foo*",
+          "M{ovies,usic}",
+          "ab[cd]",
+          "%3"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.07",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::7",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "one",
+          "",
+          "three"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.08",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::8",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "some(parentheses)"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.09",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::9",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "$some_ot~her_)spe!cial_*_characters"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "join.ref.10",
+      "origin": "reference-test:quote_test.go::TestSimpleJoin::10",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "' "
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.00",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::0",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "hello"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.01",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::1",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "hello goodbye"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.02",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::2",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "hello   goodbye"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.03",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::3",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "glob* test?"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.04",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::4",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "don\\'t you know the dewey decimal system\\?"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.05",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::5",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'don'\\''t you know the dewey decimal system?'"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.06",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::6",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "one '' two"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.07",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::7",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "text with\\\na backslash-escaped newline"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.08",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::8",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "text \"with\na\" quoted newline"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.09",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::9",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"quoted\\d\\\\\\\" text with\\\na backslash-escaped newline\""
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.10",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::10",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "text with an escaped \\\n newline in the middle"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.11",
+      "origin": "reference-test:unquote_test.go::TestSimpleSplit::11",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "foo\"bar\"baz"
+        ]
+      },
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "split.ref.err.00",
+      "origin": "reference-test:unquote_test.go::TestErrorSplit::0",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "don't worry"
+        ]
+      },
+      "tags": [
+        "harvested",
+        "error"
+      ]
+    },
+    {
+      "case": "split.ref.err.01",
+      "origin": "reference-test:unquote_test.go::TestErrorSplit::1",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'test'\\''ing"
+        ]
+      },
+      "tags": [
+        "harvested",
+        "error"
+      ]
+    },
+    {
+      "case": "split.ref.err.02",
+      "origin": "reference-test:unquote_test.go::TestErrorSplit::2",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"foo'bar"
+        ]
+      },
+      "tags": [
+        "harvested",
+        "error"
+      ]
+    },
+    {
+      "case": "split.ref.err.03",
+      "origin": "reference-test:unquote_test.go::TestErrorSplit::3",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "foo\\"
+        ]
+      },
+      "tags": [
+        "harvested",
+        "error"
+      ]
+    },
+    {
+      "case": "split.ref.err.04",
+      "origin": "reference-test:unquote_test.go::TestErrorSplit::4",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "   \\"
+        ]
+      },
+      "tags": [
+        "harvested",
+        "error"
+      ]
+    },
+    {
+      "case": "join.no-args",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": []
+      },
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "join.empty-arg",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "join.two-empty-args",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "",
+          ""
+        ]
+      },
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "join.empty-between",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a",
+          "",
+          "",
+          "b"
+        ]
+      },
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "join.space-only",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          " "
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.tab-only",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "\t"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.newline-only",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "\n"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.tab-inside",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a\tb"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.newline-inside",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a\nb"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.trailing-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "line\n"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.leading-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          " lead"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.cr-not-quoted",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a\rb",
+          "\r"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.vt-ff-not-quoted",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a\u000bb",
+          "c\fd"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.nbsp-not-quoted",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a b"
+        ]
+      },
+      "tags": [
+        "whitespace",
+        "unicode"
+      ]
+    },
+    {
+      "case": "join.unicode-space-not-quoted",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a b",
+          "c　d",
+          "e f",
+          "gh"
+        ]
+      },
+      "tags": [
+        "whitespace",
+        "unicode"
+      ]
+    },
+    {
+      "case": "join.single-quote-only",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "'"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.two-single-quotes",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "''"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.leading-quote-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "'a b"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.trailing-quote-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a b'"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.quote-space-quote",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "' '"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.two-quotes-then-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "'' x"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.inner-quote-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a'b c"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.adjacent-quotes-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a''b c"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.quote-with-tab",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "it's\there"
+        ]
+      },
+      "tags": [
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.quote-with-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "it's\nfine"
+        ]
+      },
+      "tags": [
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.quote-no-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "it's"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "join.each-special-alone",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "\\",
+          "'",
+          "\"",
+          "`",
+          "$",
+          "{",
+          "[",
+          "|",
+          "&",
+          ";",
+          "<",
+          ">",
+          "(",
+          ")",
+          "*",
+          "?",
+          "!"
+        ]
+      },
+      "tags": [
+        "special"
+      ]
+    },
+    {
+      "case": "join.all-specials-one-arg",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "\\'\"`${[|&;<>()*?!"
+        ]
+      },
+      "tags": [
+        "special"
+      ]
+    },
+    {
+      "case": "join.not-escaped-punct",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "#",
+          "#comment",
+          "]",
+          "}",
+          "=",
+          "a=b",
+          "%",
+          "^",
+          "-",
+          "--flag",
+          ",",
+          ".",
+          "/",
+          ":",
+          "@",
+          "+"
+        ]
+      },
+      "tags": [
+        "special"
+      ]
+    },
+    {
+      "case": "join.tilde-alone",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~"
+        ]
+      },
+      "tags": [
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.tilde-path",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~/dir"
+        ]
+      },
+      "tags": [
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.tilde-middle-end",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a~b",
+          "a~"
+        ]
+      },
+      "tags": [
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.tilde-double",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~~"
+        ]
+      },
+      "tags": [
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.tilde-then-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~ a"
+        ]
+      },
+      "tags": [
+        "tilde",
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.tilde-after-special",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "*~"
+        ]
+      },
+      "tags": [
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.tilde-each-arg",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a",
+          "~b",
+          "~c"
+        ]
+      },
+      "tags": [
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.special-then-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a* b"
+        ]
+      },
+      "tags": [
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.space-then-special",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a b*"
+        ]
+      },
+      "tags": [
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.rollback-per-arg",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a*",
+          "b c",
+          "d?"
+        ]
+      },
+      "tags": [
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.special-then-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "$x\n"
+        ]
+      },
+      "tags": [
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.backslashes",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "C:\\path\\x"
+        ]
+      },
+      "tags": [
+        "special"
+      ]
+    },
+    {
+      "case": "join.backslash-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a\\ b"
+        ]
+      },
+      "tags": [
+        "special",
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.dollar-vars",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "$HOME",
+          "${x}",
+          "$(cmd)"
+        ]
+      },
+      "tags": [
+        "special"
+      ]
+    },
+    {
+      "case": "join.double-quotes-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "say \"hi\""
+        ]
+      },
+      "tags": [
+        "special"
+      ]
+    },
+    {
+      "case": "join.unicode-plain",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "héllo",
+          "日本語",
+          "😀",
+          "👍🏽",
+          "é",
+          "a‍b"
+        ]
+      },
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "join.unicode-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "héllo wörld"
+        ]
+      },
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "join.unicode-then-special",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "日本*",
+          "😀?"
+        ]
+      },
+      "tags": [
+        "unicode",
+        "special"
+      ]
+    },
+    {
+      "case": "join.emoji-quote-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "😀 '😀'"
+        ]
+      },
+      "tags": [
+        "unicode",
+        "quote"
+      ]
+    },
+    {
+      "case": "join.replacement-char",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "�",
+          "a� b"
+        ]
+      },
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "join.nul-byte",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "a\u0000b"
+        ]
+      },
+      "tags": [
+        "control"
+      ]
+    },
+    {
+      "case": "join.controls",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "\u0007",
+          "\u001b[0m",
+          ""
+        ]
+      },
+      "tags": [
+        "control"
+      ]
+    },
+    {
+      "case": "join.large-arg",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          {
+            "$gen": "string",
+            "alphabet": "a",
+            "min": 10000,
+            "max": 10000
+          }
+        ]
+      },
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "join.large-arg-with-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          {
+            "$gen": "concat",
+            "parts": [
+              {
+                "$gen": "string",
+                "alphabet": "b",
+                "min": 5000,
+                "max": 5000
+              },
+              " ",
+              {
+                "$gen": "string",
+                "alphabet": "c",
+                "min": 5000,
+                "max": 5000
+              }
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "join.many-args",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": {
+          "$gen": "list",
+          "min": 500,
+          "max": 500,
+          "of": {
+            "$gen": "string",
+            "alphabet": "ascii",
+            "min": 0,
+            "max": 8
+          }
+        }
+      },
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "split.empty",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "split.spaces-only",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "   "
+        ]
+      },
+      "tags": [
+        "empty",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.whitespace-only-mix",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          " \t\n \t\n"
+        ]
+      },
+      "tags": [
+        "empty",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.leading-trailing-ws",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "  a  b  "
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.tab-newline-separators",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\nb\tc"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.cr-not-separator",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\rb \r"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.crlf",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\r\nb"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.vt-ff-not-separator",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\u000bb c\fd"
+        ]
+      },
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.nbsp-not-separator",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a b"
+        ]
+      },
+      "tags": [
+        "whitespace",
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.unicode-space-not-separator",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a b c　d e f gh"
+        ]
+      },
+      "tags": [
+        "whitespace",
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.empty-single",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "''"
+        ]
+      },
+      "tags": [
+        "empty",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.empty-double",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\""
+        ]
+      },
+      "tags": [
+        "empty",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.empty-adjacent-quotes",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "''\"\""
+        ]
+      },
+      "tags": [
+        "empty",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.empty-words-between",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a '' b \"\" c"
+        ]
+      },
+      "tags": [
+        "empty",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.concat-quote-styles",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a'b'\"c\"\\d"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "split.single-keeps-backslash",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a\\b'"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "split.single-trailing-backslash",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a\\'"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "split.single-keeps-double",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'say \"hi\"'"
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "split.single-keeps-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a\nb'"
+        ]
+      },
+      "tags": [
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.single-keeps-dollar",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'$HOME `x`'"
+        ]
+      },
+      "tags": [
+        "quote",
+        "no-expansion"
+      ]
+    },
+    {
+      "case": "split.double-keeps-single",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"it's\""
+        ]
+      },
+      "tags": [
+        "quote"
+      ]
+    },
+    {
+      "case": "split.double-escape-dollar",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\$\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.double-escape-backtick",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\`\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.double-escape-dquote",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\\"\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.double-escape-backslash",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\\\\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.double-escape-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"a\\\nb\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.double-nonescape-kept",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\a\\n\\'\\ \""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.double-backslash-unicode",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\é\" \"\\😀\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "escape",
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.double-no-expansion",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"$HOME\" \"`id`\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "no-expansion"
+      ]
+    },
+    {
+      "case": "split.double-keeps-tab-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"a\tb\nc\""
+        ]
+      },
+      "tags": [
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.raw-escape-letters",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\a\\b"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.raw-escape-backslash",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\\"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.raw-escape-quotes",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\' \\\""
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.raw-escape-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\  a\\ b"
+        ]
+      },
+      "tags": [
+        "escape",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.raw-escape-tab",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\tx"
+        ]
+      },
+      "tags": [
+        "escape",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.raw-escape-unicode",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\é\\😀"
+        ]
+      },
+      "tags": [
+        "escape",
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.raw-escape-cr",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\\\r\nb"
+        ]
+      },
+      "tags": [
+        "escape",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.escaped-newline-only",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\n"
+        ]
+      },
+      "tags": [
+        "escape",
+        "empty"
+      ]
+    },
+    {
+      "case": "split.escaped-newline-start",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\nfoo"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.escaped-newline-end",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "foo\\\n"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.escaped-newline-mid",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "foo\\\nbar"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.escaped-newline-repeated",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\n\\\n a \\\n"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.escaped-backslash-then-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\\\\\nb"
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.trailing-escaped-space",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\\ "
+        ]
+      },
+      "tags": [
+        "escape"
+      ]
+    },
+    {
+      "case": "split.no-expansion",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "$HOME ~ *.go {a,b} a|b a;b a&&b >out <in 2>&1 (x) !x"
+        ]
+      },
+      "tags": [
+        "no-expansion"
+      ]
+    },
+    {
+      "case": "split.hash-not-comment",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a #b # c"
+        ]
+      },
+      "tags": [
+        "no-expansion"
+      ]
+    },
+    {
+      "case": "split.dollar-single-unsupported",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "$'a\\nb'"
+        ]
+      },
+      "tags": [
+        "no-expansion",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.unicode-words",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "héllo wörld 日本語 😀 👍🏽 é"
+        ]
+      },
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.unicode-quoted",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'日本 語' \"😀 x\""
+        ]
+      },
+      "tags": [
+        "unicode",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.replacement-char",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "� \"�\""
+        ]
+      },
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.nul-byte",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\u0000b c"
+        ]
+      },
+      "tags": [
+        "control"
+      ]
+    },
+    {
+      "case": "split.large-word",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          {
+            "$gen": "string",
+            "alphabet": "a",
+            "min": 10000,
+            "max": 10000
+          }
+        ]
+      },
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "split.large-many-words",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          {
+            "$gen": "string",
+            "alphabet": "ab  \t\n",
+            "min": 20000,
+            "max": 20000
+          }
+        ]
+      },
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "split.large-single-quoted",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          {
+            "$gen": "concat",
+            "parts": [
+              "'",
+              {
+                "$gen": "string",
+                "alphabet": "letters",
+                "min": 10000,
+                "max": 10000
+              },
+              " x'"
+            ]
+          }
+        ]
+      },
+      "tags": [
+        "large",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.err.single-alone",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.double-alone",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\""
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.escape-alone",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.escape-after-word",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a \\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.escape-ends-word",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a b\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.single-after-words",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a b 'c d"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.single-mid-word",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a b'c"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.single-after-closed",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a' 'b"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.double-after-words",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a b \"c d"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.double-trailing-backslash",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"a\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words",
+        "untested-upstream"
+      ]
+    },
+    {
+      "case": "split.err.double-trailing-backslash-after-words",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "x y \"a\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words",
+        "untested-upstream"
+      ]
+    },
+    {
+      "case": "split.err.double-only-backslash",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words",
+        "untested-upstream"
+      ]
+    },
+    {
+      "case": "split.err.double-escaped-quote-open",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"a\\\""
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.escape-after-escaped-newline",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\\\n\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.single-before-double",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a \"b"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.double-before-single",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"a 'b"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.err.unicode-partial",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "日本 '語"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words",
+        "unicode"
+      ]
+    },
+    {
+      "case": "split.err.escape-after-ws-mix",
+      "origin": "hand-written",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          " \t\n\\"
+        ]
+      },
+      "tags": [
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0000",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0000",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\>\\*\\\"\\'j\\[\\'n\\' "
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0001",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0001",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "😀P7\\|N Sk"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0002",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0002",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'{|i $*\rR' 'kP?(gd6 ]g' 0W\\{\\` \\`\\[\\<xM]%gZ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0003",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0003",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\>z#\r \\(waJWcW\\<\\!w \\'T\\!~\\\""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0004",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0004",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "E\\$HB~2 'cCA&\t;zW' ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0005",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0005",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\&j5 \\\\ b8 \\\"\\*ds\\[\\? ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0006",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0006",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\)j\\[M s\\'y"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0007",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0007",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "%\\\\v\\$C \\!i d%]k~P%\\'kY \\~\\|éLZ5q"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0008",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0008",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "xJt\r\\&#R f~\\&\\; \\? D=KP9\\>a B~Y\\`#\\{f"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0009",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0009",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "mH] Rs6\\\"5Mpx"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0010",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0010",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "9\\!CEu hz%~ \\~d\\;\\( \\;Liwm😀9B~\\`"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0011",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0011",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\(k"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0012",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0012",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "3 \\~ 'R #é&O%' \\~ =2n"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0013",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0013",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "rY\\<z~KI \\<\\! é\\)XTN \\( FP\\*O%F\\*o\\\"C"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0014",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0014",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\?\\(😀=\\|8s~ p"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0015",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0015",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0016",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0016",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0017",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0017",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "]c 'EOqQA ('\\' n"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0018",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0018",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\''(#|V \"*'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0019",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0019",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "HB m}a\\[ \rHK\\*Y\\`yG \\<\\`%w\\&\\<\\`j3"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0020",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0020",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' \\*\\<Gg '\tMa'\\''E#C}' %\\)😀 \\'pC"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0021",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0021",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "f 'VV3{\nt|p' z\\)A\\' 8\\!#"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0022",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0022",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "oH~~😀\\\"g\\|eZ é\\{JgH4tP ée \\?wtJ\\` 7"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0023",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0023",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "u\\`a~\\$ W"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0024",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0024",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "Z ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0025",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0025",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0026",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0026",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "hDlBé8"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0027",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0027",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' } \\`\r7\\*\\<"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0028",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0028",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "yf\\* l\\)X \\& v 日Zo2"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0029",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0029",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' \\|t9 'ru |]\\g' vHXM5PZ '(j\t~'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0030",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0030",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "J4Hch"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0031",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0031",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\'y\\?0\\?\\( \\!\\!o😀\\?\\|\\>"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0032",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0032",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\|x n\\*  'TY9['\\''J30w\t' \\& =D"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0033",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0033",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\?\\\"K5]l8 Ym\\'\\[ ' <KyMQ$1' 'bz 4\" 5t\t'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0034",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0034",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "uG\\'jt\\$\\\"e z 0V"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0035",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0035",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "pé#}S\\>\\' Km\\(]a %a\\$\\\\T%zp\\{ GbO\\)zx"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0036",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0036",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "v=\r]}}X U\\)4MDs '`Pa\tg'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0037",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0037",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "nLQ\\\""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0038",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0038",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\[\\<\\|\\&I\\>e \\*yh\rH1]B%i"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0039",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0039",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "e0BH\\{\rC \\?"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0040",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0040",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0041",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0041",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "H\\`\\\\😀\\'o\\\"m"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0042",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0042",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' m\\&\\|0Win\\*~"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0043",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0043",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "😀é0~\\*J 'Oy\n{Np'\\''*' U5\\'\\*\\&\\&\\&%\\?日 B\\\"=\\'\\\" ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0044",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0044",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "]pqEM]C# 'T#<=\\]\t' kB😀No\\` \\)\\' 7dc\\\"A"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0045",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0045",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\;m\\\"ql#iu '0'\\''\t'\\''6a]' 4Z"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0046",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0046",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "X\\&B\\|\\>b\\'9q wp\\$\\\\XLlY😀j \\>=o"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0047",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0047",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0048",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0048",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "L \\''=Wr2 Wfy' 'FuB~\téD?#;' \\&\\{"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0049",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0049",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'6`d!HN]W ' f0]\\>]\\\\"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0050",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0050",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "V1\\)pNu\\'IV]   ayw\rN\\`😀 ' (= éX['"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0051",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0051",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\; \\\\\\)aR#u N9R \\~\\'\\'S9\\{"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0052",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0052",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\']\\|"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0053",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0053",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\'X \\[%\\?X\\\\"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0054",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0054",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "w \r\\\\Z\\(\\!B \\'yk%\\'a"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0055",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0055",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "JKic 'Z $5 N&aO'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0056",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0056",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\'\\!PZ\\*\\'qF\\[5 '' \\`\\(\\)xgu v\\)5r \\&~"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0057",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0057",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "#e\\(Y ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0058",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0058",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "KA\\{G \\(ux7\\\"\\!f] x\rw😀5\\!F Xr\\;Y}6 t\\{ig\\(~\\'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0059",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0059",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "g\\\" m\\?N~nXypsY"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0060",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0060",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0061",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0061",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "1\\'\\|\\(\\'o~ u\\$"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0062",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0062",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0063",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0063",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0064",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0064",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0065",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0065",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\''{i%m\nDH~' 6\\(#\\'\\;Eb1"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0066",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0066",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0067",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0067",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\| '' é\\&d]V"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0068",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0068",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'g$ 7' 'g p&;%[' \\?\\|VRy\\; cyyM\\[Tqb 'T\n='\\''$'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0069",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0069",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "') é' \\&Q]\\` p\\>T\\>58\\*\\'\\| D"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0070",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0070",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0071",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0071",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\"~F"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0072",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0072",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\`51\\(F%l YM5Wz3i9D ' \"'\\''q' '' IX9\\!]~"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0073",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0073",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0074",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0074",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'~ek\n)`3' \\&x2😀\\> \\~\\`a}%\\<Y\\\"R \\\"7 '01 i;y;'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0075",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0075",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'\n\\)zk4Np' U \\\" G\\)89\\>\\&\\\" '\t<[h'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0076",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0076",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\(\\' X\\[Z} ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0077",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0077",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a日Am ?' r\\$ =7g 2\\\"1S\\(Py\\$\\$~ \\`8\\[lzkA\\$"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0078",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0078",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\[Z\\\\ jTg\\' #UE0X\\$ 5\\;f0]😀 ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0079",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0079",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "3 '& qo' %\\)\\\"日k 'u? ]EY' \\''q] q'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0080",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0080",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0081",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0081",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0082",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0082",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "Q\\>YwYfm \\'~\\$]az~\\&\\*x #V\\'UY\\*D=qJ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0083",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0083",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0084",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0084",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'OMBn ?5Y'\\' xvD }~ '\nx9V ' \\;N\\` Z"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0085",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0085",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "mw\\?JCZ\\$ue% Zwn \\)X\r\\)\\*\\(\\<XP ]\\>IZ ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0086",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0086",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\rL#"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0087",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0087",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "é0 5yS\\\\\\$\\(}\\<A \\<7l\\[6\\? \\&\\$\\\\sl\\< \\;5"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0088",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0088",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "hCOy AaQH\\$\\?q\\* \\`f\\&VV"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0089",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0089",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "X o 9r \\(yXo\\< \\\\7\\; \\!\\! %\\'}"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0090",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0090",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "A\\*Q日r8D\\<K"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0091",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0091",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\?}\\\"v\\>0= C3] ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0092",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0092",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\$}=w \\'~#=h日WV\\$😀 'Q4uge p(P'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0093",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0093",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0094",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0094",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'u\n}xWi' ]\\'ézBkJB\\[ '*>5Dd\n)7I'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0095",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0095",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0096",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0096",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'\t<x>'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0097",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0097",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' \\*\\)C i B日\\$\\'\\|😀\\>gVv gG"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0098",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0098",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "' k\\nh' %\\!\\`2\\!\\$TO '9日\nK$O'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0099",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0099",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "C# p\\<Lc\\)v%T😀\\? ET\\`\\{3 \\~GMh G%N\\;5M\\$\\\"\\&"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0100",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0100",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "9N \\<t=\\&Wé\\`I FDB% j\\&😀]QhWqq%"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0101",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0101",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "QT\\`\\<\\<PkxZ \\& \\$日L j% ca}U\\&"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0102",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0102",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0103",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0103",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "i\\(m\\<😀C= \\*\\'oJwS\\'\\'\\{\\; W\\!X\\'b\\> G lm\\*k"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0104",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0104",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "J%"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0105",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0105",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'P\tm \\*ép'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0106",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0106",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\`EI\\!PcN\\?#D =Xz\\!"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0107",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0107",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "k\\`2\\)\\?\\'\\!at J~%T\\\\\\\"x 日\\|\\` 7P9j \r\\)"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0108",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0108",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "H \\\"\\{\\{\\* 'olC f;'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0109",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0109",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0110",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0110",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0111",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0111",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          " SaK '' \\\"#5 \\'\\'\\? 0\\\\"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0112",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0112",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0113",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0113",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "=\\'~Bm 'Q e4' G] '' l]OwU\\&guBr"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0114",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0114",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0115",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0115",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0116",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0116",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\{ Z\\?\\'G= gbfX%9lV N Y\\$ \\>\\\"WcWgj\\|}U"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0117",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0117",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "r \\>za\\&\\(#y\\`\\;# #\\;f] '' Y\\!rpQw"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0118",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0118",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\[l\\(Eu%\\* '' '2'\\''\nsN?1=' J#qGGg\\$j \\~4\\;5s}g"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0119",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0119",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "0=mp\\'\\(wD"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0120",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0120",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "}R\\(H \\[o =Ac7 E"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0121",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0121",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'\t' \\$i\\) \\<f IT \\?s\\'Ze~y"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0122",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0122",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0123",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0123",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0124",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0124",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "3G\\{\\'\\[ =\\<mUdJ\\$ =\\!G '' Q\\|"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0125",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0125",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "uD1]b7 '0~D=mM=\nS' i\\;n\\<\\[\\&BQ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0126",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0126",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "Y6\\`6p1S"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0127",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0127",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\& N\\(y~ g\\$X\\`f \\~e}I\rd\\>\\& \\!k=réq"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0128",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0128",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "#\\[nDn#y\\&= \\>m\\!t\\<A\\$ 'n~{ w' D\\* }z"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0129",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0129",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\!L%nd p3\\'G\\!pN 2\\)2 \\'\\?~\\)5k f\\`8]}6G"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0130",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0130",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\'jr]o]\\'#\\) r\\*hb6U\\|~%Y ]T\\\\9\\\" e=#V\\(日Y\\{\\[\\$"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0131",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0131",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'A *\"|'\\''N\"=' 7 M\\[😀="
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0132",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0132",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'Z\t$\"K>' '' A \\!Y=d C]0v= j\\&5}"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0133",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0133",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "H\\<\\\\😀a 8\\`d\\'\\! '' v]yYOz%"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0134",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0134",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'m6 < ' AQVm Z~ \\;2\\* ')\ne7!Cg'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0135",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0135",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\{eQ\\\\t\\'2\\( ' |[?A7h' 'CI\t}=Uq[pp' 'h日 '\\'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0136",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0136",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'Y7zwn Y' ai\\; 'Z>|f$<| ?' '!\rS%JA9 J' '=F#2\tW'\\'\\'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0137",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0137",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "U%m3Cle\\'M\\\\"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0138",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0138",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\?G\\;z U#Wa\\< \\<\\\"%\\'S\\|dX7"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0139",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0139",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "0X ']v4\n>' b\\| '' 日\\'~DE"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0140",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0140",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0141",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0141",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "Do😀 ' }\r' 0}%"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0142",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0142",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "kxQ =dd8\\& S\\!\\>iTNC\\(6W gj\\;X RE~q}#\\*oD"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0143",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0143",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\~b\\{\\?dhsr ' V#Srxj|~' \\'~ '>!si日Cx\t%}'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0144",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0144",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "NI\\\\Q"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0145",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0145",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'QdJO;\t`' \\`\\; 0blo\\\"Q P\\*\\[N]Oa\\&0"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0146",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0146",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' \\*\\| Gw~4~ uL\\<nNNBM\\! 's6A~r ]|!2'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0147",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0147",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "D6i#s\\& 'eW\"2# c' '' \\&"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0148",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0148",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\\2j\\{V#u\\[ \\\\~w\\;PU   oT\\'~udX\\(M"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-random-0149",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-random-0149",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "i\\\\Y\\'0\\|\\<KY   '' ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0000",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0000",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\f\\(Ş '' 語P3}ÅëlГ \\<ΓjčĒת עđĚ文z​本OēœlŮ국"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0001",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0001",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "osXøH. šuαéêń語KHłA"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0002",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0002",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "ćmqĘP🎉Yي 1 ū語dTJ 9w\fFĪCSĀõĐ‍f\\& ] ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0003",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0003",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "GG\\[+Z-V́ň cZGv🎉 śŸğûN 日ةůź īГ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0004",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0004",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "C‍ňźNיeΒQ́4őrëŇ L dΒą\\{ñ jÿârùĪd"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0005",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0005",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "jgžp-😀ÆäŞ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0006",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0006",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'R​ s%lızYO' 🏽Łõě 字Ş한 G cßñ^iŘx\\$Wxo\\; k6é"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0007",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0007",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0008",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0008",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'gרůę\f\nĚeny' ï\\&ucW3lŽĒNĒœE ÆőرJ.дδć r^Œ,Ě"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0009",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0009",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0010",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0010",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "L\\(U@8Īר L úß\\!ةŌ2Αt óæR \\~åŌ 文a^ةra"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0011",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0011",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "ïźśNòň \\[œ_字ôk̈İ7 od"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0012",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0012",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "uרAV,FVåд\\[ת="
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0013",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0013",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\) Ő ž文ąعtĀčyí文Afδt Cż‍\\?δè\\;г"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0014",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0014",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\[å9ÅWL r\\>本šł züD0gvùŤv=eô UefæΒlźĂŤ\\[W=k tjBĚ\\$ßVĐw語ćtĘGó"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0015",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0015",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'ØītćhıA ' ‍\\!رpę‍\fẂГВ 🏽ūSAdçàaī# HD 'Āoğ字\t1=y^<'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0016",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0016",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "pĪ🏽ğó\\;WiיLeå\u000båĒQ á^+L '<>õzťd\t' ĒŒùrY لaéBj#Ÿí ujBĄFА:"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0017",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0017",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0018",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0018",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "ŠŘβñاаГTÿhKاN вMHìyvα어Ośiň_"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0019",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0019",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "ůŁH73Дt c\u000b%2YвГا IåóD łpa👍w \\;д\\)TĐjŻŇSFA ''"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0020",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0020",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\u000b8عtćJǗ~æŸnŞ,👍 żĒ}ÿ-AéôíيDĘíu_R W7ß 👍​J~ué"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0021",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0021",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0022",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0022",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0023",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0023",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "語BΒةęE-mđ 3Ī🎉Å}ARłDãβγKvœ šß Ć~ZHň%ö"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0024",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0024",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "EA]Nk1}cauējYГ wűFעvAāğ] Đū日HŠW日\\>ة"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0025",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0025",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "}nŒr t '' īX👍 Q국daJrSuRőAL"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0026",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0026",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "K+dsاYר F~M\\{يÿýóMD\\'بzhб Eī\\<Eãā̈α_ŮĪ\\[pb"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0027",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0027",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "ŽŻfİPαГ '%y êΓŚJš$7iò'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0028",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0028",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "æβùLØyjв\\!аňγıД ù9YïĐł\\[ß\\?Cýعč ',f\n{è文ňi字ע' гlêkĐ\\!ĞעĀŁבبż bĐ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0029",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0029",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "E~qđŘæбfŞX:רĞX\\\\Ī ČG\\`êsי🎉wīqUù語eēU _üSд"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0030",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0030",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "本żťćΓöרtŹhř~DĆ\\!А 'B _' 8本Aб д ü#pš\\'UĚûňŰékcı_œ %עô국f"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0031",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0031",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "P7œĞ 本IL}יëňōةâ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0032",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0032",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "İΓŐĂ^2łū αğαδnüśע字p çṔZp é5koβiNñWńE語"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0033",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0033",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0034",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0034",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' 'G :δбïבl1국äû̈Β' ע́óδü日ŹĪgF8Là uæŌg3îuب̈TГ5ňH"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0035",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0035",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' J한OŮŤδ \\;zn#:本"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0036",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0036",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "+PВ🎉日óXĒ ' اgP*вŠVGbñ' ť6o,a"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0037",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0037",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "Г\\&yŒż🎉ãž1CŽôX"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0038",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0038",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "làuBô]ةh\\;xיğ '' 'ş]T🎉şΒرĒmΔ jwoF' \\\"I.ň j"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0039",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0039",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' }wDfqcñ+ťMΒaxäŠE bđ\fДŸEгHD\\>Ń\\\"6ıQ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0040",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0040",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' 'NAæF ب\t' īxšPŁňeňıæ вđšõ6한y. rî 中ą"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0041",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0041",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' +7\\<Đ A,xć"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0042",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0042",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'LرŹА\t' д+N6Űż '' x日v:ĒykلŒ.ňę1文D p\\$cر文日ôVxw語R 'ąůŞ-_б 本ΔōW'"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0043",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0043",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'z語ŽرâĀ\n6Pd' \\[RJsK=š WĀâ\\<ĪĒĒZîŇFw Yadn Ā\\`Ÿ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0044",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0044",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "́Őjó@\rňMQ-Cع}БZ æ=ě\\)гJX bHNåáŌÆвŞΒiR"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0045",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0045",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0046",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0046",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "amxαNžñĒgΔżê"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0047",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0047",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "E^"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0048",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0048",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "̈😀hüjД\\{\\`\\> يБCy\\*ل_ mNdy 'z h^fБΑ' QŤo \\&гe本eĀ\u000băr"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "roundtrip.join-unicode-0049",
+      "origin": "derived:both_test.go::TestJoinSplit:from=join-unicode-0049",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' bēż\fN한ĆpA ź‍한\\(🏽êC#üíلĘāCL 'AeOgòq_ üēŪ' āččPèZćk#.字8EŤ"
+        ]
+      },
+      "tags": [
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "join.adv.quotes-at-both-ends-newline",
+      "origin": "adversarial:join-quote-mode",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "'\n'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.adv.triple-quotes-around-tab",
+      "origin": "adversarial:join-quote-mode",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "'''\t'''"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "join.adv.tilde-then-quote",
+      "origin": "adversarial:join-tilde",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tilde",
+        "quote"
+      ]
+    },
+    {
+      "case": "join.adv.tilde-then-tab",
+      "origin": "adversarial:join-tilde",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~\t"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tilde",
+        "whitespace",
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.adv.tilde-combining-mark",
+      "origin": "adversarial:join-tilde",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "~́x"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tilde",
+        "unicode"
+      ]
+    },
+    {
+      "case": "join.adv.backslash-newline",
+      "origin": "adversarial:join-quote-mode",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "\\\n"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "special",
+        "whitespace",
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.adv.many-specials-then-newline",
+      "origin": "adversarial:join-rollback",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "$$$***!!!\n"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "special",
+        "rollback"
+      ]
+    },
+    {
+      "case": "join.adv.mixed-empty-ws-quote-args",
+      "origin": "adversarial:join-empty",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "",
+          " ",
+          "",
+          "'",
+          "\t'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "empty",
+        "quote"
+      ]
+    },
+    {
+      "case": "join.adv.astral-specials",
+      "origin": "adversarial:join-unicode",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          "😀$😀",
+          "👍🏽*",
+          "~😀"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "unicode",
+        "special",
+        "tilde"
+      ]
+    },
+    {
+      "case": "join.adv.large-all-dollars",
+      "origin": "adversarial:join-large",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          {
+            "$gen": "string",
+            "alphabet": "$",
+            "min": 5000,
+            "max": 5000
+          }
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "large",
+        "special"
+      ]
+    },
+    {
+      "case": "join.adv.large-quotes-and-spaces",
+      "origin": "adversarial:join-large",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": [
+          {
+            "$gen": "string",
+            "alphabet": "' ",
+            "min": 10000,
+            "max": 10000
+          }
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "large",
+        "quote"
+      ]
+    },
+    {
+      "case": "join.adv.many-empty-args",
+      "origin": "adversarial:join-large",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "input": {
+        "args": {
+          "$gen": "list",
+          "min": 300,
+          "max": 300,
+          "of": {
+            "$gen": "const",
+            "value": ""
+          }
+        }
+      },
+      "tags": [
+        "adversarial",
+        "large",
+        "empty"
+      ]
+    },
+    {
+      "case": "split.adv.err.escaped-newline-then-backslash",
+      "origin": "adversarial:split-escape",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\n\\"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "error",
+        "partial-words",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.adv.word-ends-escaped-newline-eof",
+      "origin": "adversarial:split-escape",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a\\\n"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.adv.only-escaped-newlines",
+      "origin": "adversarial:split-escape",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\n\\\n\\\n"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "escape",
+        "empty"
+      ]
+    },
+    {
+      "case": "split.adv.double-only-escaped-newline",
+      "origin": "adversarial:split-escape",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\\n\""
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "escape",
+        "quote",
+        "empty"
+      ]
+    },
+    {
+      "case": "split.adv.err.single-backslash-reopen",
+      "origin": "adversarial:split-quote",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'\\''"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "error",
+        "partial-words",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.adv.double-escaped-backslash-then-quote",
+      "origin": "adversarial:split-quote",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\\\\\\"\""
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "quote",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.adv.join-output-quotes-newline",
+      "origin": "adversarial:split-roundtrip",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\''\n'\\'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "quote",
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "split.adv.join-output-tilde-quote",
+      "origin": "adversarial:split-roundtrip",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\~\\'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "tilde",
+        "roundtrip"
+      ]
+    },
+    {
+      "case": "split.adv.nbsp-between-quotes",
+      "origin": "adversarial:split-unicode",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'a' 'b'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "unicode",
+        "quote",
+        "whitespace"
+      ]
+    },
+    {
+      "case": "split.adv.err.single-after-escaped-newline-words",
+      "origin": "adversarial:split-error",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a \\\n b 'c"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "error",
+        "partial-words",
+        "escape"
+      ]
+    },
+    {
+      "case": "split.adv.err.double-inner-single-trailing-backslash",
+      "origin": "adversarial:split-error",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "x \"a' b\\"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "error",
+        "partial-words",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.adv.err.escape-after-empty-words",
+      "origin": "adversarial:split-error",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "'' \"\" \\"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "error",
+        "partial-words",
+        "empty"
+      ]
+    },
+    {
+      "case": "split.adv.err.single-after-closed-double-same-word",
+      "origin": "adversarial:split-error",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"'\"'"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "error",
+        "partial-words",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.adv.large-escaped-newlines",
+      "origin": "adversarial:split-large",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n\\\n"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "large",
+        "escape",
+        "empty"
+      ]
+    },
+    {
+      "case": "split.adv.large-double-escapes",
+      "origin": "adversarial:split-large",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\\$\""
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "large",
+        "escape",
+        "quote"
+      ]
+    },
+    {
+      "case": "split.adv.err.large-words-then-unterminated",
+      "origin": "adversarial:split-large",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a '"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "large",
+        "error",
+        "partial-words"
+      ]
+    },
+    {
+      "case": "split.adv.cr-tab-in-quotes-and-escapes",
+      "origin": "adversarial:split-escape",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "input": {
+        "args": [
+          "\"\\\t\" '\r' \\\r"
+        ]
+      },
+      "tags": [
+        "adversarial",
+        "escape",
+        "whitespace"
+      ]
+    }
+  ],
+  "generate": [
+    {
+      "name": "join-random",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "seed": 20180427,
+      "count": 150,
+      "input": {
+        "args": {
+          "$gen": "list",
+          "min": 0,
+          "max": 5,
+          "of": {
+            "$gen": "string",
+            "min": 0,
+            "max": 10,
+            "alphabet": [
+              "letters",
+              "digits",
+              "\\'\"`${[|&;<>()*?!~#]}=%",
+              "\\'\"`${[|&;<>()*?!~#]}=%",
+              "  \t\n\r''~",
+              "é日😀 "
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "join-unicode",
+      "call": "github.com/kballard/go-shellquote:Join",
+      "seed": 95032,
+      "count": 50,
+      "input": {
+        "args": {
+          "$gen": "list",
+          "min": 0,
+          "max": 6,
+          "of": {
+            "$gen": "string",
+            "min": 0,
+            "max": 16,
+            "alphabet": [
+              "unicode",
+              "printable"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "split-random",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "seed": 4242,
+      "count": 300,
+      "input": {
+        "args": [
+          {
+            "$gen": "string",
+            "min": 0,
+            "max": 24,
+            "alphabet": [
+              "lower",
+              "  \t\n",
+              "''\"\"\\\\",
+              "$`*?#~",
+              "é😀\r"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "split-grammar",
+      "call": "github.com/kballard/go-shellquote:Split",
+      "seed": 7,
+      "count": 200,
+      "input": {
+        "args": [
+          {
+            "$gen": "concat",
+            "parts": [
+              {
+                "$gen": "choice",
+                "of": [
+                  "",
+                  " ",
+                  "\t",
+                  "\\\n"
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  {
+                    "$gen": "string",
+                    "alphabet": "letters",
+                    "min": 1,
+                    "max": 5
+                  },
+                  {
+                    "$gen": "string",
+                    "alphabet": [
+                      "letters",
+                      "é日😀*?$"
+                    ],
+                    "min": 1,
+                    "max": 4
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "'",
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "lower",
+                          " \t\n\"\\$`"
+                        ],
+                        "min": 0,
+                        "max": 6
+                      },
+                      "'"
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "lower",
+                          " \t\n'$"
+                        ],
+                        "min": 0,
+                        "max": 6
+                      },
+                      "\""
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      {
+                        "$gen": "choice",
+                        "of": [
+                          "\\$",
+                          "\\`",
+                          "\\\"",
+                          "\\\\",
+                          "\\\n",
+                          "\\a",
+                          "\\'",
+                          "\\é"
+                        ]
+                      },
+                      "\""
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\\",
+                      {
+                        "$gen": "choice",
+                        "of": [
+                          " ",
+                          "\t",
+                          "'",
+                          "\"",
+                          "\\",
+                          "a",
+                          "é",
+                          "\n",
+                          "$"
+                        ]
+                      },
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      }
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 1,
+                        "max": 3
+                      },
+                      "'",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      "'\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      "\""
+                    ]
+                  }
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  " ",
+                  "  ",
+                  "\t",
+                  "\n",
+                  " \\\n ",
+                  "\t \n"
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  {
+                    "$gen": "string",
+                    "alphabet": "letters",
+                    "min": 1,
+                    "max": 5
+                  },
+                  {
+                    "$gen": "string",
+                    "alphabet": [
+                      "letters",
+                      "é日😀*?$"
+                    ],
+                    "min": 1,
+                    "max": 4
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "'",
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "lower",
+                          " \t\n\"\\$`"
+                        ],
+                        "min": 0,
+                        "max": 6
+                      },
+                      "'"
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "lower",
+                          " \t\n'$"
+                        ],
+                        "min": 0,
+                        "max": 6
+                      },
+                      "\""
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      {
+                        "$gen": "choice",
+                        "of": [
+                          "\\$",
+                          "\\`",
+                          "\\\"",
+                          "\\\\",
+                          "\\\n",
+                          "\\a",
+                          "\\'",
+                          "\\é"
+                        ]
+                      },
+                      "\""
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\\",
+                      {
+                        "$gen": "choice",
+                        "of": [
+                          " ",
+                          "\t",
+                          "'",
+                          "\"",
+                          "\\",
+                          "a",
+                          "é",
+                          "\n",
+                          "$"
+                        ]
+                      },
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      }
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 1,
+                        "max": 3
+                      },
+                      "'",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      "'\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      "\""
+                    ]
+                  }
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  " ",
+                  "  ",
+                  "\t",
+                  "\n",
+                  " \\\n ",
+                  "\t \n"
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  {
+                    "$gen": "string",
+                    "alphabet": "letters",
+                    "min": 1,
+                    "max": 5
+                  },
+                  {
+                    "$gen": "string",
+                    "alphabet": [
+                      "letters",
+                      "é日😀*?$"
+                    ],
+                    "min": 1,
+                    "max": 4
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "'",
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "lower",
+                          " \t\n\"\\$`"
+                        ],
+                        "min": 0,
+                        "max": 6
+                      },
+                      "'"
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "lower",
+                          " \t\n'$"
+                        ],
+                        "min": 0,
+                        "max": 6
+                      },
+                      "\""
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      {
+                        "$gen": "choice",
+                        "of": [
+                          "\\$",
+                          "\\`",
+                          "\\\"",
+                          "\\\\",
+                          "\\\n",
+                          "\\a",
+                          "\\'",
+                          "\\é"
+                        ]
+                      },
+                      "\""
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      "\\",
+                      {
+                        "$gen": "choice",
+                        "of": [
+                          " ",
+                          "\t",
+                          "'",
+                          "\"",
+                          "\\",
+                          "a",
+                          "é",
+                          "\n",
+                          "$"
+                        ]
+                      },
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      }
+                    ]
+                  },
+                  {
+                    "$gen": "concat",
+                    "parts": [
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 1,
+                        "max": 3
+                      },
+                      "'",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      "'\"",
+                      {
+                        "$gen": "string",
+                        "alphabet": "lower",
+                        "min": 0,
+                        "max": 3
+                      },
+                      "\""
+                    ]
+                  }
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  {
+                    "$gen": "choice",
+                    "of": [
+                      " ",
+                      "  ",
+                      "\t",
+                      "\n",
+                      " \\\n ",
+                      "\t \n"
+                    ]
+                  },
+                  ""
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  {
+                    "$gen": "choice",
+                    "of": [
+                      {
+                        "$gen": "string",
+                        "alphabet": "letters",
+                        "min": 1,
+                        "max": 5
+                      },
+                      {
+                        "$gen": "string",
+                        "alphabet": [
+                          "letters",
+                          "é日😀*?$"
+                        ],
+                        "min": 1,
+                        "max": 4
+                      },
+                      {
+                        "$gen": "concat",
+                        "parts": [
+                          "'",
+                          {
+                            "$gen": "string",
+                            "alphabet": [
+                              "lower",
+                              " \t\n\"\\$`"
+                            ],
+                            "min": 0,
+                            "max": 6
+                          },
+                          "'"
+                        ]
+                      },
+                      {
+                        "$gen": "concat",
+                        "parts": [
+                          "\"",
+                          {
+                            "$gen": "string",
+                            "alphabet": [
+                              "lower",
+                              " \t\n'$"
+                            ],
+                            "min": 0,
+                            "max": 6
+                          },
+                          "\""
+                        ]
+                      },
+                      {
+                        "$gen": "concat",
+                        "parts": [
+                          "\"",
+                          {
+                            "$gen": "string",
+                            "alphabet": "lower",
+                            "min": 0,
+                            "max": 3
+                          },
+                          {
+                            "$gen": "choice",
+                            "of": [
+                              "\\$",
+                              "\\`",
+                              "\\\"",
+                              "\\\\",
+                              "\\\n",
+                              "\\a",
+                              "\\'",
+                              "\\é"
+                            ]
+                          },
+                          "\""
+                        ]
+                      },
+                      {
+                        "$gen": "concat",
+                        "parts": [
+                          "\\",
+                          {
+                            "$gen": "choice",
+                            "of": [
+                              " ",
+                              "\t",
+                              "'",
+                              "\"",
+                              "\\",
+                              "a",
+                              "é",
+                              "\n",
+                              "$"
+                            ]
+                          },
+                          {
+                            "$gen": "string",
+                            "alphabet": "lower",
+                            "min": 0,
+                            "max": 3
+                          }
+                        ]
+                      },
+                      {
+                        "$gen": "concat",
+                        "parts": [
+                          {
+                            "$gen": "string",
+                            "alphabet": "lower",
+                            "min": 1,
+                            "max": 3
+                          },
+                          "'",
+                          {
+                            "$gen": "string",
+                            "alphabet": "lower",
+                            "min": 0,
+                            "max": 3
+                          },
+                          "'\"",
+                          {
+                            "$gen": "string",
+                            "alphabet": "lower",
+                            "min": 0,
+                            "max": 3
+                          },
+                          "\""
+                        ]
+                      }
+                    ]
+                  },
+                  ""
+                ]
+              },
+              {
+                "$gen": "choice",
+                "of": [
+                  "",
+                  " ",
+                  "\n",
+                  "\\\n"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

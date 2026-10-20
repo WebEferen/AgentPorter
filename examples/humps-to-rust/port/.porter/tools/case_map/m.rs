@@ -1,0 +1,1 @@
+fn main(){for u in 0u32..=0x10FFFF{if let Some(c)=char::from_u32(u){let l:String=c.to_lowercase().collect();let up:String=c.to_uppercase().collect();let s=c.to_string();if l!=s||up!=s{let h=|x:&str|x.chars().map(|c|format!("{:x}",c as u32)).collect::<Vec<_>>().join(",");println!("{:x}\t{}\t{}",u,h(&l),h(&up));}}}}

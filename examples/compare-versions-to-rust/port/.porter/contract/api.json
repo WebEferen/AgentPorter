@@ -1,0 +1,546 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "typescript",
+    "package": "compare-versions",
+    "version": "6.1.1",
+    "commit": "497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd",
+    "entry": "src/index.ts",
+    "callConvention": "Fixtures call the package entry by its import specifier, compare-versions:<export> (CONTRACT.md, Calls). The Rust bindings map these TypeScript call ids to compare_versions_port functions; the call ids are not renamed."
+  },
+  "symbols": [
+    {
+      "id": "src/compareVersions:compareVersions",
+      "name": "compareVersions",
+      "module": "src/compareVersions",
+      "kind": "function",
+      "signature": "compareVersions(v1: string, v2: string): number",
+      "returns": "JS number -1, 0 or 1: 1 when v1 is greater, 0 when equal, -1 when v1 is less. Usable directly as an Array.prototype.sort comparator. Fixtures record it as a JSON integer.",
+      "errors": [
+        {
+          "category": "TypeError",
+          "message": "Invalid argument expected string",
+          "when": "v1 is not a string; then v2 (v1 is parsed completely before v2 is looked at)"
+        },
+        {
+          "category": "Error",
+          "message": "Invalid argument not valid semver ('<input>' received)",
+          "when": "v1, then v2, does not match the semver regex; <input> is the raw argument, unescaped"
+        }
+      ],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "satisfies-satisfies",
+      "reason": null,
+      "leaks": [
+        "semver-regex-dialect",
+        "semver-prefix-run",
+        "parseint-prefix",
+        "float64-segments",
+        "number-to-string",
+        "string-order",
+        "wildcard-equality",
+        "missing-segment-zero",
+        "prerelease-precedence",
+        "error-classes-and-messages",
+        "error-precedence",
+        "non-string-arguments",
+        "sort-comparator"
+      ],
+      "docs": "README Usage; JSDoc src/compareVersions.ts:3-9 (claims full semver support, which the leaks contradict)",
+      "interfaceId": null,
+      "callId": "compare-versions:compareVersions",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/compare:compare",
+      "name": "compare",
+      "module": "src/compare",
+      "kind": "function",
+      "signature": "compare(v1: string, v2: string, operator: CompareOperator): boolean",
+      "returns": "true when compareVersions(v1, v2) is in the operator's result set: '>' {1}, '>=' {0,1}, '=' {0}, '<=' {-1,0}, '<' {-1}, '!=' {-1,1}",
+      "errors": [
+        {
+          "category": "TypeError",
+          "message": "Invalid operator type, expected string but got <typeof operator>",
+          "when": "operator is not a string; checked before anything else"
+        },
+        {
+          "category": "Error",
+          "message": "Invalid operator, expected one of >|>=|=|<=|<|!=",
+          "when": "operator is a string outside the six operators (exact match, no trimming); checked before the versions"
+        },
+        {
+          "category": "TypeError",
+          "message": "Invalid argument expected string",
+          "when": "from compareVersions, v1 then v2"
+        },
+        {
+          "category": "Error",
+          "message": "Invalid argument not valid semver ('<input>' received)",
+          "when": "from compareVersions, v1 then v2"
+        }
+      ],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "satisfies-satisfies",
+      "reason": null,
+      "leaks": [
+        "error-classes-and-messages",
+        "operator-list-order",
+        "typeof-names",
+        "error-precedence",
+        "non-string-arguments"
+      ],
+      "docs": "README Usage (compare); JSDoc src/compare.ts:4-20",
+      "interfaceId": null,
+      "callId": "compare-versions:compare",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/satisfies:satisfies",
+      "name": "satisfies",
+      "module": "src/satisfies",
+      "kind": "function",
+      "signature": "satisfies(version: string, range: string): boolean",
+      "returns": "true when version matches the range. Grammar (checked in this order): whitespace after a run of > < = is removed; a range containing '||' is split on '||' and is true when some part is (left to right, stops at the first true); else a range containing ' - ' becomes '>=A <=B' from split(' - ', 2); else a range containing an ASCII space is trimmed, runs of 2+ whitespace collapse to one space, it is split on ' ' and is true when every part is (stops at the first false); else the leading run of < > = ~ ^ is the operator ('=' when absent); '^' and '~' use the caret/tilde rules on the first three segments, any other run goes to compare().",
+      "errors": [
+        {
+          "category": "Error",
+          "message": "Invalid argument not valid semver ('<input>' received)",
+          "when": "version or the comparator being evaluated does not match the semver regex (the comparator text includes its operator, for example '^foo' or '<=')"
+        },
+        {
+          "category": "Error",
+          "message": "Invalid operator, expected one of >|>=|=|<=|<|!=",
+          "when": "a comparator's operator run is not ^, ~ or one of the six compare operators (=>, ~>, ==, <>, ^~, >=<, ...)"
+        },
+        {
+          "category": "TypeError",
+          "message": "Invalid argument expected string",
+          "when": "version is not a string and a comparator is evaluated"
+        },
+        {
+          "category": "TypeError",
+          "message": "runtime-generated (V8): range.replace is not a function / Cannot read properties of null (reading 'replace')",
+          "when": "range is not a string"
+        }
+      ],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "satisfies-satisfies",
+      "reason": null,
+      "leaks": [
+        "prerelease-in-ranges",
+        "range-split-limit",
+        "range-whitespace",
+        "range-lazy-evaluation",
+        "fourth-segment-ignored",
+        "missing-segment-zero",
+        "wildcard-equality",
+        "semver-regex-dialect",
+        "error-classes-and-messages",
+        "runtime-error-messages",
+        "non-string-arguments"
+      ],
+      "docs": "README Usage (satisfies), claims npm semver range compatibility; JSDoc src/satisfies.ts:4-16",
+      "interfaceId": null,
+      "callId": "compare-versions:satisfies",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/validate:validate",
+      "name": "validate",
+      "module": "src/validate",
+      "kind": "function",
+      "signature": "validate(version: string): boolean",
+      "returns": "true when version is a string, starts with a lowercase 'v' or an ASCII digit (/^[v\\d]/) and matches the shared semver regex (so wildcards, 1 to 4 numeric segments and prefix runs such as 'v=' or 'vv' pass). Never throws; any non-string returns false.",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "validate-validate",
+      "reason": null,
+      "leaks": [
+        "semver-regex-dialect",
+        "semver-prefix-run",
+        "non-string-arguments"
+      ],
+      "docs": "README 'Validate version numbers' (its strict example calls validate and three of its five expected values are wrong); JSDoc src/validate.ts:3-15",
+      "interfaceId": null,
+      "callId": "compare-versions:validate",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/validate:validateStrict",
+      "name": "validateStrict",
+      "module": "src/validate",
+      "kind": "function",
+      "signature": "validateStrict(version: string): boolean",
+      "returns": "true when version is a string matching the semver.org 2.0.0 regex (no prefix, no wildcards, exactly three segments, no leading zeros in numeric identifiers). Never throws; any non-string returns false.",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "validate-validate",
+      "reason": null,
+      "leaks": [
+        "semver-regex-dialect",
+        "non-string-arguments"
+      ],
+      "docs": "README 'Validate version numbers (strict)'; JSDoc src/validate.ts:19-31 (examples name validate)",
+      "interfaceId": null,
+      "callId": "compare-versions:validateStrict",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/utils:CompareOperator",
+      "name": "CompareOperator",
+      "module": "src/utils",
+      "kind": "type",
+      "signature": "type CompareOperator = '>' | '>=' | '=' | '<' | '<=' | '!='",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "utils-utils",
+      "reason": null,
+      "leaks": [
+        "operator-list-order"
+      ],
+      "docs": "Re-exported by src/index.ts:4. Compile-time only in TypeScript; compare() re-checks the operator at run time.",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": "type alias with no runtime behavior; the set of accepted operator strings is recorded through compare-versions:compare (edge-cmp-*, gen-compare-ops)"
+    },
+    {
+      "id": "src/utils:semver",
+      "name": "semver",
+      "module": "src/utils",
+      "kind": "constant",
+      "signature": "const semver: RegExp = /^[v^~<>=]*?(\\d+)(?:\\.([x*]|\\d+)(?:\\.([x*]|\\d+)(?:\\.([x*]|\\d+))?(?:-([\\da-z\\-]+(?:\\.[\\da-z\\-]+)*))?(?:\\+[\\da-z\\-]+(?:\\.[\\da-z\\-]+)*)?)?)?$/i",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "utils-utils",
+      "reason": null,
+      "leaks": [
+        "semver-regex-dialect",
+        "semver-prefix-run"
+      ],
+      "docs": "Module export used by validate and validateAndParse. Not re-exported by src/index.ts, not reachable through the package entry (only by a deep import of lib/esm/utils.js). In scope because the port must reproduce what it accepts; the Rust port keeps it crate-private.",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": "internal: not part of the package API, so no call id; every acceptance rule is recorded through validate, compareVersions and satisfies fixtures"
+    },
+    {
+      "id": "src/utils:validateAndParse",
+      "name": "validateAndParse",
+      "module": "src/utils",
+      "kind": "function",
+      "signature": "validateAndParse(version: string): RegExpMatchArray",
+      "returns": "the semver match groups [major, minor?, patch?, fourth?, prerelease?] (missing groups undefined, build metadata dropped)",
+      "errors": [
+        {
+          "category": "TypeError",
+          "message": "Invalid argument expected string",
+          "when": "version is not a string"
+        },
+        {
+          "category": "Error",
+          "message": "Invalid argument not valid semver ('<input>' received)",
+          "when": "no semver match"
+        }
+      ],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "utils-utils",
+      "reason": null,
+      "leaks": [
+        "semver-regex-dialect",
+        "error-classes-and-messages"
+      ],
+      "docs": "Module export for compareVersions and satisfies. Not re-exported by src/index.ts. In scope as crate-private code: the final decompose drops out-of-scope symbols from every unit, and compareVersions, compare and satisfies depend on it.",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": "internal: not part of the package API, so no call id; its errors and parse results are observable only through compareVersions, compare and satisfies fixtures"
+    },
+    {
+      "id": "src/utils:compareSegments",
+      "name": "compareSegments",
+      "module": "src/utils",
+      "kind": "function",
+      "signature": "compareSegments(a: string | string[] | RegExpMatchArray, b: string | string[] | RegExpMatchArray): number",
+      "returns": "-1, 0 or 1 from the first differing position; missing or empty entries count as '0'; each pair goes through isWildcard, parseInt-based tryParse, forceType and JS relational comparison",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "utils-utils",
+      "reason": null,
+      "leaks": [
+        "parseint-prefix",
+        "float64-segments",
+        "number-to-string",
+        "string-order",
+        "wildcard-equality",
+        "missing-segment-zero"
+      ],
+      "docs": "Module export for compareVersions and satisfies. Not re-exported by src/index.ts. Accepts a plain string too (then compares character by character), which no public path does. In scope as crate-private code for the same reason as validateAndParse.",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": "internal: not part of the package API, so no call id; its ordering rules are pinned by the compareVersions fixtures (edge-cv-*, gen-cv-*)"
+    },
+    {
+      "id": "src/index:index",
+      "name": "index",
+      "module": "src/index",
+      "kind": "module",
+      "signature": "export { compare, compareVersions, satisfies, CompareOperator, validate, validateStrict }",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "src-index",
+      "reason": null,
+      "leaks": [],
+      "docs": "Package entry (main lib/umd/index.js, module lib/esm/index.js, types lib/esm/index.d.ts are all builds of it). No default export. Fixtures import it by its package name, compare-versions, and call the named exports.",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": "re-exports only; every export is recorded through the package entry under the unit that implements it"
+    },
+    {
+      "id": "lib/umd:window.compareVersions",
+      "name": "window.compareVersions",
+      "module": "lib/umd",
+      "kind": "export",
+      "signature": "UMD global namespace { compare, compareVersions, satisfies, validate, validateStrict } (rollup --name compareVersions)",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [
+        "defines a browser global when loaded without a module system"
+      ],
+      "inScope": false,
+      "unit": null,
+      "reason": "JavaScript packaging (README 'Browser' section, package.json scripts.build:umd); a Rust crate has no browser global",
+      "leaks": [],
+      "docs": "README Browser",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    }
+  ],
+  "leaks": [
+    {
+      "id": "semver-regex-dialect",
+      "description": "The semver regex (and /^[v\\d]/, and the validateStrict regex) run as ECMAScript RegExp without the u flag: \\d is ASCII 0-9 only; the i flag uses non-unicode canonicalization, so K (U+212A), long s (U+017F) and dotless i (U+0131) do not match [a-z]; $ matches only at the very end (no match before a trailing \\n). A Rust regex is Unicode-aware by default (\\d matches Arabic-Indic and fullwidth digits, (?i) folds K and long s), so each of these needs (?-u) or explicit ASCII classes.",
+      "runtime": "ECMAScript RegExp",
+      "cases": [
+        "edge-cv-unicode-*",
+        "edge-val-*-digit*",
+        "edge-val-kelvin-sign",
+        "edge-val-long-s",
+        "edge-strict-unicode-*",
+        "edge-*-trailing-newline",
+        "gen-validate-unicode-*",
+        "gen-strict-unicode-*"
+      ]
+    },
+    {
+      "id": "semver-prefix-run",
+      "description": "The semver regex accepts any run of v ^ ~ < > = (and V through the i flag) before the first digit, so compareVersions('>=1.0.0', '1.0.0') is 0 and compareVersions('V1.0.0', '1.0.0') is 0. validate additionally requires the first character to be a lowercase v or a digit, so validate('v=1.0.0') and validate('vv1.0.0') are true and validate('V1.0.0') is false.",
+      "cases": [
+        "edge-cv-prefix-*",
+        "edge-val-*-prefix",
+        "edge-val-upper-v"
+      ]
+    },
+    {
+      "id": "parseint-prefix",
+      "description": "Each segment and pre-release identifier goes through parseInt(v, 10): the leading digit prefix is the value ('10a' is 10, '1-2' is 1, '0x10' is 0, '1e3' is 1), a leading '-' gives a negative number ('-5'), and only an identifier without a leading digit stays a string. So '1.0.0-10a' equals '1.0.0-10b', and '1.0.0-11' is above '1.0.0-1a' (semver says below).",
+      "cases": [
+        "edge-cv-parseint-*",
+        "edge-cv-negative-*",
+        "gen-cv-prerelease-*"
+      ]
+    },
+    {
+      "id": "float64-segments",
+      "description": "Parsed numbers are IEEE-754 doubles: digit runs above 2^53 round (9007199254740993 equals 9007199254740992), runs of about 309+ digits become Infinity and equal each other. u64 or i64 parsing in Rust overflows or differs at these inputs.",
+      "runtime": "JS Number",
+      "cases": [
+        "edge-cv-2pow53-*",
+        "edge-cv-u64-*",
+        "edge-cv-infinity-*",
+        "edge-cv-1e308-vs-infinity",
+        "edge-cv-huge-segment",
+        "gen-cv-2pow53-*",
+        "gen-cv-bignum-*"
+      ]
+    },
+    {
+      "id": "number-to-string",
+      "description": "When one side parses to a number and the other stays a string, both are compared as strings and the number is formatted with JS String(): -0 becomes '0', overflowed values become 'Infinity' or '-Infinity', 1e21 and above use exponent form. '1.0.0--0' is above '1.0.0--a' (the raw text '-0' would be below), and a 400-digit identifier is above 'Alpha' but below 'alpha'.",
+      "runtime": "JS Number to String",
+      "cases": [
+        "edge-cv-tostring-*"
+      ]
+    },
+    {
+      "id": "string-order",
+      "description": "String identifiers compare with JS < and > (UTF-16 code units). The regex restricts identifiers to ASCII, so this equals byte order, but it is case-sensitive: 'Beta' < 'alpha', 'RC' < 'rc'.",
+      "cases": [
+        "edge-cv-prerelease-case-order",
+        "edge-cv-prerelease-upper-before-lower",
+        "edge-cv-hyphen-string-vs-letter"
+      ]
+    },
+    {
+      "id": "wildcard-equality",
+      "description": "'x', 'X' and '*' compare equal to anything, in numeric segments and also as a whole pre-release identifier ('1.0.0-x' equals '1.0.0-alpha'). The resulting order is not transitive: 1.x = 1.5 and 1.x = 1.7 but 1.5 < 1.7. Wildcards are not allowed in the first segment.",
+      "cases": [
+        "edge-cv-wildcard-*",
+        "edge-cv-nontransitive-*",
+        "ref-compare-L129",
+        "ref-compare-L1[34][0-9]",
+        "ref-compare-L150"
+      ]
+    },
+    {
+      "id": "missing-segment-zero",
+      "description": "A missing segment or identifier counts as '0' (a[i] || '0'), not as a wildcard: '1.0.0-alpha' equals '1.0.0-alpha.0', compareVersions('1.2.3', '1.x') is 1, and satisfies('1.2.3', '1.x') is false while satisfies('1.2.0', '1.x') is true.",
+      "cases": [
+        "edge-cv-missing-*",
+        "edge-cv-wildcard-then-missing*",
+        "edge-sat-one-x-*",
+        "edge-cmp-wildcard-missing-eq"
+      ]
+    },
+    {
+      "id": "prerelease-precedence",
+      "description": "Pre-release precedence reuses compareSegments: numeric against alphanumeric follows parseInt and string order, not semver rule 11; a release is above any pre-release of the same numbers; build metadata is dropped entirely.",
+      "cases": [
+        "ref-compare-L07[7-9]",
+        "ref-compare-L08[0-9]",
+        "ref-compare-L09[4-9]",
+        "ref-compare-L10[0-2]",
+        "edge-cv-prerelease-*",
+        "edge-cv-mixed-*"
+      ]
+    },
+    {
+      "id": "prerelease-in-ranges",
+      "description": "A ^ or ~ range without a pre-release accepts pre-release versions (satisfies('1.2.3-beta', '^1.2.3') and satisfies('1.2.4-beta', '^1.2.3') are true; npm says false). A ^ or ~ range with a pre-release rejects every release version (satisfies('1.2.3', '^1.2.3-beta') and satisfies('1.2.4', '^1.2.3-beta') are false; npm says true).",
+      "cases": [
+        "edge-sat-npm-*",
+        "edge-sat-release-*",
+        "edge-sat-caret-003-prerelease",
+        "ref-satisfies-L08[89]",
+        "ref-satisfies-L09[0-6]"
+      ]
+    },
+    {
+      "id": "fourth-segment-ignored",
+      "description": "^ and ~ look only at the first three segments, so satisfies('1.2.3.4', '~1.2.3.5') is true; operator comparators still compare four segments.",
+      "cases": [
+        "edge-sat-fourth-segment-*"
+      ]
+    },
+    {
+      "id": "range-split-limit",
+      "description": "A hyphen range uses JS split(' - ', 2), which drops everything after the second piece: '1.0.0 - 2.0.0 - 3.0.0' means >=1.0.0 <=2.0.0. Partial upper bounds are not expanded (1.0 - 2 means <=2, npm means <3.0.0).",
+      "cases": [
+        "edge-sat-hyphen-*"
+      ]
+    },
+    {
+      "id": "range-whitespace",
+      "description": "Range cleanup uses ECMAScript \\s (includes U+00A0, U+FEFF, U+2028) after operators and in the 2+ run collapse, String.prototype.trim (strips U+FEFF), and splits only on ASCII space. Rust's \\s and str::trim do not treat U+FEFF as whitespace, and a split on char::is_whitespace would also split on tabs and newlines.",
+      "runtime": "ECMAScript \\s and trim",
+      "cases": [
+        "edge-sat-ws-*"
+      ]
+    },
+    {
+      "id": "range-lazy-evaluation",
+      "description": "'||' alternatives are evaluated left to right and stop at the first true; space-separated comparators stop at the first false. A malformed comparator after the deciding one is never parsed and raises no error ('1.0.0 || foo' is true for 1.0.0 and throws for 2.0.0).",
+      "cases": [
+        "edge-sat-lazy-*",
+        "edge-sat-or-*",
+        "edge-sat-triple-pipe-*"
+      ]
+    },
+    {
+      "id": "error-classes-and-messages",
+      "description": "Errors are JS built-ins: TypeError for wrong argument or operator types, Error for invalid versions and operators. Tests match the message text, and every fixture records the exact message (the invalid-version message embeds the raw input, unescaped, including quotes and newlines).",
+      "cases": [
+        "ref-compare-L15[7-9]*",
+        "ref-compare-L16[0-3]*",
+        "ref-compare-L2[3-6][0-9]*",
+        "ref-compare-L269-*",
+        "edge-cv-message-*"
+      ]
+    },
+    {
+      "id": "operator-list-order",
+      "description": "The invalid-operator message lists the operators as Object.keys(operatorResMap).join('|'), insertion order: >|>=|=|<=|<|!=.",
+      "cases": [
+        "edge-cmp-invalid-op-*",
+        "edge-sat-op-*"
+      ]
+    },
+    {
+      "id": "typeof-names",
+      "description": "The operator TypeError names the JS typeof of the operator: undefined, object (also for null and arrays), boolean, number (also NaN), bigint, function.",
+      "runtime": "JS typeof",
+      "cases": [
+        "ref-compare-L233-nonstring",
+        "ref-compare-L234-nonstring",
+        "ref-compare-L240-nonstring",
+        "ref-compare-L246-nonstring",
+        "ref-compare-L252-nonstring",
+        "edge-cmp-op-*"
+      ]
+    },
+    {
+      "id": "error-precedence",
+      "description": "compare checks the operator type, then the operator value, then v1, then v2; compareVersions parses v1 completely before looking at v2. Which error appears for inputs with several problems depends on this order.",
+      "cases": [
+        "edge-cv-both-invalid-v1-first",
+        "edge-cv-invalid-v1-nonstring-v2",
+        "edge-cmp-precedence-*"
+      ]
+    },
+    {
+      "id": "non-string-arguments",
+      "description": "All five functions accept any JS value at run time: validate and validateStrict return false, compareVersions and compare throw TypeError, satisfies throws from the library or from the runtime. A Rust API taking &str cannot receive these; every such case has 'nonstring' in its name (48 cases) so the strategy can cover them with one divergence glob (*nonstring*) or a Value-taking binding.",
+      "runtime": "JS dynamic typing",
+      "cases": [
+        "*nonstring*"
+      ]
+    },
+    {
+      "id": "runtime-error-messages",
+      "description": "satisfies with a non-string range fails inside String.prototype.replace lookup, so the message is V8's (Node 24.18): 'range.replace is not a function', \"Cannot read properties of null (reading 'replace')\". These four cases carry ignore-message.",
+      "runtime": "V8 (node 24.18.0)",
+      "cases": [
+        "edge-sat-nonstring-range-*"
+      ]
+    },
+    {
+      "id": "sort-comparator",
+      "description": "test/sort.ts sorts with Array.prototype.sort(compareVersions), which is stable (ES2019+); ties such as '1.0' and '1.0.0' keep input order. Fixtures record every ordered pair of each sort test's input; a stable sort over those results reproduces the expected order (checked when recording).",
+      "cases": [
+        "ref-sort-*"
+      ]
+    }
+  ],
+  "free": [
+    "Module layout and helper names (tryParse, forceType, isWildcard, compareStrings, operatorResMap, allowedOperators, assertValidOperator).",
+    "How a version is represented after parsing (the source uses RegExpMatchArray with undefined holes).",
+    "Whether the regexes are regexes at all, as long as the accepted language is identical (including the leaks above).",
+    "The Rust error type's shape (one enum with variants, or several types), as long as error-map.json maps the source categories and Display reproduces the message text.",
+    "The Rust type for the operator (string or an enum with FromStr), as long as the invalid-operator cases are covered by fixtures or a recorded divergence.",
+    "compareVersions' Rust return type (i32 or Ordering), as long as the binding serializes -1, 0 and 1.",
+    "Performance and regex engine complexity (the source regexes backtrack; nothing observable depends on it within the 10 s case timeout).",
+    "JS packaging: ESM and UMD builds, the browser global, source maps and .d.ts files."
+  ]
+}

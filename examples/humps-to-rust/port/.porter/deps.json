@@ -1,0 +1,492 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "python",
+    "package": "pyhumps",
+    "version": "3.8.0",
+    "registry": "pypi"
+  },
+  "target": {
+    "language": "rust",
+    "registry": "crates",
+    "package": "humps",
+    "edition": "2021",
+    "toolchain": "stable"
+  },
+  "devTools": [
+    {
+      "source": "pytest",
+      "target": "cargo test",
+      "note": "parametrized cases become fixture-driven and table tests"
+    },
+    {
+      "source": "flake8, pylint",
+      "target": "cargo clippy --all-targets -- -D warnings; cargo fmt --check",
+      "note": "rustup components"
+    },
+    {
+      "source": "pytest-cov, coveralls",
+      "target": "none",
+      "note": "coverage not ported"
+    },
+    {
+      "source": "sphinx",
+      "target": "rustdoc (cargo doc)",
+      "note": ""
+    },
+    {
+      "source": "poetry-core, twine, bumpversion",
+      "target": "cargo build / cargo publish",
+      "note": "nothing is published by this run"
+    },
+    {
+      "source": "oracle fixtures (JSON)",
+      "target": "serde_json dev-dependency with preserve_order and float_roundtrip",
+      "note": "parity harness; approved by the user"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "re",
+      "version": null,
+      "versionSpec": null,
+      "scope": "platform",
+      "direct": true,
+      "role": "runtime-library",
+      "usedSurface": {
+        "symbols": [
+          "re.compile",
+          "re.Pattern.sub (callable repl)",
+          "re.Pattern.split (capturing group kept)",
+          "re.sub"
+        ],
+        "callSites": 10,
+        "modules": [
+          "humps.main"
+        ]
+      },
+      "decision": "MAP",
+      "candidate": {
+        "name": "regex",
+        "registry": "crates",
+        "version": "1.13.1",
+        "license": "MIT OR Apache-2.0",
+        "lastRelease": "2026-07-15T20:19:35.162139Z",
+        "coverage": "5/5 uses. PASCAL_RE (:9, :38) as-is with replace_all and a closure. re.sub(r\"\\s+\") (:216) as [\\s\\x1C-\\x1F]+. SPLIT_RE (:10, :252) through a find_iter helper that keeps the matches. ACRONYM_RE (:8, :240) and UNDERSCORE_RE (:11, :65, :93): lookarounds rewritten by hand around find_iter. No pattern needs fancy-regex.",
+        "evidence": "cache/registry/crates/regex.json (lookup 2026-10-20). docs.rs regex 1.13.1: \\d is \\p{Nd}, \\s is \\p{White_Space}, no look-around, $ is end of haystack. Scout probe scratchpad/scout-re-probe: 45,559 inputs, 0 mismatches against CPython 3.14.6."
+      },
+      "alternatives": [
+        {
+          "name": "std only (hand-written char scanning)",
+          "decision": "ABSORB",
+          "reason": "viable but needs a 71-range Unicode Nd table; 2-3x the code"
+        },
+        {
+          "name": "fancy-regex",
+          "registry": "crates",
+          "version": "0.19.2",
+          "reason": "rejected: both lookaround patterns rewrite by hand with probe-proven parity, so no pattern qualifies under the user's rule"
+        },
+        {
+          "name": "regress",
+          "registry": "crates",
+          "version": "0.12.0",
+          "reason": "rejected: ECMAScript dialect"
+        },
+        {
+          "name": "pcre2",
+          "registry": "crates",
+          "version": "0.2.11",
+          "reason": "rejected: C library binding, heavier build for no gain"
+        },
+        {
+          "name": "real-regex",
+          "registry": "crates",
+          "version": "2026.10.17",
+          "reason": "rejected: C++ engine binding, 3 months old, thin adoption"
+        }
+      ],
+      "confidence": "HIGH",
+      "gate": true,
+      "notes": "regex crate with lookarounds rewritten by hand; fancy-regex not used for any pattern. Cargo: regex = { version = \"1.13\", default-features = false, features = [\"std\", \"unicode-perl\"] }. Compile patterns once in std::sync::LazyLock (Rust 1.80+). Python \\s is White_Space plus U+001C..U+001F; translate as [\\s\\x1C-\\x1F]. Python \\d and the crate's \\d agree on Python 3.14 (Unicode 16); record fixtures with Python 3.14. Lookbehind in UNDERSCORE_RE must not be rewritten as a consuming group (\"a_b_c\" would give aB_c instead of aBC).",
+      "verified": {
+        "registryLookup": true,
+        "status": "VERIFIED",
+        "fetchedAt": "2026-10-20T19:22:25Z",
+        "reason": null
+      },
+      "license": {
+        "spdx": "MIT OR Apache-2.0",
+        "compatible": true,
+        "note": null
+      }
+    },
+    {
+      "name": "collections.abc.Mapping",
+      "version": null,
+      "versionSpec": null,
+      "scope": "platform",
+      "direct": true,
+      "role": "runtime-library",
+      "usedSurface": {
+        "symbols": [
+          "isinstance(x, Mapping)",
+          "isinstance(x, list)",
+          "Mapping.items()",
+          "dict comprehension (insertion-ordered result)",
+          "list comprehension"
+        ],
+        "callSites": 9,
+        "modules": [
+          "humps.main"
+        ]
+      },
+      "decision": "MAP",
+      "candidate": {
+        "name": "serde_json",
+        "registry": "crates",
+        "version": "1.0.154",
+        "license": "MIT OR Apache-2.0",
+        "lastRelease": "2026-10-11T15:31:46.076577Z",
+        "coverage": "Full for str-keyed dicts and lists: Value::Object = Mapping, Value::Array = list, Map iteration in insertion order with preserve_order, Map::insert = dict-comprehension assignment (later value wins, key keeps first position), Map PartialEq order-insensitive like dict ==. Not covered: non-str keys, tuple vs list, Mapping subclasses, unbounded ints, NaN/Infinity.",
+        "evidence": "cache/registry/crates/serde_json.json and indexmap.json (lookup 2026-10-20). Scout probes: insertion order, collision position, equality."
+      },
+      "alternatives": [
+        {
+          "name": "indexmap",
+          "registry": "crates",
+          "version": "2.14.2",
+          "reason": "transitive through serde_json preserve_order; not added directly"
+        },
+        {
+          "name": "simd-json",
+          "registry": "crates",
+          "version": "0.18.1",
+          "reason": "rejected: own Value type, no documented insertion order, MSRV 1.88"
+        },
+        {
+          "name": "sonic-rs",
+          "registry": "crates",
+          "version": "0.5.10",
+          "reason": "rejected: own Value type, keeps duplicate keys, Apache-2.0 only"
+        },
+        {
+          "name": "json",
+          "registry": "crates",
+          "version": "0.12.4",
+          "reason": "rejected: last release 2020-03-18"
+        },
+        {
+          "name": "linked-hash-map",
+          "registry": "crates",
+          "version": "0.5.6",
+          "reason": "rejected: last release 2022-06-25, no JSON value type"
+        }
+      ],
+      "confidence": "HIGH",
+      "gate": true,
+      "notes": "Dict and list inputs map to serde_json::Value (user's package decision), so serde_json is a runtime dependency. Runtime features = [\"preserve_order\"] (without it Map is a BTreeMap and keys come out sorted). Dev/harness: features = [\"preserve_order\", \"float_roundtrip\"] (default float parsing misread about 10% of Python float reprs by 1 ULP in the scout probe). Never Map::remove in place (swap_remove reorders). Divergences to record in the contract: non-str keys unrepresentable; tuples not walked in Python but every JSON array is walked in Rust; top-level null/bool/number go through the Python string path; NaN/Infinity and ints beyond 64 bits not representable.",
+      "verified": {
+        "registryLookup": true,
+        "status": "VERIFIED",
+        "fetchedAt": "2026-10-20T19:23:58Z",
+        "reason": null
+      },
+      "license": {
+        "spdx": "MIT OR Apache-2.0",
+        "compatible": true,
+        "note": null
+      }
+    },
+    {
+      "name": "poetry-core",
+      "version": null,
+      "versionSpec": ">=1.0.0",
+      "scope": "build",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: cargo (Cargo.toml) replaces the build backend.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "bumpversion",
+      "version": "0.6.0",
+      "versionSpec": "^0.6.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: version bump tool; cargo release workflow or manual version edit.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "coveralls",
+      "version": "3.3.1",
+      "versionSpec": "^3.3.1",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: coverage upload; not ported.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "flake8",
+      "version": "4.0.1",
+      "versionSpec": "^5.0.4",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: cargo clippy and cargo fmt.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "ipython",
+      "version": "7.30.1",
+      "versionSpec": "^7.34.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "unused",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: interactive shell, not used by code or tests.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "pathlib2",
+      "version": "2.3.6",
+      "versionSpec": "^2.3.6",
+      "scope": "dev",
+      "direct": true,
+      "role": "polyfill",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: pathlib backport, not imported.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "pylint",
+      "version": "2.12.2",
+      "versionSpec": "^2.12.2",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: cargo clippy.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "pytest",
+      "version": "6.2.5",
+      "versionSpec": "^7.1.3",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [
+          "mark"
+        ],
+        "callSites": 7,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: cargo test.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "pytest-cov",
+      "version": "3.0.0",
+      "versionSpec": "^4.0.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: coverage; not ported.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "scandir",
+      "version": "1.10.0",
+      "versionSpec": "^1.10.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "polyfill",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: os.scandir backport, not imported.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "sphinx",
+      "version": "4.3.2",
+      "versionSpec": "^4.3.2",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: docs; rustdoc.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "twine",
+      "version": "3.7.1",
+      "versionSpec": "^3.8.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Dev tool, never ported: publishing; cargo publish.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    }
+  ]
+}

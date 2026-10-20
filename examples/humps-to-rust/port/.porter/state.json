@@ -1,0 +1,349 @@
+{
+  "schema": 1,
+  "phase": "verify",
+  "phases": {
+    "recover": {
+      "status": "SKIPPED",
+      "at": null,
+      "gate": "source code available",
+      "artifacts": {}
+    },
+    "survey": {
+      "status": "DONE",
+      "at": "2026-10-20T19:20:33Z",
+      "gate": null,
+      "artifacts": {
+        "survey.json": "sha256:7b6ceca8db343db31957528aea33e3aa165b69e6fffe012f3f40f18e05ca699e",
+        "survey.md": "sha256:60aedfc330720a409f1cdd3ec629d2b806d2e1e567fe0fe1000cb354df37611f"
+      }
+    },
+    "target": {
+      "status": "DONE",
+      "at": "2026-10-20T19:15:13Z",
+      "gate": "given",
+      "artifacts": {}
+    },
+    "deps": {
+      "status": "DONE",
+      "at": "2026-10-20T19:31:27Z",
+      "gate": "approved",
+      "artifacts": {
+        "deps.json": "sha256:419c32c5ef9219331cb91c8aac6b9a1fa464fee20bcbf4ebe26d56f3bf533920",
+        "deps.md": "sha256:2543f98f6b59ce2b6aa826acf3a8058d47b23745fa8e784068393e5fae6ae63a"
+      }
+    },
+    "contract": {
+      "status": "DONE",
+      "at": "2026-10-20T19:50:42Z",
+      "gate": null,
+      "artifacts": {
+        "contract/api.json": "sha256:10144e2f975175ba4274426dfee716248831a2e1a20067233211bec3af8dbefc",
+        "contract/contract.md": "sha256:a4b89263d6df58e0fdf51ba28cd4489506516bfbf13248ee468be4096ba5618f",
+        "fixtures": "sha256:a746c94ccda38d5af15a561e1e6c608adc8a015b4bbc5cbdca48979062aa50b8"
+      }
+    },
+    "strategy": {
+      "status": "DONE",
+      "at": "2026-10-20T19:54:20Z",
+      "gate": "approved",
+      "artifacts": {
+        "plan.json": "sha256:d733356f55964be9f2d6d5cbff4ede3aaa7959d9fdff4ae2d0d5d18d8851316e",
+        "strategy.md": "sha256:4de20dcaf90994873880bc3f03dcb80726ac3b14cf6b2b150916aa1ac1d612b9",
+        "decomposition.md": "sha256:f9027265465277e07edf1e45dfa3ba670c3e961888327b79200ebe11e18e9677"
+      }
+    },
+    "implement": {
+      "status": "DONE",
+      "at": "2026-10-20T20:34:18Z",
+      "gate": null,
+      "artifacts": {}
+    },
+    "verify": {
+      "status": "DONE",
+      "at": "2026-10-20T20:34:18Z",
+      "gate": null,
+      "artifacts": {
+        "parity.json": "sha256:2d6ea12b24243d2da51c8ff47b08343ba16ebf3137cac6235b3550d3542e59d7",
+        "PARITY.md": "sha256:31e00e5ac824c595f946f3ae993a88414537179f33972e6f9265e894dd65111d"
+      }
+    }
+  },
+  "units": {
+    "cycle-humps": {
+      "status": "DONE",
+      "wave": 0,
+      "attempts": 2,
+      "task": "commit",
+      "verifiedLevel": "DIVERGENT",
+      "note": null
+    }
+  },
+  "budgets": {
+    "attemptsPerUnit": 3,
+    "discoveredUnits": 5,
+    "discoveredUsed": 0
+  },
+  "stale": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:15:13Z",
+      "event": "init",
+      "source": ".porter/cache/source",
+      "mode": "code",
+      "target": "rust"
+    },
+    {
+      "at": "2026-10-20T19:15:31Z",
+      "event": "phase.start",
+      "phase": "survey"
+    },
+    {
+      "at": "2026-10-20T19:20:33Z",
+      "event": "phase.end",
+      "phase": "survey",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T19:20:39Z",
+      "event": "phase.start",
+      "phase": "deps"
+    },
+    {
+      "at": "2026-10-20T19:31:27Z",
+      "event": "phase.end",
+      "phase": "deps",
+      "status": "GATE_WAIT"
+    },
+    {
+      "at": "2026-10-20T19:31:34Z",
+      "event": "gate",
+      "phase": "deps",
+      "decision": "approve",
+      "note": "deps gate: approve the proposed decisions when every MAP and SHIM candidate is registry-verified. Prefer the regex crate and rewrite lookarounds by hand; use fancy-regex only for a pattern that cannot be rewritten, and say which. serde_json as a dev-dependency for the parity harness is fine. (Package answer: Dict and list inputs map to serde_json::Value.) Both MAP candidates (regex 1.13.1, serde_json 1.0.154) are VERIFIED; no pattern needs fancy-regex."
+    },
+    {
+      "at": "2026-10-20T19:31:40Z",
+      "event": "phase.start",
+      "phase": "contract"
+    },
+    {
+      "at": "2026-10-20T19:50:42Z",
+      "event": "phase.end",
+      "phase": "contract",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T19:50:51Z",
+      "event": "phase.start",
+      "phase": "strategy"
+    },
+    {
+      "at": "2026-10-20T19:54:20Z",
+      "event": "plan.sync",
+      "added": [
+        "cycle-humps"
+      ]
+    },
+    {
+      "at": "2026-10-20T19:54:20Z",
+      "event": "phase.end",
+      "phase": "strategy",
+      "status": "GATE_WAIT"
+    },
+    {
+      "at": "2026-10-20T19:54:38Z",
+      "event": "gate",
+      "phase": "strategy",
+      "decision": "approve",
+      "note": "strategy gate: approve the proposed units, order and budgets as written. (Package: the crate is named humps (library name humps), Rust stable, edition 2021, an idiomatic Rust API. Dict and list inputs map to serde_json::Value. The fixtures keep the Python call ids; the bindings translate.)"
+    },
+    {
+      "at": "2026-10-20T19:54:45Z",
+      "event": "phase.start",
+      "phase": "implement"
+    },
+    {
+      "at": "2026-10-20T19:54:45Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "PENDING",
+      "to": "IN_PROGRESS"
+    },
+    {
+      "at": "2026-10-20T19:56:21Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "read-contract"
+    },
+    {
+      "at": "2026-10-20T19:57:36Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "scaffold"
+    },
+    {
+      "at": "2026-10-20T20:04:13Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "implement"
+    },
+    {
+      "at": "2026-10-20T20:04:25Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "mark-divergences"
+    },
+    {
+      "at": "2026-10-20T20:07:22Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "port-tests"
+    },
+    {
+      "at": "2026-10-20T20:08:33Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "wire-fixtures"
+    },
+    {
+      "at": "2026-10-20T20:08:33Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "green"
+    },
+    {
+      "at": "2026-10-20T20:09:26Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "IN_PROGRESS",
+      "to": "IMPLEMENTED"
+    },
+    {
+      "at": "2026-10-20T20:09:26Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "review"
+    },
+    {
+      "at": "2026-10-20T20:22:08Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "apply-findings"
+    },
+    {
+      "at": "2026-10-20T20:22:08Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "IMPLEMENTED",
+      "to": "REVIEWED"
+    },
+    {
+      "at": "2026-10-20T20:22:16Z",
+      "event": "phase.start",
+      "phase": "verify"
+    },
+    {
+      "at": "2026-10-20T20:28:53Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "REVIEWED",
+      "to": "GAP"
+    },
+    {
+      "at": "2026-10-20T20:28:53Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "GAP",
+      "to": "IN_PROGRESS"
+    },
+    {
+      "at": "2026-10-20T20:29:51Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "implement"
+    },
+    {
+      "at": "2026-10-20T20:29:51Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "wire-fixtures"
+    },
+    {
+      "at": "2026-10-20T20:29:51Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "green"
+    },
+    {
+      "at": "2026-10-20T20:29:51Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "IN_PROGRESS",
+      "to": "IMPLEMENTED"
+    },
+    {
+      "at": "2026-10-20T20:29:51Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "review"
+    },
+    {
+      "at": "2026-10-20T20:29:52Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "apply-findings"
+    },
+    {
+      "at": "2026-10-20T20:29:52Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "IMPLEMENTED",
+      "to": "REVIEWED"
+    },
+    {
+      "at": "2026-10-20T20:33:51Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "verify"
+    },
+    {
+      "at": "2026-10-20T20:33:51Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "REVIEWED",
+      "to": "VERIFIED",
+      "level": "DIVERGENT"
+    },
+    {
+      "at": "2026-10-20T20:34:11Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "report"
+    },
+    {
+      "at": "2026-10-20T20:34:11Z",
+      "event": "unit.task",
+      "unit": "cycle-humps",
+      "task": "commit"
+    },
+    {
+      "at": "2026-10-20T20:34:11Z",
+      "event": "unit.status",
+      "unit": "cycle-humps",
+      "from": "VERIFIED",
+      "to": "DONE"
+    },
+    {
+      "at": "2026-10-20T20:34:18Z",
+      "event": "phase.end",
+      "phase": "implement",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T20:34:18Z",
+      "event": "phase.end",
+      "phase": "verify",
+      "status": "DONE"
+    }
+  ]
+}

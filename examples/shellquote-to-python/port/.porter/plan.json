@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "draft": false,
+  "generatedBy": "porter.py decompose",
+  "generatedAt": "2026-10-20T19:32:57Z",
+  "budgets": {
+    "unitMaxLoc": 400,
+    "unitMaxSymbols": 8,
+    "unitMinLoc": 30
+  },
+  "tracer": "root",
+  "order": [
+    "root"
+  ],
+  "layers": {
+    "core": [
+      "root"
+    ]
+  },
+  "cycles": [],
+  "orphans": [],
+  "unknownRoots": [],
+  "adjustments": [
+    "root: referenceTests set to both_test.go, quote_test.go, unquote_test.go; decompose left it empty because Go same-package tests import nothing from the module, and parity reftests needs the files to assign [ref: ...] tags to the unit",
+    "root: added risk tag unicode; the survey and the contract leak list flag byte versus code-point semantics (invalid-utf8)",
+    "root: strategy code-port; the goto state machines in quote.go and unquote.go must be reproduced exactly and the contract pins their output character for character",
+    "root: extra acceptance criterion for exc.words, because parity ignores expect.value on error outcomes"
+  ],
+  "units": [
+    {
+      "id": "root",
+      "name": "root",
+      "layer": "core",
+      "wave": 0,
+      "symbols": [
+        "root:Join",
+        "root:UnterminatedSingleQuoteError",
+        "root:UnterminatedDoubleQuoteError",
+        "root:UnterminatedEscapeError",
+        "root:Split",
+        "root:specialChars",
+        "root:extraSpecialChars",
+        "root:prefixChars",
+        "root:quote",
+        "root:splitChars",
+        "root:singleChar",
+        "root:doubleChar",
+        "root:escapeChar",
+        "root:doubleEscapeChars",
+        "root:splitWord"
+      ],
+      "publicSymbols": [
+        "root:Join",
+        "root:UnterminatedSingleQuoteError",
+        "root:UnterminatedDoubleQuoteError",
+        "root:UnterminatedEscapeError",
+        "root:Split"
+      ],
+      "sources": [
+        {
+          "path": "quote.go",
+          "lines": [
+            12,
+            102
+          ]
+        },
+        {
+          "path": "unquote.go",
+          "lines": [
+            11,
+            22
+          ]
+        },
+        {
+          "path": "unquote.go",
+          "lines": [
+            33,
+            156
+          ]
+        }
+      ],
+      "loc": 213,
+      "dependsOn": [],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/root/",
+        "expected": null
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "both_test.go",
+        "quote_test.go",
+        "unquote_test.go"
+      ],
+      "riskTags": [
+        "error-model",
+        "nullability",
+        "ordering",
+        "unicode"
+      ],
+      "riskScore": 2,
+      "strategy": "code-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md",
+        "split errors carry the words Go returned with the error (exc.words), checked by a target test over every Split error fixture, since parity does not compare expect.value on error outcomes"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": true,
+      "overBudget": false,
+      "notes": "Python API: join(*args: str) -> str, split(s: str) -> list[str]; exceptions UnterminatedSingleQuoteError, UnterminatedDoubleQuoteError, UnterminatedEscapeError (common base ShellQuoteError(ValueError)). Bindings translate the Go call ids."
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "upstream": {
+    "package": "compare-versions",
+    "version": "6.1.1",
+    "commit": "497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd",
+    "language": "typescript",
+    "mode": "code",
+    "artifactSha256": null
+  },
+  "target": {
+    "language": "rust",
+    "package": "compare-versions-port",
+    "path": "."
+  },
+  "evidenceDate": "2026-10-20T20:20:11Z",
+  "run": "final",
+  "units": [
+    {
+      "unit": "satisfies-satisfies",
+      "level": "DIVERGENT",
+      "fixtures": {
+        "total": 3084,
+        "passed": 3051,
+        "normalized": 0,
+        "divergent": 33,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 239,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 2,
+        "DIVERGENCE": 8,
+        "UNRESOLVED": 0,
+        "total": 249
+      },
+      "divergences": [
+        "non-string-arguments"
+      ],
+      "mismatches": [],
+      "perf": {
+        "cases": 3084,
+        "medianRatio": 0.102,
+        "note": "target time / oracle time; above 1 is slower"
+      },
+      "notes": [],
+      "oracle": {
+        "language": "javascript",
+        "package": "compare-versions",
+        "version": "6.1.1",
+        "commit": "497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd",
+        "runtime": "node 24.18.0",
+        "driver": "agentporter/knowledge/oracles/javascript/oracle.mjs",
+        "recordedAt": "2026-10-20T20:19:58Z"
+      }
+    },
+    {
+      "unit": "src-index",
+      "level": "ASSERTED",
+      "fixtures": {
+        "total": 0,
+        "passed": 0,
+        "normalized": 0,
+        "divergent": 0,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 5,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 0,
+        "DIVERGENCE": 0,
+        "UNRESOLVED": 0,
+        "total": 5
+      },
+      "divergences": [],
+      "mismatches": [],
+      "perf": null,
+      "notes": [],
+      "oracle": null
+    },
+    {
+      "unit": "utils-utils",
+      "level": "ASSERTED",
+      "fixtures": {
+        "total": 0,
+        "passed": 0,
+        "normalized": 0,
+        "divergent": 0,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 75,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 0,
+        "DIVERGENCE": 0,
+        "UNRESOLVED": 0,
+        "total": 75
+      },
+      "divergences": [],
+      "mismatches": [],
+      "perf": null,
+      "notes": [],
+      "oracle": null
+    },
+    {
+      "unit": "validate-validate",
+      "level": "DIVERGENT",
+      "fixtures": {
+        "total": 1204,
+        "passed": 1188,
+        "normalized": 0,
+        "divergent": 16,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 87,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 1,
+        "DIVERGENCE": 5,
+        "UNRESOLVED": 0,
+        "total": 93
+      },
+      "divergences": [
+        "non-string-arguments"
+      ],
+      "mismatches": [],
+      "perf": {
+        "cases": 1204,
+        "medianRatio": 0.077,
+        "note": "target time / oracle time; above 1 is slower"
+      },
+      "notes": [],
+      "oracle": {
+        "language": "javascript",
+        "package": "compare-versions",
+        "version": "6.1.1",
+        "commit": "497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd",
+        "runtime": "node 24.18.0",
+        "driver": "agentporter/knowledge/oracles/javascript/oracle.mjs",
+        "recordedAt": "2026-10-20T20:07:30Z"
+      }
+    }
+  ],
+  "divergences": [
+    {
+      "id": "non-string-arguments",
+      "unit": "validate-validate",
+      "summary": "validate and validateStrict take &str; the source's runtime checks for non-string arguments (which return false) cannot be expressed.",
+      "rationale": "Idiomatic Rust API decided at the strategy gate: string parameters are &str, so a number, null, object or array cannot be passed. The cases exist only because JavaScript is dynamically typed.",
+      "cases": [
+        "*nonstring*"
+      ],
+      "approvedBy": "strategy gate 2026-10-20: 'an idiomatic Rust API (Result for errors)'; scope gauntlet lists non-string arguments as out of scope"
+    },
+    {
+      "id": "non-string-arguments",
+      "unit": "satisfies-satisfies",
+      "summary": "compareVersions, compare and satisfies take &str; the source's TypeError paths for non-string versions, operators and ranges (including four V8-generated messages) cannot be reached.",
+      "rationale": "Idiomatic Rust API decided at the strategy gate: string parameters are &str, so non-string values cannot be passed. The cases exist only because JavaScript is dynamically typed.",
+      "cases": [
+        "*nonstring*",
+        "edge-cmp-precedence-v1-before-v2"
+      ],
+      "approvedBy": "strategy gate 2026-10-20: 'an idiomatic Rust API (Result for errors)'; scope gauntlet lists non-string arguments as out of scope; unattended: edge-cmp-precedence-v1-before-v2 (compare('foo', 42, '>'), tagged nonstring) added on 2026-10-20 as the conservative choice: it passes a non-string v2, which the approved divergence covers; its id lacks 'nonstring', so the glob missed it. No behavior change."
+    }
+  ],
+  "markers": {
+    "non-string-arguments": [
+      "src/compare.rs:17",
+      "src/satisfies.rs:19",
+      "src/utils.rs:168",
+      "src/validate.rs:11",
+      "src/validate.rs:26"
+    ]
+  },
+  "markerErrors": [],
+  "totals": {
+    "units": 4,
+    "total": 4288,
+    "passed": 4239,
+    "normalized": 0,
+    "divergent": 49,
+    "failed": 0,
+    "missing": 0,
+    "EXACT": 0,
+    "EQUIVALENT": 0,
+    "DIVERGENT": 2,
+    "ASSERTED": 2,
+    "GAP": 0,
+    "OUT-OF-SCOPE": 0
+  }
+}

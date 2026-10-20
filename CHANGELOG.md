@@ -8,6 +8,9 @@ and the project uses [Semantic Versioning](https://semver.org/).
 ### Added
 
 - `install.sh`: one-command install of the Claude Code plugin, the Codex plugin and the CLI.
+- Four more examples, each with the original next to the port: go-shellquote (Go to Python), scule
+  (TypeScript to Go), compare-versions (TypeScript to Rust) and pyhumps (Python to Rust). ms-to-go moved
+  into the same `original/` and `port/` layout.
 - `parity reftests cargo` imports `cargo test` output, with ref tags in comments above `#[test]` functions.
 - The JavaScript oracle loads unbuilt TypeScript on Node 22.18 or newer, including extensionless and
   `.js`-suffixed relative imports.

@@ -1,0 +1,1510 @@
+{
+ "cases": {
+  "ref-compare-L024": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L025": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L026": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L032": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L033": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L034": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L040": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L041": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L042": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L043": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L044": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L050": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L051": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L052": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L053": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L054": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L055": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L056": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L057": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L058": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L059": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L060": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L066": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L067": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L068": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L069": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L070": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L071": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L077": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L078": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L079": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L080": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L081": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L082": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L083": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L084": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L085": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L086": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L087": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L088": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L094": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L095": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L096": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L097": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L098": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L099": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L100": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L101": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L102": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L108": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L109": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L110": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L111": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L117": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L118": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L119": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L120": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L121": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L122": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L123": {
+   "kind": "value",
+   "value": -1
+  },
+  "ref-compare-L129": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L130": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L131": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L132": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L133": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L134": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L135": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L136": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L137": {
+   "kind": "value",
+   "value": 0
+  },
+  "ref-compare-L138": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L139": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L140": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L141": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L142": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L143": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L144": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L145": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L146": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L147": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L148": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L149": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L150": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L175": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L176": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L177": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L178": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L179": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L180": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L181": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L182": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L183": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L184": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L185": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L186": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L187": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L188": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L189": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L190": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L191": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L192": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L193": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L194": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L195": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L196": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L197": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L198": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L199": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L200": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L201": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L202": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L203": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L204": {
+   "kind": "value",
+   "value": 1
+  },
+  "ref-compare-L288": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L289": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L290": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L291": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-compare-L292": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-compare-L293": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L294": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L295": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-compare-L296": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L297": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L298": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-compare-L299": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L300": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L301": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-compare-L302": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-compare-L303": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-compare-L157-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid argument expected string"
+  },
+  "ref-compare-L158-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid argument expected string"
+  },
+  "ref-compare-L159-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid argument expected string"
+  },
+  "ref-compare-L161": {
+   "kind": "error",
+   "pattern": "Invalid argument not valid semver"
+  },
+  "ref-compare-L162": {
+   "kind": "error",
+   "pattern": "Invalid argument not valid semver"
+  },
+  "ref-compare-L163": {
+   "kind": "error",
+   "pattern": "Invalid argument not valid semver"
+  },
+  "ref-compare-L233-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid operator type, expected string but got "
+  },
+  "ref-compare-L234-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid operator type, expected string but got "
+  },
+  "ref-compare-L240-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid operator type, expected string but got boolean"
+  },
+  "ref-compare-L246-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid operator type, expected string but got number"
+  },
+  "ref-compare-L252-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid operator type, expected string but got object"
+  },
+  "ref-compare-L264": {
+   "kind": "error",
+   "pattern": "Invalid operator, expected one of "
+  },
+  "ref-compare-L265": {
+   "kind": "error",
+   "pattern": "Invalid operator, expected one of "
+  },
+  "ref-compare-L266": {
+   "kind": "error",
+   "pattern": "Invalid operator, expected one of "
+  },
+  "ref-compare-L269-r272-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid argument expected string"
+  },
+  "ref-compare-L269-r273-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid argument expected string"
+  },
+  "ref-compare-L269-r274-nonstring": {
+   "kind": "error",
+   "pattern": "Invalid argument expected string"
+  },
+  "ref-compare-L269-r276": {
+   "kind": "error",
+   "pattern": "Invalid argument not valid semver"
+  },
+  "ref-compare-L269-r277": {
+   "kind": "error",
+   "pattern": "Invalid argument not valid semver"
+  },
+  "ref-compare-L269-r278": {
+   "kind": "error",
+   "pattern": "Invalid argument not valid semver"
+  },
+  "ref-satisfies-L015": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L016": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L017": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L018": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L019": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L020": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L021": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L022": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L023": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L024": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L025": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L026": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L027": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L028": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L029": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L035": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L036": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L037": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L038": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L039": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L040": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L041": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L042": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L043": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L044": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L045": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L046": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L051": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L052": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L053": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L054": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L055": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L056": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L057": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L058": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L059": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L060": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L061": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L062": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L063": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L064": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L065": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L066": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L067": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L068": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L069": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L070": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L071": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L072": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L073": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L074": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L075": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L076": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L077": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L078": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L079": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L080": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L081": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L082": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L083": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L088": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L089": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L090": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L091": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L092": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L093": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L094": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L095": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L096": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L102": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L103": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L104": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L105": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L106": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L107": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L108": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L109": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L110": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L111": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L112": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L113": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L114": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L115": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L116": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L117": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L118": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L119": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L120": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L121": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L122": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L123": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L129": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L130": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L131": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-satisfies-L132": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L133": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L134": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-satisfies-L135": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L007-nonstring": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L008-nonstring": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L009-nonstring": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L010-nonstring": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L011-nonstring": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L013": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L014": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L015": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L016": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L017": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L018": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L019": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L020": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L021": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L022": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L023": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L024": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L025": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L026": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L027": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L039": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L040": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L041": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L042": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L043": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L044": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L045": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L046": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L047": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L048": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L049": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L050": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L051": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L052": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L053": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L054": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L055": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L056": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L057": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L058": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L059": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L060": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L061": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L062": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L063": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L064": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L065": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L066": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L067": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L068": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L069": {
+   "kind": "value",
+   "value": true
+  },
+  "ref-validate-L079": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L080": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L081": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L082": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L083": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L084": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L085": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L086": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L087": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L088": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L089": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L090": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L091": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L092": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L093": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L094": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L095": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L096": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L097": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L098": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L099": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L100": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L101": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L102": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L103": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L104": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L105": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L106": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L107": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L108": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L109": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L110": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L111": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L112": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L113": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L114": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L115": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L116": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L117": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L118": {
+   "kind": "value",
+   "value": false
+  },
+  "ref-validate-L119": {
+   "kind": "value",
+   "value": false
+  }
+ },
+ "sort": {
+  "test/sort.ts::L5": {
+   "input": [
+    "1.2.3",
+    "4.11.6",
+    "4.2.0",
+    "1.5.19",
+    "1.5.5",
+    "4.1.3",
+    "2.3.1",
+    "10.5.5",
+    "11.3.0"
+   ],
+   "expected": [
+    "1.2.3",
+    "1.5.5",
+    "1.5.19",
+    "2.3.1",
+    "4.1.3",
+    "4.2.0",
+    "4.11.6",
+    "10.5.5",
+    "11.3.0"
+   ],
+   "pairs": {
+    "0,1": "ref-sort-L005-p0-1",
+    "0,2": "ref-sort-L005-p0-2",
+    "0,3": "ref-sort-L005-p0-3",
+    "0,4": "ref-sort-L005-p0-4",
+    "0,5": "ref-sort-L005-p0-5",
+    "0,6": "ref-sort-L005-p0-6",
+    "0,7": "ref-sort-L005-p0-7",
+    "0,8": "ref-sort-L005-p0-8",
+    "1,0": "ref-sort-L005-p1-0",
+    "1,2": "ref-sort-L005-p1-2",
+    "1,3": "ref-sort-L005-p1-3",
+    "1,4": "ref-sort-L005-p1-4",
+    "1,5": "ref-sort-L005-p1-5",
+    "1,6": "ref-sort-L005-p1-6",
+    "1,7": "ref-sort-L005-p1-7",
+    "1,8": "ref-sort-L005-p1-8",
+    "2,0": "ref-sort-L005-p2-0",
+    "2,1": "ref-sort-L005-p2-1",
+    "2,3": "ref-sort-L005-p2-3",
+    "2,4": "ref-sort-L005-p2-4",
+    "2,5": "ref-sort-L005-p2-5",
+    "2,6": "ref-sort-L005-p2-6",
+    "2,7": "ref-sort-L005-p2-7",
+    "2,8": "ref-sort-L005-p2-8",
+    "3,0": "ref-sort-L005-p3-0",
+    "3,1": "ref-sort-L005-p3-1",
+    "3,2": "ref-sort-L005-p3-2",
+    "3,4": "ref-sort-L005-p3-4",
+    "3,5": "ref-sort-L005-p3-5",
+    "3,6": "ref-sort-L005-p3-6",
+    "3,7": "ref-sort-L005-p3-7",
+    "3,8": "ref-sort-L005-p3-8",
+    "4,0": "ref-sort-L005-p4-0",
+    "4,1": "ref-sort-L005-p4-1",
+    "4,2": "ref-sort-L005-p4-2",
+    "4,3": "ref-sort-L005-p4-3",
+    "4,5": "ref-sort-L005-p4-5",
+    "4,6": "ref-sort-L005-p4-6",
+    "4,7": "ref-sort-L005-p4-7",
+    "4,8": "ref-sort-L005-p4-8",
+    "5,0": "ref-sort-L005-p5-0",
+    "5,1": "ref-sort-L005-p5-1",
+    "5,2": "ref-sort-L005-p5-2",
+    "5,3": "ref-sort-L005-p5-3",
+    "5,4": "ref-sort-L005-p5-4",
+    "5,6": "ref-sort-L005-p5-6",
+    "5,7": "ref-sort-L005-p5-7",
+    "5,8": "ref-sort-L005-p5-8",
+    "6,0": "ref-sort-L005-p6-0",
+    "6,1": "ref-sort-L005-p6-1",
+    "6,2": "ref-sort-L005-p6-2",
+    "6,3": "ref-sort-L005-p6-3",
+    "6,4": "ref-sort-L005-p6-4",
+    "6,5": "ref-sort-L005-p6-5",
+    "6,7": "ref-sort-L005-p6-7",
+    "6,8": "ref-sort-L005-p6-8",
+    "7,0": "ref-sort-L005-p7-0",
+    "7,1": "ref-sort-L005-p7-1",
+    "7,2": "ref-sort-L005-p7-2",
+    "7,3": "ref-sort-L005-p7-3",
+    "7,4": "ref-sort-L005-p7-4",
+    "7,5": "ref-sort-L005-p7-5",
+    "7,6": "ref-sort-L005-p7-6",
+    "7,8": "ref-sort-L005-p7-8",
+    "8,0": "ref-sort-L005-p8-0",
+    "8,1": "ref-sort-L005-p8-1",
+    "8,2": "ref-sort-L005-p8-2",
+    "8,3": "ref-sort-L005-p8-3",
+    "8,4": "ref-sort-L005-p8-4",
+    "8,5": "ref-sort-L005-p8-5",
+    "8,6": "ref-sort-L005-p8-6",
+    "8,7": "ref-sort-L005-p8-7"
+   }
+  },
+  "test/sort.ts::L31": {
+   "input": [
+    "1.0",
+    "1.0.0",
+    "1.0.1"
+   ],
+   "expected": [
+    "1.0",
+    "1.0.0",
+    "1.0.1"
+   ],
+   "pairs": {
+    "0,1": "ref-sort-L031-p0-1",
+    "0,2": "ref-sort-L031-p0-2",
+    "1,0": "ref-sort-L031-p1-0",
+    "1,2": "ref-sort-L031-p1-2",
+    "2,0": "ref-sort-L031-p2-0",
+    "2,1": "ref-sort-L031-p2-1"
+   }
+  },
+  "test/sort.ts::L37": {
+   "input": [
+    "1.0.0",
+    "1.0.1",
+    "1.0.1-gamma",
+    "1.0.1-alpha"
+   ],
+   "expected": [
+    "1.0.0",
+    "1.0.1-alpha",
+    "1.0.1-gamma",
+    "1.0.1"
+   ],
+   "pairs": {
+    "0,1": "ref-sort-L037-p0-1",
+    "0,2": "ref-sort-L037-p0-2",
+    "0,3": "ref-sort-L037-p0-3",
+    "1,0": "ref-sort-L037-p1-0",
+    "1,2": "ref-sort-L037-p1-2",
+    "1,3": "ref-sort-L037-p1-3",
+    "2,0": "ref-sort-L037-p2-0",
+    "2,1": "ref-sort-L037-p2-1",
+    "2,3": "ref-sort-L037-p2-3",
+    "3,0": "ref-sort-L037-p3-0",
+    "3,1": "ref-sort-L037-p3-1",
+    "3,2": "ref-sort-L037-p3-2"
+   }
+  }
+ },
+ "unrepresentable": [
+  "test/compare.ts::L160 compareVersions(() => undefined, () => undefined): function value",
+  "test/compare.ts::L258 compare('3.2.1', '3.2.0', () => {}): function value",
+  "test/compare.ts::L269 row 275 compare(() => undefined, () => undefined, '>'): function value",
+  "test/validate.ts::L12 validate(() => undefined): function value"
+ ]
+}

@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "typescript",
+    "package": "compare-versions",
+    "version": "6.1.1",
+    "manifests": [
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "target": {
+    "language": "rust",
+    "registry": "crates",
+    "package": "compare-versions-port"
+  },
+  "devTools": [
+    {
+      "source": "mocha",
+      "target": "cargo test",
+      "note": "Table-driven mocha suites become #[test] functions iterating over case tables in tests/*.rs. Built into cargo, no crate."
+    },
+    {
+      "source": "@types/mocha",
+      "target": "none",
+      "note": "Type stubs for the test runner; the Rust compiler needs nothing."
+    },
+    {
+      "source": "c8",
+      "target": "none",
+      "note": "Coverage is not part of the contract. cargo-llvm-cov is an optional local tool, not a dependency."
+    },
+    {
+      "source": "typescript",
+      "target": "rustc (cargo check --all-targets)",
+      "note": "The compiler is the type checker (ecosystems/rust.md section 7)."
+    },
+    {
+      "source": "ts-node",
+      "target": "none",
+      "note": "Runs TypeScript tests without a build step; cargo test compiles directly."
+    },
+    {
+      "source": "rollup",
+      "target": "cargo build",
+      "note": "UMD bundling for browsers has no Rust equivalent; the crate is the only artifact."
+    },
+    {
+      "source": "(parity harness)",
+      "target": "serde_json (dev-dependency)",
+      "note": "Required by knowledge/harnesses/rust/main.rs. Dev-only, so the published crate keeps zero runtime dependencies. Registry record: cache/registry/crates/serde_json.json (1.0.154, MIT OR Apache-2.0, released 2026-10-11).",
+      "evidence": "cache/registry/crates/serde_json.json"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "@types/mocha",
+      "version": "10.0.7",
+      "versionSpec": "^10.0.7",
+      "scope": "dev",
+      "direct": true,
+      "role": "type-stubs",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Ambient types for describe/it in test/*.ts. Rust tests need no stubs.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "c8",
+      "version": "10.1.2",
+      "versionSpec": "^10.1.2",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Coverage wrapper in package.json scripts.test (c8 --reporter=lcov mocha). Not imported. Coverage is not part of the contract.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "mocha",
+      "version": "10.6.0",
+      "versionSpec": "^10.6.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [
+          "describe",
+          "it"
+        ],
+        "callSites": 0,
+        "modules": [
+          "test/compare.ts",
+          "test/satisfies.ts",
+          "test/validate.ts",
+          "test/sort.ts"
+        ]
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "usage-scan reports it unused because describe/it are globals (.mocharc.json), not imports. The test runner maps to cargo test (devTools); the suites themselves are harvested by the contract phase.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "rollup",
+      "version": "4.18.1",
+      "versionSpec": "^4.18.1",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Builds the UMD bundle (package.json scripts.build:umd). No equivalent artifact in Rust.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "ts-node",
+      "version": "10.9.2",
+      "versionSpec": "^10.9.2",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Mocha loader for TypeScript tests (.mocharc.json). Not needed by cargo test.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "typescript",
+      "version": "5.5.3",
+      "versionSpec": "^5.5.3",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Compiler for the source. Replaced by rustc (devTools).",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    }
+  ]
+}

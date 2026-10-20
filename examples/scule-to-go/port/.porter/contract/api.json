@@ -1,0 +1,758 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "typescript",
+    "package": "scule",
+    "version": "1.3.0",
+    "commit": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+    "mode": "code",
+    "entry": "src/index.ts",
+    "callModule": "./src/index.ts",
+    "callIdNote": "User decision: \"The fixtures keep the TypeScript call ids; the bindings translate.\" Call ids are ./src/index.ts:<TypeScript export name>; the module part is the import specifier the JavaScript oracle loads (the package entry points at dist/, which the checkout does not contain)."
+  },
+  "symbols": [
+    {
+      "id": "src/index:isUppercase",
+      "name": "isUppercase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "isUppercase(char: string = \"\"): boolean | undefined",
+      "returns": "undefined when the argument contains an ASCII digit 0-9 anywhere; otherwise char !== char.toLowerCase() over the whole string (true when lowercasing changes it)",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "split",
+      "reason": null,
+      "leaks": [
+        "is-uppercase-definition",
+        "ascii-digit-tristate",
+        "undefined-defaults"
+      ],
+      "docs": "Exported (src/index.ts:15) but not documented in README.md.",
+      "interfaceId": null,
+      "callId": "./src/index.ts:isUppercase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:splitByCase",
+      "name": "splitByCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "splitByCase(str: string, separators?: readonly string[]): string[]",
+      "returns": "parts in input order, case preserved, separators removed; [] for \"\"; empty parts kept",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "split",
+      "reason": null,
+      "leaks": [
+        "utf16-falling-edge-split",
+        "lone-surrogate-encoding",
+        "code-point-iteration",
+        "is-uppercase-definition",
+        "ascii-digit-tristate",
+        "separators-nil-vs-empty",
+        "empty-parts",
+        "whitespace-not-splitter",
+        "separator-resets-case"
+      ],
+      "docs": "README.md:120-126",
+      "interfaceId": null,
+      "callId": "./src/index.ts:splitByCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:upperFirst",
+      "name": "upperFirst",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "upperFirst(str: string): string",
+      "returns": "str[0].toUpperCase() + str.slice(1); \"\" for \"\"",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "split",
+      "reason": null,
+      "leaks": [
+        "utf16-first-unit-casing",
+        "full-case-mapping"
+      ],
+      "docs": "README.md:102-109",
+      "interfaceId": null,
+      "callId": "./src/index.ts:upperFirst",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:lowerFirst",
+      "name": "lowerFirst",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "lowerFirst(str: string): string",
+      "returns": "str[0].toLowerCase() + str.slice(1); \"\" for \"\"",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "split",
+      "reason": null,
+      "leaks": [
+        "utf16-first-unit-casing",
+        "full-case-mapping",
+        "final-sigma"
+      ],
+      "docs": "README.md:111-118",
+      "interfaceId": null,
+      "callId": "./src/index.ts:lowerFirst",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:pascalCase",
+      "name": "pascalCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "pascalCase(): \"\"; pascalCase(str: string | readonly string[], opts?: CaseOptions): string",
+      "returns": "parts (splitByCase(str), or the array as given) each passed through upperFirst (after toLowerCase when opts.normalize), joined with \"\"; \"\" for a falsy str",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-first-unit-casing",
+        "utf16-falling-edge-split",
+        "full-case-mapping",
+        "final-sigma",
+        "array-input",
+        "empty-parts",
+        "undefined-defaults"
+      ],
+      "docs": "README.md:32-41",
+      "interfaceId": null,
+      "callId": "./src/index.ts:pascalCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:camelCase",
+      "name": "camelCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "camelCase(): \"\"; camelCase(str: string | readonly string[], opts?: CaseOptions): string",
+      "returns": "lowerFirst(pascalCase(str || \"\", opts))",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-first-unit-casing",
+        "utf16-falling-edge-split",
+        "full-case-mapping",
+        "final-sigma",
+        "array-input",
+        "empty-parts",
+        "undefined-defaults"
+      ],
+      "docs": "README.md:43-50",
+      "interfaceId": null,
+      "callId": "./src/index.ts:camelCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:kebabCase",
+      "name": "kebabCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "kebabCase(): \"\"; kebabCase(str: string | readonly string[], joiner?: string): string",
+      "returns": "parts each lowercased with toLowerCase, joined with joiner ?? \"-\"; empty parts kept; \"\" for a falsy str",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-falling-edge-split",
+        "lone-surrogate-encoding",
+        "full-case-mapping",
+        "final-sigma",
+        "joiner-nullish",
+        "array-input",
+        "empty-parts",
+        "whitespace-not-splitter",
+        "undefined-defaults"
+      ],
+      "docs": "README.md:52-61",
+      "interfaceId": null,
+      "callId": "./src/index.ts:kebabCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:snakeCase",
+      "name": "snakeCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "snakeCase(): \"\"; snakeCase(str: string | readonly string[]): string",
+      "returns": "kebabCase(str || \"\", \"_\")",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-falling-edge-split",
+        "lone-surrogate-encoding",
+        "full-case-mapping",
+        "final-sigma",
+        "array-input",
+        "empty-parts",
+        "undefined-defaults"
+      ],
+      "docs": "README.md:63-70",
+      "interfaceId": null,
+      "callId": "./src/index.ts:snakeCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:flatCase",
+      "name": "flatCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "flatCase(): \"\"; flatCase(str: string | readonly string[]): string",
+      "returns": "kebabCase(str || \"\", \"\")",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-falling-edge-split",
+        "full-case-mapping",
+        "final-sigma",
+        "array-input",
+        "undefined-defaults"
+      ],
+      "docs": "README.md:72-79",
+      "interfaceId": null,
+      "callId": "./src/index.ts:flatCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:trainCase",
+      "name": "trainCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "trainCase(): \"\"; trainCase(str: string | readonly string[], opts?: CaseOptions): string",
+      "returns": "non-empty parts each passed through upperFirst (after toLowerCase when opts.normalize), joined with \"-\"",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-first-unit-casing",
+        "utf16-falling-edge-split",
+        "lone-surrogate-encoding",
+        "full-case-mapping",
+        "final-sigma",
+        "array-input",
+        "empty-parts",
+        "undefined-defaults",
+        "readme-traincase"
+      ],
+      "docs": "README.md:81-90 (the example at :86-87 disagrees with the code; the code wins)",
+      "interfaceId": null,
+      "callId": "./src/index.ts:trainCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/index:titleCase",
+      "name": "titleCase",
+      "module": "src/index",
+      "kind": "function",
+      "signature": "titleCase(): \"\"; titleCase(str: string | readonly string[], opts?: CaseOptions): string",
+      "returns": "non-empty parts joined with \" \"; a part matching /^(a|an|and|as|at|but|by|for|if|in|is|nor|of|on|or|the|to|with)$/i is lowercased, any other part goes through upperFirst (after toLowerCase when opts.normalize)",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "utf16-first-unit-casing",
+        "utf16-falling-edge-split",
+        "lone-surrogate-encoding",
+        "full-case-mapping",
+        "final-sigma",
+        "title-exception-regex",
+        "array-input",
+        "empty-parts",
+        "whitespace-not-splitter",
+        "undefined-defaults"
+      ],
+      "docs": "README.md:92-100",
+      "interfaceId": null,
+      "callId": "./src/index.ts:titleCase",
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:CaseOptions",
+      "name": "CaseOptions",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "interface CaseOptions { normalize?: boolean }",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "cases",
+      "reason": null,
+      "leaks": [
+        "undefined-defaults"
+      ],
+      "docs": "src/types.ts:42-44. In scope: it is the runtime options shape taken by pascalCase, camelCase, trainCase and titleCase, and becomes a Go options struct with one field, Normalize bool (zero value false = option absent). A missing opts, {} and {normalize: false} behave the same; normalize is read with a truthiness check.",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": "Type with no runtime of its own. Its one field is exercised through the normalize fixtures of pascalCase, camelCase and trainCase and titleCase : cases tagged normalize, including opts {}, {normalize: false} and undefined. All of them are in unit cases."
+    },
+    {
+      "id": "src/types:SplitByCase",
+      "name": "SplitByCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type SplitByCase<T, Separator extends string = Splitter, Accumulator extends unknown[] = []>",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of splitByCase; Go has no equivalent. The runtime behavior is covered by the splitByCase fixtures.",
+      "leaks": [],
+      "docs": "src/types.ts:46-100",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:JoinByCase",
+      "name": "JoinByCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type JoinByCase<T, Joiner extends string>",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type shared by kebab, snake and flat case.",
+      "leaks": [],
+      "docs": "src/types.ts:102-112",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:PascalCase",
+      "name": "PascalCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type PascalCase<T, Normalize extends boolean | undefined = false, Accumulator extends string = \"\">",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of pascalCase.",
+      "leaks": [],
+      "docs": "src/types.ts:114-127",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:CamelCase",
+      "name": "CamelCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type CamelCase<T, Normalize extends boolean | undefined = false>",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of camelCase.",
+      "leaks": [],
+      "docs": "src/types.ts:129-136",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:KebabCase",
+      "name": "KebabCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type KebabCase<T extends string | readonly string[], Joiner extends string = \"-\">",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of kebabCase.",
+      "leaks": [],
+      "docs": "src/types.ts:138-141",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:SnakeCase",
+      "name": "SnakeCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type SnakeCase<T extends string | readonly string[]>",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of snakeCase.",
+      "leaks": [],
+      "docs": "src/types.ts:143-146",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:TrainCase",
+      "name": "TrainCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type TrainCase<T, Normalize extends boolean | undefined = false, Joiner extends string = \"-\">",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of trainCase and titleCase. It also disagrees with the runtime in places (survey: src/types.ts:158), so it is not a behavior reference.",
+      "leaks": [],
+      "docs": "src/types.ts:148-162",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    },
+    {
+      "id": "src/types:FlatCase",
+      "name": "FlatCase",
+      "module": "src/types",
+      "kind": "type",
+      "signature": "type FlatCase<T extends string | readonly string[]>",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": false,
+      "unit": null,
+      "reason": "User decision: \"Type-level helpers in src/types.ts have no runtime behavior and are out of scope.\" Compile-time literal result type of flatCase.",
+      "leaks": [],
+      "docs": "src/types.ts:164-167",
+      "interfaceId": null,
+      "callId": null,
+      "noFixturesReason": null
+    }
+  ],
+  "leaks": [
+    {
+      "id": "utf16-first-unit-casing",
+      "description": "upperFirst and lowerFirst re-case str[0], the first UTF-16 code unit. A leading character above U+FFFF is a surrogate pair, and a lone surrogate has no case mapping, so it is never re-cased: upperFirst(\"𐐨abc\") is \"𐐨abc\" (a code-point port would give \"𐐀abc\"). Reaches pascalCase, camelCase, trainCase and titleCase through every part.",
+      "symbols": [
+        "src/index:upperFirst",
+        "src/index:lowerFirst",
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:trainCase",
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [
+        "utf16-first-char",
+        "astral"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "utf16-falling-edge-split",
+      "description": "splitByCase's falling-edge branch measures and cuts the buffer in UTF-16 code units (buff.length > 1, buff.at(-1), buff.slice(0, length - 1)). A single astral capital already has length 2, so \"𐐀a\" splits where \"Aa\" does not, and the cut moves only the low surrogate: splitByCase(\"𐐀a\") is [\"\\ud801\", \"\\udc00a\"]. pascalCase, camelCase and flatCase glue the halves back into valid text (flatCase(\"𐐀a\") is \"𐐀a\": the capital survives because toLowerCase ran on the halves); kebabCase, snakeCase, trainCase and titleCase put the joiner between the halves. Only astral characters that have a lowercase mapping (Deseret, Osage, Adlam capitals and similar) trigger it; emoji and mathematical alphanumerics are uncased and do not. The fixtures keep every case of this kind whose output is valid UTF-8 (tags astral-upper, utf16-falling-edge: for example flatCase(\"𐐀a\"), pascalCase(\"𐐀a\"), camelCase(\"𐐀oo\")). The 21 cases whose output keeps a lone surrogate were removed from the fixtures (see lone-surrogate-encoding).",
+      "symbols": [
+        "src/index:splitByCase",
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [
+        "astral-upper",
+        "utf16-falling-edge"
+      ],
+      "preserve": "where the output is valid UTF-8; see lone-surrogate-encoding for the rest"
+    },
+    {
+      "id": "lone-surrogate-encoding",
+      "description": "For 21 inputs (splitByCase, kebabCase, snakeCase, trainCase and titleCase on 𐐀a, A𐐀a and 𐐀𐐨, train and title with and without normalize) the original returns strings holding lone UTF-16 surrogates, for example splitByCase(\"𐐀a\") -> [\"\\ud801\",\"\\udc00a\"]. These cases were recorded once and then removed from the fixtures, because the fixture contract requires strings to be UTF-8 (knowledge/oracles/CONTRACT.md: \"Strings stay strings (UTF-8)\") and porter's own tooling fails on them (state postflight: UnicodeEncodeError 'surrogates not allowed'). Each removed input is listed with its JavaScript output as escaped text in contract/units/split.md and contract/units/cases.md. A Go string cannot hold a lone surrogate as valid UTF-8 (encoding/json turns an unpaired \\udXXX into U+FFFD), so whatever the port returns for these inputs is a documented divergence; the strategy phase picks the target behavior. Do not change the other astral cases to match it: they stay in the fixtures and must pass.",
+      "symbols": [
+        "src/index:splitByCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:trainCase",
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [],
+      "removedCases": 21,
+      "preserve": false
+    },
+    {
+      "id": "code-point-iteration",
+      "description": "splitByCase walks code points (for...of), so a separator matches exactly one whole code point: astral separators such as \"😀\" work, separators of two or more code points (\"--\", \"::\", \"e\\u0301\") and the empty string never match. Combining marks are standalone characters that count as lowercase: \"CAFE\\u0301\" splits into [\"CAF\", \"E\\u0301\"].",
+      "symbols": [
+        "src/index:splitByCase"
+      ],
+      "fixtureTags": [
+        "custom-separators",
+        "multi-char-separator",
+        "combining"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "full-case-mapping",
+      "description": "toUpperCase and toLowerCase apply full, locale-independent Unicode mappings including SpecialCasing: ß -> SS, ŉ -> ʼN, ﬀ -> FF, ǰ -> J̌, ΐ -> three code points, İ -> i + U+0307. Lengths change (upperFirst(\"ßa\") is \"SSa\", camelCase(\"ßfoo\") is \"sSfoo\"). Go's strings.ToUpper/ToLower and unicode.ToUpper/ToLower are simple one-to-one mappings and differ on every one of these (GENERIC.md T5). The source never uses toLocale*, so no locale rules apply (T6).",
+      "symbols": [
+        "src/index:upperFirst",
+        "src/index:lowerFirst",
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [
+        "full-case-mapping"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "final-sigma",
+      "description": "toLowerCase applies the Final_Sigma context rule to the string it is given, which is a whole part (kebab, snake, flat, normalize, minor words) or the first code unit (lowerFirst): \"ΑΣ\" -> \"ας\", \"ΟΔΟΣ-ΚΑΛΟΣ\" -> \"οδος-καλος\", lowerFirst(\"Σ\") -> \"σ\". The context stops at part boundaries. Per-character lowercasing gives σ everywhere.",
+      "symbols": [
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:trainCase",
+        "src/index:titleCase",
+        "src/index:lowerFirst"
+      ],
+      "fixtureTags": [
+        "final-sigma"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "is-uppercase-definition",
+      "description": "isUppercase(c) is c !== c.toLowerCase() over the whole argument (isUppercase(\"aB\") is true). Anything with a lowercase mapping counts as upper: Lu letters, titlecase digraphs (ǅ), letter numbers (Ⅻ), circled letters (Ⓐ), the Kelvin and Ohm signs. Anything without one counts as lower: lowercase and uncased letters, CJK, emoji, spaces, punctuation, combining marks, and mathematical alphanumerics such as 𝐀 even though they are category Lu. Go's unicode.IsUpper (category Lu) disagrees on Ⅻ, Ⓐ, ǅ and 𝐀.",
+      "symbols": [
+        "src/index:isUppercase",
+        "src/index:splitByCase"
+      ],
+      "fixtureTags": [
+        "case-mapping-not-lu",
+        "titlecase-digraph"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "ascii-digit-tristate",
+      "description": "NUMBER_CHAR_RE is /\\d/ without the u flag: ASCII 0-9 only, anywhere in the argument (GENERIC.md T20). isUppercase then returns undefined (fixture value {\"$undefined\": true}; the Go binding must return the harness Undefined marker). In splitByCase the digit is neither upper nor lower: it suppresses the next rising edge (\"foo1BAR\" stays one part) but a later falling edge still fires (\"foo123Bar\" -> [\"foo123\", \"Bar\"]). Non-ASCII digits (٣, １, ²) are ordinary lowercase characters.",
+      "symbols": [
+        "src/index:isUppercase",
+        "src/index:splitByCase"
+      ],
+      "fixtureTags": [
+        "digits"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "title-exception-regex",
+      "description": "titleCase's minor-word test is /^(a|an|and|as|at|but|by|for|if|in|is|nor|of|on|or|the|to|with)$/i without the u flag. Non-unicode case-insensitive matching never maps a non-ASCII character to an ASCII one, so \"aſ\" (long s), \"iſ\" and \"ıs\" are not minor words. Go regexp (?i) uses Unicode simple folding (ſ matches s, K matches k) and would lowercase \"aſ\". Minor words are lowercased in every position, first word included: \"the-end\" -> \"the End\", \"A\" -> \"a\", \"ALink\" -> \"a Link\".",
+      "symbols": [
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [
+        "minor-words",
+        "regex-i-ascii-only"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "separators-nil-vs-empty",
+      "description": "splitByCase uses separators ?? [\"-\", \"_\", \"/\", \".\"]: an omitted or undefined list means the defaults, an empty list means no separators at all (\"foo-bar_Baz\" with [] -> [\"foo-bar_\", \"Baz\"]). The Go API has to keep 'not given' distinct from 'given and empty'.",
+      "symbols": [
+        "src/index:splitByCase"
+      ],
+      "fixtureTags": [
+        "empty-separators",
+        "undefined-arg"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "joiner-nullish",
+      "description": "kebabCase joins with joiner ?? \"-\": \"\" is a real joiner (flatCase relies on it), undefined means \"-\". Multi-character and astral joiners are used verbatim.",
+      "symbols": [
+        "src/index:kebabCase"
+      ],
+      "fixtureTags": [
+        "joiner"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "empty-parts",
+      "description": "Empty parts are kept by kebabCase, snakeCase and flatCase (\"foo--bar\" -> \"foo--bar\", \"-\" -> \"-\"), dropped by trainCase and titleCase (.filter(Boolean)), and vanish in pascalCase and camelCase because upperFirst(\"\") is \"\". splitByCase(\"\") is [] but splitByCase(\"-\") is [\"\", \"\"].",
+      "symbols": [
+        "src/index:splitByCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase",
+        "src/index:pascalCase",
+        "src/index:camelCase"
+      ],
+      "fixtureTags": [
+        "empty-parts",
+        "empty"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "array-input",
+      "description": "Every case function accepts a string or an array of parts (Array.isArray). Array elements are used as parts verbatim and never re-split (\"baz-qux\" stays one part); [] gives \"\".",
+      "symbols": [
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [
+        "array-input"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "whitespace-not-splitter",
+      "description": "Spaces, tabs and newlines are ordinary lowercase characters: \"foo bar\" is one part, \"Foo Bar\" -> [\"Foo \", \"Bar\"] (kebabCase \"foo -bar\", titleCase \"Foo  Bar\"), \"FOO BAR\" -> [\"FO\", \"O \", \"BAR\"].",
+      "symbols": [
+        "src/index:splitByCase",
+        "src/index:kebabCase",
+        "src/index:titleCase"
+      ],
+      "fixtureTags": [
+        "whitespace"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "separator-resets-case",
+      "description": "A separator resets previousUpper to undefined, so no case edge fires on the first character after it: \"foo-Bar\" gives [\"foo\", \"Bar\"] with no empty part before \"Bar\", and \"-ABc\" gives [\"\", \"A\", \"Bc\"]. The previousSplitter flag is redundant: it is undefined only before the first ordinary character, when previousUpper is undefined too, and never set back afterwards (the separator branch continues before the assignment). A port can drop it; a literal port that 'fixes' its name or resets it changes nothing, but resetting previousUpper differently does.",
+      "symbols": [
+        "src/index:splitByCase"
+      ],
+      "fixtureTags": [
+        "empty-parts"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "undefined-defaults",
+      "description": "Zero-argument and undefined calls are part of the TypeScript overloads: isUppercase() is false (default \"\"), every case function returns \"\" (str ? ... : \"\", str || \"\", or splitByCase(undefined) -> []). For options, a missing opts, {} and {normalize: false} are identical. In Go these map to zero values; bindings use in.IsUndefined(i).",
+      "symbols": [
+        "src/index:isUppercase",
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase",
+        "src/types:CaseOptions"
+      ],
+      "fixtureTags": [
+        "no-arg",
+        "undefined-arg"
+      ],
+      "preserve": true
+    },
+    {
+      "id": "unicode-version",
+      "description": "Case mappings come from the runtime's ICU data. Fixtures were recorded on Node 24.18.0 (ICU 78.3, Unicode 17.0); Go's unicode package is Unicode 15.0.0 (still so in Go 1.26). Every character in the hand-written cases and generator alphabets has had its case mapping since Unicode 11 or earlier, so the corpus does not depend on that gap. Characters assigned in Unicode 16 or 17 (Garay, for example) would.",
+      "symbols": [
+        "src/index:isUppercase",
+        "src/index:upperFirst",
+        "src/index:lowerFirst",
+        "src/index:kebabCase"
+      ],
+      "fixtureTags": [],
+      "preserve": "pinned by corpus choice"
+    },
+    {
+      "id": "readme-traincase",
+      "description": "README.md:86-87 says trainCase(\"FooBARb\") is \"Foo-Ba-Rb\"; the code returns \"Foo-BA-Rb\" (fixture trainCase.doc.L86, tagged readme-disagrees). The recorded code output is the contract.",
+      "symbols": [
+        "src/index:trainCase"
+      ],
+      "fixtureTags": [
+        "readme-disagrees"
+      ],
+      "preserve": true
+    }
+  ],
+  "free": [
+    {
+      "id": "go-names",
+      "description": "Go identifiers (SplitByCase, PascalCase, ...). Call ids keep the TypeScript names; bindings translate."
+    },
+    {
+      "id": "overload-shape",
+      "description": "How the TypeScript overloads, optional arguments, string-or-array input and the options object become Go functions (separate slice variants, variadics, an options struct), as long as the observable results match, including the separators-nil-vs-empty and joiner-nullish distinctions."
+    },
+    {
+      "id": "type-level-results",
+      "description": "The literal result types in src/types.ts (out of scope by user decision)."
+    },
+    {
+      "id": "internals",
+      "description": "The private constants NUMBER_CHAR_RE, STR_SPLITTERS and titleCaseExceptions as named values (a table lookup can replace the regexes if it matches the same strings), the state flag names, snakeCase/flatCase delegating to kebabCase."
+    },
+    {
+      "id": "empty-slice-identity",
+      "description": "splitByCase may return a nil or an empty slice for \"\"; both serialize as []."
+    },
+    {
+      "id": "out-of-signature-inputs",
+      "description": "Inputs outside the TypeScript signatures (null, numbers, objects, arrays with non-string elements). JavaScript coerces or throws TypeError for them; they are not recorded and not part of the contract."
+    },
+    {
+      "id": "performance",
+      "description": "Speed and allocation. Timings are recorded in oracle/timings for the perf ratio only."
+    },
+    {
+      "id": "layout",
+      "description": "Package and file layout of the port."
+    }
+  ]
+}

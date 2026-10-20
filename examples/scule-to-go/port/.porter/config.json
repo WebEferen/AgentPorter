@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "createdAt": "2026-10-20T19:15:01Z",
+  "source": {
+    "location": "https://github.com/unjs/scule.git",
+    "path": ".porter/cache/source",
+    "ref": "v1.3.0",
+    "commit": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+    "dirty": false,
+    "subpath": null,
+    "language": "typescript",
+    "package": {
+      "name": "scule",
+      "version": "1.3.0"
+    },
+    "license": {
+      "spdx": "MIT",
+      "copyleft": "none"
+    },
+    "mode": "code",
+    "authorization": null
+  },
+  "target": {
+    "language": "go",
+    "path": ".",
+    "package": "github.com/agentporter-examples/scule"
+  },
+  "options": {
+    "commitPolicy": "per-unit",
+    "worktree": false,
+    "registryTtlHours": 24,
+    "budgets": {
+      "unitMaxLoc": 400,
+      "unitMaxSymbols": 8,
+      "unitMinLoc": 30,
+      "attemptsPerUnit": 3,
+      "discoveredUnits": 5,
+      "portMaxDepth": 1,
+      "portMaxLoc": 2000
+    }
+  }
+}

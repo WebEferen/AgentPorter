@@ -1,0 +1,387 @@
+{
+  "schema": 1,
+  "units": {
+    "split": [
+      {
+        "ref": "test/scule.test.ts:17",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:18",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:19",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"fooBar\""
+      },
+      {
+        "ref": "test/scule.test.ts:20",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"FooBarBaz\""
+      },
+      {
+        "ref": "test/scule.test.ts:21",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"FooBARb\""
+      },
+      {
+        "ref": "test/scule.test.ts:22",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"foo_bar-baz/qux\""
+      },
+      {
+        "ref": "test/scule.test.ts:23",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"foo--bar-Baz\""
+      },
+      {
+        "ref": "test/scule.test.ts:24",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:25",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"foo123-bar\""
+      },
+      {
+        "ref": "test/scule.test.ts:26",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"FOOBar\""
+      },
+      {
+        "ref": "test/scule.test.ts:27",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"ALink\""
+      },
+      {
+        "ref": "test/scule.test.ts:29",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"foo\\\\Bar.fuzz-FIZz\""
+      },
+      {
+        "ref": "test/scule.test.ts:34",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSplitByCase/\"new-name-value\""
+      },
+      {
+        "ref": "test/scule.test.ts:93",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestUpperFirst/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:94",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestUpperFirst/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:95",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestUpperFirst/\"Foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:103",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestLowerFirst/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:104",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestLowerFirst/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:105",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestLowerFirst/\"Foo\""
+      }
+    ],
+    "cases": [
+      {
+        "ref": "test/scule.test.ts:46",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:47",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:48",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"foo-bAr\""
+      },
+      {
+        "ref": "test/scule.test.ts:49",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"FooBARb\""
+      },
+      {
+        "ref": "test/scule.test.ts:50",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"foo_bar-baz/qux\""
+      },
+      {
+        "ref": "test/scule.test.ts:51",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:52",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestPascalCase/\"foo--bar-Baz\""
+      },
+      {
+        "ref": "test/scule.test.ts:60",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestCamelCase/\"FooBarBaz\""
+      },
+      {
+        "ref": "test/scule.test.ts:61",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestCamelCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:69",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:70",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:71",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"foo/Bar\""
+      },
+      {
+        "ref": "test/scule.test.ts:72",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"foo-bAr\""
+      },
+      {
+        "ref": "test/scule.test.ts:73",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"foo--bar\""
+      },
+      {
+        "ref": "test/scule.test.ts:74",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"FooBAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:75",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"ALink\""
+      },
+      {
+        "ref": "test/scule.test.ts:76",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestKebabCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:84",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSnakeCase/\"FooBarBaz\""
+      },
+      {
+        "ref": "test/scule.test.ts:85",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestSnakeCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:113",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:114",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"f\""
+      },
+      {
+        "ref": "test/scule.test.ts:115",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:116",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"foo-bAr\""
+      },
+      {
+        "ref": "test/scule.test.ts:117",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"AcceptCH\""
+      },
+      {
+        "ref": "test/scule.test.ts:118",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"foo_bar-baz/qux\""
+      },
+      {
+        "ref": "test/scule.test.ts:119",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:120",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"foo--bar-Baz\""
+      },
+      {
+        "ref": "test/scule.test.ts:121",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"WWW-authenticate\""
+      },
+      {
+        "ref": "test/scule.test.ts:122",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCase/\"WWWAuthenticate\""
+      },
+      {
+        "ref": "test/scule.test.ts:128",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCaseNormalize/\"AcceptCH\""
+      },
+      {
+        "ref": "test/scule.test.ts:129",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCaseNormalize/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:130",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTrainCaseNormalize/\"WWW-authenticate\""
+      },
+      {
+        "ref": "test/scule.test.ts:138",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTitleCase/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:139",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTitleCase/\"f\""
+      },
+      {
+        "ref": "test/scule.test.ts:140",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTitleCase/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:141",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTitleCase/\"foo-bar\""
+      },
+      {
+        "ref": "test/scule.test.ts:142",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestTitleCase/\"this-IS-aTitle\""
+      },
+      {
+        "ref": "test/scule.test.ts:150",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"\""
+      },
+      {
+        "ref": "test/scule.test.ts:151",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"foo\""
+      },
+      {
+        "ref": "test/scule.test.ts:152",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"foo-bAr\""
+      },
+      {
+        "ref": "test/scule.test.ts:153",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"FooBARb\""
+      },
+      {
+        "ref": "test/scule.test.ts:154",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"foo_bar-baz/qux\""
+      },
+      {
+        "ref": "test/scule.test.ts:155",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"FOO_BAR\""
+      },
+      {
+        "ref": "test/scule.test.ts:156",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "github.com/agentporter-examples/scule TestFlatCase/\"foo--bar-Baz\""
+      }
+    ]
+  }
+}

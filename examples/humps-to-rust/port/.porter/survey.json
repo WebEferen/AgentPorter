@@ -1,0 +1,892 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-20T19:15:31Z",
+  "root": ".porter/cache/source",
+  "subpath": null,
+  "sampled": false,
+  "coverage": {
+    "codeFiles": 14,
+    "scanned": 14
+  },
+  "vcs": {
+    "kind": "git",
+    "commit": "dc56af8dff5c1f3a6421f2d8ed55940df820ec58",
+    "dirty": false,
+    "remote": "https://github.com/nficano/humps.git",
+    "describe": "v3.8.0"
+  },
+  "license": {
+    "spdx": "Unlicense",
+    "source": "LICENSE",
+    "copyleft": "none",
+    "manifest": null
+  },
+  "package": {
+    "name": "pyhumps",
+    "version": "3.8.0"
+  },
+  "languages": [
+    {
+      "language": "python",
+      "files": 14,
+      "loc": 1170
+    }
+  ],
+  "primaryLanguage": "python",
+  "tests": {
+    "files": 8,
+    "loc": 752,
+    "cases": 18,
+    "ratio": 2.79,
+    "runners": [
+      "pytest"
+    ],
+    "modules": [
+      {
+        "path": "tests/__init__.py",
+        "imports": []
+      },
+      {
+        "path": "tests/test_camelize.py",
+        "imports": [
+          "humps"
+        ]
+      },
+      {
+        "path": "tests/test_decamelize.py",
+        "imports": [
+          "humps"
+        ]
+      },
+      {
+        "path": "tests/test_dekebabize.py",
+        "imports": [
+          "humps"
+        ]
+      },
+      {
+        "path": "tests/test_humps.py",
+        "imports": [
+          "humps"
+        ]
+      },
+      {
+        "path": "tests/test_kebabize.py",
+        "imports": [
+          "humps"
+        ]
+      },
+      {
+        "path": "tests/test_pascalize.py",
+        "imports": [
+          "humps"
+        ]
+      },
+      {
+        "path": "tests/test_separate_words.py",
+        "imports": [
+          "humps.main"
+        ]
+      }
+    ]
+  },
+  "manifests": [
+    {
+      "path": "Pipfile.lock",
+      "kind": "pipfile-lock"
+    },
+    {
+      "path": "poetry.lock",
+      "kind": "poetry-lock"
+    },
+    {
+      "path": "pyproject.toml",
+      "kind": "pyproject"
+    },
+    {
+      "path": "setup.cfg",
+      "kind": "setup.cfg"
+    },
+    {
+      "path": "setup.py",
+      "kind": "setup.py"
+    }
+  ],
+  "tooling": [
+    {
+      "path": ".pre-commit-config.yaml",
+      "kind": "lint-config"
+    },
+    {
+      "path": ".pylintrc",
+      "kind": "python-lint"
+    },
+    {
+      "path": "Makefile",
+      "kind": "task-runner"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "kind": "ci"
+    },
+    {
+      "path": "docs/Makefile",
+      "kind": "task-runner"
+    }
+  ],
+  "runtimes": [
+    {
+      "runtime": "python",
+      "spec": "classifiers 3.6, 3.7, 3.8, 3.9, 3.10",
+      "path": "setup.py"
+    }
+  ],
+  "entryPoints": [
+    {
+      "kind": "library",
+      "name": "humps",
+      "target": "humps/__init__.py",
+      "path": "humps/__init__.py"
+    }
+  ],
+  "packages": [
+    {
+      "path": ".",
+      "manifests": [
+        "pyproject.toml",
+        "setup.py"
+      ]
+    }
+  ],
+  "kind": "library",
+  "couplingCounts": {
+    "pure": 4
+  },
+  "sourceLoc": 270,
+  "publicSymbols": 25,
+  "graph": {
+    "leaves": [
+      "humps.main"
+    ],
+    "hubs": [
+      {
+        "module": "humps.main",
+        "importedBy": 1
+      }
+    ],
+    "cycles": []
+  },
+  "modules": [
+    {
+      "id": "setup",
+      "path": "setup.py",
+      "language": "python",
+      "loc": 37,
+      "role": "aux",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": [
+          "setuptools"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "docs.conf",
+      "path": "docs/conf.py",
+      "language": "python",
+      "loc": 111,
+      "role": "aux",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "sphinx_rtd_theme"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "humps",
+      "path": "humps/__init__.py",
+      "language": "python",
+      "loc": 34,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps.main"
+        ],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "humps",
+      "path": "humps/__init__.pyi",
+      "language": "python",
+      "loc": 24,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps.main"
+        ],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "humps.main",
+      "path": "humps/main.py",
+      "language": "python",
+      "loc": 200,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "nullability",
+        "regex"
+      ],
+      "riskScore": 3,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "ACRONYM_RE",
+          "kind": "constant",
+          "line": 8,
+          "endLine": 8,
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [
+            "re"
+          ],
+          "io": [],
+          "risk": [
+            "regex"
+          ]
+        },
+        {
+          "name": "PASCAL_RE",
+          "kind": "constant",
+          "line": 9,
+          "endLine": 9,
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [
+            "re"
+          ],
+          "io": [],
+          "risk": [
+            "regex"
+          ]
+        },
+        {
+          "name": "SPLIT_RE",
+          "kind": "constant",
+          "line": 10,
+          "endLine": 10,
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [
+            "re"
+          ],
+          "io": [],
+          "risk": [
+            "regex"
+          ]
+        },
+        {
+          "name": "UNDERSCORE_RE",
+          "kind": "constant",
+          "line": 11,
+          "endLine": 11,
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [
+            "re"
+          ],
+          "io": [],
+          "risk": [
+            "regex"
+          ]
+        },
+        {
+          "name": "pascalize",
+          "kind": "function",
+          "line": 14,
+          "endLine": 39,
+          "loc": 22,
+          "public": true,
+          "refs": [
+            "humps.main:PASCAL_RE",
+            "humps.main:_is_none",
+            "humps.main:_process_keys",
+            "humps.main:camelize"
+          ],
+          "external": [
+            "collections"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "camelize",
+          "kind": "function",
+          "line": 42,
+          "endLine": 65,
+          "loc": 20,
+          "public": true,
+          "refs": [
+            "humps.main:UNDERSCORE_RE",
+            "humps.main:_is_none",
+            "humps.main:_process_keys"
+          ],
+          "external": [
+            "collections"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "kebabize",
+          "kind": "function",
+          "line": 68,
+          "endLine": 93,
+          "loc": 23,
+          "public": true,
+          "refs": [
+            "humps.main:UNDERSCORE_RE",
+            "humps.main:_fix_abbreviations",
+            "humps.main:_is_none",
+            "humps.main:_process_keys",
+            "humps.main:_separate_words",
+            "humps.main:is_camelcase",
+            "humps.main:is_pascalcase"
+          ],
+          "external": [
+            "collections"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "decamelize",
+          "kind": "function",
+          "line": 96,
+          "endLine": 114,
+          "loc": 16,
+          "public": true,
+          "refs": [
+            "humps.main:_fix_abbreviations",
+            "humps.main:_is_none",
+            "humps.main:_process_keys",
+            "humps.main:_separate_words"
+          ],
+          "external": [
+            "collections"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "depascalize",
+          "kind": "function",
+          "line": 117,
+          "endLine": 127,
+          "loc": 10,
+          "public": true,
+          "refs": [
+            "humps.main:decamelize"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "dekebabize",
+          "kind": "function",
+          "line": 130,
+          "endLine": 147,
+          "loc": 16,
+          "public": true,
+          "refs": [
+            "humps.main:_is_none",
+            "humps.main:_process_keys"
+          ],
+          "external": [
+            "collections"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_camelcase",
+          "kind": "function",
+          "line": 150,
+          "endLine": 161,
+          "loc": 11,
+          "public": true,
+          "refs": [
+            "humps.main:camelize"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_pascalcase",
+          "kind": "function",
+          "line": 164,
+          "endLine": 174,
+          "loc": 10,
+          "public": true,
+          "refs": [
+            "humps.main:pascalize"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_kebabcase",
+          "kind": "function",
+          "line": 177,
+          "endLine": 187,
+          "loc": 11,
+          "public": true,
+          "refs": [
+            "humps.main:kebabize"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_snakecase",
+          "kind": "function",
+          "line": 190,
+          "endLine": 204,
+          "loc": 13,
+          "public": true,
+          "refs": [
+            "humps.main:decamelize",
+            "humps.main:is_camelcase",
+            "humps.main:is_kebabcase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "_is_none",
+          "kind": "function",
+          "line": 207,
+          "endLine": 216,
+          "loc": 10,
+          "public": false,
+          "refs": [],
+          "external": [
+            "re"
+          ],
+          "io": [],
+          "risk": [
+            "nullability",
+            "regex"
+          ]
+        },
+        {
+          "name": "_process_keys",
+          "kind": "function",
+          "line": 219,
+          "endLine": 224,
+          "loc": 6,
+          "public": false,
+          "refs": [],
+          "external": [
+            "collections"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "_fix_abbreviations",
+          "kind": "function",
+          "line": 227,
+          "endLine": 240,
+          "loc": 13,
+          "public": false,
+          "refs": [
+            "humps.main:ACRONYM_RE"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "_separate_words",
+          "kind": "function",
+          "line": 243,
+          "endLine": 252,
+          "loc": 10,
+          "public": false,
+          "refs": [
+            "humps.main:SPLIT_RE"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        }
+      ]
+    },
+    {
+      "id": "humps.main",
+      "path": "humps/main.pyi",
+      "language": "python",
+      "loc": 12,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "StrOrIter",
+          "kind": "type",
+          "line": 4,
+          "endLine": 4,
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [
+            "typing"
+          ],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "pascalize",
+          "kind": "function",
+          "line": 7,
+          "endLine": 7,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "camelize",
+          "kind": "function",
+          "line": 8,
+          "endLine": 8,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "kebabize",
+          "kind": "function",
+          "line": 9,
+          "endLine": 9,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "decamelize",
+          "kind": "function",
+          "line": 10,
+          "endLine": 10,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "depascalize",
+          "kind": "function",
+          "line": 11,
+          "endLine": 11,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "dekebabize",
+          "kind": "function",
+          "line": 12,
+          "endLine": 12,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_camelcase",
+          "kind": "function",
+          "line": 13,
+          "endLine": 13,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_pascalcase",
+          "kind": "function",
+          "line": 14,
+          "endLine": 14,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_kebabcase",
+          "kind": "function",
+          "line": 15,
+          "endLine": 15,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "is_snakecase",
+          "kind": "function",
+          "line": 16,
+          "endLine": 16,
+          "loc": 1,
+          "public": true,
+          "refs": [
+            "humps.main:StrOrIter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        }
+      ]
+    },
+    {
+      "id": "tests",
+      "path": "tests/__init__.py",
+      "language": "python",
+      "loc": 0,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_camelize",
+      "path": "tests/test_camelize.py",
+      "language": "python",
+      "loc": 108,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_decamelize",
+      "path": "tests/test_decamelize.py",
+      "language": "python",
+      "loc": 107,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_dekebabize",
+      "path": "tests/test_dekebabize.py",
+      "language": "python",
+      "loc": 98,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_humps",
+      "path": "tests/test_humps.py",
+      "language": "python",
+      "loc": 196,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_kebabize",
+      "path": "tests/test_kebabize.py",
+      "language": "python",
+      "loc": 97,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_pascalize",
+      "path": "tests/test_pascalize.py",
+      "language": "python",
+      "loc": 100,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "tests.test_separate_words",
+      "path": "tests/test_separate_words.py",
+      "language": "python",
+      "loc": 46,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "humps.main"
+        ],
+        "external": [
+          "pytest"
+        ]
+      },
+      "symbols": []
+    }
+  ]
+}

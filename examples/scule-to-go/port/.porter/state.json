@@ -1,0 +1,413 @@
+{
+  "schema": 1,
+  "phase": "verify",
+  "phases": {
+    "recover": {
+      "status": "SKIPPED",
+      "at": null,
+      "gate": "source code available",
+      "artifacts": {}
+    },
+    "survey": {
+      "status": "DONE",
+      "at": "2026-10-20T19:20:20Z",
+      "gate": null,
+      "artifacts": {
+        "survey.json": "sha256:3f880bb5a744c9fd5ad9eac1883747b99152b6439efcd592cf263005bed61c08",
+        "survey.md": "sha256:fee2969ff914d442692d58fcf91f52b2ed6c9aeecb9facc3ecc6cc897db822a4"
+      }
+    },
+    "target": {
+      "status": "DONE",
+      "at": "2026-10-20T19:15:01Z",
+      "gate": "given",
+      "artifacts": {}
+    },
+    "deps": {
+      "status": "DONE",
+      "at": "2026-10-20T19:21:29Z",
+      "gate": "no items",
+      "artifacts": {
+        "deps.json": "sha256:04289966c42daa8956a0824b0b342ab1c942110979281c0c45a7a18b75cc055a",
+        "deps.md": "sha256:675af0f37e380415573d3d672c87ed3426dea1ab03e5d55e939c5cb3aa78eecf"
+      }
+    },
+    "contract": {
+      "status": "DONE",
+      "at": "2026-10-20T19:49:23Z",
+      "gate": null,
+      "artifacts": {
+        "contract/api.json": "sha256:f1188a8b9aadb1416b6fc080091472a17acde152e1a3e520548582f2e9c216dc",
+        "contract/contract.md": "sha256:0cca334853222b0ceea71a2963c51bda0b468ea3867425096710171d620b284e",
+        "fixtures": "sha256:814a36e010bb7c90d14570e5e34ab61a728cb537f355ddae912647b390f564de"
+      }
+    },
+    "strategy": {
+      "status": "DONE",
+      "at": "2026-10-20T19:52:01Z",
+      "gate": "approved",
+      "artifacts": {
+        "plan.json": "sha256:7f7b4015103a3a7dc2d7a1a80c1e7e02ec45832f424c63fe0f32632116e00d1f",
+        "strategy.md": "sha256:e738df19a7c725316bbabd1dc38beb92514c74927ef7a14f9ec07ec8a0739d34",
+        "decomposition.md": "sha256:1fd5646c8aed253b58cced140f632b57efc50e1a0be8a93d7687fe14a1947d5e"
+      }
+    },
+    "implement": {
+      "status": "DONE",
+      "at": "2026-10-20T20:19:42Z",
+      "gate": null,
+      "artifacts": {}
+    },
+    "verify": {
+      "status": "DONE",
+      "at": "2026-10-20T20:19:42Z",
+      "gate": null,
+      "artifacts": {
+        "parity.json": "sha256:416cdf1104d39e6ed0707a788287d5d8714cb8ce3063b30eb80452e277f8c9b8",
+        "PARITY.md": "sha256:e3d8bfe0418dbf09b542243527f986f9395df4bdf09164d55260d74f513cab21"
+      }
+    }
+  },
+  "units": {
+    "split": {
+      "status": "DONE",
+      "wave": 0,
+      "attempts": 1,
+      "task": "commit",
+      "verifiedLevel": "EXACT",
+      "note": null
+    },
+    "cases": {
+      "status": "DONE",
+      "wave": 1,
+      "attempts": 1,
+      "task": "commit",
+      "verifiedLevel": "EXACT",
+      "note": null
+    }
+  },
+  "budgets": {
+    "attemptsPerUnit": 3,
+    "discoveredUnits": 5,
+    "discoveredUsed": 0
+  },
+  "stale": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:15:01Z",
+      "event": "init",
+      "source": ".porter/cache/source",
+      "mode": "code",
+      "target": "go"
+    },
+    {
+      "at": "2026-10-20T19:15:12Z",
+      "event": "phase.start",
+      "phase": "survey"
+    },
+    {
+      "at": "2026-10-20T19:20:20Z",
+      "event": "phase.end",
+      "phase": "survey",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T19:20:25Z",
+      "event": "phase.start",
+      "phase": "deps"
+    },
+    {
+      "at": "2026-10-20T19:21:29Z",
+      "event": "phase.end",
+      "phase": "deps",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T19:21:35Z",
+      "event": "phase.start",
+      "phase": "contract"
+    },
+    {
+      "at": "2026-10-20T19:45:39Z",
+      "event": "phase.end",
+      "phase": "contract",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T19:45:44Z",
+      "event": "phase.start",
+      "phase": "strategy"
+    },
+    {
+      "at": "2026-10-20T19:47:28Z",
+      "event": "phase.start",
+      "phase": "contract",
+      "rerun": true
+    },
+    {
+      "at": "2026-10-20T19:49:23Z",
+      "event": "phase.end",
+      "phase": "contract",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T19:49:34Z",
+      "event": "phase.start",
+      "phase": "strategy",
+      "rerun": true
+    },
+    {
+      "at": "2026-10-20T19:52:01Z",
+      "event": "plan.sync",
+      "added": [
+        "split",
+        "cases"
+      ]
+    },
+    {
+      "at": "2026-10-20T19:52:01Z",
+      "event": "phase.end",
+      "phase": "strategy",
+      "status": "GATE_WAIT"
+    },
+    {
+      "at": "2026-10-20T19:52:10Z",
+      "event": "gate",
+      "phase": "strategy",
+      "decision": "approve",
+      "note": "strategy gate: approve the proposed units, order and budgets as written."
+    },
+    {
+      "at": "2026-10-20T19:52:18Z",
+      "event": "phase.start",
+      "phase": "implement"
+    },
+    {
+      "at": "2026-10-20T19:52:18Z",
+      "event": "unit.status",
+      "unit": "split",
+      "from": "PENDING",
+      "to": "IN_PROGRESS"
+    },
+    {
+      "at": "2026-10-20T19:56:02Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "read-contract"
+    },
+    {
+      "at": "2026-10-20T19:56:28Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "scaffold"
+    },
+    {
+      "at": "2026-10-20T20:00:00Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "implement"
+    },
+    {
+      "at": "2026-10-20T20:00:24Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "mark-divergences"
+    },
+    {
+      "at": "2026-10-20T20:02:30Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "port-tests"
+    },
+    {
+      "at": "2026-10-20T20:02:48Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "wire-fixtures"
+    },
+    {
+      "at": "2026-10-20T20:04:30Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "green"
+    },
+    {
+      "at": "2026-10-20T20:05:13Z",
+      "event": "unit.status",
+      "unit": "split",
+      "from": "IN_PROGRESS",
+      "to": "IMPLEMENTED"
+    },
+    {
+      "at": "2026-10-20T20:05:13Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "review"
+    },
+    {
+      "at": "2026-10-20T20:14:47Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "apply-findings"
+    },
+    {
+      "at": "2026-10-20T20:14:47Z",
+      "event": "unit.status",
+      "unit": "split",
+      "from": "IMPLEMENTED",
+      "to": "REVIEWED"
+    },
+    {
+      "at": "2026-10-20T20:15:01Z",
+      "event": "phase.start",
+      "phase": "verify"
+    },
+    {
+      "at": "2026-10-20T20:15:43Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "verify"
+    },
+    {
+      "at": "2026-10-20T20:15:43Z",
+      "event": "unit.status",
+      "unit": "split",
+      "from": "REVIEWED",
+      "to": "VERIFIED",
+      "level": "EXACT"
+    },
+    {
+      "at": "2026-10-20T20:16:00Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "report"
+    },
+    {
+      "at": "2026-10-20T20:16:00Z",
+      "event": "unit.task",
+      "unit": "split",
+      "task": "commit"
+    },
+    {
+      "at": "2026-10-20T20:16:00Z",
+      "event": "unit.status",
+      "unit": "split",
+      "from": "VERIFIED",
+      "to": "DONE"
+    },
+    {
+      "at": "2026-10-20T20:16:12Z",
+      "event": "unit.status",
+      "unit": "cases",
+      "from": "PENDING",
+      "to": "IN_PROGRESS"
+    },
+    {
+      "at": "2026-10-20T20:17:47Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "read-contract"
+    },
+    {
+      "at": "2026-10-20T20:17:47Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "implement"
+    },
+    {
+      "at": "2026-10-20T20:17:48Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "mark-divergences"
+    },
+    {
+      "at": "2026-10-20T20:18:36Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "port-tests"
+    },
+    {
+      "at": "2026-10-20T20:18:37Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "wire-fixtures"
+    },
+    {
+      "at": "2026-10-20T20:18:39Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "green"
+    },
+    {
+      "at": "2026-10-20T20:19:03Z",
+      "event": "unit.status",
+      "unit": "cases",
+      "from": "IN_PROGRESS",
+      "to": "IMPLEMENTED"
+    },
+    {
+      "at": "2026-10-20T20:19:03Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "review"
+    },
+    {
+      "at": "2026-10-20T20:19:22Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "apply-findings"
+    },
+    {
+      "at": "2026-10-20T20:19:22Z",
+      "event": "unit.status",
+      "unit": "cases",
+      "from": "IMPLEMENTED",
+      "to": "REVIEWED"
+    },
+    {
+      "at": "2026-10-20T20:19:36Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "verify"
+    },
+    {
+      "at": "2026-10-20T20:19:37Z",
+      "event": "unit.status",
+      "unit": "cases",
+      "from": "REVIEWED",
+      "to": "VERIFIED",
+      "level": "EXACT"
+    },
+    {
+      "at": "2026-10-20T20:19:37Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "report"
+    },
+    {
+      "at": "2026-10-20T20:19:37Z",
+      "event": "unit.task",
+      "unit": "cases",
+      "task": "commit"
+    },
+    {
+      "at": "2026-10-20T20:19:37Z",
+      "event": "unit.status",
+      "unit": "cases",
+      "from": "VERIFIED",
+      "to": "DONE"
+    },
+    {
+      "at": "2026-10-20T20:19:42Z",
+      "event": "phase.end",
+      "phase": "implement",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-20T20:19:42Z",
+      "event": "phase.end",
+      "phase": "verify",
+      "status": "DONE"
+    }
+  ]
+}

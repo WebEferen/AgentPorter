@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "createdAt": "2026-10-20T19:15:01Z",
+  "source": {
+    "location": "https://github.com/kballard/go-shellquote.git",
+    "path": ".porter/cache/source",
+    "ref": "95032a82bc518f77982ea72343cc1ade730072f0",
+    "commit": "95032a82bc518f77982ea72343cc1ade730072f0",
+    "dirty": false,
+    "subpath": null,
+    "language": "go",
+    "package": {
+      "name": "github.com/kballard/go-shellquote",
+      "version": null
+    },
+    "license": {
+      "spdx": "MIT",
+      "copyleft": "none"
+    },
+    "mode": "code",
+    "authorization": null
+  },
+  "target": {
+    "language": "python",
+    "path": ".",
+    "package": "shellquote"
+  },
+  "options": {
+    "commitPolicy": "per-unit",
+    "worktree": false,
+    "registryTtlHours": 24,
+    "budgets": {
+      "unitMaxLoc": 400,
+      "unitMaxSymbols": 8,
+      "unitMinLoc": 30,
+      "attemptsPerUnit": 3,
+      "discoveredUnits": 5,
+      "portMaxDepth": 1,
+      "portMaxLoc": 2000
+    }
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "draft": false,
+  "generatedBy": "porter.py decompose",
+  "generatedAt": "2026-10-20T19:50:51Z",
+  "budgets": {
+    "unitMaxLoc": 400,
+    "unitMaxSymbols": 8,
+    "unitMinLoc": 30
+  },
+  "tracer": "cycle-humps",
+  "order": [
+    "cycle-humps"
+  ],
+  "layers": {
+    "core": [
+      "cycle-humps"
+    ]
+  },
+  "cycles": [
+    {
+      "clusters": [
+        "m:humps.main/is_pascalcase",
+        "m:humps.main/kebabize"
+      ],
+      "edges": [
+        "humps.main:depascalize -> humps.main:decamelize",
+        "humps.main:is_pascalcase -> humps.main:pascalize",
+        "humps.main:kebabize -> humps.main:is_pascalcase"
+      ],
+      "loc": 191,
+      "reason": "created by a budget split"
+    }
+  ],
+  "orphans": [],
+  "unknownRoots": [],
+  "adjustments": [],
+  "units": [
+    {
+      "id": "cycle-humps",
+      "name": "cycle humps",
+      "layer": "core",
+      "wave": 0,
+      "symbols": [
+        "humps.main:pascalize",
+        "humps.main:camelize",
+        "humps.main:kebabize",
+        "humps.main:decamelize",
+        "humps.main:depascalize",
+        "humps.main:dekebabize",
+        "humps.main:is_camelcase",
+        "humps.main:is_pascalcase",
+        "humps.main:is_kebabcase",
+        "humps.main:is_snakecase",
+        "humps.main:_is_none",
+        "humps.main:_process_keys",
+        "humps.main:_fix_abbreviations",
+        "humps.main:_separate_words"
+      ],
+      "publicSymbols": [
+        "humps.main:pascalize",
+        "humps.main:camelize",
+        "humps.main:kebabize",
+        "humps.main:decamelize",
+        "humps.main:depascalize",
+        "humps.main:dekebabize",
+        "humps.main:is_camelcase",
+        "humps.main:is_pascalcase",
+        "humps.main:is_kebabcase",
+        "humps.main:is_snakecase"
+      ],
+      "sources": [
+        {
+          "path": "humps/main.py",
+          "lines": [
+            14,
+            39
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            42,
+            65
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            68,
+            93
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            96,
+            114
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            117,
+            127
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            130,
+            147
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            150,
+            161
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            164,
+            174
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            177,
+            187
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            190,
+            204
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            207,
+            216
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            219,
+            224
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            227,
+            240
+          ]
+        },
+        {
+          "path": "humps/main.py",
+          "lines": [
+            243,
+            252
+          ]
+        }
+      ],
+      "loc": 191,
+      "dependsOn": [],
+      "externalDeps": [
+        "collections",
+        "re (MAP)"
+      ],
+      "fixtures": {
+        "path": "fixtures/cycle-humps/",
+        "expected": null
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "tests/test_separate_words.py"
+      ],
+      "riskTags": [
+        "nullability",
+        "regex"
+      ],
+      "riskScore": 3,
+      "strategy": null,
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": true,
+      "overBudget": false,
+      "notes": null
+    }
+  ]
+}

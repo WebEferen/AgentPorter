@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "upstream": {
+    "package": "github.com/kballard/go-shellquote",
+    "version": null,
+    "commit": "95032a82bc518f77982ea72343cc1ade730072f0",
+    "language": "go",
+    "mode": "code",
+    "artifactSha256": null
+  },
+  "target": {
+    "language": "python",
+    "package": "shellquote",
+    "path": "."
+  },
+  "evidenceDate": "2026-10-20T20:00:11Z",
+  "run": "verify-final-v1",
+  "units": [
+    {
+      "unit": "root",
+      "level": "EXACT",
+      "fixtures": {
+        "total": 1083,
+        "passed": 1083,
+        "normalized": 0,
+        "divergent": 0,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 29,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 0,
+        "DIVERGENCE": 0,
+        "UNRESOLVED": 0,
+        "total": 29
+      },
+      "divergences": [],
+      "mismatches": [],
+      "perf": {
+        "cases": 1021,
+        "medianRatio": 3.1,
+        "note": "target time / oracle time; above 1 is slower"
+      },
+      "notes": [],
+      "oracle": {
+        "commit": "95032a82bc518f77982ea72343cc1ade730072f0",
+        "driver": "agentporter/knowledge/oracles/go",
+        "language": "go",
+        "package": "root",
+        "recordedAt": "2026-10-20T19:55:16Z",
+        "runtime": "go1.26.0",
+        "version": "unknown"
+      }
+    }
+  ],
+  "divergences": [],
+  "markers": {},
+  "markerErrors": [],
+  "totals": {
+    "units": 1,
+    "total": 1083,
+    "passed": 1083,
+    "normalized": 0,
+    "divergent": 0,
+    "failed": 0,
+    "missing": 0,
+    "EXACT": 1,
+    "EQUIVALENT": 0,
+    "DIVERGENT": 0,
+    "ASSERTED": 0,
+    "GAP": 0,
+    "OUT-OF-SCOPE": 0
+  }
+}

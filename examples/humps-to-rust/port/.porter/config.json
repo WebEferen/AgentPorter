@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "createdAt": "2026-10-20T19:15:13Z",
+  "source": {
+    "location": "https://github.com/nficano/humps.git",
+    "path": ".porter/cache/source",
+    "ref": "v3.8.0",
+    "commit": "dc56af8dff5c1f3a6421f2d8ed55940df820ec58",
+    "dirty": false,
+    "subpath": null,
+    "language": "python",
+    "package": {
+      "name": "pyhumps",
+      "version": "3.8.0"
+    },
+    "license": {
+      "spdx": "Unlicense",
+      "copyleft": "none"
+    },
+    "mode": "code",
+    "authorization": null
+  },
+  "target": {
+    "language": "rust",
+    "path": ".",
+    "package": "humps"
+  },
+  "options": {
+    "commitPolicy": "per-unit",
+    "worktree": false,
+    "registryTtlHours": 24,
+    "budgets": {
+      "unitMaxLoc": 400,
+      "unitMaxSymbols": 8,
+      "unitMinLoc": 30,
+      "attemptsPerUnit": 3,
+      "discoveredUnits": 5,
+      "portMaxDepth": 1,
+      "portMaxLoc": 2000
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "divergences": [
+    {
+      "id": "non-string-arguments",
+      "unit": "validate-validate",
+      "summary": "validate and validateStrict take &str; the source's runtime checks for non-string arguments (which return false) cannot be expressed.",
+      "rationale": "Idiomatic Rust API decided at the strategy gate: string parameters are &str, so a number, null, object or array cannot be passed. The cases exist only because JavaScript is dynamically typed.",
+      "cases": [
+        "*nonstring*"
+      ],
+      "approvedBy": "strategy gate 2026-10-20: 'an idiomatic Rust API (Result for errors)'; scope gauntlet lists non-string arguments as out of scope"
+    },
+    {
+      "id": "non-string-arguments",
+      "unit": "satisfies-satisfies",
+      "summary": "compareVersions, compare and satisfies take &str; the source's TypeError paths for non-string versions, operators and ranges (including four V8-generated messages) cannot be reached.",
+      "rationale": "Idiomatic Rust API decided at the strategy gate: string parameters are &str, so non-string values cannot be passed. The cases exist only because JavaScript is dynamically typed.",
+      "cases": [
+        "*nonstring*",
+        "edge-cmp-precedence-v1-before-v2"
+      ],
+      "approvedBy": "strategy gate 2026-10-20: 'an idiomatic Rust API (Result for errors)'; scope gauntlet lists non-string arguments as out of scope; unattended: edge-cmp-precedence-v1-before-v2 (compare('foo', 42, '>'), tagged nonstring) added on 2026-10-20 as the conservative choice: it passes a non-string v2, which the approved divergence covers; its id lacks 'nonstring', so the glob missed it. No behavior change."
+    }
+  ]
+}

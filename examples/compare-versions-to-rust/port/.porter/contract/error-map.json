@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "map": {
+    "TypeError": "Error",
+    "Error": "Error"
+  },
+  "notes": "Proposal for the strategy gate. The Rust harness reports an Err's category as its type name (last path segment), so one public error enum, compare_versions_port::Error, reports 'Error' for every failure. Suggested variants: InvalidVersion(String) for \"Invalid argument not valid semver ('<input>' received)\" and InvalidOperator for \"Invalid operator, expected one of >|>=|=|<=|<|!=\", whose Display impl reproduces the source text so messages compare exactly. The source's TypeError paths are 'Invalid argument expected string' and 'Invalid operator type, expected string but got <typeof>' (only reachable with non-string arguments, all in cases named *nonstring*), plus four V8-generated messages in satisfies (ignore-message). Through a &str API they are unreachable; if the strategy keeps them, a variant such as InvalidType with the same Display text covers them under this same mapping. A port that wants EXACT instead of EQUIVALENT can name its types TypeError and Error and drop this map."
+}

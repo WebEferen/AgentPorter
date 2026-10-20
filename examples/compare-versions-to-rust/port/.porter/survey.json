@@ -1,0 +1,624 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-20T19:15:18Z",
+  "root": ".porter/cache/source",
+  "subpath": null,
+  "sampled": false,
+  "coverage": {
+    "codeFiles": 10,
+    "scanned": 10
+  },
+  "vcs": {
+    "kind": "git",
+    "commit": "497a7e0c5fc00c6bb16f3aa81ce32fe2acdd43cd",
+    "dirty": false,
+    "remote": "https://github.com/omichelsen/compare-versions.git",
+    "describe": "v6.1.1"
+  },
+  "license": {
+    "spdx": "MIT",
+    "source": "LICENSE",
+    "copyleft": "none",
+    "manifest": "MIT"
+  },
+  "package": {
+    "name": "compare-versions",
+    "version": "6.1.1",
+    "license": "MIT"
+  },
+  "languages": [
+    {
+      "language": "typescript",
+      "files": 10,
+      "loc": 795
+    }
+  ],
+  "primaryLanguage": "typescript",
+  "tests": {
+    "files": 4,
+    "loc": 581,
+    "cases": 12,
+    "ratio": 2.71,
+    "runners": [
+      "mocha-style (describe/it)"
+    ],
+    "modules": [
+      {
+        "path": "test/compare.ts",
+        "imports": [
+          "src/index"
+        ]
+      },
+      {
+        "path": "test/satisfies.ts",
+        "imports": [
+          "src/index"
+        ]
+      },
+      {
+        "path": "test/sort.ts",
+        "imports": [
+          "src/index"
+        ]
+      },
+      {
+        "path": "test/validate.ts",
+        "imports": [
+          "src/index"
+        ]
+      }
+    ]
+  },
+  "manifests": [
+    {
+      "path": "package-lock.json",
+      "kind": "npm-lock"
+    },
+    {
+      "path": "package.json",
+      "kind": "npm"
+    }
+  ],
+  "tooling": [
+    {
+      "path": ".editorconfig",
+      "kind": "lint-config"
+    },
+    {
+      "path": ".mocharc.json",
+      "kind": "js-test"
+    },
+    {
+      "path": "tsconfig.json",
+      "kind": "typescript"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "kind": "ci"
+    }
+  ],
+  "runtimes": [],
+  "entryPoints": [
+    {
+      "kind": "library",
+      "name": "main",
+      "target": "./lib/umd/index.js",
+      "path": "package.json"
+    },
+    {
+      "kind": "library",
+      "name": "module",
+      "target": "./lib/esm/index.js",
+      "path": "package.json"
+    },
+    {
+      "kind": "library",
+      "name": "types",
+      "target": "./lib/esm/index.d.ts",
+      "path": "package.json"
+    }
+  ],
+  "packages": [
+    {
+      "path": ".",
+      "manifests": [
+        "package.json"
+      ]
+    }
+  ],
+  "kind": "library",
+  "couplingCounts": {
+    "pure": 6
+  },
+  "sourceLoc": 214,
+  "publicSymbols": 10,
+  "graph": {
+    "leaves": [
+      "src/utils"
+    ],
+    "hubs": [
+      {
+        "module": "src/utils",
+        "importedBy": 5
+      },
+      {
+        "module": "src/compare",
+        "importedBy": 2
+      },
+      {
+        "module": "src/compareVersions",
+        "importedBy": 2
+      },
+      {
+        "module": "src/satisfies",
+        "importedBy": 1
+      },
+      {
+        "module": "src/validate",
+        "importedBy": 1
+      }
+    ],
+    "cycles": []
+  },
+  "modules": [
+    {
+      "id": "src/compare",
+      "path": "src/compare.ts",
+      "language": "typescript",
+      "loc": 48,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "error-model",
+        "ordering",
+        "reflection"
+      ],
+      "riskScore": 4,
+      "imports": {
+        "internal": [
+          "src/compareVersions",
+          "src/utils"
+        ],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "compare",
+          "kind": "constant",
+          "line": 21,
+          "endLine": 30,
+          "public": true,
+          "loc": 8,
+          "refs": [
+            "src/compare:assertValidOperator",
+            "src/compare:operatorResMap",
+            "src/compareVersions:compareVersions",
+            "src/utils:CompareOperator"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "operatorResMap",
+          "kind": "constant",
+          "line": 32,
+          "endLine": 39,
+          "public": false,
+          "loc": 8,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "allowedOperators",
+          "kind": "constant",
+          "line": 41,
+          "endLine": 41,
+          "public": false,
+          "loc": 1,
+          "refs": [
+            "src/compare:operatorResMap"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "ordering",
+            "reflection"
+          ]
+        },
+        {
+          "name": "assertValidOperator",
+          "kind": "constant",
+          "line": 43,
+          "endLine": 54,
+          "public": false,
+          "loc": 12,
+          "refs": [
+            "src/compare:allowedOperators"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "error-model",
+            "reflection"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/compareVersions",
+      "path": "src/compareVersions.ts",
+      "language": "typescript",
+      "loc": 26,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/utils"
+        ],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "compareVersions",
+          "kind": "constant",
+          "line": 10,
+          "endLine": 31,
+          "public": true,
+          "loc": 18,
+          "refs": [
+            "src/utils:compareSegments",
+            "src/utils:validateAndParse"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        }
+      ]
+    },
+    {
+      "id": "src/index",
+      "path": "src/index.ts",
+      "language": "typescript",
+      "loc": 5,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/compare",
+          "src/compareVersions",
+          "src/satisfies",
+          "src/utils",
+          "src/validate"
+        ],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "index",
+          "kind": "module",
+          "line": 1,
+          "endLine": 5,
+          "public": true,
+          "loc": 5,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        }
+      ]
+    },
+    {
+      "id": "src/satisfies",
+      "path": "src/satisfies.ts",
+      "language": "typescript",
+      "loc": 58,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "nullability",
+        "regex"
+      ],
+      "riskScore": 3,
+      "imports": {
+        "internal": [
+          "src/compare",
+          "src/utils"
+        ],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "satisfies",
+          "kind": "constant",
+          "line": 17,
+          "endLine": 69,
+          "public": true,
+          "loc": 43,
+          "refs": [
+            "src/compare:compare",
+            "src/utils:CompareOperator",
+            "src/utils:compareSegments",
+            "src/utils:validateAndParse"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability",
+            "regex"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/utils",
+      "path": "src/utils.ts",
+      "language": "typescript",
+      "loc": 43,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "error-model",
+        "numeric",
+        "reflection"
+      ],
+      "riskScore": 5,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "CompareOperator",
+          "kind": "type",
+          "line": 4,
+          "endLine": 4,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "semver",
+          "kind": "constant",
+          "line": 6,
+          "endLine": 7,
+          "public": true,
+          "loc": 2,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "validateAndParse",
+          "kind": "constant",
+          "line": 9,
+          "endLine": 21,
+          "public": true,
+          "loc": 13,
+          "refs": [
+            "src/utils:semver"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "error-model",
+            "reflection"
+          ]
+        },
+        {
+          "name": "isWildcard",
+          "kind": "constant",
+          "line": 23,
+          "endLine": 23,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "tryParse",
+          "kind": "constant",
+          "line": 25,
+          "endLine": 28,
+          "public": false,
+          "loc": 4,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "numeric"
+          ]
+        },
+        {
+          "name": "forceType",
+          "kind": "constant",
+          "line": 30,
+          "endLine": 31,
+          "public": false,
+          "loc": 2,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "reflection"
+          ]
+        },
+        {
+          "name": "compareStrings",
+          "kind": "constant",
+          "line": 33,
+          "endLine": 39,
+          "public": false,
+          "loc": 7,
+          "refs": [
+            "src/utils:forceType",
+            "src/utils:isWildcard",
+            "src/utils:tryParse"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "compareSegments",
+          "kind": "constant",
+          "line": 41,
+          "endLine": 50,
+          "public": true,
+          "loc": 10,
+          "refs": [
+            "src/utils:compareStrings"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "numeric"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/validate",
+      "path": "src/validate.ts",
+      "language": "typescript",
+      "loc": 34,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "reflection",
+        "regex"
+      ],
+      "riskScore": 5,
+      "imports": {
+        "internal": [
+          "src/utils"
+        ],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "validate",
+          "kind": "constant",
+          "line": 16,
+          "endLine": 17,
+          "public": true,
+          "loc": 2,
+          "refs": [
+            "src/utils:semver"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "reflection",
+            "regex"
+          ]
+        },
+        {
+          "name": "validateStrict",
+          "kind": "constant",
+          "line": 32,
+          "endLine": 36,
+          "public": true,
+          "loc": 5,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "reflection",
+            "regex"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test/compare",
+      "path": "test/compare.ts",
+      "language": "typescript",
+      "loc": 286,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/index"
+        ],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "test/satisfies",
+      "path": "test/satisfies.ts",
+      "language": "typescript",
+      "loc": 131,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/index"
+        ],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "test/sort",
+      "path": "test/sort.ts",
+      "language": "typescript",
+      "loc": 41,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/index"
+        ],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "test/validate",
+      "path": "test/validate.ts",
+      "language": "typescript",
+      "loc": 123,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/index"
+        ],
+        "external": []
+      },
+      "symbols": []
+    }
+  ]
+}

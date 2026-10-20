@@ -1,0 +1,951 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-20T19:15:13Z",
+  "root": ".porter/cache/source",
+  "subpath": null,
+  "sampled": false,
+  "coverage": {
+    "codeFiles": 4,
+    "scanned": 4
+  },
+  "vcs": {
+    "kind": "git",
+    "commit": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+    "dirty": false,
+    "remote": "https://github.com/unjs/scule.git",
+    "describe": "v1.3.0"
+  },
+  "license": {
+    "spdx": "MIT",
+    "source": "LICENSE",
+    "copyleft": "none",
+    "manifest": "MIT"
+  },
+  "package": {
+    "name": "scule",
+    "version": "1.3.0",
+    "license": "MIT"
+  },
+  "languages": [
+    {
+      "language": "typescript",
+      "files": 4,
+      "loc": 567
+    }
+  ],
+  "primaryLanguage": "typescript",
+  "tests": {
+    "files": 2,
+    "loc": 235,
+    "cases": 12,
+    "ratio": 0.71,
+    "runners": [
+      "mocha-style (describe/it)",
+      "vitest"
+    ],
+    "modules": [
+      {
+        "path": "test/scule.test.ts",
+        "imports": [
+          "src/index"
+        ]
+      },
+      {
+        "path": "test/types.test-d.ts",
+        "imports": [
+          "src/types"
+        ]
+      }
+    ]
+  },
+  "manifests": [
+    {
+      "path": "package.json",
+      "kind": "npm"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "kind": "pnpm-lock"
+    }
+  ],
+  "tooling": [
+    {
+      "path": ".editorconfig",
+      "kind": "lint-config"
+    },
+    {
+      "path": ".eslintrc",
+      "kind": "js-lint"
+    },
+    {
+      "path": ".prettierrc",
+      "kind": "js-format"
+    },
+    {
+      "path": "tsconfig.json",
+      "kind": "typescript"
+    },
+    {
+      "path": ".github/workflows/autofix.yml",
+      "kind": "ci"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "kind": "ci"
+    }
+  ],
+  "runtimes": [],
+  "entryPoints": [
+    {
+      "kind": "library",
+      "name": "main",
+      "target": "./dist/index.cjs",
+      "path": "package.json"
+    },
+    {
+      "kind": "library",
+      "name": "module",
+      "target": "./dist/index.mjs",
+      "path": "package.json"
+    },
+    {
+      "kind": "library",
+      "name": "types",
+      "target": "./dist/index.d.ts",
+      "path": "package.json"
+    },
+    {
+      "kind": "library",
+      "name": ".",
+      "target": "{'types': './dist/index.d.ts', 'require': './dist/index.cjs', 'import': './dist/index.mjs'}",
+      "path": "package.json"
+    },
+    {
+      "kind": "library",
+      "name": "./*",
+      "target": "./*",
+      "path": "package.json"
+    }
+  ],
+  "packages": [
+    {
+      "path": ".",
+      "manifests": [
+        "package.json"
+      ]
+    }
+  ],
+  "kind": "library",
+  "couplingCounts": {
+    "pure": 2
+  },
+  "sourceLoc": 332,
+  "publicSymbols": 37,
+  "graph": {
+    "leaves": [
+      "src/types"
+    ],
+    "hubs": [
+      {
+        "module": "src/types",
+        "importedBy": 1
+      }
+    ],
+    "cycles": []
+  },
+  "modules": [
+    {
+      "id": "src/index",
+      "path": "src/index.ts",
+      "language": "typescript",
+      "loc": 175,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "nullability",
+        "numeric",
+        "reflection"
+      ],
+      "riskScore": 4,
+      "imports": {
+        "internal": [
+          "src/types"
+        ],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "NUMBER_CHAR_RE",
+          "kind": "constant",
+          "line": 12,
+          "endLine": 12,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "STR_SPLITTERS",
+          "kind": "constant",
+          "line": 13,
+          "endLine": 13,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "isUppercase",
+          "kind": "function",
+          "line": 15,
+          "endLine": 20,
+          "public": true,
+          "loc": 6,
+          "refs": [
+            "src/index:NUMBER_CHAR_RE"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "splitByCase",
+          "kind": "function",
+          "line": 22,
+          "endLine": 22,
+          "public": true,
+          "loc": 1,
+          "refs": [
+            "src/types:SplitByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "splitByCase",
+          "kind": "function",
+          "line": 23,
+          "endLine": 26,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:SplitByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "splitByCase",
+          "kind": "function",
+          "line": 27,
+          "endLine": 81,
+          "public": true,
+          "loc": 47,
+          "refs": [
+            "src/index:STR_SPLITTERS",
+            "src/index:isUppercase",
+            "src/types:SplitByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability",
+            "numeric",
+            "reflection"
+          ]
+        },
+        {
+          "name": "upperFirst",
+          "kind": "function",
+          "line": 83,
+          "endLine": 85,
+          "public": true,
+          "loc": 3,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "lowerFirst",
+          "kind": "function",
+          "line": 87,
+          "endLine": 89,
+          "public": true,
+          "loc": 3,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "pascalCase",
+          "kind": "function",
+          "line": 91,
+          "endLine": 91,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "pascalCase",
+          "kind": "function",
+          "line": 92,
+          "endLine": 95,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:CaseOptions",
+            "src/types:PascalCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "pascalCase",
+          "kind": "function",
+          "line": 96,
+          "endLine": 105,
+          "public": true,
+          "loc": 10,
+          "refs": [
+            "src/index:splitByCase",
+            "src/index:upperFirst",
+            "src/types:CaseOptions",
+            "src/types:PascalCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "camelCase",
+          "kind": "function",
+          "line": 107,
+          "endLine": 107,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "camelCase",
+          "kind": "function",
+          "line": 108,
+          "endLine": 111,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:CamelCase",
+            "src/types:CaseOptions"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "camelCase",
+          "kind": "function",
+          "line": 112,
+          "endLine": 120,
+          "public": true,
+          "loc": 9,
+          "refs": [
+            "src/index:lowerFirst",
+            "src/index:pascalCase",
+            "src/types:CamelCase",
+            "src/types:CaseOptions"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "kebabCase",
+          "kind": "function",
+          "line": 122,
+          "endLine": 122,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "kebabCase",
+          "kind": "function",
+          "line": 123,
+          "endLine": 125,
+          "public": true,
+          "loc": 3,
+          "refs": [
+            "src/types:KebabCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "kebabCase",
+          "kind": "function",
+          "line": 126,
+          "endLine": 129,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:KebabCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "kebabCase",
+          "kind": "function",
+          "line": 130,
+          "endLine": 139,
+          "public": true,
+          "loc": 10,
+          "refs": [
+            "src/index:splitByCase",
+            "src/types:KebabCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "snakeCase",
+          "kind": "function",
+          "line": 141,
+          "endLine": 141,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "snakeCase",
+          "kind": "function",
+          "line": 142,
+          "endLine": 144,
+          "public": true,
+          "loc": 3,
+          "refs": [
+            "src/types:SnakeCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "snakeCase",
+          "kind": "function",
+          "line": 145,
+          "endLine": 147,
+          "public": true,
+          "loc": 3,
+          "refs": [
+            "src/index:kebabCase",
+            "src/types:SnakeCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "flatCase",
+          "kind": "function",
+          "line": 149,
+          "endLine": 149,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "flatCase",
+          "kind": "function",
+          "line": 150,
+          "endLine": 152,
+          "public": true,
+          "loc": 3,
+          "refs": [
+            "src/types:FlatCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "flatCase",
+          "kind": "function",
+          "line": 153,
+          "endLine": 155,
+          "public": true,
+          "loc": 3,
+          "refs": [
+            "src/index:kebabCase",
+            "src/types:FlatCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "trainCase",
+          "kind": "function",
+          "line": 157,
+          "endLine": 157,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "trainCase",
+          "kind": "function",
+          "line": 158,
+          "endLine": 161,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:CaseOptions",
+            "src/types:TrainCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "trainCase",
+          "kind": "function",
+          "line": 162,
+          "endLine": 170,
+          "public": true,
+          "loc": 9,
+          "refs": [
+            "src/index:splitByCase",
+            "src/index:upperFirst",
+            "src/types:CaseOptions",
+            "src/types:TrainCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "titleCaseExceptions",
+          "kind": "constant",
+          "line": 172,
+          "endLine": 173,
+          "public": false,
+          "loc": 2,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "titleCase",
+          "kind": "function",
+          "line": 175,
+          "endLine": 175,
+          "public": true,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "titleCase",
+          "kind": "function",
+          "line": 176,
+          "endLine": 182,
+          "public": true,
+          "loc": 7,
+          "refs": [
+            "src/types:CaseOptions",
+            "src/types:TrainCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "titleCase",
+          "kind": "function",
+          "line": 183,
+          "endLine": 197,
+          "public": true,
+          "loc": 14,
+          "refs": [
+            "src/index:splitByCase",
+            "src/index:titleCaseExceptions",
+            "src/index:upperFirst",
+            "src/types:CaseOptions",
+            "src/types:TrainCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "src/types",
+      "path": "src/types.ts",
+      "language": "typescript",
+      "loc": 157,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "nullability"
+      ],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "Splitter",
+          "kind": "type",
+          "line": 1,
+          "endLine": 1,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "FirstOfString",
+          "kind": "type",
+          "line": 2,
+          "endLine": 4,
+          "public": false,
+          "loc": 3,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "RemoveFirstOfString",
+          "kind": "type",
+          "line": 5,
+          "endLine": 7,
+          "public": false,
+          "loc": 3,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "IsUpper",
+          "kind": "type",
+          "line": 8,
+          "endLine": 8,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "IsLower",
+          "kind": "type",
+          "line": 9,
+          "endLine": 9,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "SameLetterCase",
+          "kind": "type",
+          "line": 10,
+          "endLine": 15,
+          "public": false,
+          "loc": 6,
+          "refs": [
+            "src/types:IsLower",
+            "src/types:IsUpper"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "CapitalizedWords",
+          "kind": "type",
+          "line": 16,
+          "endLine": 26,
+          "public": false,
+          "loc": 11,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "JoinLowercaseWords",
+          "kind": "type",
+          "line": 27,
+          "endLine": 35,
+          "public": false,
+          "loc": 9,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "LastOfArray",
+          "kind": "type",
+          "line": 37,
+          "endLine": 37,
+          "public": false,
+          "loc": 1,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "RemoveLastOfArray",
+          "kind": "type",
+          "line": 38,
+          "endLine": 40,
+          "public": false,
+          "loc": 3,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "CaseOptions",
+          "kind": "type",
+          "line": 42,
+          "endLine": 44,
+          "public": true,
+          "loc": 3,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "SplitByCase",
+          "kind": "type",
+          "line": 46,
+          "endLine": 100,
+          "public": true,
+          "loc": 55,
+          "refs": [
+            "src/types:FirstOfString",
+            "src/types:IsLower",
+            "src/types:IsUpper",
+            "src/types:LastOfArray",
+            "src/types:RemoveFirstOfString",
+            "src/types:RemoveLastOfArray",
+            "src/types:SameLetterCase",
+            "src/types:Splitter"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "JoinByCase",
+          "kind": "type",
+          "line": 102,
+          "endLine": 112,
+          "public": true,
+          "loc": 11,
+          "refs": [
+            "src/types:JoinLowercaseWords",
+            "src/types:SplitByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "PascalCase",
+          "kind": "type",
+          "line": 114,
+          "endLine": 127,
+          "public": true,
+          "loc": 14,
+          "refs": [
+            "src/types:CapitalizedWords",
+            "src/types:SplitByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "CamelCase",
+          "kind": "type",
+          "line": 129,
+          "endLine": 136,
+          "public": true,
+          "loc": 8,
+          "refs": [
+            "src/types:PascalCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "KebabCase",
+          "kind": "type",
+          "line": 138,
+          "endLine": 141,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:JoinByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "SnakeCase",
+          "kind": "type",
+          "line": 143,
+          "endLine": 146,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:JoinByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "TrainCase",
+          "kind": "type",
+          "line": 148,
+          "endLine": 162,
+          "public": true,
+          "loc": 15,
+          "refs": [
+            "src/types:CapitalizedWords",
+            "src/types:SplitByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "FlatCase",
+          "kind": "type",
+          "line": 164,
+          "endLine": 167,
+          "public": true,
+          "loc": 4,
+          "refs": [
+            "src/types:JoinByCase"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        }
+      ]
+    },
+    {
+      "id": "test/scule.test",
+      "path": "test/scule.test.ts",
+      "language": "typescript",
+      "loc": 149,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/index"
+        ],
+        "external": [
+          "vitest"
+        ]
+      },
+      "symbols": []
+    },
+    {
+      "id": "test/types.test-d",
+      "path": "test/types.test-d.ts",
+      "language": "typescript",
+      "loc": 86,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [
+          "src/types"
+        ],
+        "external": [
+          "vitest"
+        ]
+      },
+      "symbols": []
+    }
+  ]
+}

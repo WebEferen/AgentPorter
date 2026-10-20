@@ -1,0 +1,2545 @@
+{
+  "schema": 1,
+  "units": {
+    "utils-utils": [
+      {
+        "ref": "test/compare.ts::L69",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::missing_or_empty_segments_read_as_zero"
+      },
+      {
+        "ref": "test/compare.ts::L50",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::missing_or_empty_segments_read_as_zero"
+      },
+      {
+        "ref": "edge-cv-missing-identifier-zero",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::missing_or_empty_segments_read_as_zero"
+      },
+      {
+        "ref": "edge-cv-missing-identifier-00",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::missing_or_empty_segments_read_as_zero"
+      },
+      {
+        "ref": "edge-cv-identifier-alpha-vs-missing",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::missing_or_empty_segments_read_as_zero"
+      },
+      {
+        "ref": "edge-cv-mixed-alpha-vs-number",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-mixed-number-vs-alpha",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-negative-identifier",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-negative-identifiers-order",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-negative-subidentifier",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-hyphen-string-vs-letter",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-prerelease-case-order",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-prerelease-upper-before-lower",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numbers_against_strings_compare_as_js_strings"
+      },
+      {
+        "ref": "edge-cv-tostring-negative-zero",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "edge-cv-tostring-zero-vs-hyphen",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "edge-cv-tostring-infinity-vs-upper",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "edge-cv-tostring-infinity-vs-lower",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "edge-cv-tostring-finite-vs-upper",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "edge-cv-tostring-neg-infinity-vs-upper",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "edge-cv-tostring-exponent-vs-letter",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::number_text_follows_js_string_conversion"
+      },
+      {
+        "ref": "ref-compare-L264",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "ref-compare-L265",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "ref-compare-L266",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "edge-cmp-invalid-op-eqeq",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "edge-cmp-invalid-op-ltgt",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "edge-cmp-invalid-op-eqgt",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "edge-cmp-invalid-op-leading-space",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::operator_parsing_and_message"
+      },
+      {
+        "ref": "edge-cv-parseint-prefix-equal",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-parseint-prefix-gt",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-parseint-numeric-vs-alnum",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-parseint-hyphenated",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-parseint-hex-like",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-parseint-exponent-like",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-leading-zeros-long",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "test/compare.ts::L82",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::segments_compare_by_their_parse_int_prefix"
+      },
+      {
+        "ref": "edge-cv-prefix-mixed-run",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_groups_match_the_source_regex"
+      },
+      {
+        "ref": "edge-cv-prefix-upper-v",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_groups_match_the_source_regex"
+      },
+      {
+        "ref": "edge-cv-upper-wildcard",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_groups_match_the_source_regex"
+      },
+      {
+        "ref": "edge-cv-build-upper",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_groups_match_the_source_regex"
+      },
+      {
+        "ref": "test/compare.ts::L56",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_groups_match_the_source_regex"
+      },
+      {
+        "ref": "edge-cv-2pow53-major",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-2pow53-exact-step",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-2pow53-below",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-u64-overflow",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-u64-max-vs-small",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-infinity-equal",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-infinity-vs-one",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "edge-cv-1e308-vs-infinity",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::numeric_segments_compare_as_f64"
+      },
+      {
+        "ref": "ref-compare-L161",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-message-quote",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::validate_and_parse_reports_the_input_in_the_source_message"
+      },
+      {
+        "ref": "edge-cv-message-newline",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::validate_and_parse_reports_the_input_in_the_source_message"
+      },
+      {
+        "ref": "edge-cv-message-unicode",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::validate_and_parse_reports_the_input_in_the_source_message"
+      },
+      {
+        "ref": "edge-cv-empty-v1",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "ref-compare-L162",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "ref-compare-L163",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-trailing-newline",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-five-segments",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-prerelease-needs-three-segments",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-build-needs-three-segments",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-empty-identifier",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-wildcard-first-segment",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-prefix-bang",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-unicode-arabic-indic-digits",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-unicode-kelvin-sign",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-unicode-long-s",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-unicode-dotless-i",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "edge-cv-unicode-fullwidth-v",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::semver_rejects_what_the_source_regex_rejects"
+      },
+      {
+        "ref": "test/compare.ts::L129",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "test/compare.ts::L130",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "test/compare.ts::L133",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "test/compare.ts::L135",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "edge-cv-nontransitive-a",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "edge-cv-nontransitive-c",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "edge-cv-wildcard-then-missing",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      },
+      {
+        "ref": "edge-cv-wildcard-fourth",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo utils::tests::wildcards_compare_equal_to_anything"
+      }
+    ],
+    "validate-validate": [
+      {
+        "ref": "test/validate.ts::L13",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_rejects_malformed_versions"
+      },
+      {
+        "ref": "test/validate.ts::L14",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_rejects_malformed_versions"
+      },
+      {
+        "ref": "test/validate.ts::L15",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_rejects_malformed_versions"
+      },
+      {
+        "ref": "test/validate.ts::L16",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_rejects_malformed_versions"
+      },
+      {
+        "ref": "test/validate.ts::L26",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_rejects_malformed_versions"
+      },
+      {
+        "ref": "test/validate.ts::L27",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_rejects_malformed_versions"
+      },
+      {
+        "ref": "test/validate.ts::L17",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L18",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L19",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L20",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L21",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L22",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L23",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L24",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L25",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_accepts_loose_versions"
+      },
+      {
+        "ref": "test/validate.ts::L79",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L80",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L81",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L82",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L83",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L84",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L85",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L86",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L87",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L88",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L89",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L90",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L91",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L92",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L93",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L94",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L95",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L96",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L97",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L98",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L99",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L100",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L101",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L102",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L103",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L104",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L105",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L106",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L107",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L108",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L109",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L110",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L111",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L112",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L113",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L114",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L115",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L116",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L117",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L118",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L119",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_rejects_invalid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L39",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L40",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L41",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L42",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L43",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L44",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L45",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L46",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L47",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L48",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L49",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L50",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L51",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L52",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L53",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L54",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L55",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L56",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L57",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L58",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L59",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L60",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L61",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L62",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L63",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L64",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L65",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L66",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L67",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L68",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L69",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo validate_strict_accepts_valid_semver"
+      },
+      {
+        "ref": "test/validate.ts::L7",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; the Rust API takes &str (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/validate.ts::L8",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; the Rust API takes &str (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/validate.ts::L9",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; the Rust API takes &str (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/validate.ts::L10",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; the Rust API takes &str (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/validate.ts::L11",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; the Rust API takes &str (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/validate.ts::L12",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "a function argument is neither representable in JSON fixtures nor in Rust's &str API",
+        "targetTest": null
+      }
+    ],
+    "satisfies-satisfies": [
+      {
+        "ref": "test/compare.ts::L264",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_rejects_unknown_operators"
+      },
+      {
+        "ref": "test/compare.ts::L265",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_rejects_unknown_operators"
+      },
+      {
+        "ref": "test/compare.ts::L266",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_rejects_unknown_operators"
+      },
+      {
+        "ref": "test/compare.ts::L269",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_throws_the_errors_of_compare_versions"
+      },
+      {
+        "ref": "test/compare.ts::L66",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_different_segment"
+      },
+      {
+        "ref": "test/compare.ts::L67",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_different_segment"
+      },
+      {
+        "ref": "test/compare.ts::L68",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_different_segment"
+      },
+      {
+        "ref": "test/compare.ts::L69",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_different_segment"
+      },
+      {
+        "ref": "test/compare.ts::L70",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_different_segment"
+      },
+      {
+        "ref": "test/compare.ts::L71",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_different_segment"
+      },
+      {
+        "ref": "test/compare.ts::L288",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L289",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L290",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L291",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L292",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L293",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L294",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L295",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L296",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L297",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L298",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L299",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L300",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L301",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L302",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L303",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_applies_operators"
+      },
+      {
+        "ref": "test/compare.ts::L50",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L51",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L52",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L53",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L54",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L55",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L56",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L57",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L58",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L59",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L60",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_four_segment"
+      },
+      {
+        "ref": "test/compare.ts::L108",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_v"
+      },
+      {
+        "ref": "test/compare.ts::L109",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_v"
+      },
+      {
+        "ref": "test/compare.ts::L110",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_v"
+      },
+      {
+        "ref": "test/compare.ts::L111",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_v"
+      },
+      {
+        "ref": "test/compare.ts::L24",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_single_segment"
+      },
+      {
+        "ref": "test/compare.ts::L25",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_single_segment"
+      },
+      {
+        "ref": "test/compare.ts::L26",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_single_segment"
+      },
+      {
+        "ref": "test/compare.ts::L117",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L118",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L119",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L120",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L121",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L122",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L123",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_leading_zero"
+      },
+      {
+        "ref": "test/compare.ts::L40",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_three_segment"
+      },
+      {
+        "ref": "test/compare.ts::L41",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_three_segment"
+      },
+      {
+        "ref": "test/compare.ts::L42",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_three_segment"
+      },
+      {
+        "ref": "test/compare.ts::L43",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_three_segment"
+      },
+      {
+        "ref": "test/compare.ts::L44",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_three_segment"
+      },
+      {
+        "ref": "test/compare.ts::L32",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_two_segment"
+      },
+      {
+        "ref": "test/compare.ts::L33",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_two_segment"
+      },
+      {
+        "ref": "test/compare.ts::L34",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_two_segment"
+      },
+      {
+        "ref": "test/compare.ts::L94",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L95",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L96",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L97",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L98",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L99",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L100",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L101",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L102",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_build_metadata"
+      },
+      {
+        "ref": "test/compare.ts::L77",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L78",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L79",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L80",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L81",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L82",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L83",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L84",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L85",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L86",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L87",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L88",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_pre_release"
+      },
+      {
+        "ref": "test/compare.ts::L161",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo invalid_versions_error_in_both_functions"
+      },
+      {
+        "ref": "test/compare.ts::L162",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo invalid_versions_error_in_both_functions"
+      },
+      {
+        "ref": "test/compare.ts::L163",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo invalid_versions_error_in_both_functions"
+      },
+      {
+        "ref": "test/compare.ts::L276",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo invalid_versions_error_in_both_functions"
+      },
+      {
+        "ref": "test/compare.ts::L277",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo invalid_versions_error_in_both_functions"
+      },
+      {
+        "ref": "test/compare.ts::L278",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo invalid_versions_error_in_both_functions"
+      },
+      {
+        "ref": "test/compare.ts::L175",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L176",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L177",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L178",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L179",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L180",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L181",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L182",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L183",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L184",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L185",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L186",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L187",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L188",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L189",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L190",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L191",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L192",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L193",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L194",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L195",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L196",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L197",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L198",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L199",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L200",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L201",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L202",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L203",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L204",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_misc"
+      },
+      {
+        "ref": "test/compare.ts::L129",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L130",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L131",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L132",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L133",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L134",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L135",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L136",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L137",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L138",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L139",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L140",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L141",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L142",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L143",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L144",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L145",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L146",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L147",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L148",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L149",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/compare.ts::L150",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo compare_versions_wildcards"
+      },
+      {
+        "ref": "test/satisfies.ts::L35",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L36",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L37",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L38",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L39",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L40",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L41",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L42",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L43",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L44",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L45",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L46",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_caret"
+      },
+      {
+        "ref": "test/satisfies.ts::L129",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L130",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L131",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L132",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L133",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L134",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L135",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_malformed"
+      },
+      {
+        "ref": "test/satisfies.ts::L88",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L89",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L90",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L91",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L92",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L93",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L94",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L95",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L96",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_pre_release"
+      },
+      {
+        "ref": "test/satisfies.ts::L51",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L52",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L53",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L54",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L55",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L56",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L57",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L58",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L59",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L60",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L61",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L62",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L63",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L64",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L65",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L66",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L67",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L68",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L69",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L70",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L71",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L72",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L73",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L74",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L75",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L76",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L77",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L78",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L79",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L80",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L81",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L82",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L83",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparators"
+      },
+      {
+        "ref": "test/satisfies.ts::L15",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L16",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L17",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L18",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L19",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L20",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L21",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L22",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L23",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L24",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L25",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L26",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L27",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L28",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L29",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_tilde"
+      },
+      {
+        "ref": "test/satisfies.ts::L102",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L103",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L104",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L105",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L106",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L107",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L108",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L109",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L110",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L111",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L112",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L113",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L114",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L115",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L116",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L117",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L118",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L119",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L120",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L121",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L122",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/satisfies.ts::L123",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo satisfies_comparator_sets"
+      },
+      {
+        "ref": "test/sort.ts::L31",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo sorts_different_digits"
+      },
+      {
+        "ref": "test/sort.ts::L37",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo sorts_pre_release"
+      },
+      {
+        "ref": "test/sort.ts::L5",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo sorts_versions"
+      },
+      {
+        "ref": "test/compare.ts::L157",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L158",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L159",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L233",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L234",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L240",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L246",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L252",
+        "resolution": "DIVERGENCE",
+        "reason": "non-string argument; &str API (divergence non-string-arguments)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L160",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "passes a JavaScript function; no JSON or Rust form (contract.md)",
+        "targetTest": null
+      },
+      {
+        "ref": "test/compare.ts::L258",
+        "resolution": "OUT-OF-SCOPE",
+        "reason": "passes a JavaScript function; no JSON or Rust form (contract.md)",
+        "targetTest": null
+      }
+    ],
+    "src-index": [
+      {
+        "ref": "src/index.ts::L1",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo crate_root_exposes_every_public_name"
+      },
+      {
+        "ref": "src/index.ts::L2",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo crate_root_exposes_every_public_name"
+      },
+      {
+        "ref": "src/index.ts::L3",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo crate_root_exposes_every_public_name"
+      },
+      {
+        "ref": "src/index.ts::L5",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo crate_root_exposes_every_public_name"
+      },
+      {
+        "ref": "src/index.ts::L4",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo crate_root_exposes_every_public_name"
+      }
+    ]
+  }
+}

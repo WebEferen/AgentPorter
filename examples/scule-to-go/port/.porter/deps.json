@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "typescript",
+    "ecosystem": "npm",
+    "manifests": [
+      "package.json"
+    ]
+  },
+  "target": {
+    "language": "go",
+    "registry": "go"
+  },
+  "devTools": [
+    {
+      "source": "vitest",
+      "target": "go test ./...",
+      "note": "table-driven tests with t.Run; fixtures run through the Go harness"
+    },
+    {
+      "source": "@vitest/coverage-v8",
+      "target": "go test -cover ./...",
+      "note": "ships with the Go toolchain"
+    },
+    {
+      "source": "eslint + eslint-config-unjs",
+      "target": "go vet ./... and staticcheck (honnef.co/go/tools, cache/registry record)",
+      "note": "staticcheck run via go run or go tool; no lint config to port"
+    },
+    {
+      "source": "prettier",
+      "target": "gofmt -l .",
+      "note": "ships with the Go toolchain"
+    },
+    {
+      "source": "typescript",
+      "target": "go build ./... (compiler is the type checker)",
+      "note": "type-level tests in test/types.test-d.ts have no Go equivalent and are out of scope"
+    },
+    {
+      "source": "unbuild",
+      "target": "none (go modules publish source)",
+      "note": "no bundling step in Go"
+    },
+    {
+      "source": "changelogen",
+      "target": "none (git tags)",
+      "note": "release tooling; Go publishes by pushing a semver tag"
+    },
+    {
+      "source": "@types/node",
+      "target": "none",
+      "note": "type stubs only"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "@types/node",
+      "version": null,
+      "versionSpec": "^20.11.3",
+      "scope": "dev",
+      "direct": true,
+      "role": "type-stubs",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Node type declarations for the TS compiler; no runtime use.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "@vitest/coverage-v8",
+      "version": null,
+      "versionSpec": "^1.2.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Coverage for vitest; replaced by go test -cover.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "changelogen",
+      "version": null,
+      "versionSpec": "^0.5.5",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Release and changelog tool (used in the release script); deps-graph hinted test-tool. Go releases are git tags.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "eslint",
+      "version": null,
+      "versionSpec": "^8.56.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Replaced by go vet and staticcheck.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "eslint-config-unjs",
+      "version": null,
+      "versionSpec": "^0.2.1",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "ESLint preset; no Go equivalent needed.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "prettier",
+      "version": null,
+      "versionSpec": "^3.2.2",
+      "scope": "dev",
+      "direct": true,
+      "role": "lint-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Formatter; replaced by gofmt.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "typescript",
+      "version": null,
+      "versionSpec": "^5.3.3",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Compiler and type checker; replaced by the Go compiler.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "unbuild",
+      "version": null,
+      "versionSpec": "^2.0.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "build-tool",
+      "usedSurface": {
+        "symbols": [],
+        "callSites": 0,
+        "modules": []
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Bundler for dist/ (deps-graph hinted test-tool); Go has no bundling step.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    },
+    {
+      "name": "vitest",
+      "version": null,
+      "versionSpec": "^1.2.0",
+      "scope": "dev",
+      "direct": true,
+      "role": "test-tool",
+      "usedSurface": {
+        "symbols": [
+          "test",
+          "describe",
+          "expect",
+          "assertType",
+          "expectTypeOf"
+        ],
+        "callSites": 88,
+        "modules": [
+          "test/scule.test.ts",
+          "test/types.test-d.ts"
+        ]
+      },
+      "decision": "DROP",
+      "candidate": null,
+      "confidence": "HIGH",
+      "gate": false,
+      "notes": "Used only by test/ (usage.json: tests-only, 2 files). The test cases become oracle case specs; the runner maps to go test.",
+      "verified": {
+        "registryLookup": false,
+        "status": "NOT_APPLICABLE",
+        "reason": "no registry candidate for this decision",
+        "fetchedAt": null
+      }
+    }
+  ]
+}

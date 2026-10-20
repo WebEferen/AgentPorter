@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "source": {
+    "language": "go",
+    "importPath": "github.com/kballard/go-shellquote",
+    "package": "shellquote",
+    "commit": "95032a82bc518f77982ea72343cc1ade730072f0",
+    "version": null,
+    "mode": "code",
+    "target": {
+      "language": "python",
+      "package": "shellquote",
+      "naming": "snake_case functions (join, split), exceptions for errors; fixtures keep the Go call ids"
+    }
+  },
+  "symbols": [
+    {
+      "id": "root:Join",
+      "name": "Join",
+      "module": "root",
+      "kind": "function",
+      "signature": "func Join(args ...string) string",
+      "returns": "string: each argument quoted for /bin/sh and joined with single spaces; \"\" when there are no arguments. Never fails.",
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "root",
+      "reason": null,
+      "callId": "github.com/kballard/go-shellquote:Join",
+      "leaks": [
+        "invalid-utf8"
+      ],
+      "docs": "quote.go:9-21 (Join), quote.go:23-102 (quote). Variadic: fixture input.args are the arguments themselves, one string each. Per argument: \"\" becomes ''; if the argument contains a space, tab or newline, the whole argument is single-quoted, with each ' written as '\\'' and no empty '' pair at either end; otherwise each of \\ ' \" ` $ { [ | & ; < > ( ) * ? ! is backslash-escaped, and ~ is escaped only as the first character. Target name: join."
+    },
+    {
+      "id": "root:Split",
+      "name": "Split",
+      "module": "root",
+      "kind": "function",
+      "signature": "func Split(input string) (words []string, err error)",
+      "returns": "[]string, never nil: the words after sh-style splitting, quote removal and escape processing; [] for empty or whitespace-only input. On error the words completed before the failing word come back as well (fixtures: expect.value on the error outcome).",
+      "errors": [
+        "UnterminatedSingleQuoteError: a ' has no closing '",
+        "UnterminatedDoubleQuoteError: a \" has no closing \" (an escaped \\\" does not close; a trailing backslash inside the quote also ends here)",
+        "UnterminatedEscapeError: the input ends with an unescaped backslash outside quotes"
+      ],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "root",
+      "reason": null,
+      "callId": "github.com/kballard/go-shellquote:Split",
+      "leaks": [
+        "split-partial-words-on-error",
+        "split-empty-not-nil",
+        "error-sentinels",
+        "invalid-utf8"
+      ],
+      "docs": "unquote.go:24-65 (Split), unquote.go:67-156 (splitWord). Separators are exactly space, tab and newline. Outside quotes a backslash escapes the next character and backslash-newline is removed. Inside '...' everything is literal. Inside \"...\" a backslash escapes only $ ` \" \\ and newline (backslash-newline is removed); before any other character the backslash stays. No expansion of any kind, no $'...' quoting, no comments. Target name: split."
+    },
+    {
+      "id": "root:UnterminatedSingleQuoteError",
+      "name": "UnterminatedSingleQuoteError",
+      "module": "root",
+      "kind": "constant",
+      "signature": "var UnterminatedSingleQuoteError = errors.New(\"Unterminated single-quoted string\")",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "root",
+      "reason": null,
+      "callId": null,
+      "noFixturesReason": "An error value, not a callable: observed through Split error outcomes (category UnterminatedSingleQuoteError, message \"Unterminated single-quoted string\").",
+      "leaks": [
+        "error-sentinels"
+      ],
+      "docs": "unquote.go:11. Sentinel compared by identity (unquote_test.go:22). Target: an exception class with the same name whose str() is the exact message."
+    },
+    {
+      "id": "root:UnterminatedDoubleQuoteError",
+      "name": "UnterminatedDoubleQuoteError",
+      "module": "root",
+      "kind": "constant",
+      "signature": "var UnterminatedDoubleQuoteError = errors.New(\"Unterminated double-quoted string\")",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "root",
+      "reason": null,
+      "callId": null,
+      "noFixturesReason": "An error value, not a callable: observed through Split error outcomes (category UnterminatedDoubleQuoteError, message \"Unterminated double-quoted string\").",
+      "leaks": [
+        "error-sentinels"
+      ],
+      "docs": "unquote.go:12. Sentinel compared by identity (unquote_test.go:22). Target: an exception class with the same name whose str() is the exact message."
+    },
+    {
+      "id": "root:UnterminatedEscapeError",
+      "name": "UnterminatedEscapeError",
+      "module": "root",
+      "kind": "constant",
+      "signature": "var UnterminatedEscapeError = errors.New(\"Unterminated backslash-escape\")",
+      "returns": null,
+      "errors": [],
+      "sideEffects": [],
+      "inScope": true,
+      "unit": "root",
+      "reason": null,
+      "callId": null,
+      "noFixturesReason": "An error value, not a callable: observed through Split error outcomes (category UnterminatedEscapeError, message \"Unterminated backslash-escape\").",
+      "leaks": [
+        "error-sentinels"
+      ],
+      "docs": "unquote.go:13. Sentinel compared by identity (unquote_test.go:22). Target: an exception class with the same name whose str() is the exact message."
+    }
+  ],
+  "leaks": [
+    {
+      "id": "invalid-utf8",
+      "description": "Go strings are byte sequences. Join and Split accept invalid UTF-8 and copy every byte through unchanged: utf8.DecodeRuneInString reads a bad byte as U+FFFD with width 1, none of the special characters match it, and output is built from slices of the input (quote.go:48-53, unquote.go:74-77). Probe on the pinned source: Join(\"a\\xff b\") = \"'a\\xff b'\", Split(\"a\\xffb c\") = [\"a\\xffb\" \"c\"], Split(Join(x)) == x for every probe. A Python str cannot hold these bytes.",
+      "decision": "unattended: strategy phase decides the scope. Conservative default recorded here: the Python API takes and returns str only and does not promise anything about invalid UTF-8; a bytes API is out of scope unless the strategy adds it. No fixture uses invalid UTF-8 (JSON fixture strings cannot carry it, and recording it via $bytes would need a call id that is not part of the API).",
+      "fixtures": "none",
+      "trap": "GENERIC T44"
+    },
+    {
+      "id": "split-partial-words-on-error",
+      "description": "Split has named results (unquote.go:33), so every error return also returns the words completed so far: the slice is non-nil, holds the words before the failing word, and drops the failing word's partial text. Examples: \"a b 'c d\" -> [a b] + UnterminatedSingleQuoteError; \"a b\\\\\" -> [a] (b is lost, error raised inside splitWord, unquote.go:58-60); \"a \\\\\" -> [a] (error raised at word start, unquote.go:46-48); \"'a\" -> [].",
+      "decision": "unattended: strategy phase decides whether the Python exception carries these words (for example an attribute on the exception) or drops them. The fixtures record them as expect.value on every Split error outcome; parity does not compare that field, so either choice passes parity, and a target test should read it if the words are kept. str(exception) must stay the bare message either way.",
+      "fixtures": "every Split case with expect.kind error (170 cases)",
+      "trap": "GENERIC T32"
+    },
+    {
+      "id": "split-empty-not-nil",
+      "description": "Split returns a non-nil empty slice (make([]string, 0), unquote.go:35) for empty or whitespace-only input and for errors before the first word. The Go driver serializes nil and empty slices alike as [], so fixtures show []. Python: return [] and never None.",
+      "decision": "Preserve: split returns a list, [] when there are no words.",
+      "fixtures": "split.empty, split.spaces-only, split.whitespace-only-mix, split.escaped-newline-only"
+    },
+    {
+      "id": "error-sentinels",
+      "description": "The three errors are package-level errors.New values compared by identity (unquote_test.go:22), so their names are the error categories and their texts are exact API: \"Unterminated single-quoted string\", \"Unterminated double-quoted string\", \"Unterminated backslash-escape\" (capitalized, no trailing period). When several problems exist, the first one met scanning left to right wins (\"'a \\\"b\" -> single, \"\\\"a 'b\" -> double).",
+      "decision": "Preserve the three names as Python exception classes and the exact messages as str(exc). Callers match by class (except ...), not by message. Any base class is free.",
+      "fixtures": "every Split error case; messages compared exactly (no ignore-message)",
+      "trap": "GENERIC T32, T35"
+    },
+    {
+      "id": "go-separator-and-escape-sets",
+      "description": "Both functions use fixed ASCII character sets, not Unicode classes: Split separates only on space, tab and newline (unquote.go:17); Join switches to single quotes only for space, tab and newline (quote.go:25). CR, VT, FF, NBSP, U+0085, U+2028, U+2003, U+3000 are ordinary word characters on both sides. Python str.split(), str.isspace() and re \\s treat them as whitespace.",
+      "decision": "Preserve the exact sets; never use str.split() or \\s.",
+      "fixtures": "join.cr-not-quoted, join.vt-ff-not-quoted, join.nbsp-not-quoted, join.unicode-space-not-quoted, split.cr-not-separator, split.crlf, split.vt-ff-not-separator, split.nbsp-not-separator, split.unicode-space-not-separator",
+      "trap": "GENERIC T20"
+    }
+  ],
+  "free": [
+    "The label-and-goto state machine in splitWord and the shared bytes.Buffer with Truncate rollback in quote: any structure that gives the same outputs.",
+    "Private helper names (quote, splitWord) and the private character-set variables and constants (specialChars, extraSpecialChars, prefixChars, splitChars, singleChar, doubleChar, escapeChar, doubleEscapeChars).",
+    "Byte offsets against code-point indexes: for valid UTF-8 the results are identical.",
+    "Whether join is variadic (join(*args)) or takes one iterable (join(args)); the harness binding translates fixture input.args either way.",
+    "The exception hierarchy above the three named classes (for example a shared base class, or subclassing ValueError), as long as type(exc).__name__ and str(exc) match.",
+    "Returning a fresh list on each call; Go's slice capacity and aliasing are not observable.",
+    "Performance and allocation behavior."
+  ]
+}

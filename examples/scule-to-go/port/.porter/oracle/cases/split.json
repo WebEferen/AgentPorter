@@ -1,0 +1,3918 @@
+{
+  "schema": 1,
+  "unit": "split",
+  "kind": "value",
+  "cases": [
+    {
+      "case": "splitByCase.ref.L17",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:17",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L18",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:18",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L19",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooBar"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:19",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L20",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FooBarBaz"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:20",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L21",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FooBARb"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:21",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L22",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo_bar-baz/qux"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:22",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L23",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo--bar-Baz"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:23",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L24",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FOO_BAR"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:24",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L25",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo123-bar"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:25",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L26",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FOOBar"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:26",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L27",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ALink"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:27",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L29",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo\\Bar.fuzz-FIZz",
+          [
+            "\\",
+            ".",
+            "-"
+          ]
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:29",
+      "tags": [
+        "harvested",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.ref.L34",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "new-name-value",
+          [
+            "_"
+          ]
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:34",
+      "tags": [
+        "harvested",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.doc.L122-default-splitters",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a-b_c/d.e"
+        ]
+      },
+      "origin": "doc:README.md:122",
+      "tags": [
+        "readme"
+      ]
+    },
+    {
+      "case": "splitByCase.empty",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "splitByCase.single-lower",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.single-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "A"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.upper-upper-lower",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ABc"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.lower-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "aB"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.lower-upper-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "aBC"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.upper-run-then-word",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ABCdef"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.xml-http-request",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "XMLHttpRequest"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.get-http-response-code",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "getHTTPResponseCode"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.iphone",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "iPhone"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.foo-BAR-baz",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooBARbaz"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.mixed-separators",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo_barBaz-QUX/quux.Corge"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "splitters"
+      ]
+    },
+    {
+      "case": "splitByCase.digits-suppress-rising",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo1BAR"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "splitByCase.digits-upper-then-lower",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FOO1bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "splitByCase.digits-then-falling",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo123Bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "splitByCase.digits-only",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "123"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "splitByCase.digit-lead",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "2fooBar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "splitByCase.http2-server",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "HTTP2Server"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "splitByCase.non-ascii-digits",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo٣Bar１baz²Qux"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits",
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.space-lower",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "splitByCase.space-title",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "Foo Bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "splitByCase.space-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FOO BAR"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "splitByCase.tab-newline",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo\tBar\nbaz"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "splitByCase.lone-splitter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "-"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "splitters",
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.splitters-only",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "-_/."
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "splitters",
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.leading-trailing-splitters",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "-fooBar-"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "splitters",
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.double-dot",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo..bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "splitters",
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.backslash-not-splitter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo\\bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "splitters"
+      ]
+    },
+    {
+      "case": "splitByCase.latin1-camel",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "élanVital"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.latin1-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ÉLAN-VITAL"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.sharp-s-mid",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "straßeName"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "splitByCase.sharp-s-lead",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ßfoo-bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "splitByCase.capital-sharp-s",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "GROẞE-Straße"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "splitByCase.greek-final-sigma",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ΟΔΟΣ-ΚΑΛΟΣ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "final-sigma"
+      ]
+    },
+    {
+      "case": "splitByCase.greek-two-letters",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ΑΣ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "final-sigma"
+      ]
+    },
+    {
+      "case": "splitByCase.greek-camel",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "οδόςΚαλός"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.turkish-dotted-capital",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "İstanbul-İZMİR"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "splitByCase.turkish-dotless",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ıiIİ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.titlecase-digraphs",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ǅungla-ǆem-ǄAR"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "splitByCase.ligature-and-napostrophe",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ﬀoo-ŉbar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "splitByCase.nfd-combining-acute",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "CAFÉ-café"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "combining"
+      ]
+    },
+    {
+      "case": "splitByCase.cyrillic-camel",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "приветМир"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.cjk-then-latin",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "日本語Text"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.roman-numeral",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ⅫChapter-ⅻ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "splitByCase.circled-letters",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ⒶⒷⓒ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "splitByCase.fullwidth-latin",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ＦｏｏＢａｒ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.emoji-lead",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "😀FooBar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral"
+      ]
+    },
+    {
+      "case": "splitByCase.emoji-after-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FOO😀bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral"
+      ]
+    },
+    {
+      "case": "splitByCase.emoji-zwj-sequence",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "👩‍💻Dev"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral"
+      ]
+    },
+    {
+      "case": "splitByCase.astral-lower-lead",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "𐐨oo-bar"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral",
+        "utf16-first-char"
+      ]
+    },
+    {
+      "case": "splitByCase.astral-upper-rising",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a𐐀"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral",
+        "astral-upper"
+      ]
+    },
+    {
+      "case": "splitByCase.math-bold-uncased",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "𝐀𝐁c"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "splitByCase.large",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBazfooBarBaz"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.empty-list",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo-bar_Baz",
+          []
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-separators",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.undefined",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo-bar_Baz",
+          {
+            "$undefined": true
+          }
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "undefined-arg",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.space",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo bar Baz",
+          [
+            " "
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.multi-char-never-matches",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo--bar",
+          [
+            "--"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "multi-char-separator",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.multi-char-mixed",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo::barBaz-qux",
+          [
+            "::",
+            "-"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "multi-char-separator",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.empty-string",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo-bar",
+          [
+            ""
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "multi-char-separator",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.emoji",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo😀Bar",
+          [
+            "😀"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.precomposed",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooébar",
+          [
+            "é"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.decomposed-never-matches",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooébar",
+          [
+            "é"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "multi-char-separator",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.letter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "banana",
+          [
+            "a"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-parts",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.upper-letter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooXbar",
+          [
+            "X"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.digits",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo1Bar2baz",
+          [
+            "1",
+            "2"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.duplicates",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a-b",
+          [
+            "-",
+            "-"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.only-separators",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "---",
+          [
+            "-"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-parts",
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.seps.backslash-default-off",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo\\Bar",
+          [
+            "\\"
+          ]
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "custom-separators"
+      ]
+    },
+    {
+      "case": "splitByCase.default.two-splitters",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "--"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.default.trailing",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo-"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.default.leading",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "-foo"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.default.leading-splitter-upper-run",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "-ABc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty-parts"
+      ]
+    },
+    {
+      "case": "splitByCase.default.upper-lower",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "Ab"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.upper-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "AB"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.title-pair",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "AbC"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.rise-after-splitter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo-Bar"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.upper-after-splitter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "foo-BAR"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.lower-after-upper-splitter",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "FOO-bar"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.fooBAR",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooBAR"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.etag",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ETag"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "splitByCase.default.single-astral-upper",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "𐐀"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral",
+        "astral-upper"
+      ]
+    },
+    {
+      "case": "splitByCase.default.cherokee",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ᏣᎳᎩꮳꮃꭹ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "upperFirst.ref.L93",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:93",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "upperFirst.ref.L94",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "foo"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:94",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "upperFirst.ref.L95",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "Foo"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:95",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "lowerFirst.ref.L103",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:103",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "lowerFirst.ref.L104",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "foo"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:104",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "lowerFirst.ref.L105",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "Foo"
+        ]
+      },
+      "origin": "reference-test:test/scule.test.ts:105",
+      "tags": [
+        "harvested"
+      ]
+    },
+    {
+      "case": "upperFirst.doc.L107",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "hello world!"
+        ]
+      },
+      "origin": "doc:README.md:107",
+      "tags": [
+        "readme"
+      ]
+    },
+    {
+      "case": "lowerFirst.doc.L116",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "Hello world!"
+        ]
+      },
+      "origin": "doc:README.md:116",
+      "tags": [
+        "readme"
+      ]
+    },
+    {
+      "case": "isUppercase.no-args",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": []
+      },
+      "origin": "hand-written",
+      "tags": [
+        "no-arg"
+      ]
+    },
+    {
+      "case": "isUppercase.undefined-arg",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          {
+            "$undefined": true
+          }
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "undefined-arg"
+      ]
+    },
+    {
+      "case": "isUppercase.empty",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          ""
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "empty"
+      ]
+    },
+    {
+      "case": "isUppercase.A",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "A"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "isUppercase.a",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "a"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "isUppercase.digit",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "1"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "isUppercase.lower-digit",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "a1"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits",
+        "multi-char"
+      ]
+    },
+    {
+      "case": "isUppercase.upper-digit",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "A1"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits",
+        "multi-char"
+      ]
+    },
+    {
+      "case": "isUppercase.digit-anywhere",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ABC9"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits",
+        "multi-char"
+      ]
+    },
+    {
+      "case": "isUppercase.mixed-string",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "aB"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "multi-char"
+      ]
+    },
+    {
+      "case": "isUppercase.upper-string",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "AB"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "multi-char"
+      ]
+    },
+    {
+      "case": "isUppercase.lower-string",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ab"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "multi-char"
+      ]
+    },
+    {
+      "case": "isUppercase.space",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          " "
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "isUppercase.hyphen",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "-"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "isUppercase.e-acute-upper",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "É"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.e-acute-lower",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "é"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.sharp-s",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ß"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.capital-sharp-s",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ẞ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.sigma",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Σ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.final-sigma",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ς"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.small-sigma",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "σ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.dotted-capital-i",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "İ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "isUppercase.dotless-small-i",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ı"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.titlecase-dz",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ǅ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "isUppercase.small-dz",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ǆ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "isUppercase.capital-dz",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ǆ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "isUppercase.roman-twelve",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ⅻ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "isUppercase.small-roman-twelve",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ⅻ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "isUppercase.circled-A",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ⓐ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "isUppercase.deseret-capital",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "𐐀"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral"
+      ]
+    },
+    {
+      "case": "isUppercase.deseret-small",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "𐐨"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral"
+      ]
+    },
+    {
+      "case": "isUppercase.math-bold-A",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "𝐀"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "isUppercase.emoji",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "😀"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "astral"
+      ]
+    },
+    {
+      "case": "isUppercase.cjk",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "日"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.arabic-indic-digit",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "٣"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "digits"
+      ]
+    },
+    {
+      "case": "isUppercase.fullwidth-digit",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "１"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "digits"
+      ]
+    },
+    {
+      "case": "isUppercase.superscript-two",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "²"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "digits"
+      ]
+    },
+    {
+      "case": "isUppercase.fullwidth-A",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ａ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.kelvin-sign",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "K"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.ohm-sign",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ω"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.combining-acute",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "́"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "combining"
+      ]
+    },
+    {
+      "case": "isUppercase.cherokee-capital",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ꭰ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.cherokee-small",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ꭰ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.georgian-mtavruli",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "Ა"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.georgian-mkhedruli",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ა"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "isUppercase.napostrophe",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ŉ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.sharp-s",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ßa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.sharp-s",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ßa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.sharp-s-alone",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ß"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.sharp-s-alone",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ß"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.napostrophe",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ŉa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.napostrophe",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ŉa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.ligature-ff",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ﬀoo"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.ligature-ff",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ﬀoo"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.j-caron",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ǰa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.j-caron",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ǰa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.iota-dialytika-tonos",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ΐa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.iota-dialytika-tonos",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ΐa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.small-dz",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ǆa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "lowerFirst.small-dz",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ǆa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "upperFirst.titlecase-dz",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ǅa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "lowerFirst.titlecase-dz",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ǅa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "upperFirst.dotless-i",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ıa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "lowerFirst.dotless-i",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ıa"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "upperFirst.i",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ia"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "lowerFirst.i",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ia"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "upperFirst.e-acute",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "élan"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "lowerFirst.e-acute",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "élan"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "upperFirst.nfd-a-umlaut",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "äbc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "combining"
+      ]
+    },
+    {
+      "case": "lowerFirst.nfd-a-umlaut",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "äbc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "combining"
+      ]
+    },
+    {
+      "case": "upperFirst.georgian",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "აბგ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "lowerFirst.georgian",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "აბგ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "upperFirst.cherokee-small",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ꭰꭱ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "lowerFirst.cherokee-small",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ꭰꭱ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "upperFirst.astral-lower-lead",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "𐐨abc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "astral",
+        "utf16-first-char"
+      ]
+    },
+    {
+      "case": "lowerFirst.astral-lower-lead",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "𐐨abc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "astral",
+        "utf16-first-char"
+      ]
+    },
+    {
+      "case": "upperFirst.astral-upper-lead",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "𐐀ABC"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "astral",
+        "utf16-first-char"
+      ]
+    },
+    {
+      "case": "lowerFirst.astral-upper-lead",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "𐐀ABC"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "astral",
+        "utf16-first-char"
+      ]
+    },
+    {
+      "case": "upperFirst.emoji-lead",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "😀a"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "astral"
+      ]
+    },
+    {
+      "case": "lowerFirst.emoji-lead",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "😀a"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "astral"
+      ]
+    },
+    {
+      "case": "upperFirst.digit-lead",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "1abc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "lowerFirst.digit-lead",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "1abc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "digits"
+      ]
+    },
+    {
+      "case": "upperFirst.space-lead",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          " abc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "lowerFirst.space-lead",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          " abc"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "whitespace"
+      ]
+    },
+    {
+      "case": "upperFirst.already-upper",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ABC"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "lowerFirst.already-upper",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ABC"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "upperFirst.final-sigma-word",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ΣΑΣ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "final-sigma"
+      ]
+    },
+    {
+      "case": "lowerFirst.final-sigma-word",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ΣΑΣ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "final-sigma"
+      ]
+    },
+    {
+      "case": "upperFirst.dotted-capital-i",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "İstanbul"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "lowerFirst.dotted-capital-i",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "İstanbul"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "full-case-mapping"
+      ]
+    },
+    {
+      "case": "upperFirst.kelvin",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "Kelvin"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "lowerFirst.kelvin",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "Kelvin"
+        ]
+      },
+      "origin": "hand-written"
+    },
+    {
+      "case": "upperFirst.capital-sharp-s",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ẞ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "lowerFirst.capital-sharp-s",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ẞ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "upperFirst.roman-numeral",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ⅻ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "lowerFirst.roman-numeral",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ⅻ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "case-mapping-not-lu"
+      ]
+    },
+    {
+      "case": "upperFirst.large",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "lowerFirst.large",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "large"
+      ]
+    },
+    {
+      "case": "lowerFirst.sigma-alone",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "Σ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "final-sigma"
+      ]
+    },
+    {
+      "case": "lowerFirst.sigma-then-letter",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ΣΑ"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "final-sigma"
+      ]
+    },
+    {
+      "case": "lowerFirst.capital-dz",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ǄA"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode",
+        "titlecase-digraph"
+      ]
+    },
+    {
+      "case": "lowerFirst.ecole",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ÉCOLE"
+        ]
+      },
+      "origin": "hand-written",
+      "tags": [
+        "unicode"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.boundary.1",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a1B"
+        ]
+      },
+      "origin": "adversarial:boundary",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.boundary.2",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ABCdef"
+        ]
+      },
+      "origin": "adversarial:boundary",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.empty.3",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "--"
+        ]
+      },
+      "origin": "adversarial:empty",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.separators.4",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "fooBar",
+          [
+            "B"
+          ]
+        ]
+      },
+      "origin": "adversarial:separators",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.unicode.5",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a😀b",
+          [
+            "😀"
+          ]
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.unicode.6",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "áB"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.large.7",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "aBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaBaB"
+        ]
+      },
+      "origin": "adversarial:large",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.unicode.8",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "ΣΑΣa"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.unicode.9",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "İstanbulCity"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.empty.10",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "x",
+          []
+        ]
+      },
+      "origin": "adversarial:empty",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "splitByCase.adv.separators.11",
+      "call": "./src/index.ts:splitByCase",
+      "input": {
+        "args": [
+          "a.b",
+          [
+            "",
+            "."
+          ]
+        ]
+      },
+      "origin": "adversarial:separators",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "isUppercase.adv.unicode.12",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ǅ"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "isUppercase.adv.boundary.13",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "1A"
+        ]
+      },
+      "origin": "adversarial:boundary",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "isUppercase.adv.unicode.14",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": [
+          "ﬀ"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "isUppercase.adv.empty.15",
+      "call": "./src/index.ts:isUppercase",
+      "input": {
+        "args": []
+      },
+      "origin": "adversarial:empty",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "upperFirst.adv.unicode.16",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ǆa"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "upperFirst.adv.unicode.17",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ŉx"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "upperFirst.adv.unicode.18",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "ͅx"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "lowerFirst.adv.unicode.19",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ΣA"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "lowerFirst.adv.unicode.20",
+      "call": "./src/index.ts:lowerFirst",
+      "input": {
+        "args": [
+          "ẞ"
+        ]
+      },
+      "origin": "adversarial:unicode",
+      "tags": [
+        "adversarial"
+      ]
+    },
+    {
+      "case": "upperFirst.adv.malformed.21",
+      "call": "./src/index.ts:upperFirst",
+      "input": {
+        "args": [
+          "�"
+        ]
+      },
+      "origin": "adversarial:malformed",
+      "tags": [
+        "adversarial"
+      ]
+    }
+  ],
+  "generate": [
+    {
+      "name": "gen.splitByCase.chars-ascii",
+      "call": "./src/index.ts:splitByCase",
+      "seed": 101,
+      "count": 120,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "abcxyzABCXYZ019-_/. ",
+          "min": 0,
+          "max": 16
+        }
+      ]
+    },
+    {
+      "name": "gen.splitByCase.chars-unicode",
+      "call": "./src/index.ts:splitByCase",
+      "seed": 102,
+      "count": 120,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "abzABZ09-_/. éÉßẞΣσςΑαİıǅǆǄÅåЖжŉﬀ́ⅫⅻⒶⓐ日😀𐐨𝐀Ａｂ٣",
+          "min": 0,
+          "max": 16
+        }
+      ]
+    },
+    {
+      "name": "gen.splitByCase.words",
+      "call": "./src/index.ts:splitByCase",
+      "seed": 103,
+      "count": 80,
+      "args": [
+        {
+          "$gen": "choice",
+          "of": [
+            {
+              "$gen": "concat",
+              "parts": [
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                }
+              ]
+            },
+            {
+              "$gen": "concat",
+              "parts": [
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                }
+              ]
+            },
+            {
+              "$gen": "concat",
+              "parts": [
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                }
+              ]
+            },
+            {
+              "$gen": "concat",
+              "parts": [
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                }
+              ]
+            },
+            {
+              "$gen": "concat",
+              "parts": [
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                },
+                {
+                  "$gen": "choice",
+                  "of": [
+                    "foo",
+                    "bar",
+                    "Foo",
+                    "Bar",
+                    "FOO",
+                    "BAR",
+                    "x",
+                    "X",
+                    "id",
+                    "ID",
+                    "Http",
+                    "HTTP",
+                    "2",
+                    "42",
+                    "v1",
+                    "-",
+                    "_",
+                    "/",
+                    ".",
+                    " ",
+                    "--",
+                    "é",
+                    "É",
+                    "ß",
+                    "straße",
+                    "ΑΣ",
+                    "Σ",
+                    "ς",
+                    "İ",
+                    "ı",
+                    "ǅ",
+                    "ǆ",
+                    "ﬀ",
+                    "ŉ",
+                    "😀",
+                    "𐐨",
+                    "𝐀",
+                    "Ⅻ",
+                    "日本",
+                    "Кот",
+                    "КОТ",
+                    "the",
+                    "of",
+                    "AND"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gen.splitByCase.separators",
+      "call": "./src/index.ts:splitByCase",
+      "seed": 104,
+      "count": 80,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "abzABZ09-_/. éÉßẞΣσςΑαİıǅǆǄÅåЖжŉﬀ́ⅫⅻⒶⓐ日😀𐐨𝐀Ａｂ٣",
+          "min": 0,
+          "max": 16
+        },
+        {
+          "$gen": "list",
+          "of": {
+            "$gen": "choice",
+            "of": [
+              "-",
+              "_",
+              " ",
+              ".",
+              "/",
+              "x",
+              "X",
+              "😀",
+              "é",
+              "--",
+              ""
+            ]
+          },
+          "min": 0,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "name": "gen.isUppercase.char",
+      "call": "./src/index.ts:isUppercase",
+      "seed": 201,
+      "count": 150,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "aAzZ09 -_/.éÉßẞΣσςİıǅǆǄÅåЖжŉﬀ́ⅫⅻⒶⓐ日😀𐐨𝐀Ａｂ٣１²KΩᎠꭰ",
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "name": "gen.isUppercase.string",
+      "call": "./src/index.ts:isUppercase",
+      "seed": 202,
+      "count": 50,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "aAzZ09 -_/.éÉßẞΣσςİıǅǆǄÅåЖжŉﬀ́ⅫⅻⒶⓐ日😀𐐨𝐀Ａｂ٣１²KΩᎠꭰ",
+          "min": 0,
+          "max": 4
+        }
+      ]
+    },
+    {
+      "name": "gen.upperFirst.chars-unicode",
+      "call": "./src/index.ts:upperFirst",
+      "seed": 203,
+      "count": 80,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "aAzZ09 -_/.éÉßẞΣσςİıǅǆǄÅåЖжŉﬀ́ⅫⅻⒶⓐ日😀𐐨𝐀Ａｂ٣１²KΩᎠꭰ",
+          "min": 0,
+          "max": 6
+        }
+      ]
+    },
+    {
+      "name": "gen.lowerFirst.chars-unicode",
+      "call": "./src/index.ts:lowerFirst",
+      "seed": 204,
+      "count": 80,
+      "args": [
+        {
+          "$gen": "string",
+          "alphabet": "aAzZ09 -_/.éÉßẞΣσςİıǅǆǄÅåЖжŉﬀ́ⅫⅻⒶⓐ日😀𐐨𝐀Ａｂ٣１²KΩᎠꭰ",
+          "min": 0,
+          "max": 6
+        }
+      ]
+    }
+  ]
+}

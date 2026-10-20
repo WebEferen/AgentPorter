@@ -1,0 +1,17 @@
+[package]
+name = "humps"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Convert strings and JSON object keys between snake_case, camelCase, PascalCase and kebab-case (a port of pyhumps 3.8.0)"
+publish = false
+
+[lib]
+name = "humps"
+
+[dependencies]
+regex = { version = "1.13", default-features = false, features = ["std", "unicode-perl"] }
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+
+[dev-dependencies]
+serde_json = { version = "1.0.154", features = ["preserve_order", "float_roundtrip"] }

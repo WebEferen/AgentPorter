@@ -1,0 +1,378 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-20T19:15:14Z",
+  "root": ".porter/cache/source",
+  "subpath": null,
+  "sampled": false,
+  "coverage": {
+    "codeFiles": 6,
+    "scanned": 6
+  },
+  "vcs": {
+    "kind": "git",
+    "commit": "95032a82bc518f77982ea72343cc1ade730072f0",
+    "dirty": false,
+    "remote": "https://github.com/kballard/go-shellquote.git",
+    "describe": "95032a8"
+  },
+  "license": {
+    "spdx": "MIT",
+    "source": "LICENSE",
+    "copyleft": "none",
+    "manifest": null
+  },
+  "package": {},
+  "languages": [
+    {
+      "language": "go",
+      "files": 6,
+      "loc": 346
+    }
+  ],
+  "primaryLanguage": "go",
+  "tests": {
+    "files": 3,
+    "loc": 104,
+    "cases": 4,
+    "ratio": 0.43,
+    "runners": [
+      "go test"
+    ],
+    "modules": [
+      {
+        "path": "both_test.go",
+        "imports": []
+      },
+      {
+        "path": "quote_test.go",
+        "imports": []
+      },
+      {
+        "path": "unquote_test.go",
+        "imports": []
+      }
+    ]
+  },
+  "manifests": [],
+  "tooling": [],
+  "runtimes": [],
+  "entryPoints": [],
+  "packages": [],
+  "kind": "library",
+  "couplingCounts": {
+    "pure": 1
+  },
+  "sourceLoc": 242,
+  "publicSymbols": 5,
+  "graph": {
+    "leaves": [
+      "root"
+    ],
+    "hubs": [],
+    "cycles": []
+  },
+  "modules": [
+    {
+      "id": "root",
+      "path": ".",
+      "language": "go",
+      "loc": 242,
+      "role": "source",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [
+        "error-model",
+        "nullability",
+        "ordering",
+        "unicode"
+      ],
+      "riskScore": 5,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": [
+        {
+          "name": "Join",
+          "kind": "function",
+          "line": 12,
+          "endLine": 23,
+          "file": "quote.go",
+          "loc": 11,
+          "public": true,
+          "refs": [
+            "root:quote"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "ordering"
+          ]
+        },
+        {
+          "name": "specialChars",
+          "kind": "constant",
+          "line": 24,
+          "endLine": 24,
+          "file": "quote.go",
+          "loc": 1,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "extraSpecialChars",
+          "kind": "constant",
+          "line": 25,
+          "endLine": 25,
+          "file": "quote.go",
+          "loc": 1,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "prefixChars",
+          "kind": "constant",
+          "line": 26,
+          "endLine": 27,
+          "file": "quote.go",
+          "loc": 2,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "quote",
+          "kind": "function",
+          "line": 29,
+          "endLine": 102,
+          "file": "quote.go",
+          "loc": 71,
+          "public": false,
+          "refs": [
+            "root:extraSpecialChars",
+            "root:prefixChars",
+            "root:specialChars"
+          ],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "UnterminatedSingleQuoteError",
+          "kind": "constant",
+          "line": 11,
+          "endLine": 11,
+          "file": "unquote.go",
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "error-model"
+          ]
+        },
+        {
+          "name": "UnterminatedDoubleQuoteError",
+          "kind": "constant",
+          "line": 12,
+          "endLine": 12,
+          "file": "unquote.go",
+          "loc": 1,
+          "public": true,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "error-model"
+          ]
+        },
+        {
+          "name": "UnterminatedEscapeError",
+          "kind": "constant",
+          "line": 13,
+          "endLine": 16,
+          "file": "unquote.go",
+          "loc": 3,
+          "public": true,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": [
+            "error-model"
+          ]
+        },
+        {
+          "name": "splitChars",
+          "kind": "constant",
+          "line": 17,
+          "endLine": 17,
+          "file": "unquote.go",
+          "loc": 1,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "singleChar",
+          "kind": "constant",
+          "line": 18,
+          "endLine": 18,
+          "file": "unquote.go",
+          "loc": 1,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "doubleChar",
+          "kind": "constant",
+          "line": 19,
+          "endLine": 19,
+          "file": "unquote.go",
+          "loc": 1,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "escapeChar",
+          "kind": "constant",
+          "line": 20,
+          "endLine": 20,
+          "file": "unquote.go",
+          "loc": 1,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "doubleEscapeChars",
+          "kind": "constant",
+          "line": 21,
+          "endLine": 22,
+          "file": "unquote.go",
+          "loc": 2,
+          "public": false,
+          "refs": [],
+          "external": [],
+          "io": [],
+          "risk": []
+        },
+        {
+          "name": "Split",
+          "kind": "function",
+          "line": 33,
+          "endLine": 65,
+          "file": "unquote.go",
+          "loc": 31,
+          "public": true,
+          "refs": [
+            "root:UnterminatedEscapeError",
+            "root:escapeChar",
+            "root:splitChars",
+            "root:splitWord"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        },
+        {
+          "name": "splitWord",
+          "kind": "function",
+          "line": 67,
+          "endLine": 156,
+          "file": "unquote.go",
+          "loc": 85,
+          "public": false,
+          "refs": [
+            "root:UnterminatedDoubleQuoteError",
+            "root:UnterminatedEscapeError",
+            "root:UnterminatedSingleQuoteError",
+            "root:doubleChar",
+            "root:doubleEscapeChars",
+            "root:escapeChar",
+            "root:singleChar",
+            "root:splitChars"
+          ],
+          "external": [],
+          "io": [],
+          "risk": [
+            "nullability"
+          ]
+        }
+      ],
+      "files": [
+        "doc.go",
+        "quote.go",
+        "unquote.go"
+      ]
+    },
+    {
+      "id": "both_test.go",
+      "path": "both_test.go",
+      "language": "go",
+      "loc": 26,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "quote_test.go",
+      "path": "quote_test.go",
+      "language": "go",
+      "loc": 28,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": []
+    },
+    {
+      "id": "unquote_test.go",
+      "path": "unquote_test.go",
+      "language": "go",
+      "loc": 50,
+      "role": "test",
+      "coupling": "pure",
+      "signals": [],
+      "risk": [],
+      "riskScore": 0,
+      "imports": {
+        "internal": [],
+        "external": []
+      },
+      "symbols": []
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "units": {
+    "cycle-humps": [
+      {
+        "ref": "tests/test_separate_words.py::test_separate_words",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo tests::separate_words_rows"
+      },
+      {
+        "ref": "tests/test_dekebabize.py::test_dekebabize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo dekebabize_test_dekebabize"
+      },
+      {
+        "ref": "tests/test_dekebabize.py::test_dekebabize_dict_list",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo dekebabize_test_dekebabize_dict_list"
+      },
+      {
+        "ref": "tests/test_humps.py::test_numeric",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_numeric"
+      },
+      {
+        "ref": "tests/test_humps.py::test_upper",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_upper"
+      },
+      {
+        "ref": "tests/test_camelize.py::test_camelize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo camelize_test_camelize"
+      },
+      {
+        "ref": "tests/test_camelize.py::test_camelize_dict_list",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo camelize_test_camelize_dict_list"
+      },
+      {
+        "ref": "tests/test_pascalize.py::test_pascalize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo pascalize_test_pascalize"
+      },
+      {
+        "ref": "tests/test_humps.py::test_pascalize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_pascalize"
+      },
+      {
+        "ref": "tests/test_kebabize.py::test_kebabize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo kebabize_test_kebabize"
+      },
+      {
+        "ref": "tests/test_humps.py::test_camelized_acronyms",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_camelized_acronyms"
+      },
+      {
+        "ref": "tests/test_decamelize.py::test_decamelize_dict_list",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo decamelize_test_decamelize_dict_list"
+      },
+      {
+        "ref": "tests/test_decamelize.py::test_decamelize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo decamelize_test_decamelize"
+      },
+      {
+        "ref": "tests/test_humps.py::test_converting_strings",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_converting_strings"
+      },
+      {
+        "ref": "tests/test_humps.py::test_depascalize",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_depascalize"
+      },
+      {
+        "ref": "tests/test_kebabize.py::test_kebabize_dict_list",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo kebabize_test_kebabize_dict_list"
+      },
+      {
+        "ref": "tests/test_humps.py::test_conditionals",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo humps_test_conditionals"
+      },
+      {
+        "ref": "tests/test_pascalize.py::test_pascalize_dict_list",
+        "resolution": "PASS",
+        "reason": null,
+        "targetTest": "cargo pascalize_test_pascalize_dict_list"
+      }
+    ]
+  }
+}

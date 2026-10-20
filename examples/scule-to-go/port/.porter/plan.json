@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "draft": false,
+  "generatedBy": "porter.py decompose",
+  "generatedAt": "2026-10-20T19:49:34Z",
+  "budgets": {
+    "unitMaxLoc": 400,
+    "unitMaxSymbols": 8,
+    "unitMinLoc": 30
+  },
+  "tracer": "split",
+  "order": [
+    "split",
+    "cases"
+  ],
+  "layers": {
+    "core": [
+      "split",
+      "cases"
+    ]
+  },
+  "cycles": [],
+  "orphans": [
+    {
+      "symbol": "src/index:STR_SPLITTERS",
+      "note": "private constant; owned by split"
+    },
+    {
+      "symbol": "src/index:titleCaseExceptions",
+      "note": "private constant; owned by cases"
+    }
+  ],
+  "unknownRoots": [],
+  "adjustments": [
+    "Replaced the proposed units (src-kebabcase, src-isuppercase, types-types) with split and cases: the proposal ignored the api.json units the fixtures are filed under, sized each function by one overload line, and missed the call edges (camelCase->pascalCase, flatCase->kebabCase, case functions->splitByCase).",
+    "split owns isUppercase, splitByCase, upperFirst, lowerFirst: the leaf layer every converter calls; cases depends on it, so the cut is acyclic.",
+    "CaseOptions moved from types-types to cases: it is the options struct of four functions in cases and has nothing to call; types-types is dropped.",
+    "Private helper types in src/types.ts (Splitter, FirstOfString, ...) are not owned by any unit: they serve only the out-of-scope type-level helpers.",
+    "split is the tracer: it holds the riskiest semantics (UTF-16 split, full case mapping), so the harness and parity path are proven on them first."
+  ],
+  "units": [
+    {
+      "id": "split",
+      "name": "split and first-letter casing",
+      "layer": "core",
+      "wave": 0,
+      "symbols": [
+        "src/index:isUppercase",
+        "src/index:splitByCase",
+        "src/index:upperFirst",
+        "src/index:lowerFirst",
+        "src/index:NUMBER_CHAR_RE",
+        "src/index:STR_SPLITTERS"
+      ],
+      "publicSymbols": [
+        "src/index:isUppercase",
+        "src/index:splitByCase",
+        "src/index:upperFirst",
+        "src/index:lowerFirst"
+      ],
+      "sources": [
+        {
+          "path": "src/index.ts",
+          "lines": [
+            12,
+            89
+          ]
+        }
+      ],
+      "loc": 70,
+      "dependsOn": [],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/split/",
+        "expected": 966
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "test/scule.test.ts"
+      ],
+      "riskTags": [
+        "unicode",
+        "regex",
+        "nullability"
+      ],
+      "riskScore": 3,
+      "strategy": "code-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md",
+        "the internal UTF-16 part representation and the full case-mapping helpers are exported to the package (unexported identifiers) for unit cases"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": true,
+      "overBudget": false,
+      "notes": "Tracer bullet: proves module scaffold, harness, bindings and parity collect end to end on the hardest semantics (UTF-16 split, full case mapping)."
+    },
+    {
+      "id": "cases",
+      "name": "case converters and CaseOptions",
+      "layer": "core",
+      "wave": 1,
+      "symbols": [
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase",
+        "src/index:titleCaseExceptions",
+        "src/types:CaseOptions"
+      ],
+      "publicSymbols": [
+        "src/index:pascalCase",
+        "src/index:camelCase",
+        "src/index:kebabCase",
+        "src/index:snakeCase",
+        "src/index:flatCase",
+        "src/index:trainCase",
+        "src/index:titleCase",
+        "src/types:CaseOptions"
+      ],
+      "sources": [
+        {
+          "path": "src/index.ts",
+          "lines": [
+            91,
+            173
+          ]
+        },
+        {
+          "path": "src/types.ts",
+          "lines": [
+            1,
+            3
+          ]
+        }
+      ],
+      "loc": 85,
+      "dependsOn": [
+        "split"
+      ],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/cases/",
+        "expected": 1982
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "test/scule.test.ts",
+        "test/types.test-d.ts"
+      ],
+      "riskTags": [
+        "unicode",
+        "regex",
+        "nullability"
+      ],
+      "riskScore": 2,
+      "strategy": "contract-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": false,
+      "overBudget": false,
+      "notes": "test/types.test-d.ts maps to OUT-OF-SCOPE (user decision on type-level helpers)."
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "upstream": {
+    "package": "scule",
+    "version": "1.3.0",
+    "commit": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+    "language": "typescript",
+    "mode": "code",
+    "artifactSha256": null
+  },
+  "target": {
+    "language": "go",
+    "package": "github.com/agentporter-examples/scule",
+    "path": "."
+  },
+  "evidenceDate": "2026-10-20T20:19:42Z",
+  "run": "final-1",
+  "units": [
+    {
+      "unit": "cases",
+      "level": "EXACT",
+      "fixtures": {
+        "total": 1997,
+        "passed": 1997,
+        "normalized": 0,
+        "divergent": 0,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 44,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 0,
+        "DIVERGENCE": 0,
+        "UNRESOLVED": 0,
+        "total": 44
+      },
+      "divergences": [],
+      "mismatches": [],
+      "perf": {
+        "cases": 1997,
+        "medianRatio": 0.01,
+        "note": "target time / oracle time; above 1 is slower"
+      },
+      "notes": [],
+      "oracle": {
+        "language": "javascript",
+        "package": "scule",
+        "version": "1.3.0",
+        "commit": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+        "runtime": "node 24.18.0",
+        "driver": "agentporter/knowledge/oracles/javascript/oracle.mjs",
+        "recordedAt": "2026-10-20T20:19:23Z"
+      }
+    },
+    {
+      "unit": "split",
+      "level": "EXACT",
+      "fixtures": {
+        "total": 987,
+        "passed": 987,
+        "normalized": 0,
+        "divergent": 0,
+        "failed": 0,
+        "missing": 0
+      },
+      "referenceTests": {
+        "PASS": 19,
+        "FAIL": 0,
+        "OUT-OF-SCOPE": 0,
+        "DIVERGENCE": 0,
+        "UNRESOLVED": 0,
+        "total": 19
+      },
+      "divergences": [],
+      "mismatches": [],
+      "perf": {
+        "cases": 987,
+        "medianRatio": 0.01,
+        "note": "target time / oracle time; above 1 is slower"
+      },
+      "notes": [],
+      "oracle": {
+        "language": "javascript",
+        "package": "scule",
+        "version": "1.3.0",
+        "commit": "90d28593c8426d16beb5dadf3af8d341b6fee107",
+        "runtime": "node 24.18.0",
+        "driver": "agentporter/knowledge/oracles/javascript/oracle.mjs",
+        "recordedAt": "2026-10-20T20:15:29Z"
+      }
+    }
+  ],
+  "divergences": [
+    {
+      "id": "d1",
+      "unit": "split",
+      "summary": "Where JavaScript returns a string holding a lone UTF-16 surrogate, the Go result holds U+FFFD in its place: SplitByCase(\"\\U00010400a\") is [\"\\uFFFD\", \"\\uFFFDa\"] where JavaScript gives [\"\\ud801\", \"\\udc00a\"].",
+      "rationale": "Go strings are UTF-8, which cannot encode a lone surrogate. The port keeps parts as UTF-16 code units internally, so it cuts in the same place as JavaScript and rejoins the halves exactly (flatCase and pascalCase stay identical); only decoding a part that still holds a lone surrogate replaces it. Planned as DIVERGENCE D1 in strategy.md (scope gauntlet, lone-surrogate outputs). The affected inputs were removed from the fixtures (contract/units/split.md, Removed cases), so no fixture fails on it.",
+      "cases": [
+        "splitByCase.astral-upper-then-lower",
+        "splitByCase.astral-upper-mid",
+        "splitByCase.astral-upper-then-astral-lower"
+      ],
+      "approvedBy": "strategy"
+    },
+    {
+      "id": "d2",
+      "unit": "split",
+      "summary": "Single code point case mappings and the Final_Sigma context use Go's unicode tables (Unicode 15.0 in Go 1.22-1.26) instead of the JavaScript engine's (Unicode 17.0 in Node 24). UpperFirst(\"ƛ\") is \"ƛ\" where JavaScript gives \"Ƛ\"; SplitByCase(\"a\\uA7CB\") is one part in Go and two in JavaScript (U+A7CB is uppercase only from Unicode 16).",
+      "rationale": "strategy.md lists the Unicode version gap as a seam for later. No fixture touches an affected code point (the corpus uses mappings from Unicode 11 or earlier). Found by the split review, which compared every code point against Node 24.18; documented in doc.go. Fix later by making internal/gencasing emit single code point differences too.",
+      "cases": [],
+      "approvedBy": "strategy"
+    },
+    {
+      "id": "d1-cases",
+      "unit": "cases",
+      "summary": "Where JavaScript returns a joined string holding a lone UTF-16 surrogate, the Go result holds U+FFFD in its place: KebabCase(\"\\U00010400a\") is \"\\uFFFD-\\uFFFDa\" where JavaScript gives \"\\ud801-\\udc00a\".",
+      "rationale": "Same cause as d1: Go strings are UTF-8 and cannot carry a lone surrogate. The converters join the UTF-16 parts from splitUnits and decode once, so PascalCase, CamelCase and FlatCase rejoin split surrogate pairs exactly; only a joiner placed between the two halves (kebab, snake, train, title) leaves lone surrogates, which decoding replaces. Planned as DIVERGENCE D1 in strategy.md; the 18 affected inputs were removed from the fixtures (contract/units/cases.md, Removed cases).",
+      "cases": [
+        "kebabCase.astral-upper-then-lower",
+        "kebabCase.astral-upper-mid",
+        "kebabCase.astral-upper-then-astral-lower",
+        "snakeCase.astral-upper-then-lower",
+        "snakeCase.astral-upper-mid",
+        "snakeCase.astral-upper-then-astral-lower",
+        "trainCase.astral-upper-then-lower",
+        "trainCase.astral-upper-mid",
+        "trainCase.astral-upper-then-astral-lower",
+        "trainCase.norm.astral-upper-then-lower",
+        "trainCase.norm.astral-upper-mid",
+        "trainCase.norm.astral-upper-then-astral-lower",
+        "titleCase.astral-upper-then-lower",
+        "titleCase.astral-upper-mid",
+        "titleCase.astral-upper-then-astral-lower",
+        "titleCase.norm.astral-upper-then-lower",
+        "titleCase.norm.astral-upper-mid",
+        "titleCase.norm.astral-upper-then-astral-lower"
+      ],
+      "approvedBy": "strategy"
+    }
+  ],
+  "markers": {
+    "d2": [
+      "casing.go:22",
+      "casing.go:35"
+    ],
+    "d1-cases": [
+      "scule.go:189"
+    ],
+    "d1": [
+      "utf16.go:21"
+    ]
+  },
+  "markerErrors": [],
+  "totals": {
+    "units": 2,
+    "total": 2984,
+    "passed": 2984,
+    "normalized": 0,
+    "divergent": 0,
+    "failed": 0,
+    "missing": 0,
+    "EXACT": 2,
+    "EQUIVALENT": 0,
+    "DIVERGENT": 0,
+    "ASSERTED": 0,
+    "GAP": 0,
+    "OUT-OF-SCOPE": 0
+  }
+}

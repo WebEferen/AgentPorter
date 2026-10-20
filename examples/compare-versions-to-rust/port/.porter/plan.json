@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "draft": false,
+  "generatedBy": "porter.py decompose",
+  "generatedAt": "2026-10-20T19:44:01Z",
+  "budgets": {
+    "unitMaxLoc": 400,
+    "unitMaxSymbols": 8,
+    "unitMinLoc": 30
+  },
+  "tracer": "validate-validate",
+  "order": [
+    "utils-utils",
+    "validate-validate",
+    "satisfies-satisfies",
+    "src-index"
+  ],
+  "layers": {
+    "foundation": [
+      "utils-utils"
+    ],
+    "core": [
+      "validate-validate",
+      "satisfies-satisfies"
+    ],
+    "entry": [
+      "src-index"
+    ]
+  },
+  "cycles": [],
+  "orphans": [],
+  "unknownRoots": [],
+  "adjustments": [
+    "src-index: dependsOn [validate-validate, satisfies-satisfies], wave 0 -> 2, moved last in order. Rust `pub use` re-exports need the modules to exist; the survey recorded no refs from src/index (it only re-exports), so decompose saw it as independent. Matches 'entry points last' in the methodology.",
+    "src-index: referenceTests cleared. The four test files exercise functions owned by validate-validate (test/validate.ts) and satisfies-satisfies (test/compare.ts, test/satisfies.ts, test/sort.ts), which already map them; decompose assigned them to src-index too because every test imports the package entry.",
+    "utils-utils also owns the crate's public Error enum and the JS-number helpers (parseInt prefix parse, Number-to-String), per the cross-cutting rule that the error hierarchy belongs to the foundation."
+  ],
+  "units": [
+    {
+      "id": "utils-utils",
+      "name": "utils utils",
+      "layer": "foundation",
+      "wave": 0,
+      "symbols": [
+        "src/utils:CompareOperator",
+        "src/utils:semver",
+        "src/utils:validateAndParse",
+        "src/utils:compareSegments",
+        "src/utils:isWildcard",
+        "src/utils:tryParse",
+        "src/utils:forceType",
+        "src/utils:compareStrings"
+      ],
+      "publicSymbols": [
+        "src/utils:CompareOperator",
+        "src/utils:semver",
+        "src/utils:validateAndParse",
+        "src/utils:compareSegments"
+      ],
+      "sources": [
+        {
+          "path": "src/utils.ts",
+          "lines": [
+            4,
+            50
+          ]
+        }
+      ],
+      "loc": 40,
+      "dependsOn": [],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/utils-utils/",
+        "expected": null
+      },
+      "noFixturesReason": "No call id of its own: CompareOperator is a type alias, and semver, validateAndParse and compareSegments are module-internal (not exported by src/index.ts, not reachable through the package entry). Every rule of the comparison core is recorded through the satisfies-satisfies and validate-validate fixtures (edge-cv-*, gen-cv-*, edge-val-*), which a wrong core fails. Assertion plan: contract/units/utils-utils.md.",
+      "referenceTests": [],
+      "riskTags": [
+        "error-model",
+        "numeric",
+        "reflection"
+      ],
+      "riskScore": 5,
+      "strategy": "code-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": false,
+      "overBudget": false,
+      "notes": "Owns compare_versions_port::Error (InvalidVersion, InvalidOperator), the semver matcher, segment comparison and the JS Number helpers. Crate-private except Error and CompareOperator."
+    },
+    {
+      "id": "validate-validate",
+      "name": "validate validate",
+      "layer": "core",
+      "wave": 1,
+      "symbols": [
+        "src/validate:validate",
+        "src/validate:validateStrict"
+      ],
+      "publicSymbols": [
+        "src/validate:validate",
+        "src/validate:validateStrict"
+      ],
+      "sources": [
+        {
+          "path": "src/validate.ts",
+          "lines": [
+            16,
+            17
+          ]
+        },
+        {
+          "path": "src/validate.ts",
+          "lines": [
+            32,
+            36
+          ]
+        }
+      ],
+      "loc": 7,
+      "dependsOn": [
+        "utils-utils"
+      ],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/validate-validate/",
+        "expected": null
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "test/validate.ts"
+      ],
+      "riskTags": [
+        "reflection",
+        "regex"
+      ],
+      "riskScore": 5,
+      "strategy": "contract-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": true,
+      "overBudget": false,
+      "notes": null
+    },
+    {
+      "id": "src-index",
+      "name": "src index",
+      "layer": "entry",
+      "wave": 2,
+      "symbols": [
+        "src/index:index"
+      ],
+      "publicSymbols": [
+        "src/index:index"
+      ],
+      "sources": [
+        {
+          "path": "src/index.ts",
+          "lines": [
+            1,
+            5
+          ]
+        }
+      ],
+      "loc": 5,
+      "dependsOn": [
+        "validate-validate",
+        "satisfies-satisfies"
+      ],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/src-index/",
+        "expected": null
+      },
+      "noFixturesReason": "Re-exports only (src/index.ts:1-5). Fixtures call every export through the package entry (compare-versions:<export>) and are filed under the unit that implements it. Assertion plan: contract/units/src-index.md.",
+      "referenceTests": [],
+      "riskTags": [],
+      "riskScore": 0,
+      "strategy": "contract-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md",
+        "the crate root exports exactly the five functions, CompareOperator and Error; nothing from utils is public"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": false,
+      "overBudget": false,
+      "notes": "Finalizes src/lib.rs: crate docs and the public surface (compare, compare_versions, satisfies, validate, validate_strict, CompareOperator, Error), checked against src/index.ts. Earlier units add their own mod and pub use lines as they land."
+    },
+    {
+      "id": "satisfies-satisfies",
+      "name": "satisfies satisfies",
+      "layer": "core",
+      "wave": 1,
+      "symbols": [
+        "src/compare:compare",
+        "src/compareVersions:compareVersions",
+        "src/satisfies:satisfies",
+        "src/compare:operatorResMap",
+        "src/compare:allowedOperators",
+        "src/compare:assertValidOperator"
+      ],
+      "publicSymbols": [
+        "src/compare:compare",
+        "src/compareVersions:compareVersions",
+        "src/satisfies:satisfies"
+      ],
+      "sources": [
+        {
+          "path": "src/compare.ts",
+          "lines": [
+            21,
+            54
+          ]
+        },
+        {
+          "path": "src/compareVersions.ts",
+          "lines": [
+            10,
+            31
+          ]
+        },
+        {
+          "path": "src/satisfies.ts",
+          "lines": [
+            17,
+            69
+          ]
+        }
+      ],
+      "loc": 90,
+      "dependsOn": [
+        "utils-utils"
+      ],
+      "externalDeps": [],
+      "fixtures": {
+        "path": "fixtures/satisfies-satisfies/",
+        "expected": null
+      },
+      "noFixturesReason": null,
+      "referenceTests": [
+        "test/compare.ts",
+        "test/satisfies.ts",
+        "test/sort.ts"
+      ],
+      "riskTags": [
+        "error-model",
+        "nullability",
+        "ordering",
+        "reflection",
+        "regex"
+      ],
+      "riskScore": 7,
+      "strategy": "code-port",
+      "acceptance": [
+        "every fixture passes, or the mismatch is a documented DIVERGENCE",
+        "every mapped reference test resolves to PASS, OUT-OF-SCOPE or DIVERGENCE",
+        "format, lint, typecheck and tests are green",
+        "the code follows the idiom map in strategy.md"
+      ],
+      "deferred": null,
+      "discovered": false,
+      "tracer": false,
+      "overBudget": false,
+      "notes": null
+    }
+  ]
+}

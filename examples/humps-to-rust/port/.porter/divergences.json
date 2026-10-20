@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "divergences": [
+    {
+      "id": "recursion-depth",
+      "unit": "cycle-humps",
+      "summary": "the *_value walker has no nesting limit; Python raises RecursionError at about 990 levels",
+      "rationale": "a runtime limit, not behavior callers rely on (leak recursion-depth); deep input is bounded by the caller's stack and by serde_json's 128-level parse limit. Planned in strategy.md (idiom map, Recursion row, and the scope gauntlet). No fixture records it.",
+      "cases": [],
+      "approvedBy": "strategy gate 2026-10-20"
+    },
+    {
+      "id": "unicode-version",
+      "unit": "cycle-humps",
+      "summary": "Final_Sigma context in py_lower uses std's Unicode 17 Cased/Case_Ignorable sets; a sigma next to U+0295 or a character newly cased in Unicode 17 can lower differently from CPython 3.14 (decamelize(\"ʕΣ\") is \"ʕς\" in Python, \"ʕσ\" here)",
+      "rationale": "Review finding 2 residual. Per-character case mappings and the str predicates are matched to CPython 3.14 with generated tables; reproducing Final_Sigma would need CPython's Cased and Case_Ignorable sets, which unicodedata does not expose. No fixture input contains these characters.",
+      "cases": [],
+      "approvedBy": "unattended: no user answer covers this residual; conservative choice is to fix every probe-confirmed mapping and declare only the sigma-context residual"
+    },
+    {
+      "id": "oracle-depth-cap",
+      "unit": "cycle-humps",
+      "summary": "two adversarial fixtures nested 100 levels deep record the oracle driver's truncation marker ({\"$type\": ..., \"truncated\": true} past MAX_DEPTH 64); the port returns the full result, which equals what humps returns when called directly",
+      "rationale": "The mismatch is in the recorded expectation, not the port: knowledge/oracles/python/oracle.py caps serialization at 64 levels and the Rust harness does not. No normalization covers it and the verifier keeps mismatching adversarial cases as fixtures.",
+      "cases": [
+        "adv.fix.camelize.deep-100",
+        "adv.fix.decamelize.deep-list-100"
+      ],
+      "approvedBy": "unattended: verifier classed both as oracle artifacts (no port or binding bug); conservative choice is an exact-id divergence so the unit reports DIVERGENT, not EXACT"
+    }
+  ]
+}
