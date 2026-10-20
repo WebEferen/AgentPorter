@@ -53,6 +53,16 @@ resume across sessions, models and people. `/agentporter:status` shows where it 
 
 ## Install
 
+One command installs the plugin for every agent it finds on the PATH (Claude Code, Codex) and the
+`agentporter` CLI:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/WebEferen/AgentPorter/main/install.sh | sh
+```
+
+It is safe to re-run and updates what is already there. Pass options after `sh -s --`, for example
+`sh -s -- --no-codex`; `--help` lists them. To install each part by hand instead:
+
 Claude Code:
 
 ```text

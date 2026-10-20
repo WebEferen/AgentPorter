@@ -4,6 +4,31 @@ AgentPorter is a set of skills, subagents, reference files and one Python helper
 need Python 3.11 or newer on the PATH as `python3`. Nothing else is required. Node is only needed for
 REA (artifact mode) and for oracles and harnesses in JavaScript or TypeScript.
 
+## One command
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/WebEferen/AgentPorter/main/install.sh | sh
+```
+
+[`install.sh`](../install.sh) installs:
+
+- the Claude Code plugin, when `claude` is on the PATH;
+- the Codex plugin, when `codex` is on the PATH;
+- the `agentporter` CLI, with uv when it is installed (uv fetches Python 3.11 or newer if needed), else
+  pipx, else a private virtualenv in `~/.local/share/agentporter` linked into `~/.local/bin`.
+
+It warns when `python3` is older than 3.11, because the plugin skills run `python3` directly. Running it
+again updates everything it installed. Options go after `sh -s --`:
+
+| Option | Effect |
+| --- | --- |
+| `--ref <ref>` | Install a branch or tag instead of `main` (also `AGENTPORTER_REF`). |
+| `--no-cli` | Skip the CLI. |
+| `--no-claude` | Skip the Claude Code plugin. |
+| `--no-codex` | Skip the Codex plugin. |
+
+The sections below do the same steps by hand.
+
 ## Claude Code
 
 ```text

@@ -1,6 +1,7 @@
 """Repository hygiene: manifests agree, frontmatter parses, schemas load, no long dashes anywhere."""
 import json
 import re
+import subprocess
 import unittest
 
 from util import ROOT
@@ -35,6 +36,8 @@ class ManifestTest(unittest.TestCase):
         codex_market = json.loads((ROOT / ".agents" / "plugins" / "marketplace.json").read_text())
         from porterlib import __version__
         self.assertEqual(claude["name"], "agentporter")
+        # `claude plugin validate` accepts displayName but `claude plugin install` rejects the manifest.
+        self.assertNotIn("displayName", claude)
         self.assertEqual(market["plugins"][0]["name"], claude["name"])
         self.assertEqual(codex["name"], claude["name"])
         self.assertEqual(codex_market["plugins"][0]["name"], claude["name"])
@@ -72,6 +75,17 @@ class SchemaTest(unittest.TestCase):
             self.assertIn("$schema", schema, p.name)
             name = p.name.removesuffix(".schema.json")
             jsonschema.validate_named({}, name)
+
+
+class InstallerTest(unittest.TestCase):
+    def run_installer(self, *args):
+        return subprocess.run(["sh", str(ROOT / "install.sh"), *args], capture_output=True, text=True)
+
+    def test_parses_and_handles_flags(self):
+        self.assertEqual(subprocess.run(["sh", "-n", str(ROOT / "install.sh")]).returncode, 0)
+        self.assertEqual(self.run_installer("--help").returncode, 0)
+        self.assertEqual(self.run_installer("--bogus").returncode, 2)
+        self.assertEqual(self.run_installer("--ref").returncode, 2)
 
 
 class StyleTest(unittest.TestCase):
