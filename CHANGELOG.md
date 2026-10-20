@@ -9,6 +9,10 @@ and the project uses [Semantic Versioning](https://semver.org/).
 
 - `install.sh`: one-command install of the Claude Code plugin, the Codex plugin and the CLI.
 
+### Changed
+
+- New logo: a hotel service bell between code brackets. The README now leads with the one-command install.
+
 ### Fixed
 
 - The Claude Code plugin manifest had a `displayName` key that `claude plugin install` rejects.

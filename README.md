@@ -29,6 +29,67 @@ target language if you have not picked one.
 It does not port UI, whole applications with databases and deployment, or timing-sensitive concurrency.
 When something cannot be proven, the parity report says so instead of hiding it.
 
+## Install
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/WebEferen/AgentPorter/main/install.sh | sh
+```
+
+This installs the plugin for Claude Code and Codex, whichever is on your PATH, and the `agentporter`
+CLI. Run it again to update. Options go after `sh -s --`: `--no-claude`, `--no-codex`, `--no-cli` or
+`--ref <tag>`. The plugin needs Python 3.11 or newer as `python3`.
+
+<details>
+<summary>Install by hand</summary>
+
+Claude Code, from inside a session:
+
+```text
+/plugin marketplace add WebEferen/AgentPorter
+/plugin install agentporter@agentporter
+```
+
+Codex:
+
+```text
+codex plugin marketplace add WebEferen/AgentPorter
+codex plugin add agentporter@agentporter
+```
+
+The CLI on its own, for CI or scripting (no dependencies):
+
+```text
+pipx install git+https://github.com/WebEferen/AgentPorter
+agentporter --help
+```
+
+Other agents that read the skills folder layout can copy or symlink `skills/*`. Details for each path
+are in [docs/installing.md](docs/installing.md).
+
+</details>
+
+## Quick start
+
+Create an empty repository for the port, open your agent there and point it at the source:
+
+```text
+mkdir slugify-ts && cd slugify-ts && git init
+claude
+> /agentporter:port https://github.com/un33k/python-slugify --ref v9.1.3 --to typescript
+```
+
+Without `--to`, the target phase recommends a language and asks you to pick one. For a binary with no
+source:
+
+```text
+> /agentporter:port ./bin/gron
+```
+
+The router asks who authorized the analysis, records the answer, runs REA, and continues from the
+recovered behavior.
+
+Calling `/agentporter:port` with no arguments resumes the current port.
+
 ## How it works
 
 ```text
@@ -50,64 +111,6 @@ recover -> survey -> target -> deps -> contract -> strategy -> implement (per un
 
 All state lives in a `.porter/` folder in the repository that will hold the port. A port can stop and
 resume across sessions, models and people. `/agentporter:status` shows where it stands at any time.
-
-## Install
-
-One command installs the plugin for every agent it finds on the PATH (Claude Code, Codex) and the
-`agentporter` CLI:
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/WebEferen/AgentPorter/main/install.sh | sh
-```
-
-It is safe to re-run and updates what is already there. Pass options after `sh -s --`, for example
-`sh -s -- --no-codex`; `--help` lists them. To install each part by hand instead:
-
-Claude Code:
-
-```text
-/plugin marketplace add WebEferen/AgentPorter
-/plugin install agentporter@agentporter
-```
-
-Codex:
-
-```text
-codex plugin marketplace add WebEferen/AgentPorter
-codex plugin add agentporter@agentporter
-```
-
-The helper CLI on its own, for CI or scripting (Python 3.11 or newer, no dependencies):
-
-```text
-pipx install git+https://github.com/WebEferen/AgentPorter
-agentporter --help
-```
-
-Other agents that read the skills folder layout can copy or symlink `skills/*`. Details for each path
-are in [docs/installing.md](docs/installing.md).
-
-## Quick start
-
-Create an empty repository for the port and start from there:
-
-```text
-mkdir slugify-ts && cd slugify-ts && git init
-claude
-> /agentporter:port https://github.com/un33k/python-slugify --ref v9.1.3 --to typescript
-```
-
-Without `--to`, the target phase recommends a language and asks you to pick one. For a binary with no
-source:
-
-```text
-> /agentporter:port ./bin/gron
-```
-
-The router asks who authorized the analysis, records the answer, runs REA, and continues from the
-recovered behavior.
-
-Calling `/agentporter:port` with no arguments resumes the current port.
 
 ## Skills and agents
 
