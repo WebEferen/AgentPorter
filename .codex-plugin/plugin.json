@@ -20,7 +20,7 @@
       "Which language should I port this package to?",
       "What is the status of this port?"
     ],
-    "brandColor": "#14B8A6",
+    "brandColor": "#111111",
     "composerIcon": "./assets/icon-128.png",
     "logo": "./assets/icon-512.png"
   }

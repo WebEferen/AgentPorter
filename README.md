@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-    <img src="assets/logo.svg" alt="AgentPorter" width="160">
+    <img src="assets/logo.svg" alt="AgentPorter avatar: a porter with a terminal cap and a pixel glitch" width="200" height="200">
   </picture>
 </p>
 
@@ -11,10 +11,10 @@
 
 <p align="center">
   <a href="https://github.com/WebEferen/AgentPorter/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/WebEferen/AgentPorter/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-14B8A6"></a>
-  <img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-0F172A">
-  <img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-F59E0B">
-  <img alt="Codex plugin" src="https://img.shields.io/badge/Codex-plugin-64748B">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111111"></a>
+  <img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-111111">
+  <img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-111111">
+  <img alt="Codex plugin" src="https://img.shields.io/badge/Codex-plugin-111111">
 </p>
 
 AgentPorter is a plugin for Claude Code and Codex. It moves a library, package or CLI tool from one
@@ -110,7 +110,7 @@ they were made, and what that means for the results: [examples/README.md](exampl
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/how-it-works-dark.svg">
-  <img src="assets/how-it-works.svg" alt="The eight phases: recover, survey, target, deps, contract, strategy, implement per unit, verify. Recover, target, deps and strategy stop for your approval, and a GAP found by verify goes back to implement." width="100%">
+  <img src="assets/how-it-works.svg" alt="Eight phases: recover (binaries only), survey, target (skip with --to), deps, contract, strategy, implement per unit, verify. Target and strategy require approval; recover and deps pause when needed. A GAP found by verify returns to implement. State in .porter/ lets a port stop and resume." width="100%">
 </picture>
 
 | Phase | What happens | You approve |
